@@ -15,7 +15,7 @@ models.Base.metadata.create_all(bind=engine)
 # Create Experience
 @app.post(EXP_API_BASE_URL, response_model=schemas.ResponseExperience, status_code=status.HTTP_201_CREATED)
 def create_experience(request: schemas.RequestExperience, db: Session = Depends(get_db)):
-    new_experience = models.Experience(**request.dict())
+    new_experience = models.Experience(**request.model_dump())
     db.add(new_experience)
     db.commit()
     return new_experience
