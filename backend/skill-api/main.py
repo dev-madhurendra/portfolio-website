@@ -45,3 +45,18 @@ def deleteSkillById(skill_id: int, db: Session = Depends(get_db)):
     db.delete(skill)
     db.commit()
     return f"Skill with ID {skill_id} deleted succesfully !"
+
+
+# update skill by id
+@app.put(SKILL_API_BASE_URL + "/{skill_id}", response_model=schemas.ResponseSkill, status_code=status.HTTP_200_OK)
+def updateSkillById(skill_id: int, request: schemas.RequestSkill, db: Session = Depends(get_db)):
+    skill = db.query(models.Skill).filter(models.Skill.id == skill_id).first()
+    if not skill:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Skill with ID {skill_id} not found')
+
+    # Update the skill with the new values
+    skill.name = request.name
+    skill.level = request.level
+
+    db.commit()
+    return skill
