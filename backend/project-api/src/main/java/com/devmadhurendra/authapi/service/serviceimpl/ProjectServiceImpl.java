@@ -68,14 +68,22 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public ProjectDTO updateProject(Long id,ProjectDTO projectDTO) {
+    public ProjectDTO updateProject(Long id, ProjectDTO projectDTO, MultipartFile image, String path) throws IOException {
         Project project = projectRepository.findById(id).orElseThrow(() -> new ProjectNotFoundException("Project " + id + " not found !"));
+
         project.setTitle(projectDTO.getTitle());
         project.setLink(projectDTO.getLink());
         project.setDescription(projectDTO.getDescription());
         project.setTechnologies(projectDTO.getTechnologies());
-        project.setProjectImage(projectDTO.getProjectImage());
+
+        if (image != null) {
+            String fileName = fileService.uploadImage(path, image);
+            project.setProjectImage(fileName);
+        }
+
         Project updated = projectRepository.save(project);
+
         return modelMapper.map(updated, ProjectDTO.class);
     }
+
 }

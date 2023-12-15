@@ -1,9 +1,9 @@
 package com.devmadhurendra.authapi.controller;
 
 import com.devmadhurendra.authapi.dto.ProjectDTO;
+import com.devmadhurendra.authapi.exception.ProjectNotFoundException;
 import com.devmadhurendra.authapi.service.FileService;
 import com.devmadhurendra.authapi.service.ProjectService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -55,14 +55,23 @@ public class ProjectController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
+    public ResponseEntity<String> deleteProject(@PathVariable Long id) {
         projectService.deleteProject(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>("Project " + id + " deleted successfully !",HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProjectDTO> updateProject(@PathVariable Long id,@Valid @RequestBody ProjectDTO projectDTO) {
-        ProjectDTO updatedProject = projectService.updateProject(id, projectDTO);
-        return ResponseEntity.ok(updatedProject);
+    public ResponseEntity<ProjectDTO> updateProject(
+            @PathVariable Long id,
+            @ModelAttribute ProjectDTO projectDTO,
+            @RequestParam(required = false) MultipartFile image) {
+        try {
+            ProjectDTO updatedProject = projectService.updateProject(id, projectDTO, image, path);
+            return new ResponseEntity<>(updatedProject, HttpStatus.OK);
+        } catch (ProjectNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (IOException e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

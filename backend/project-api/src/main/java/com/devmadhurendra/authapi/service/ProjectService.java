@@ -12,5 +12,5 @@ public interface ProjectService {
     ProjectDTO getProject(Long id);
     List<ProjectDTO> getAllProject();
     void deleteProject(Long id);
-    ProjectDTO updateProject(Long id,ProjectDTO projectDTO);
+    ProjectDTO updateProject(Long id,ProjectDTO projectDTO,MultipartFile image, String path) throws IOException ;
 }
