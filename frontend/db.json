@@ -1,0 +1,187 @@
+{
+    "admin":[
+        {
+            "id":1,
+            "username":"dev.madhurendra@gmail.com",
+            "password":"Madhurendra@123Portfolio"
+        }
+    ],
+    "about":[
+        {
+            "id": 1,
+            "images": "image_url1",
+            "name": "John Doe",
+            "title": "Software Engineer",
+            "description": "Experienced software engineer with expertise in various technologies.",
+            "resumeLink": "resume_link1"
+        }
+    ],
+    "educations":[
+        {
+          "id": 1,
+          "title": "Bachelor of Science in Computer Science",
+          "school": "University XYZ",
+          "location": "City ABC",
+          "start_date": "2020-09-01",
+          "end_date": "2024-05-31",
+          "percentage": "75%",
+          "description": "Studied computer science with a focus on algorithms and data structures."
+        },
+        {
+          "id": 2,
+          "title": "High School Diploma",
+          "school": "High School XYZ",
+          "location": "City ABC",
+          "start_date": "2016-09-01",
+          "end_date": "2020-05-31",
+          "percentage": "85%",
+          "description": "Completed high school with a focus on mathematics and physics."
+        },
+        {
+          "id": 3,
+          "title": "Certification in Web Development",
+          "school": "Tech Institute",
+          "location": "City XYZ",
+          "start_date": "2022-01-15",
+          "end_date": "2022-05-15",
+          "percentage": "N/A",
+          "description": "Attended a short-term course on web development, learning HTML, CSS, and JavaScript."
+        }
+    ],
+    "experience":[
+        {
+            "id": 1,
+            "title": "Software Engineer",
+            "company": "TechCo",
+            "location": "City, Country",
+            "start_date": "2022-01-01",
+            "end_date": "2023-01-01",
+            "description": "Worked on developing innovative software solutions.",
+            "technologies": "Java, Python, JavaScript, React, Spring"
+        }
+    ],
+    "skills":[
+        {"id": 1, "name": "C++", "level": 90},
+        {"id": 2, "name": "Python", "level": 95},
+        {"id": 3, "name": "Java", "level": 85},
+        {"id": 4, "name": "JavaScript", "level": 80},
+        {"id": 5, "name": "TypeScript", "level": 75},
+        {"id": 6, "name": "Golang", "level": 70},
+        {"id": 7, "name": "HTML", "level": 90},
+        {"id": 8, "name": "CSS", "level": 85},
+        {"id": 9, "name": "ReactJS", "level": 80},
+        {"id": 10, "name": "NextJS", "level": 75},
+        {"id": 11, "name": "Spring", "level": 85},
+        {"id": 12, "name": "SpringBoot", "level": 80},
+        {"id": 13, "name": "Node", "level": 75},
+        {"id": 14, "name": "Express", "level": 80},
+        {"id": 15, "name": "Django", "level": 85},
+        {"id": 16, "name": "FastAPI", "level": 80},
+        {"id": 17, "name": "Atomic Design", "level": 75},
+        {"id": 18, "name": "Design Pattern", "level": 80},
+        {"id": 19, "name": "Java SOLID", "level": 85},
+        {"id": 20, "name": "RTL", "level": 75},
+        {"id": 21, "name": "JUNIT", "level": 80},
+        {"id": 22, "name": "Mockito", "level": 75},
+        {"id": 23, "name": "MySQL", "level": 85},
+        {"id": 24, "name": "MongoDB", "level": 80},
+        {"id": 25, "name": "SQLite", "level": 75},
+        {"id": 26, "name": "Storybook", "level": 80},
+        {"id": 27, "name": "GraphQL", "level": 75},
+        {"id": 28, "name": "OOPs", "level": 90},
+        {"id": 29, "name": "DBMS", "level": 85},
+        {"id": 30, "name": "Git", "level": 80},
+        {"id": 31, "name": "Bootstrap", "level": 85},
+        {"id": 32, "name": "Material UI", "level": 80},
+        {"id": 33, "name": "DSA", "level": 90},
+        {"id": 34, "name": "OWASP", "level": 75}
+    ],
+    "projects":[
+        {
+          "id": 1,
+          "title": "Project 1",
+          "description": "Description for Project 1",
+          "technologies": "Java, Spring Boot, React",
+          "link": "https://project1.example.com",
+          "projectImage": "project1_image.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Project 2",
+          "description": "Description for Project 2",
+          "technologies": "Python, Django, Vue.js",
+          "link": "https://project2.example.com",
+          "projectImage": "project2_image.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Project 3",
+          "description": "Description for Project 3",
+          "technologies": "Node.js, Express, Angular",
+          "link": "https://project3.example.com",
+          "projectImage": "project3_image.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Project 4",
+          "description": "Description for Project 4",
+          "technologies": "Ruby on Rails, React",
+          "link": "https://project4.example.com",
+          "projectImage": "project4_image.jpg"
+        },
+        {
+          "id": 5,
+          "title": "Project 5",
+          "description": "Description for Project 5",
+          "technologies": "PHP, Laravel, Vue.js",
+          "link": "https://project5.example.com",
+          "projectImage": "project5_image.jpg"
+        },
+        {
+          "id": 6,
+          "title": "Project 6",
+          "description": "Description for Project 6",
+          "technologies": "Java, Spring Boot, Angular",
+          "link": "https://project6.example.com",
+          "projectImage": "project6_image.jpg"
+        },
+        {
+          "id": 7,
+          "title": "Project 7",
+          "description": "Description for Project 7",
+          "technologies": "Python, Flask, React",
+          "link": "https://project7.example.com",
+          "projectImage": "project7_image.jpg"
+        },
+        {
+          "id": 8,
+          "title": "Project 8",
+          "description": "Description for Project 8",
+          "technologies": "Node.js, Express, Vue.js",
+          "link": "https://project8.example.com",
+          "projectImage": "project8_image.jpg"
+        }
+    ]
+      ,
+    "messages":[
+        {
+          "id": 1,
+          "name": "John Doe",
+          "email": "john.doe@example.com",
+          "description": "Description for John Doe"
+        },
+        {
+          "id": 2,
+          "name": "Jane Doe",
+          "email": "jane.doe@example.com",
+          "description": "Description for Jane Doe"
+        },
+        {
+          "id": 3,
+          "name": "Alice Smith",
+          "email": "alice.smith@example.com",
+          "description": "Description for Alice Smith"
+        }
+    ]
+      
+}
