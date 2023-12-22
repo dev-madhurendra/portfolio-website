@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "coverage": "npm test --coverage --watchAll -c jest.config.ts",
     "test": "jest"
   },
   "dependencies": {
