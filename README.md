@@ -18,6 +18,7 @@ Welcome to my personal portfolio website powered by FastAPI and Spring Boot for 
 - ☕ **Java**: Leveraging the reliability of Java with Spring Boot.
 - ⚛️ **React**: Building a modern and interactive frontend with React.
 - 🚀 **Vite**: Boosting the frontend development with Vite for a faster and efficient workflow.
+- 🔥 **Sonar Cloud** : Using Sonar Cloud as a CI CD tool (for checking coverage, code smells and all)
 
 ## Getting Started
 
