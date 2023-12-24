@@ -1,10 +1,12 @@
+import React from 'react'
 import './App.css'
+import { DarkModeSwitch } from 'react-toggle-dark-mode'
 
 function App() {
 
   return (
     <div>
-      Hi
+      <DarkModeSwitch onChange={() => {} } checked={false} />
     </div>
   )
 }

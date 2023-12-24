@@ -1,8 +1,6 @@
-
 import React from "react";
-import { Button, ButtonProps } from "@mui/material";
-
-export interface IButtonProps extends ButtonProps {}
+import { Button } from "@mui/material";
+import { IButtonProps } from "../../../interfaces/types";
 
 const MuiButton = ({ ...buttonProps }: IButtonProps) => 
 <Button {...buttonProps} />;
