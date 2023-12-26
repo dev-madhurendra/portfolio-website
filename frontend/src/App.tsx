@@ -1,14 +1,32 @@
-import React from 'react'
-import './App.css'
-import { DarkModeSwitch } from 'react-toggle-dark-mode'
+import React from 'react';
+import styled from '@emotion/styled';
+import Navbar from './components/molecules/Navbar';
+import HomeSection from './pages/Home';
+import './App.css';
+import { DarkModeProvider } from './services/context/DarkMode';
+import { useDarkMode } from './services/customhook/useDarkMode';
 
 function App() {
-
   return (
-    <div>
-      <DarkModeSwitch onChange={() => {} } checked={false} />
-    </div>
-  )
+    <DarkModeProvider>
+      <AppContent />
+    </DarkModeProvider>
+  );
 }
 
-export default App
+const AppContent: React.FC = () => {
+  const { isDark } = useDarkMode();
+
+  const AppContainer = styled('div')({
+    color:isDark ? '#fff' : 'inherit',
+  });
+
+  return (
+    <AppContainer>
+      <Navbar />
+      <HomeSection />
+    </AppContainer>
+  );
+};
+
+export default App;

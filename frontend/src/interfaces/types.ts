@@ -18,3 +18,7 @@ export interface IDarkModeToggle {
   onChange: () => void
   size?: number
 }
+export interface DarkModeContextProps {
+  isDark: boolean;
+  toggleMode: () => void;
+}
