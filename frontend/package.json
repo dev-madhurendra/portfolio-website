@@ -29,7 +29,8 @@
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",
-    "react-toggle-dark-mode": "^1.1.1"
+    "react-toggle-dark-mode": "^1.1.1",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",
