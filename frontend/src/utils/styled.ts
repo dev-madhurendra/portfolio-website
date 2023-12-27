@@ -34,6 +34,7 @@ export const IconContainer = styled('div')({
   '@media (max-width:468px)': {
     display: "none",
   },
+  zIndex:1,
 },slideInAnimation)
 
 export const LeftDiv = styled('div')({
@@ -112,7 +113,6 @@ export const RotatedBackground = styled('div')({
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% 100%',
   transform: 'rotate(0deg)',
-  zIndex:-1
 });
 export const DarkRotatedBackground = styled('div')({
   position: 'absolute',
@@ -124,7 +124,6 @@ export const DarkRotatedBackground = styled('div')({
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% 100%',
   transform: 'rotate(0deg)',
-  zIndex:-1
 });
 export const LeftHomeDiv = styled('div')({
     display: "flex",
@@ -137,7 +136,8 @@ export const LeftHomeDiv = styled('div')({
     fontSize: "1.875rem",
     '@media (max-width:468px)': {
       width: "100vw",
-    }
+  },
+  zIndex:1
 })
 const floatAnimation = keyframes`
   0%, 100% {
@@ -274,4 +274,39 @@ export const IconDiv = styled('div')({
       fontSize: "1.125rem",
     },
 
+})
+
+export const AboutDiv = styled('div')({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "90vw",
+    height: "100vh",
+    marginLeft: "8vw",
+    textAlign:"justify"
+})
+
+export const LeftAboutDiv = styled('div')({
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    '& img': {
+        width: "600px",
+        height: "600px",
+        borderRadius: "50%",
+    },
+    width: "50%",
+})
+export const RightAboutDiv = styled('div')({
+    display: "flex",
+    justifyContent: "center",
+    flexDirection:"column",
+    width:"40%",
+    gap: "1.25rem",
+})
+export const SkillAboutDiv = styled('div')({
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    rowGap: "0.625rem",
+    columnGap:"0.625rem"
 })

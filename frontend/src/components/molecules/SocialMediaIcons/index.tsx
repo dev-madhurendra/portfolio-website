@@ -9,7 +9,7 @@ const SocialMediaIcons = () => {
     <IconDiv data-testid = {SOCIAL_MEDIA_COMPONENT}>
       {socialMediaData.map(({ platform, icon, color, link }) => (
         <a key={platform} href={link} target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={icon} style={{ color }} />
+          <FontAwesomeIcon icon={icon} style={{ color }} className='wave' />
         </a>
       ))}
     </IconDiv>
