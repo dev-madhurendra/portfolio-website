@@ -1,11 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faCode, faEnvelope, faHouse, faLaptopCode, faRightToBracket, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faCode, faEnvelope, faHouse, faInfo, faLaptopCode, faRightToBracket, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 import DarkModeToggle from '../../atoms/Toggle';
-import { IconContainer, LeftDiv, MiddleDiv, RightDiv, StyledAboutIcon, StyledNavIcon } from '../../../utils/styled';
+import { IconContainer, LeftDiv, MiddleDiv, RightDiv, StyledNavIcon } from '../../../utils/styled';
 import Icon from '../../atoms/Icon';
 import LogoGif from '../../../../public/gif/Logo.gif';
-import About from '../../../../public/svg/About.svg';
 import { useDarkMode } from '../../../services/customhook/useDarkMode';
 import { ICON_COMPONENT_HOME } from '../../../utils/constants';
 
@@ -19,7 +18,7 @@ const HomeIconsList = () => {
       </LeftDiv>
       <MiddleDiv>
         <FontAwesomeIcon icon={faHouse} />
-        <Icon src={About} sx={StyledAboutIcon} />
+        <FontAwesomeIcon icon={faInfo} />
         <FontAwesomeIcon icon={faUserGraduate} />
         <FontAwesomeIcon icon={faCode} />
         <FontAwesomeIcon icon={faLaptopCode} />

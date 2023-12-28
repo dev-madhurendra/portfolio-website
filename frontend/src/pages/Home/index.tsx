@@ -5,10 +5,11 @@ import { HERO_SECTION_IMAGE, RESUME_LINK } from '../../utils/constants';
 import { ButtonHomeDiv, CapsuleButton, DarkRotatedBackground, GreetHomeDiv, HomeDiv, IntroDiv, LeftHomeDiv, RightHomeDiv, RotatedBackground, TypedHomeDiv } from '../../utils/styled';
 import SocialMediaIcons from '../../components/molecules/SocialMediaIcons';
 import HeroSectionImage from '../../../public/gif/Video-Call.gif'
-import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../services/customhook/useDarkMode';
+import './style.css'
+import AnimatedName from '../../components/molecules/AnimatedName';
 
 
 const HomeSection = () => {
@@ -31,7 +32,7 @@ const HomeSection = () => {
                 <h1 className='wave'>👋</h1>  
             </GreetHomeDiv>
             <IntroDiv>
-              <h2>I'm <span className='name'>&lt;Madhurendra&gt;</span></h2>
+              <AnimatedName />
             </IntroDiv>  
             <TypedHomeDiv>
                 <h4 ref={el}></h4>      

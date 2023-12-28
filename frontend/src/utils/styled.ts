@@ -20,6 +20,7 @@ const slideInAnimation = () => ({
   animation: 'slideIn 1s ease-in',
 });
 
+
 export const IconContainer = styled('div')({
   height: "100vh",
   position: "fixed",
@@ -34,6 +35,7 @@ export const IconContainer = styled('div')({
   '@media (max-width:468px)': {
     display: "none",
   },
+  zIndex:1,
 },slideInAnimation)
 
 export const LeftDiv = styled('div')({
@@ -112,7 +114,6 @@ export const RotatedBackground = styled('div')({
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% 100%',
   transform: 'rotate(0deg)',
-  zIndex:-1
 });
 export const DarkRotatedBackground = styled('div')({
   position: 'absolute',
@@ -124,7 +125,6 @@ export const DarkRotatedBackground = styled('div')({
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% 100%',
   transform: 'rotate(0deg)',
-  zIndex:-1
 });
 export const LeftHomeDiv = styled('div')({
     display: "flex",
@@ -137,7 +137,8 @@ export const LeftHomeDiv = styled('div')({
     fontSize: "1.875rem",
     '@media (max-width:468px)': {
       width: "100vw",
-    }
+  },
+  zIndex:1
 })
 const floatAnimation = keyframes`
   0%, 100% {
@@ -192,13 +193,15 @@ export const GreetHomeDiv = styled('div')({
 
     }
 })
+
 export const CapsuleButton = styled(MuiButton)({
   borderRadius: '50px', 
   textTransform: 'none',
   width: "11.375rem",
   height: "3.125rem",
-  fontSize: "1.375rem"
+  fontSize: "1.375rem",
 })
+
 export const ButtonHomeDiv = styled('div')({
   display: "flex",
   justifyContent: "flex-start",
@@ -227,26 +230,16 @@ export const TypedHomeDiv = styled('div')({
 })
 export const IntroDiv = styled('div')({
   width: "60%",
+  display: "flex",
   '@media (max-width: 900px)': {
-    '& h2': {
-      fontSize: "40px",
-    },
     display: "flex",
     justifyContent: "flex-start",
     alignItems:"center",
     width:"60vw"
   },
   '@media (max-width:468px)': {
-    '& h2': {
-      width: "100%",
-      justifyContent: "flex-start",
-      fontSize: "35px",
-    },
     width: "80vw",
   },
-  '@media (max-width:1280px)': {
-    fontSize:"1.3125rem"
-  }
 })
 export const socialMediaColors = {
   github: '#333',
@@ -274,4 +267,95 @@ export const IconDiv = styled('div')({
       fontSize: "1.125rem",
     },
 
+})
+
+export const AboutDiv = styled('div')({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "90vw",
+    height: "100vh",
+    marginLeft: "8vw",
+    textAlign: "justify",
+    '@media (max-width: 768px)': {
+      flexDirection: "column-reverse",
+      height: "100%",
+      gap:"1.25rem",
+      marginTop:"6.25rem"
+    },
+    '@media (max-width: 480px)': {
+      flexDirection: "column-reverse",
+      height: "100%",
+      gap:"1.25rem",
+      marginTop:"6.25rem"
+    },
+})
+
+export const LeftAboutDiv = styled('div')({
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    '& img': {
+        width: "90%",
+        height: "90%",
+        borderRadius: "10%",
+    },
+    width: "50%",
+    '@media (max-width: 768px)': {
+      width:"100%"
+    },
+    '@media (max-width: 480px)': {
+      width:"100%"
+    },
+})
+export const RightAboutDiv = styled('div')({
+    display: "flex",
+    justifyContent: "center",
+    flexDirection:"column",
+    width:"50%",
+    gap: "1.25rem",
+    '@media (max-width: 768px)': {
+      width: "90%",
+      alignItems:"center"
+    },
+    '@media (max-width: 480px)': {
+      width: "90%",
+      alignItems:"center"
+    },
+})
+export const SkillAboutDiv = styled('div')({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  rowGap: '0.625rem',
+  columnGap: '0.625rem',
+  '@media (max-width: 768px)': {
+    gridTemplateColumns: 'repeat(2, 1fr)', 
+  },
+  '@media (max-width: 480px)': {
+    gridTemplateColumns: 'repeat(1, 1fr)', 
+  },
+});
+
+export const FlexDiv = styled('div')({
+    display: "flex",
+    gap: "10px",
+    fontWeight: "bold",
+    '& div': {
+      fontSize:"3.1125rem",
+    },
+    '@media (max-width: 900px)': {
+      '& div': {
+        fontSize:"1.8125rem !important",
+      },
+    },
+    '@media (max-width: 468px)': {
+      '& div': {
+        fontSize:"1.85rem !important",
+      },
+    },
+    '@media (max-width: 1280px)': {
+      '& div': {
+        fontSize:"2.5rem",
+      },
+    },
 })

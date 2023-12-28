@@ -13,6 +13,12 @@ export const greets = [
   'Full Stack Developer',
   'Code Architect'
 ]
+export const nameType = [
+  `console.log('👋 Madhurendra');`,
+  `print('Madhurendra 👋')`,
+  `puts 'Madhur👋endra'`,
+];
+
 export const typeAttributes = {
     strings: greets,
     typeSpeed: 80,
@@ -21,6 +27,12 @@ export const typeAttributes = {
     showCursor: true,
     shuffle: true,
     smartBackspace:true
+}
+export const typeNameAttributes = {
+    strings: nameType,
+    typeSpeed: 100,
+    showCursor: false,
+    loop:true
 }
 export const socialMediaData = [
   { platform: 'github', icon: faGithubSquare, color: '#333', link: 'https://github.com/dev-madhurendra' },
@@ -33,3 +45,12 @@ export const socialMediaData = [
   { platform: 'codepen', icon: faCodepen, color: '#000000', link: 'https://codepen.io/devMadhurendra' },
   { platform: 'snapchat', icon: faSnapchat, color: '#fffc00', link: 'https://www.snapchat.com/add/dev-madhurendra' },
 ];
+export const skillsData = [
+    { label: '🌐 Frontend Development'},
+    { label: '🛠️ Backend Development'},
+    { label: '📡 API Development'},
+    { label: '📊 Databases'},
+    { label: '📚 Cyber Security'},
+    { label: '📚 Continuous Learning'},
+];
+export const myname = "MADHURENDRA"
