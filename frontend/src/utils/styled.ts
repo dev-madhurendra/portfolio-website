@@ -228,30 +228,15 @@ export const TypedHomeDiv = styled('div')({
 export const IntroDiv = styled('div')({
   width: "60%",
   display: "flex",
-  gap:"10px",
   '@media (max-width: 900px)': {
-    '& h2': {
-      fontSize: "40px",
-    },
     display: "flex",
     justifyContent: "flex-start",
     alignItems:"center",
     width:"60vw"
   },
   '@media (max-width:468px)': {
-    '& h2': {
-      width: "100%",
-      justifyContent: "flex-start",
-      fontSize: "35px",
-    },
     width: "80vw",
   },
-  '@media (max-width:1280px)': {
-    fontSize:"1.3125rem"
-  },
-  fontSize: "55px",
-  fontWeight: "bold",
-
 })
 export const socialMediaColors = {
   github: '#333',
@@ -318,5 +303,24 @@ export const SkillAboutDiv = styled('div')({
 
 export const FlexDiv = styled('div')({
     display: "flex",
-    gap:"10px"
+    gap: "10px",
+    fontWeight: "bold",
+    '& div': {
+      fontSize:"3.1125rem",
+    },
+    '@media (max-width: 900px)': {
+      '& div': {
+        fontSize:"1.8125rem !important",
+      },
+    },
+    '@media (max-width: 468px)': {
+      '& div': {
+        fontSize:"1.85rem !important",
+      },
+    },
+    '@media (max-width: 1280px)': {
+      '& div': {
+        fontSize:"2.5rem",
+      },
+    },
 })
