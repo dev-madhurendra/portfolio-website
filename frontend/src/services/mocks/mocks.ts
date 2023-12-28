@@ -53,3 +53,4 @@ export const skillsData = [
     { label: '📚 Cyber Security'},
     { label: '📚 Continuous Learning'},
 ];
+export const myname = "MADHURENDRA"

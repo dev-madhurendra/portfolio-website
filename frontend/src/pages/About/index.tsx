@@ -39,8 +39,7 @@ const About = () => {
                     <MyChip
                         key={index}
                         label={skill.label}
-                        size='medium'
-                        style={{ fontSize: "15px" }}
+                        size='small'
                     />
                 ))}
             </SkillAboutDiv>

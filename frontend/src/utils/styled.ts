@@ -227,6 +227,8 @@ export const TypedHomeDiv = styled('div')({
 })
 export const IntroDiv = styled('div')({
   width: "60%",
+  display: "flex",
+  gap:"10px",
   '@media (max-width: 900px)': {
     '& h2': {
       fontSize: "40px",
@@ -246,7 +248,10 @@ export const IntroDiv = styled('div')({
   },
   '@media (max-width:1280px)': {
     fontSize:"1.3125rem"
-  }
+  },
+  fontSize: "55px",
+  fontWeight: "bold",
+
 })
 export const socialMediaColors = {
   github: '#333',
@@ -309,4 +314,9 @@ export const SkillAboutDiv = styled('div')({
     gridTemplateColumns: "repeat(3, 1fr)",
     rowGap: "0.625rem",
     columnGap:"0.625rem"
+})
+
+export const FlexDiv = styled('div')({
+    display: "flex",
+    gap:"10px"
 })
