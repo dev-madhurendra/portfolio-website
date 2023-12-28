@@ -10,3 +10,6 @@ export const FULL_STACK_DEV = "<b>Full-Stack Developer</b>"
 export const ABOUT_DESC =  `🚀 I am a ${FULL_STACK_DEV} with hands-on experience in building robust and scalable web applications.I am always open to collaboration and creating amazing digital experiences; Let's connect and explore the possibilities together;`
 export const ABOUT_SUB_DESC = "Passionate software engineer working at a dynamic startup, with expertise in a variety of cutting-edge technologies and tools; My skills include;"
 export const ABOUT_SUB_FOOTER_DESC = " Let's connect, collaborate, and work together! 🌟;"
+export const ABOUT_COMPONENT = "about-component"
+export const ICON_ABOUT_ALT = "about-image"
+export const NAME_ANIMATION = "name-animation-test-id"

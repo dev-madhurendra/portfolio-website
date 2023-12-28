@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Typed from 'typed.js';
-import { myname, typeAttributes } from '../../services/mocks/mocks';
+import { typeAttributes } from '../../services/mocks/mocks';
 import { HERO_SECTION_IMAGE, RESUME_LINK } from '../../utils/constants';
 import { ButtonHomeDiv, CapsuleButton, DarkRotatedBackground, GreetHomeDiv, HomeDiv, IntroDiv, LeftHomeDiv, RightHomeDiv, RotatedBackground, TypedHomeDiv } from '../../utils/styled';
 import SocialMediaIcons from '../../components/molecules/SocialMediaIcons';

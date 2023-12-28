@@ -20,6 +20,7 @@ const slideInAnimation = () => ({
   animation: 'slideIn 1s ease-in',
 });
 
+
 export const IconContainer = styled('div')({
   height: "100vh",
   position: "fixed",
@@ -192,13 +193,15 @@ export const GreetHomeDiv = styled('div')({
 
     }
 })
+
 export const CapsuleButton = styled(MuiButton)({
   borderRadius: '50px', 
   textTransform: 'none',
   width: "11.375rem",
   height: "3.125rem",
-  fontSize: "1.375rem"
+  fontSize: "1.375rem",
 })
+
 export const ButtonHomeDiv = styled('div')({
   display: "flex",
   justifyContent: "flex-start",
@@ -273,7 +276,19 @@ export const AboutDiv = styled('div')({
     width: "90vw",
     height: "100vh",
     marginLeft: "8vw",
-    textAlign:"justify"
+    textAlign: "justify",
+    '@media (max-width: 768px)': {
+      flexDirection: "column-reverse",
+      height: "100%",
+      gap:"1.25rem",
+      marginTop:"6.25rem"
+    },
+    '@media (max-width: 480px)': {
+      flexDirection: "column-reverse",
+      height: "100%",
+      gap:"1.25rem",
+      marginTop:"6.25rem"
+    },
 })
 
 export const LeftAboutDiv = styled('div')({
@@ -281,25 +296,45 @@ export const LeftAboutDiv = styled('div')({
     justifyContent: "flex-start",
     alignItems: "center",
     '& img': {
-        width: "600px",
-        height: "600px",
-        borderRadius: "50%",
+        width: "90%",
+        height: "90%",
+        borderRadius: "10%",
     },
     width: "50%",
+    '@media (max-width: 768px)': {
+      width:"100%"
+    },
+    '@media (max-width: 480px)': {
+      width:"100%"
+    },
 })
 export const RightAboutDiv = styled('div')({
     display: "flex",
     justifyContent: "center",
     flexDirection:"column",
-    width:"40%",
+    width:"50%",
     gap: "1.25rem",
+    '@media (max-width: 768px)': {
+      width: "90%",
+      alignItems:"center"
+    },
+    '@media (max-width: 480px)': {
+      width: "90%",
+      alignItems:"center"
+    },
 })
 export const SkillAboutDiv = styled('div')({
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    rowGap: "0.625rem",
-    columnGap:"0.625rem"
-})
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  rowGap: '0.625rem',
+  columnGap: '0.625rem',
+  '@media (max-width: 768px)': {
+    gridTemplateColumns: 'repeat(2, 1fr)', 
+  },
+  '@media (max-width: 480px)': {
+    gridTemplateColumns: 'repeat(1, 1fr)', 
+  },
+});
 
 export const FlexDiv = styled('div')({
     display: "flex",

@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 import AboutImage from "../../../public/jpeg/About-Image.jpg"
 import MyChip from '../../components/atoms/Chip'
 import { skillsData, socialMediaData, typeNameAttributes } from '../../services/mocks/mocks'
-import { ABOUT_DESC, ABOUT_SUB_DESC, ABOUT_SUB_FOOTER_DESC } from '../../utils/constants';
+import { ABOUT_COMPONENT, ABOUT_DESC, ABOUT_SUB_DESC, ABOUT_SUB_FOOTER_DESC, ICON_ABOUT_ALT } from '../../utils/constants';
 import { AboutDiv, LeftAboutDiv, RightAboutDiv, SkillAboutDiv } from '../../utils/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
@@ -22,9 +22,9 @@ const About = () => {
     
 
   return (
-    <AboutDiv>
+    <AboutDiv data-testid={ABOUT_COMPONENT}>
         <LeftAboutDiv>
-            <img src={AboutImage} />      
+            <img src={AboutImage} alt={ICON_ABOUT_ALT} />      
         </LeftAboutDiv>        
         <RightAboutDiv>
             <h1>{'<About />'}</h1>
