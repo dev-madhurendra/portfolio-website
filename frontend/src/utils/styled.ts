@@ -35,7 +35,7 @@ export const IconContainer = styled('div')({
   '@media (max-width:468px)': {
     display: "none",
   },
-  zIndex:1,
+  zIndex:"1111",
 },slideInAnimation)
 
 export const LeftDiv = styled('div')({
@@ -82,12 +82,12 @@ export const StyledSkillIcon = {
   width: "4rem",
   height: "4rem",
 }
-export const HomeDiv = styled('div')({
+export const HomeDiv = styled('div')<{ id: string }>({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     height: "100vh",
-    width: "92vw",
+    width: "90vw",
     '@media (max-width: 900px)': {
       flexDirection: 'column',
       justifyContent: "space-evenly",
@@ -102,7 +102,7 @@ export const HomeDiv = styled('div')({
       justifyContent: "center",
       width: "90vw",
       marginLeft: "6vw",
-    }
+  },
 })
 export const RotatedBackground = styled('div')({
   position: 'absolute',
@@ -269,26 +269,21 @@ export const IconDiv = styled('div')({
 
 })
 
-export const AboutDiv = styled('div')({
+export const AboutDiv = styled('div')<{id: string}>({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "90vw",
-    height: "100vh",
+    height: "100%",
     marginLeft: "8vw",
     textAlign: "justify",
+    marginTop: "6.25rem",
     '@media (max-width: 768px)': {
       flexDirection: "column-reverse",
       height: "100%",
       gap:"1.25rem",
-      marginTop:"6.25rem"
-    },
-    '@media (max-width: 480px)': {
-      flexDirection: "column-reverse",
-      height: "100%",
-      gap:"1.25rem",
-      marginTop:"6.25rem"
-    },
+      margin:"auto",
+    },  
 })
 
 export const LeftAboutDiv = styled('div')({
@@ -296,32 +291,39 @@ export const LeftAboutDiv = styled('div')({
     justifyContent: "flex-start",
     alignItems: "center",
     '& img': {
-        width: "90%",
+        width: "80%",
         height: "90%",
         borderRadius: "10%",
     },
     width: "50%",
     '@media (max-width: 768px)': {
-      width:"100%"
-    },
-    '@media (max-width: 480px)': {
-      width:"100%"
+      width: "100%",
+      margin: "auto",
+      '& img': {
+          width: "100%",
+          height: "90%",
+          borderRadius: "10%",
+      },
     },
 })
 export const RightAboutDiv = styled('div')({
     display: "flex",
     justifyContent: "center",
     flexDirection:"column",
-    width:"50%",
+    width: "60%",
+    padding:"3.125rem",
     gap: "1.25rem",
     '@media (max-width: 768px)': {
-      width: "90%",
+      width: "100%",
+      justifyContent: "center",
       alignItems:"center"
     },
-    '@media (max-width: 480px)': {
-      width: "90%",
-      alignItems:"center"
-    },
+    background: 'rgba( 255, 255, 255, 0.1 )',
+    boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+    backdropFilter: 'blur(20px)',
+    WebkitBackdropFilter: 'blur(20px)',
+    borderRadius: '50px',
+    border: '1px solid rgba(255, 255, 255, 0.18)',
 })
 export const SkillAboutDiv = styled('div')({
   display: 'grid',
@@ -348,14 +350,154 @@ export const FlexDiv = styled('div')({
         fontSize:"1.8125rem !important",
       },
     },
-    '@media (max-width: 468px)': {
-      '& div': {
-        fontSize:"1.85rem !important",
-      },
-    },
     '@media (max-width: 1280px)': {
       '& div': {
         fontSize:"2.5rem",
       },
     },
+})
+
+export const EductionsDiv = styled('div')<{id: string}>({
+    display: "flex",
+    justifyContent:"space-around",
+    flexDirection:"column",
+    alignItems: "center",
+    width: "100vw",
+    height: "100%",
+    marginTop: "6.25rem",
+    marginBottom:"3.125rem",
+    '@media (max-width: 1000px)': {
+        marginTop:"5.25rem",
+        width: "100%",
+        height:"100%"
+    },
+})
+
+export const EductionsTabDiv = styled('div')({
+    display: "flex",
+    justifyContent:"flex-end",
+    flexDirection:"column",
+    gap: "1.25rem",
+    width: "40%",
+    
+    '@media (max-width: 650px)': {
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop:"2.125rem",
+      },
+})
+
+export const LeftEducationDiv = styled('div')({
+    display: "flex",
+    justifyContent:"flex-end",
+    flexDirection: "column",
+})
+
+
+export const RightEducationDiv = styled('div')({
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  width: "100%",
+  height:"100%",
+  '@media (max-width: 768px)': {
+      flexDirection: "column",
+  },
+});
+
+export const EductionsDetailsDiv = styled('div')({
+    display: "flex",
+    justifyContent:"flex-end",
+    alignItems: "center",
+    width: "50%",
+    marginTop:"3.125rem",
+    '@media (max-width: 650px)': {
+      width: "100%",
+      justifyContent:"center",
+      marginTop:"2.125rem",
+  },
+})
+
+export const SkillTagButton = styled(MuiButton)({
+  alignItems: 'center',
+  appearance: 'none',
+  backgroundColor: '#fff',
+  borderRadius: '24px',
+  borderStyle: 'none',
+  boxShadow: 'rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0',
+  boxSizing: 'border-box',
+  color: '#3c4043',
+  cursor: 'pointer',
+  display: 'inline-flex',
+  fill: 'currentcolor',
+  fontFamily: '"Google Sans", Roboto, Arial, sans-serif',
+  fontSize: '14px',
+  fontWeight: '500',
+  height: '48px',
+  justifyContent: 'center',
+  letterSpacing: '.25px',
+  lineHeight: 'normal',
+  maxWidth: '100%',
+  overflow: 'visible',
+  padding: '2px 24px',
+  position: 'relative',
+  textAlign: 'center',
+  textTransform: 'none',
+  transition: 'box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms',
+  userSelect: 'none',
+  WebkitUserSelect: 'none',
+  touchAction: 'manipulation',
+  width: 'auto',
+  willChange: 'transform, opacity',
+  zIndex: '0',
+
+  '&:hover': {
+    background: '#F6F9FE',
+    color: '#174ea6',
+  },
+
+  '&:active': {
+    boxShadow: '0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%)',
+    outline: 'none',
+  },
+
+  '&:focus': {
+    outline: 'none',
+    border: '2px solid #4285f4',
+  },
+
+  '&:not(:disabled)': {
+    boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
+  },
+
+  '&:not(:disabled):hover': {
+    boxShadow: 'rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px',
+  },
+
+  '&:not(:disabled):focus': {
+    boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
+  },
+
+  '&:not(:disabled):active': {
+    boxShadow: 'rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px',
+  },
+
+  '&:disabled': {
+    boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
+  },
+});
+
+export const SkillTagDiv = styled('div')({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap:"1.25rem"
+})
+
+export const SlillTagList = styled('ul')({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap:"1.25rem"
 })

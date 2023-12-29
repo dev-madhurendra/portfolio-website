@@ -33,3 +33,20 @@ export interface IChipProp {
     onClick?:() => void
     style?:React.CSSProperties;
 }
+
+export interface IEducationDetail {
+    id: number;
+    title: string;
+    school: string;
+    location: string;
+    start_date: string;
+    end_date: string;
+    percentage: string;
+    description: string;
+}
+
+export interface ISkill {
+  id: number;
+  name: string;
+  tags: string[];
+}

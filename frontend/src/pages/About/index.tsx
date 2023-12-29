@@ -22,7 +22,7 @@ const About = () => {
     
 
   return (
-    <AboutDiv data-testid={ABOUT_COMPONENT}>
+    <AboutDiv data-testid={ABOUT_COMPONENT} id={'about'}>
         <LeftAboutDiv>
             <img src={AboutImage} alt={ICON_ABOUT_ALT} />      
         </LeftAboutDiv>        

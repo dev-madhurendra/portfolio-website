@@ -7,23 +7,38 @@ import Icon from '../../atoms/Icon';
 import LogoGif from '../../../../public/gif/Logo.gif';
 import { useDarkMode } from '../../../services/customhook/useDarkMode';
 import { ICON_COMPONENT_HOME } from '../../../utils/constants';
+import { Link } from 'react-scroll';
 
 const HomeIconsList = () => {
   const { isDark, toggleMode } = useDarkMode();
 
   return (
-    <IconContainer data-testid={ICON_COMPONENT_HOME}>   
+    <IconContainer data-testid={ICON_COMPONENT_HOME}>
       <LeftDiv>
         <Icon src={LogoGif} sx={StyledNavIcon} />
       </LeftDiv>
       <MiddleDiv>
-        <FontAwesomeIcon icon={faHouse} />
-        <FontAwesomeIcon icon={faInfo} />
-        <FontAwesomeIcon icon={faUserGraduate} />
-        <FontAwesomeIcon icon={faCode} />
-        <FontAwesomeIcon icon={faLaptopCode} />
-        <FontAwesomeIcon icon={faBriefcase} />
-        <FontAwesomeIcon icon={faEnvelope} />
+        <Link to="home" spy smooth duration={500}>
+          <FontAwesomeIcon icon={faHouse} />
+        </Link>
+        <Link to="about" spy smooth duration={500}>
+          <FontAwesomeIcon icon={faInfo} />
+        </Link>
+        <Link to="education" spy smooth duration={500}>
+          <FontAwesomeIcon icon={faUserGraduate} />
+        </Link>
+        <Link to="code" spy smooth duration={500}>
+          <FontAwesomeIcon icon={faCode} />
+        </Link>
+        <Link to="projects" spy smooth duration={500}>
+          <FontAwesomeIcon icon={faLaptopCode} />
+        </Link>
+        <Link to="experience" spy smooth duration={500}>
+          <FontAwesomeIcon icon={faBriefcase} />
+        </Link>
+        <Link to="contact" spy smooth duration={500}>
+          <FontAwesomeIcon icon={faEnvelope} />
+        </Link>
       </MiddleDiv>
       <RightDiv>
         <DarkModeToggle checked={isDark} onChange={toggleMode} />

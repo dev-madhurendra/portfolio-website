@@ -7,14 +7,17 @@ import SocialMediaIcons from '../../components/molecules/SocialMediaIcons';
 import HeroSectionImage from '../../../public/gif/Video-Call.gif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faUser } from '@fortawesome/free-solid-svg-icons';
-import { useDarkMode } from '../../services/customhook/useDarkMode';
-import './style.css'
 import AnimatedName from '../../components/molecules/AnimatedName';
+import ParticlesContainer from '../../components/organisms/ParticlesSection';
+import './style.css'
+import { useDarkMode } from '../../services/customhook/useDarkMode';
+
 
 
 const HomeSection = () => {
   const {isDark} = useDarkMode()
   const el = React.useRef(null);
+
 
   useEffect(() => {
     const typed = new Typed(el.current, typeAttributes);
@@ -24,44 +27,44 @@ const HomeSection = () => {
     };
   }, []);
   return (
-    <HomeDiv>
-        {isDark ? <DarkRotatedBackground /> : <RotatedBackground /> }
-        <LeftHomeDiv>
-            <GreetHomeDiv>
-                <h1>Hello</h1>      
-                <h1 className='wave'>👋</h1>  
-            </GreetHomeDiv>
-            <IntroDiv>
-              <AnimatedName />
-            </IntroDiv>  
-            <TypedHomeDiv>
-                <h4 ref={el}></h4>      
-            </TypedHomeDiv>
-            <SocialMediaIcons />
-            <ButtonHomeDiv>
-              <CapsuleButton
-                variant="contained"
-                startIcon={<FontAwesomeIcon icon={faDownload} />}
-                href={RESUME_LINK}
-              >
-                  Resume
-              </CapsuleButton>
-              <CapsuleButton
-                variant="outlined"
-                startIcon={<FontAwesomeIcon
-                icon={faUser} />}
-              >
-                Hire Me
-              </CapsuleButton>
-            </ButtonHomeDiv>  
-        </LeftHomeDiv>
-        <RightHomeDiv>
-          <img
-            src={HeroSectionImage}
-            alt={HERO_SECTION_IMAGE}
-          />      
-        </RightHomeDiv>
-    </HomeDiv>
+        <HomeDiv id={'home'}>
+            {/* {isDark ? <DarkRotatedBackground /> : <RotatedBackground /> } */}
+          <LeftHomeDiv>
+              <GreetHomeDiv>
+                  <h1>Hello</h1>      
+                  <h1 className='wave'>👋</h1>  
+              </GreetHomeDiv>
+              <IntroDiv>
+                <AnimatedName />
+              </IntroDiv>  
+              <TypedHomeDiv>
+                  <h4 ref={el}></h4>      
+              </TypedHomeDiv>
+              <SocialMediaIcons />
+              <ButtonHomeDiv>
+                <CapsuleButton
+                  variant="contained"
+                  startIcon={<FontAwesomeIcon icon={faDownload} />}
+                  href={RESUME_LINK}
+                >
+                    Resume
+                </CapsuleButton>
+                <CapsuleButton
+                  variant="outlined"
+                  startIcon={<FontAwesomeIcon
+                    icon={faUser} />}
+                >
+                  Hire Me
+                </CapsuleButton>
+              </ButtonHomeDiv>  
+          </LeftHomeDiv>
+          <RightHomeDiv>
+            <img
+              src={HeroSectionImage}
+              alt={HERO_SECTION_IMAGE}
+            />      
+          </RightHomeDiv>
+      </HomeDiv>
   )
 }
 
