@@ -13,7 +13,7 @@ const MyChip = (props: IChipProp) =>
         variant={props.variant}
         onClick={props.onClick}
         color={props.color}
-        style={{ ...props.style, backgroundColor: getRandomLightColor() }}
+        sx={{ ...props.style, backgroundColor: getRandomLightColor() }}
         data-testid={MUI_CHIP}
     />
 

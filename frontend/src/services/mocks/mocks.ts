@@ -1,4 +1,5 @@
 import { faCodepen, faDiscord, faGithubSquare, faInstagram, faLinkedinIn, faQuora, faSnapchat, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { EDUIMG_1, EDUIMG_2, EDUIMG_3, EDUIMG_4, EDUIMG_5, EDUIMG_6 } from '../../utils/constants';
 
 
 export const greets = [
@@ -54,3 +55,29 @@ export const skillsData = [
     { label: '📚 Continuous Learning'},
 ];
 export const myname = "MADHURENDRA"
+export const educationImage = [
+  EDUIMG_1,
+  EDUIMG_2,
+  EDUIMG_3,
+  EDUIMG_4,
+  EDUIMG_5,
+  EDUIMG_6
+]
+export const particlesColorValues = [
+  "#2EB67D", "#ECB22E", "#E01E5B", "#36C5F0", "#EF5B0C",
+  "#3330E4", "#FF9F29", "#570A57", "#40DFEF", "#E9D5DA",
+  "#A6D1E6", "#BFFFF0", "#FF5733", "#3F51B5", "#4CAF50",
+  "#FFC107", "#9C27B0", "#009688", "#FFEB3B", "#795548"
+]
+export const itemsPerPage = {
+  mobile: 2,
+  tablet: 3,
+  laptop: 5,
+};
+export const getTypedTextOptions = (text: string = "") => ({
+  strings: [text],
+  typeSpeed: 40,
+  backSpeed: 20,
+  backDelay: 10,
+  showCursor: false,
+})
