@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "json": "json-server --watch db.json --port 8080",
-    "build": "tsc && vite build",
+    "build": "vite build --config vite.config.cjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

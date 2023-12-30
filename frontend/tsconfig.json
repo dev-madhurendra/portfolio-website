@@ -10,6 +10,6 @@
     "isolatedModules": true,
     "strict": true
   },
-  "include": ["vite.config.ts","src/**/*.ts", "src/**/*.tsx"],
+  "include": ["vite.config.cjs","src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]
 }
