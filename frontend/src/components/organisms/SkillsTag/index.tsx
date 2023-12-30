@@ -4,46 +4,52 @@ import { ISkill } from '../../../interfaces/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { SkillTagButton, SkillTagDiv, SlillTagList } from '../../../utils/styled';
-
+import { itemsPerPage } from '../../../services/mocks/mocks';
+import { CHEVRON_LEFT_ROLE, CHEVRON_RIGHT_ROLE, SKILL_SECTION_TEST_ID, SKILL_TAG } from '../../../services/mocks/testMocks';
+import { updateIndices } from '../../../services/functions/functions';
 
 const SkillsTag = () => {
-  const itemsPerPage = 5;
   const [tags, setTags] = useState<string[]>([]);
   const [pageState, setPageState] = useState({
     startIndex: 0,
-    endIndex: itemsPerPage,
+    endIndex: itemsPerPage.laptop,
   });
 
   useEffect(() => {
+    let mounted = true;
+
+    window.addEventListener('resize',handleResize);
+
     getSkillsTags()
       .then((res) => {
-        const tagSet = new Set<string>();
-        res.data.forEach((skill: ISkill) => {
-          skill.tags.forEach((tag) => {
-            tagSet.add(tag);
+        if (mounted) {
+          const tagSet = new Set<string>();
+          res.data.forEach((skill: ISkill) => {
+            skill.tags.forEach((tag) => {
+              tagSet.add(tag);
+            });
           });
-        });
-        const tagArray = Array.from(tagSet);
-        setTags(tagArray);
+          const tagArray = Array.from(tagSet);
+          setTags(tagArray);
+        }
       })
       .catch(() => {
         console.log('error');
       });
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
-  const handlePageChange = (direction: 'prev' | 'next') => {
+  const handlePageChange = (direction: string) => {
     setPageState((prevState) => {
-      let newStartIndex = prevState.startIndex;
-      let newEndIndex = prevState.endIndex;
-
-      if (direction === 'prev' && prevState.startIndex > 0) {
-        newStartIndex -= 1;
-        newEndIndex -= 1;
-      } else if (direction === 'next' && prevState.endIndex < tags.length) {
-        newStartIndex += 1;
-        newEndIndex += 1;
-      }
-
+      const { newStartIndex, newEndIndex } = updateIndices(
+        prevState.startIndex,
+        prevState.endIndex,
+        direction,
+        tags
+      );
       return {
         startIndex: newStartIndex,
         endIndex: newEndIndex,
@@ -51,23 +57,44 @@ const SkillsTag = () => {
     });
   };
 
+  const handleResize = () => {
+    if (window.innerWidth >= 1000) {
+      setPageState((prevState) => ({
+        ...prevState,
+        endIndex: itemsPerPage.laptop,
+      }));
+    } else if (window.innerWidth >= 768) {
+      setPageState((prevState) => ({
+        ...prevState,
+        endIndex: itemsPerPage.tablet,
+      }));
+    } else {
+      setPageState((prevState) => ({
+        ...prevState,
+        endIndex: itemsPerPage.mobile,
+      }));
+    }
+  };
+
   return (
-    <SkillTagDiv>
+    <SkillTagDiv data-testid={SKILL_SECTION_TEST_ID}>
       <SkillTagButton
         onClick={() => handlePageChange('prev')}
         disabled={pageState.startIndex === 0}
         children={<FontAwesomeIcon icon={faChevronCircleLeft} />}
+        role={CHEVRON_LEFT_ROLE}
       />
       <SlillTagList>
         {tags.slice(pageState.startIndex, pageState.endIndex)
-            .map((tag, index) => (
-          <SkillTagButton key={index} children={tag} />
-        ))}
+          .map((tag, index) => (
+            <SkillTagButton key={index} children={tag} role={SKILL_TAG + index} />
+          ))}
       </SlillTagList>
       <SkillTagButton
         onClick={() => handlePageChange('next')}
         disabled={pageState.endIndex >= tags.length - 5}
         children={<FontAwesomeIcon icon={faChevronCircleRight} />}
+        role={CHEVRON_RIGHT_ROLE}
       />
     </SkillTagDiv>
   );

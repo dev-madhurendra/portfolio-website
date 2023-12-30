@@ -4,7 +4,7 @@ import AboutImage from "../../../public/jpeg/About-Image.jpg"
 import MyChip from '../../components/atoms/Chip'
 import { skillsData, socialMediaData, typeNameAttributes } from '../../services/mocks/mocks'
 import { ABOUT_COMPONENT, ABOUT_DESC, ABOUT_SUB_DESC, ABOUT_SUB_FOOTER_DESC, ICON_ABOUT_ALT } from '../../utils/constants';
-import { AboutDiv, LeftAboutDiv, RightAboutDiv, SkillAboutDiv } from '../../utils/styled';
+import { AboutDiv, LeftAboutDiv, MuiChipAboutStyled, RightAboutDiv, SkillAboutDiv } from '../../utils/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
 
@@ -30,7 +30,10 @@ const About = () => {
             <h1>{'<About />'}</h1>
             <div>
             <h2 ref={el}></h2>
-            <MyChip label='<Software Engineer />' size='small' style={{fontSize:"15px"}} />      
+            <MyChip
+              label='<Software Engineer />'
+              size='small'
+            />      
             </div>
             <div><h3>{ABOUT_DESC}</h3></div>
             <div><h3>{ABOUT_SUB_DESC}</h3></div>
@@ -40,6 +43,7 @@ const About = () => {
                         key={index}
                         label={skill.label}
                         size='small'
+                        style={MuiChipAboutStyled}
                     />
                 ))}
             </SkillAboutDiv>

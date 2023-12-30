@@ -1,4 +1,4 @@
-import { ButtonProps, TypographyProps } from "@mui/material";
+import { ButtonProps, SxProps, TypographyProps } from "@mui/material";
 import { CSSProperties, ReactElement } from "react";
 
 export interface IButtonProps extends ButtonProps {}
@@ -31,7 +31,7 @@ export interface IChipProp {
     src?: string
     avatar?: ReactElement
     onClick?:() => void
-    style?:React.CSSProperties;
+    style?:SxProps;
 }
 
 export interface IEducationDetail {

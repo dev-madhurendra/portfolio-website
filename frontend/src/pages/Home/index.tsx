@@ -2,23 +2,18 @@ import React, { useEffect } from 'react'
 import Typed from 'typed.js';
 import { typeAttributes } from '../../services/mocks/mocks';
 import { HERO_SECTION_IMAGE, RESUME_LINK } from '../../utils/constants';
-import { ButtonHomeDiv, CapsuleButton, DarkRotatedBackground, GreetHomeDiv, HomeDiv, IntroDiv, LeftHomeDiv, RightHomeDiv, RotatedBackground, TypedHomeDiv } from '../../utils/styled';
+import { ButtonHomeDiv, CapsuleButton, GreetHomeDiv, HomeDiv, IntroDiv, LeftHomeDiv, RightHomeDiv, TypedHomeDiv } from '../../utils/styled';
 import SocialMediaIcons from '../../components/molecules/SocialMediaIcons';
 import HeroSectionImage from '../../../public/gif/Video-Call.gif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faUser } from '@fortawesome/free-solid-svg-icons';
 import AnimatedName from '../../components/molecules/AnimatedName';
-import ParticlesContainer from '../../components/organisms/ParticlesSection';
 import './style.css'
-import { useDarkMode } from '../../services/customhook/useDarkMode';
 
 
 
 const HomeSection = () => {
-  const {isDark} = useDarkMode()
   const el = React.useRef(null);
-
-
   useEffect(() => {
     const typed = new Typed(el.current, typeAttributes);
 
@@ -28,7 +23,6 @@ const HomeSection = () => {
   }, []);
   return (
         <HomeDiv id={'home'}>
-            {/* {isDark ? <DarkRotatedBackground /> : <RotatedBackground /> } */}
           <LeftHomeDiv>
               <GreetHomeDiv>
                   <h1>Hello</h1>      

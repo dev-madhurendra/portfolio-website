@@ -69,3 +69,15 @@ export const particlesColorValues = [
   "#A6D1E6", "#BFFFF0", "#FF5733", "#3F51B5", "#4CAF50",
   "#FFC107", "#9C27B0", "#009688", "#FFEB3B", "#795548"
 ]
+export const itemsPerPage = {
+  mobile: 2,
+  tablet: 3,
+  laptop: 5,
+};
+export const getTypedTextOptions = (text: string = "") => ({
+  strings: [text],
+  typeSpeed: 40,
+  backSpeed: 20,
+  backDelay: 10,
+  showCursor: false,
+})

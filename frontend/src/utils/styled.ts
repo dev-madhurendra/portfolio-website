@@ -20,23 +20,32 @@ const slideInAnimation = () => ({
   animation: 'slideIn 1s ease-in',
 });
 
-
 export const IconContainer = styled('div')({
-  height: "100vh",
-  position: "fixed",
-  left:"0",
-  display: "flex",
-  justifyContent: "space-around",
-  flexDirection:"column",
-  alignItems: "center",
-  gap: "1.25rem",
-  fontSize: "1.5rem",
-  marginLeft: "1.25rem",
-  '@media (max-width:468px)': {
-    display: "none",
+  height: '100vh',
+  position: 'fixed',
+  left: '0',
+  display: 'flex',
+  justifyContent: 'space-around',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '1.25rem',
+  fontSize: '1.5rem',
+  marginLeft: '1.25rem',
+  zIndex: '1111',
+  '@media (max-width: 468px)': {
+    display: 'flex', 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    position: 'fixed', 
+    bottom: '0', 
+    left: '0', 
+    width: '95%', 
+    height: 'auto', 
+    gap: '0.5rem', 
+    marginLeft: '0', 
   },
-  zIndex:"1111",
-},slideInAnimation)
+}, slideInAnimation);
+
 
 export const LeftDiv = styled('div')({
   display: "flex",
@@ -44,20 +53,36 @@ export const LeftDiv = styled('div')({
   alignItems: "center",
   boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
   cursor: "pointer",
-  borderRadius:"50%"
+  borderRadius: "50%",
+  '@media (max-width: 468px)': {
+    display:"none"
+  },
+  
 })
 export const MiddleDiv = styled('div')({
   display: "flex",
   justifyContent: "center",
   flexDirection:"column",
   alignItems: "center",
-  gap:"2.25rem",
+  gap:"0.625rem",
   boxShadow: "rgba(0, 0, 0, 0.35) 0px 0.3125rem 0.9375rem",
   padding: "1.25rem",
   cursor: "pointer",
   borderRadius: "50px",
   backgroundColor: "rgba(255,255,255,0.1)",
-  backdropFilter:"blur(1px)"
+  backdropFilter: "blur(1px)",
+  '@media (max-width: 468px)': {
+    flexDirection: 'row', 
+    position: 'fixed', 
+    overflow:"hidden",
+    bottom: '0', 
+    left: '0', 
+    gap:"0.5125rem",
+    width: '70%', 
+    height: 'auto', 
+    marginLeft: '0', 
+    padding: "1.25rem",
+  },
 })
 export const RightDiv = styled('div')({
   display: "flex",
@@ -65,7 +90,10 @@ export const RightDiv = styled('div')({
   flexDirection:"column",
   alignItems: "center",
   cursor: "pointer",
-  gap:"1.25rem"
+  gap: "1.25rem",
+  '@media (max-width: 468px)': {
+    marginLeft:"80%"
+  },
 })
 export const StyledNavIcon = {
   width: "4rem",
@@ -90,19 +118,18 @@ export const HomeDiv = styled('div')<{ id: string }>({
     width: "90vw",
     '@media (max-width: 900px)': {
       flexDirection: 'column',
-      justifyContent: "space-evenly",
       width: "100vw",
     },
     '@media (max-width:468px)': {
       justifyContent: "center",
-      width: "100vw",
+      width: "100%",
       marginLeft: "0vw",
     },
     '@media (max-width:1024px)': {
       justifyContent: "center",
       width: "90vw",
       marginLeft: "6vw",
-  },
+    },
 })
 export const RotatedBackground = styled('div')({
   position: 'absolute',
@@ -135,10 +162,16 @@ export const LeftHomeDiv = styled('div')({
     height: "50%",    
     gap: "1rem",
     fontSize: "1.875rem",
+    '@media (max-width:900px)': {
+      width: "90%",
+      fontSize: "2.1875rem",
+    },
     '@media (max-width:468px)': {
       width: "100vw",
-  },
-  zIndex:1
+      marginLeft: "0px",
+      fontSize: "1.875rem"
+    },
+    zIndex:1
 })
 const floatAnimation = keyframes`
   0%, 100% {
@@ -170,13 +203,15 @@ export const RightHomeDiv = styled('div')({
     '& img': {
       width: "20rem",
       height: "20rem",
-      marginTop:"-4.5rem"
+      marginTop: "-4.5rem",
+      marginLeft:"-7.5rem"
     }
   },
   '@media (max-width: 468px)': {
     '& img': {
       width: "25rem",
       height: "25rem",
+      marginLeft:"-0.625rem"
     }
   },
 });
@@ -208,12 +243,18 @@ export const ButtonHomeDiv = styled('div')({
   alignItems: "center",
   gap: "1rem",
   width: "60%",
+  '@media (max-width:1024px)': {
+    width: "80%",
+    marginLeft:"6rem",
+  },
   '@media (max-width: 900px)': {
     width: "60vw",
+    marginLeft:"0px",
   },
   '@media (max-width:468px)': {
-    width: "80vw",
-    justifyContent:"center",
+    width: "80%",
+    justifyContent: "center",
+    marginLeft:"0px",
   }
 })
 export const TypedHomeDiv = styled('div')({
@@ -221,6 +262,9 @@ export const TypedHomeDiv = styled('div')({
   justifyContent: "flex-start",
   alignItems: "center",
   width: "60%",
+  '@media (max-width:1024px)': {
+    fontSize: "25px",
+  },
   '@media (max-width: 900px)': {
     width: "60vw",
   },
@@ -273,7 +317,7 @@ export const AboutDiv = styled('div')<{id: string}>({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "90vw",
+    width: "85vw",
     height: "100%",
     marginLeft: "8vw",
     textAlign: "justify",
@@ -281,8 +325,9 @@ export const AboutDiv = styled('div')<{id: string}>({
     '@media (max-width: 768px)': {
       flexDirection: "column-reverse",
       height: "100%",
-      gap:"1.25rem",
-      margin:"auto",
+      gap:"1rem",
+      margin: "auto",
+      width: "95%",
     },  
 })
 
@@ -310,7 +355,7 @@ export const RightAboutDiv = styled('div')({
     display: "flex",
     justifyContent: "center",
     flexDirection:"column",
-    width: "60%",
+    width: "50%",
     padding:"3.125rem",
     gap: "1.25rem",
     '@media (max-width: 768px)': {
@@ -345,16 +390,22 @@ export const FlexDiv = styled('div')({
     '& div': {
       fontSize:"3.1125rem",
     },
+    '@media (max-width: 1280px)': {
+      '& div': {
+        fontSize:"2.2rem",
+      },
+    },
+    '@media (max-width:1024px)': {
+      '& div': {
+        fontSize: "1.75rem",
+      }
+    },
     '@media (max-width: 900px)': {
       '& div': {
         fontSize:"1.8125rem !important",
       },
     },
-    '@media (max-width: 1280px)': {
-      '& div': {
-        fontSize:"2.5rem",
-      },
-    },
+
 })
 
 export const EductionsDiv = styled('div')<{id: string}>({
@@ -432,15 +483,13 @@ export const SkillTagButton = styled(MuiButton)({
   display: 'inline-flex',
   fill: 'currentcolor',
   fontFamily: '"Google Sans", Roboto, Arial, sans-serif',
-  fontSize: '14px',
   fontWeight: '500',
   height: '48px',
   justifyContent: 'center',
   letterSpacing: '.25px',
   lineHeight: 'normal',
-  maxWidth: '100%',
+  maxWidth: '90%',
   overflow: 'visible',
-  padding: '2px 24px',
   position: 'relative',
   textAlign: 'center',
   textTransform: 'none',
@@ -501,3 +550,58 @@ export const SlillTagList = styled('ul')({
     alignItems: 'center',
     gap:"1.25rem"
 })
+export const MuiChipAboutStyled = ({
+  width: "100%",
+  '@media (min-width: 776px) and (max-width: 1024px)': {
+    width: "100px",
+  },
+})
+
+export const EducationDiv = styled('div')({
+    display: "flex",
+    flexDirection:"column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    width: "90%",
+    height: "37.5rem",
+    background: 'rgba( 255, 255, 255, 0.1 )',
+    boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+    backdropFilter: 'blur(20px)',
+    WebkitBackdropFilter: 'blur(20px)',
+    borderRadius: '50px',
+    border: '1px solid rgba(255, 255, 255, 0.18)',
+})
+
+export const EducationIconTextDiv = styled('div')({
+    display: "flex",
+    justifyContent: "flex-start",
+    textAlign:"justify",
+    gap:"20px",
+    width:"100%",
+    fontSize: "1.25rem",
+    '& span': {
+        width:"20%",
+    },
+    '& p': {
+        width:"60%",
+    }
+})
+export const EducationImageDiv = styled('div')({
+    display: "flex",
+    justifyContent: "flex-start",
+    borderRadius: "10px",
+    width:"90%",
+    '& img': {
+        width: "100%",
+        height: "18.75rem",
+        borderRadius:"0.625rem"
+    }
+});
+
+export const EducationDetails = styled('div')({
+    display: "flex",
+    flexDirection: "column",
+    gap:"2px",
+    justifyContent: "center",
+    width: "90%",
+});

@@ -6,6 +6,7 @@ import { Tab, Tabs } from '@mui/material'
 import { a11yProps, getTabStyle } from '../../services/functions/functions'
 import { useDarkMode } from '../../services/customhook/useDarkMode'
 import { EductionsDiv, LeftEducationDiv, RightEducationDiv, EductionsTabDiv, EductionsDetailsDiv } from '../../utils/styled'
+import { EDUCATION_SECTION_TEST_ID } from '../../services/mocks/testMocks'
 
 
 const Education = () => {
@@ -17,16 +18,12 @@ const Education = () => {
     useEffect(() => {
         getEducations()
             .then(res => setEducations(res.data))
-            .catch(error => {
-                throw new Error("error while fetching educations : " + error)
-            })
+            .catch(error => console.log("error while fetching educations : " + error))
     }, [])
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
+    const handleChange = (event: React.SyntheticEvent,newValue: number) => setValue(newValue);
   return (
-    <EductionsDiv id={'education'}>
+    <EductionsDiv id={'education'} data-testid = {EDUCATION_SECTION_TEST_ID}>
         <LeftEducationDiv>
               <h1>{'<'}Education{'/>'}</h1>  
         </LeftEducationDiv>      

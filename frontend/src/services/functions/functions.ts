@@ -1,4 +1,5 @@
 import { SxProps } from "@mui/material";
+import { IEducationDetail, ISkill } from "../../interfaces/types";
 
 export const getRandomLightColor = () => {
     const letters = 'ABCDEF';
@@ -21,11 +22,6 @@ export const getRandomDarkColor = () => {
   return { background: hexColor, color: textColor };
 }
 
-// Example usage:
-const randomDarkColor = getRandomDarkColor();
-console.log(randomDarkColor.background); // Background color
-console.log(randomDarkColor.color);      // Text color
-
 
 export const getRandomImage = (imageArr: string[]) => imageArr[Math.floor(Math.random() * imageArr.length)];
 
@@ -47,3 +43,28 @@ export const getTabStyle = (index: number, value: number, isDark: boolean, custo
     },
     ...customSx
 })
+
+export const getEducationDetails = (props : IEducationDetail) => {
+    return [
+        { label: 'School', value: props.school },
+        { label: 'Percentage', value: props.percentage },
+        { label: 'Duration', value: `${props.start_date} - ${props.end_date}` },
+        { label: 'Location', value: props.location },
+        { label: 'Description', value: props.description },
+    ];
+}
+
+export const updateIndices =
+    (
+        startIndex: number,
+        endIndex: number,
+        direction: string,
+        tags: string[]
+    ) => {
+    if (direction === 'prev' && startIndex > 0) {
+        return { newStartIndex: startIndex - 1, newEndIndex: endIndex - 1 };
+    } else if (direction === 'next' && endIndex < tags.length) {
+        return { newStartIndex: startIndex + 1, newEndIndex: endIndex + 1 };
+    }
+    return { newStartIndex: startIndex, newEndIndex: endIndex };
+};

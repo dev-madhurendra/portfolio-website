@@ -1,26 +1,21 @@
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
+import { getTypedTextOptions } from '../../../services/mocks/mocks';
+import { TYPED_TEXT_TEST_ID } from '../../../services/mocks/testMocks';
 
-const TypedText = ({ text = "" }: { text: string }) => {
+const TypedText = (props: { text: string }) => {
   const el = useRef(null);
 
   useEffect(() => {
-    const options = {
-      strings: [text],
-      typeSpeed: 40,
-      backSpeed: 20,
-      backDelay: 10,
-      showCursor: false,
-    };
-
+    const options = getTypedTextOptions(props.text)
     const typed = new Typed(el.current, options);
 
     return () => {
       typed.destroy();
     };
-  }, [text]);
+  }, [props.text]);
 
-  return <div ref={el}></div>;
+  return <div ref={el} data-tesid={TYPED_TEXT_TEST_ID}></div>;
 };
 
 export default TypedText;
