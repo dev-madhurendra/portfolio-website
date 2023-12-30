@@ -77,8 +77,8 @@ export const MiddleDiv = styled('div')({
     overflow:"hidden",
     bottom: '0', 
     left: '0', 
-    gap:"0.5125rem",
-    width: '70%', 
+    gap:"0.9375rem",
+    width: '80%', 
     height: 'auto', 
     marginLeft: '0', 
     padding: "1.25rem",
@@ -92,7 +92,7 @@ export const RightDiv = styled('div')({
   cursor: "pointer",
   gap: "1.25rem",
   '@media (max-width: 468px)': {
-    marginLeft:"80%"
+    marginLeft:"90%"
   },
 })
 export const StyledNavIcon = {
@@ -375,7 +375,7 @@ export const SkillAboutDiv = styled('div')({
   gridTemplateColumns: 'repeat(3, 1fr)',
   rowGap: '0.625rem',
   columnGap: '0.625rem',
-  '@media (max-width: 768px)': {
+  '@media (max-width: 800px)': {
     gridTemplateColumns: 'repeat(2, 1fr)', 
   },
   '@media (max-width: 480px)': {

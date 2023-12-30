@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getSkillsTags } from '../../../services/apicalls/getcall';
-import { ISkill } from '../../../interfaces/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { SkillTagButton, SkillTagDiv, SlillTagList } from '../../../utils/styled';
@@ -23,15 +22,9 @@ const SkillsTag = () => {
     getSkillsTags()
       .then((res) => {
         if (mounted) {
-          const tagSet = new Set<string>();
-          res.data.forEach((skill: ISkill) => {
-            skill.tags.forEach((tag) => {
-              tagSet.add(tag);
-            });
-          });
-          const tagArray = Array.from(tagSet);
-          setTags(tagArray);
+          setTags(res);
         }
+          
       })
       .catch(() => {
         console.log('error');
@@ -85,7 +78,7 @@ const SkillsTag = () => {
         role={CHEVRON_LEFT_ROLE}
       />
       <SlillTagList>
-        {tags.slice(pageState.startIndex, pageState.endIndex)
+        {tags?.slice(pageState.startIndex, pageState.endIndex)
           .map((tag, index) => (
             <SkillTagButton key={index} children={tag} role={SKILL_TAG + index} />
           ))}

@@ -1,11 +1,11 @@
 import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import SkillsTag from '.';
 import { CHEVRON_LEFT_ROLE, CHEVRON_RIGHT_ROLE, SKILL_SECTION_TEST_ID, SKILL_TAG } from '../../../services/mocks/testMocks';
 
 jest.mock('../../../services/apicalls/getcall', () => ({
-  getSkillsTags: jest.fn(() => Promise.resolve({ data: [{ tags: ['React', 'Redux'] }] })),
+  getSkillsTags: jest.fn(async () => ['React', 'Redux']),
 }));
 
 const resizeWindow = (width: number) => {
