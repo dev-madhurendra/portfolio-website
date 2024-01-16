@@ -31,7 +31,7 @@ const Experience = () => {
 
   return (
     <StyledExperienceSection id="experience">
-      <h2>{EXPERIENCE_TITLE}</h2>
+      <h1>{EXPERIENCE_TITLE}</h1>
       <ExperienceFirstContainer>
         <Tabs
             selectedIndex={tabIndex}

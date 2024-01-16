@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import {
     StyledContactSection,
     ContactGrid,
@@ -9,7 +8,14 @@ import {
     ContactDetails,
     SocialLinks
 } from "../../../utils/styled";
-import { CONTACT_DESC, CONTACT_IMAGE_URL, MADHURENDRA_NATH_TIWARI, SOFTWARE_ENGINEER } from "../../../utils/constants";
+import {
+    BLANK,
+    CONTACT_DESC,
+    CONTACT_IMAGE_URL,
+    MADHURENDRA_NATH_TIWARI,
+    SOFTWARE_ENGINEER
+} from "../../../utils/constants";
+import { socialLinks } from "../../../services/mocks/mocks";
 
 const ContactCard = () => {
   return (
@@ -17,40 +23,26 @@ const ContactCard = () => {
       <ContactGrid>
         <LeftColumn>
           <ImageContainer>
-            <img
-              src={CONTACT_IMAGE_URL}
-              alt="/"            
-            />
+            <img src={CONTACT_IMAGE_URL} alt="/" />
           </ImageContainer>
           <ContactDetails>
             <h3>{MADHURENDRA_NATH_TIWARI}</h3>
             <p>{SOFTWARE_ENGINEER}</p>
             <p>{CONTACT_DESC}</p>
-            </ContactDetails>
+          </ContactDetails>
           <SocialLinks>
-            <a
-              href="https://www.linkedin.com/in/dev-madhurendra/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div>
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </div>
-            </a>
-            <a href="https://github.com/suryac72" target="_blank" rel="noreferrer">
-              <div>
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </div>
-            </a>
-            <div>
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </div>
-            <a href="/resume">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.link}
+                target={BLANK}
+              >
                 <div>
-                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  <FontAwesomeIcon icon={social.icon} />
                 </div>
-            </a>
-            </SocialLinks>
+              </a>
+            ))}
+          </SocialLinks>
         </LeftColumn>
       </ContactGrid>
     </StyledContactSection>

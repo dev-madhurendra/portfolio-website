@@ -42,8 +42,6 @@ export const IconContainer = styled('div')({
     left: '0', 
     width: '80%', 
     height: 'auto', 
-    gap: '0.5rem', 
-    marginLeft: '0', 
   },
 }, slideInAnimation);
 
@@ -79,7 +77,7 @@ export const MiddleDiv = styled('div')({
     top: '0', 
     left: '0',
     gap:"1.25rem",
-    width: '80%', 
+    width: '65%', 
     height: 'auto', 
     marginLeft: '0', 
     marginTop: '0.3125rem', 
@@ -94,7 +92,7 @@ export const RightDiv = styled('div')({
   cursor: "pointer",
   gap: "1.25rem",
   '@media (max-width: 468px)': {
-    marginLeft: "90%",
+    marginLeft: "70%",
     marginTop: '0.3125rem', 
   },
 })
@@ -806,6 +804,7 @@ export const StyledExperienceSection = styled("div")({
   alignItems: "center",
   width: "100vw",
   height: "100vh",
+  marginTop:"100px",
   '@media(max-width:468px)':{
     height: "100%",
   },
@@ -820,7 +819,7 @@ export const ExperienceFirstContainer = styled("div")({
   width: "100vw",
   marginLeft: "200px",
   '@media(max-width:468px)':{
-    marginTop:"0px"
+    marginTop:"100px"
   },
 });
 
@@ -1042,17 +1041,99 @@ export const StyledHorizontalLine = styled.hr`
   width: 60%;
   border: 1px solid grey;
 `;
-export const StyledContactMeSection = styled('div')<{id: string}>({
+export const StyledContactMeSection = styled('div')({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
     "@media (max-width: 468px)": {
       flexDirection:"column",
-      height:"100%"
+      height: "100%",
     },
 })
 export const ExperienceMuiButton = styled(MuiButton)({
     fontSize: "18px",
     padding:"10px"
 })
+export const ContactContainer = styled('div')<{id: string}>({
+  height: "100%",
+  marginTop:"100px"
+})
+export const CenteredText = styled.h1`
+  text-align:center;
+`
+
+
+export const StyledContact = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+`;
+
+export const FormContainer = styled.div`
+  grid-column: span 3;
+  width: 80%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 16px;
+  @media (max-width: 468px) {
+    width: 90%;
+  }
+`;
+
+export const Form = styled.form`
+  width: 100%;
+  max-width: 1240px;
+  margin: auto;
+  padding: 10px;
+`;
+
+export const FormGroup = styled.div`
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  gap: 4px;
+  width:100%;
+  padding: 2px;
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  width:100%;
+
+  label {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    padding: 2px;
+  }
+
+  input,
+  textarea {
+    border: 2px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 4px 0;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+`;
+
+export const SendButton = styled.button`
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  background-color: #4a5568;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+`;

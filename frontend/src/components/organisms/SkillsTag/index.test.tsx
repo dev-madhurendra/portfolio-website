@@ -15,7 +15,7 @@ const resizeWindow = (width: number) => {
 
 describe('SkillsTag component', () => {
   beforeEach(() => {
-    render(<SkillsTag />);
+    render(<SkillsTag onSkillTagClick={jest.fn()} />);
   });
 
   it('renders correctly', async () => {

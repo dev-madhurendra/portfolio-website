@@ -1,5 +1,6 @@
 import { faCodepen, faDiscord, faGithub, faGithubSquare, faInstagram, faLinkedinIn, faQuora, faSnapchat, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { EDUIMG_1, EDUIMG_2, EDUIMG_3, EDUIMG_4, EDUIMG_5, EDUIMG_6 } from '../../utils/constants';
+import { faHouse, faInfo, faUserGraduate, faCode, faLaptopCode, faBriefcase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 
 export const greets = [
@@ -95,3 +96,20 @@ export const socialLinks = [
 ];
 
 export const quickLinks = ["Home", "About", "Education", "Skill", "Project", "Experience", "Contact"];
+
+export const formFields = [
+  { name: "Name", type: "text", field: "name" },
+  { name: "Phone Number", type: "text", field: "phone" },
+  { name: "Email", type: "email", field: "email" },
+  { name: "Subject", type: "text", field: "subject" },
+  { name: "Message", type: "textarea", field: "message" },
+];
+export const navLinks  = [
+  { to: "home", icon: faHouse },
+  { to: "about", icon: faInfo },
+  { to: "education", icon: faUserGraduate },
+  { to: "code", icon: faCode },
+  { to: "projects", icon: faLaptopCode },
+  { to: "experience", icon: faBriefcase },
+  { to: "contact", icon: faEnvelope },
+]
