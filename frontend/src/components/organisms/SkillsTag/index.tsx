@@ -6,8 +6,9 @@ import { SkillTagButton, SkillTagDiv, SlillTagList } from '../../../utils/styled
 import { itemsPerPage } from '../../../services/mocks/mocks';
 import { CHEVRON_LEFT_ROLE, CHEVRON_RIGHT_ROLE, SKILL_SECTION_TEST_ID, SKILL_TAG } from '../../../services/mocks/testMocks';
 import { updateIndices } from '../../../services/functions/functions';
+import { ISkillProps } from '../../../interfaces/types';
 
-const SkillsTag = () => {
+const SkillsTag = (props: ISkillProps) => {
   const [tags, setTags] = useState<string[]>([]);
   const [pageState, setPageState] = useState({
     startIndex: 0,
@@ -17,7 +18,22 @@ const SkillsTag = () => {
   useEffect(() => {
     let mounted = true;
 
-    window.addEventListener('resize',handleResize);
+    if (window.innerWidth >= 1000) {
+      setPageState((prevState) => ({
+        ...prevState,
+        endIndex: itemsPerPage.laptop,
+      }));
+    } else if (window.innerWidth >= 768) {
+      setPageState((prevState) => ({
+        ...prevState,
+        endIndex: itemsPerPage.tablet,
+      }));
+    } else if (window.innerWidth <=468) {
+      setPageState((prevState) => ({
+        ...prevState,
+        endIndex: itemsPerPage.mobile,
+      }));
+    }
 
     getSkillsTags()
       .then((res) => {
@@ -50,25 +66,6 @@ const SkillsTag = () => {
     });
   };
 
-  const handleResize = () => {
-    if (window.innerWidth >= 1000) {
-      setPageState((prevState) => ({
-        ...prevState,
-        endIndex: itemsPerPage.laptop,
-      }));
-    } else if (window.innerWidth >= 768) {
-      setPageState((prevState) => ({
-        ...prevState,
-        endIndex: itemsPerPage.tablet,
-      }));
-    } else {
-      setPageState((prevState) => ({
-        ...prevState,
-        endIndex: itemsPerPage.mobile,
-      }));
-    }
-  };
-
   return (
     <SkillTagDiv data-testid={SKILL_SECTION_TEST_ID}>
       <SkillTagButton
@@ -80,12 +77,17 @@ const SkillsTag = () => {
       <SlillTagList>
         {tags?.slice(pageState.startIndex, pageState.endIndex)
           .map((tag, index) => (
-            <SkillTagButton key={index} children={tag} role={SKILL_TAG + index} />
+            <SkillTagButton
+              key={index}
+              children={tag}
+              role={SKILL_TAG + index}
+              onClick={() => props.onSkillTagClick(tag)}
+            />
           ))}
       </SlillTagList>
       <SkillTagButton
         onClick={() => handlePageChange('next')}
-        disabled={pageState.endIndex >= tags.length - 5}
+        disabled={pageState.endIndex >= tags.length}
         children={<FontAwesomeIcon icon={faChevronCircleRight} />}
         role={CHEVRON_RIGHT_ROLE}
       />

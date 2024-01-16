@@ -1,5 +1,5 @@
 import { SxProps } from "@mui/material";
-import { IEducationDetail, ISkill } from "../../interfaces/types";
+import { IEducationDetail, IProject, ISkill } from "../../interfaces/types";
 
 export const getRandomLightColor = () => {
     const letters = 'ABCDEF';
@@ -59,12 +59,21 @@ export const updateIndices =
         startIndex: number,
         endIndex: number,
         direction: string,
-        tags: string[]
+        tags: string[] | IProject[],
+        stepBy = 1,
+        wantedStepByScroll = false
     ) => {
     if (direction === 'prev' && startIndex > 0) {
-        return { newStartIndex: startIndex - 1, newEndIndex: endIndex - 1 };
+        if (endIndex === tags.length && wantedStepByScroll) {
+            return { newStartIndex: startIndex - stepBy, newEndIndex: startIndex };        
+        }
+        return { newStartIndex: startIndex - stepBy, newEndIndex: endIndex - stepBy };
     } else if (direction === 'next' && endIndex < tags.length) {
-        return { newStartIndex: startIndex + 1, newEndIndex: endIndex + 1 };
+        if (tags.length - endIndex < stepBy) {
+            return { newStartIndex: endIndex, newEndIndex: tags.length };    
+        }
+        return { newStartIndex: startIndex + stepBy, newEndIndex: endIndex + stepBy };
     }
     return { newStartIndex: startIndex, newEndIndex: endIndex };
 };
+

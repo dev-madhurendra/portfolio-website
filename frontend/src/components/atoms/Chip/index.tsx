@@ -4,8 +4,6 @@ import { MUI_CHIP } from '../../../utils/constants';
 import { IChipProp } from '../../../interfaces/types';
 import { getRandomLightColor } from '../../../services/functions/functions';
 
-
-
 const MyChip = (props: IChipProp) => 
     <Chip
         size={props.size}
