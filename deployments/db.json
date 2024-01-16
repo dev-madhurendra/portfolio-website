@@ -1,0 +1,281 @@
+{
+    "admin":[
+        {
+            "id":1,
+            "username":"dev.madhurendra@gmail.com",
+            "password":"Madhurendra@123Portfolio"
+        }
+    ],
+    "about":[
+        {
+            "id": 1,
+            "images": "image_url1",
+            "name": "John Doe",
+            "title": "Software Engineer",
+            "description": "Experienced software engineer with expertise in various technologies.",
+            "resumeLink": "resume_link1"
+        }
+    ],
+    "educations":[
+        {
+          "id": 1,
+          "title": "High School",
+          "school": "University XYZ",
+          "location": "City ABC",
+          "start_date": "2020-09-01",
+          "end_date": "2024-05-31",
+          "percentage": "75%",
+          "description": "Studied computer science with a focus on algorithms and data structures."
+        },
+        {
+          "id": 2,
+          "title": "Intermediate",
+          "school": "High School XYZ",
+          "location": "City ABC",
+          "start_date": "2016-09-01",
+          "end_date": "2020-05-31",
+          "percentage": "85%",
+          "description": "Completed high school with a focus on mathematics and physics."
+        },
+        {
+          "id": 3,
+          "title": "B.Tech.",
+          "school": "Tech Institute",
+          "location": "City XYZ",
+          "start_date": "2022-01-15",
+          "end_date": "2022-05-15",
+          "percentage": "N/A",
+          "description": "Attended a short-term course on web development, learning HTML, CSS, and JavaScript."
+        }
+    ],
+    "experiences": [
+      {
+        "id": 1,
+        "title": "Software Engineer",
+        "company": "TechCo Pvt. Ltd.",
+        "location": "City, Country",
+        "start_date": "2022-01-01",
+        "end_date": "2023-01-01",
+        "description": "Developed end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects.",
+        "technologies": "Java, Python, JavaScript, React, Spring, C++, HTML, CSS, Node.js, Angular, Ruby, Rails, Vue.js, PostgreSQL, MongoDB, Swift, Kotlin, iOS, Android, Firebase, PHP, Laravel, jQuery, MySQL, Docker, C#, .NET, ASP.NET, Xamarin, Azure, Go, Gin, Kubernetes, GraphQL, TypeScript, Rust, Rocket, WebAssembly, Redux, Electron, Scala, Play Framework, Akka, Slick, Apache Kafka, Dart, Flutter, Firebase, DartPad, AngularDart, Haskell, Yesod, Elm, Snap, GHC, Objective-C, Cocoa, Core Data, SpriteKit, SwiftUI, Perl, Catalyst, Dancer, Mojolicious, Plack, Lua, Love2D, Corona SDK, OpenResty, MoonScript, Shell, Bash, PowerShell, Zsh, Fish, Clojure, Leiningen, Ring, Compojure, Datomic, Elixir, Phoenix, Absinthe, Nerves, Mix, Groovy, Grails, Spock, Gradle, Ratpack, Crystal, Lucky, Amber, Kemal, CrystalLang, Assembly, x86, ARM, MIPS, NASM"
+
+      },
+      {
+        "id": 2,
+        "title": "Frontend Developer",
+        "company": "WebTech Solutions",
+        "location": "City, Country",
+        "start_date": "2023-02-15",
+        "end_date": "2024-02-15",
+        "description": "Developed end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects.",
+        "technologies": "Java, Python, JavaScript, React, Spring, C++, HTML, CSS, Node.js, Angular, Ruby, Rails, Vue.js, PostgreSQL, MongoDB, Swift, Kotlin, iOS, Android, Firebase, PHP, Laravel, jQuery, MySQL, Docker, C#, .NET, ASP.NET, Xamarin, Azure, Go, Gin, Kubernetes, GraphQL, TypeScript, Rust, Rocket, WebAssembly, Redux, Electron, Scala, Play Framework, Akka, Slick, Apache Kafka, Dart, Flutter, Firebase, DartPad, AngularDart, Haskell, Yesod, Elm, Snap, GHC, Objective-C, Cocoa, Core Data, SpriteKit, SwiftUI, Perl, Catalyst, Dancer, Mojolicious, Plack, Lua, Love2D, Corona SDK, OpenResty, MoonScript, Shell, Bash, PowerShell, Zsh, Fish, Clojure, Leiningen, Ring, Compojure, Datomic, Elixir, Phoenix, Absinthe, Nerves, Mix, Groovy, Grails, Spock, Gradle, Ratpack, Crystal, Lucky, Amber, Kemal, CrystalLang, Assembly, x86, ARM, MIPS, NASM"
+      },
+      {
+        "id": 3,
+        "title": "Data Scientist",
+        "company": "Data Insights Co.",
+        "location": "City, Country",
+        "start_date": "2024-03-01",
+        "end_date": "2025-03-01",
+        "description": "Developed end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects.",
+        "technologies": "Java, Python, JavaScript, React, Spring, C++, HTML, CSS, Node.js, Angular, Ruby, Rails, Vue.js, PostgreSQL, MongoDB, Swift, Kotlin, iOS, Android, Firebase, PHP, Laravel, jQuery, MySQL, Docker, C#, .NET, ASP.NET, Xamarin, Azure, Go, Gin, Kubernetes, GraphQL, TypeScript, Rust, Rocket, WebAssembly, Redux, Electron, Scala, Play Framework, Akka, Slick, Apache Kafka, Dart, Flutter, Firebase, DartPad, AngularDart, Haskell, Yesod, Elm, Snap, GHC, Objective-C, Cocoa, Core Data, SpriteKit, SwiftUI, Perl, Catalyst, Dancer, Mojolicious, Plack, Lua, Love2D, Corona SDK, OpenResty, MoonScript, Shell, Bash, PowerShell, Zsh, Fish, Clojure, Leiningen, Ring, Compojure, Datomic, Elixir, Phoenix, Absinthe, Nerves, Mix, Groovy, Grails, Spock, Gradle, Ratpack, Crystal, Lucky, Amber, Kemal, CrystalLang, Assembly, x86, ARM, MIPS, NASM"
+      },
+      {
+        "id": 4,
+        "title": "Full Stack Developer",
+        "company": "CodeCrafters LLC",
+        "location": "City, Country",
+        "start_date": "2025-04-15",
+        "end_date": "2026-04-15",
+        "description": "Developed end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects.",
+        "technologies": "Java, Python, JavaScript, React"
+      }
+    ],
+    "skills":[
+        {"id": 1, "name": "Cpp", "tags": ["Programming Language"]},
+        {"id": 2, "name": "Python", "tags": ["Programming Language"]},
+        {"id": 3, "name": "Java", "tags": ["Programming Language", "Backend"]},
+        {"id": 4, "name": "JavaScript", "tags": ["Programming Language", "Frontend"]},
+        {"id": 5, "name": "TypeScript", "tags": ["Programming Language", "Frontend"]},
+        {"id": 6, "name": "Golang", "tags": ["Programming Language"]},
+        {"id": 7, "name": "HTML", "tags": ["Frontend"]},
+        {"id": 8, "name": "CSS", "tags": ["Frontend"]},
+        {"id": 9, "name": "React", "tags": ["Frontend", "Framework"]},
+        {"id": 10, "name": "NextJS", "tags": ["Frontend", "Framework"]},
+        {"id": 11, "name": "Spring", "tags": ["Backend", "Framework"]},
+        {"id": 12, "name": "SpringBoot", "tags": ["Backend", "Framework"]},
+        {"id": 13, "name": "NodeJS", "tags": ["Backend"]},
+        {"id": 14, "name": "Express", "tags": ["Backend", "Framework"]},
+        {"id": 15, "name": "Django", "tags": ["Backend", "Framework"]},
+        {"id": 16, "name": "FastAPI", "tags": ["Backend", "Framework"]},
+        {"id": 17, "name": "Atomic Design", "tags": ["Design Pattern"]},
+        {"id": 18, "name": "Design Pattern", "tags": ["Design Pattern"]},
+        {"id": 19, "name": "Java SOLID", "tags": ["Design Pattern"]},
+        {"id": 20, "name": "Jest", "tags": ["Testing"]},
+        {"id": 21, "name": "JUNIT", "tags": ["Testing"]},
+        {"id": 22, "name": "Mockito", "tags": ["Testing"]},
+        {"id": 23, "name": "MySQL", "tags": ["Database"]},
+        {"id": 24, "name": "MongoDB", "tags": ["Database"]},
+        {"id": 25, "name": "SQLite", "tags": ["Database"]},
+        {"id": 26, "name": "Storybook", "tags": ["Frontend"]},
+        {"id": 27, "name": "GraphQL", "tags": ["Frontend", "Others"]},
+        {"id": 28, "name": "OOPs", "tags": ["Design Pattern"]},
+        {"id": 30, "name": "Git", "tags": ["Tools"]},
+        {"id": 31, "name": "Bootstrap", "tags": ["Frontend", "Framework"]},
+        {"id": 32, "name": "MaterialUI", "tags": ["Frontend", "Framework"]},
+        {"id": 34, "name": "VSCode", "tags": ["Tools"]},
+        {"id": 35, "name": "Atom", "tags": ["Tools"]},
+        {"id": 36, "name": "Vercel", "tags": ["Tools"]},
+        {"id": 37, "name": "Idea", "tags": ["Tools"]},
+        {"id": 38, "name": "Postman", "tags": ["Tools"]},
+        {"id": 39, "name": "Swagger", "tags": ["Others"]},
+        {"id": 40, "name": "Others Deisgn", "tags": ["Others"]},
+        {"id": 41, "name": "DB Design", "tags": ["Others"]},
+        {"id": 42, "name": "Webpack", "tags": ["Frontend"]},
+        {"id": 43, "name": "Vite", "tags": ["Frontend"]},
+        {"id": 44, "name": "Tailwind", "tags": ["Frontend"]},
+        {"id": 45, "name": "Pug", "tags": ["Frontend"]},
+        {"id": 46, "name": "Powershell", "tags": ["Tools"]},
+        {"id": 47, "name": "Maven", "tags": ["Backend"]},
+        {"id": 48, "name": "Markdown", "tags": ["Others"]},
+        {"id": 49, "name": "Hibernate", "tags": ["Database"]},
+        {"id": 50, "name": "Heroku", "tags": ["Tools"]},
+        {"id": 51, "name": "Github", "tags": ["Tools"]},
+        {"id": 52, "name": "React Testing Library", "tags": ["Testing"]},
+        {"id": 53, "name": "Rest", "tags": ["Others"]},
+        {"id": 54, "name": "DBMS", "tags": ["Others"]},
+        {"id": 55, "name": "DSA", "tags": ["Others"]},
+        {"id": 56, "name": "OOPs", "tags": ["Others"]},
+        {"id": 57, "name": "Sonarcloud", "tags": ["Others"]},
+        {"id": 58, "name": "CI/CD", "tags": ["Others"]},
+        {"id": 59, "name": "Linux", "tags": ["Others"]},
+        {"id": 60, "name": "Windows", "tags": ["Others"]},
+        {"id": 61, "name": "Agile", "tags": ["Others"]},
+        {"id": 62, "name": "Jira", "tags": ["Others"]},
+        {"id": 63, "name": "Auth0", "tags": ["Others"]},
+        {"id": 63, "name": "Google Cloud Platform", "tags": ["Others"]}
+      ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "Project 1",
+        "description": "Description for Project 1",
+        "technologies": "Java, Spring Boot, React",
+        "link": "https://project1.example.com",
+        "projectImage": "project1_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project1-deployed.example.com"
+      },
+      {
+        "id": 2,
+        "title": "Project 2",
+        "description": "Description for Project 2",
+        "technologies": "Python, Django, Vue.js",
+        "link": "https://project2.example.com",
+        "projectImage": "project2_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project2-deployed.example.com"
+      },
+      {
+        "id": 3,
+        "title": "Project 3",
+        "description": "Description for Project 3",
+        "technologies": "Node.js, Express, Angular",
+        "link": "https://project3.example.com",
+        "projectImage": "project3_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project3-deployed.example.com"
+      },
+      {
+        "id": 4,
+        "title": "Project 4",
+        "description": "Description for Project 4",
+        "technologies": "Ruby on Rails, React",
+        "link": "https://project4.example.com",
+        "projectImage": "project4_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project4-deployed.example.com"
+      },
+      {
+        "id": 5,
+        "title": "Project 5",
+        "description": "Description for Project 5",
+        "technologies": "PHP, Laravel, Vue.js",
+        "link": "https://project5.example.com",
+        "projectImage": "project5_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project5-deployed.example.com"
+      },
+      {
+        "id": 6,
+        "title": "Project 6",
+        "description": "Description for Project 6",
+        "technologies": "Java, Spring Boot, Angular",
+        "link": "https://project6.example.com",
+        "projectImage": "project6_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project6-deployed.example.com"
+      },
+      {
+        "id": 7,
+        "title": "Project 7",
+        "description": "Description for Project 7",
+        "technologies": "Python, Flask, React",
+        "link": "https://project7.example.com",
+        "projectImage": "project7_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project7-deployed.example.com"
+      },
+      {
+        "id": 8,
+        "title": "Project 8",
+        "description": "Description for Project 8",
+        "technologies": "Node.js, Express, Vue.js",
+        "link": "https://project8.example.com",
+        "projectImage": "project8_image.jpg",
+        "githubUrl": "https://project8-deployed.example.com",
+        "deployedUrl": "https://project8-deployed.example.com"
+      },
+      {
+        "id": 9,
+        "title": "Project 9",
+        "description": "Description for Project 8",
+        "technologies": "Node.js, Express, Vue.js",
+        "link": "https://project9.example.com",
+        "projectImage": "project9_image.jpg",
+        "githubUrl": "https://project9-deployed.example.com",
+        "deployedUrl": "https://project9-deployed.example.com"
+      },
+      {
+        "id": 10,
+        "title": "Project 10",
+        "description": "Description for Project 8",
+        "technologies": "Node.js, Express, Vue.js",
+        "link": "https://project10.example.com",
+        "projectImage": "project10_image.jpg",
+        "githubUrl": "https://project10-deployed.example.com",
+        "deployedUrl": "https://project10-deployed.example.com"
+      }
+    ],
+    "messages":[
+        {
+          "id": 1,
+          "name": "John Doe",
+          "email": "john.doe@example.com",
+          "description": "Description for John Doe"
+        },
+        {
+          "id": 2,
+          "name": "Jane Doe",
+          "email": "jane.doe@example.com",
+          "description": "Description for Jane Doe"
+        },
+        {
+          "id": 3,
+          "name": "Alice Smith",
+          "email": "alice.smith@example.com",
+          "description": "Description for Alice Smith"
+        }
+    ]
+      
+}
