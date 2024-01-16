@@ -1,4 +1,4 @@
-import { faCodepen, faDiscord, faGithubSquare, faInstagram, faLinkedinIn, faQuora, faSnapchat, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faCodepen, faDiscord, faGithub, faGithubSquare, faInstagram, faLinkedinIn, faQuora, faSnapchat, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { EDUIMG_1, EDUIMG_2, EDUIMG_3, EDUIMG_4, EDUIMG_5, EDUIMG_6 } from '../../utils/constants';
 
 
@@ -71,9 +71,14 @@ export const particlesColorValues = [
 ]
 export const itemsPerPage = {
   mobile: 2,
-  tablet: 3,
+  tablet: 2,
   laptop: 5,
 };
+export const projectPerPage = {
+  mobile: 1,
+  tablet: 1,
+  laptop: 3,
+}
 export const getTypedTextOptions = (text: string = "") => ({
   strings: [text],
   typeSpeed: 40,
@@ -81,3 +86,12 @@ export const getTypedTextOptions = (text: string = "") => ({
   backDelay: 10,
   showCursor: false,
 })
+
+export const socialLinks = [
+  { icon: faLinkedinIn, link: "https://www.linkedin.com/in/dev-madhurendra/" },
+  { icon: faGithub, link: "https://www.github.com/dev-madhurendra" },
+  { icon: faInstagram, link: "https://www.instagram.com/dev.madhurendra/" },
+  { icon: faXTwitter, link: "https://www.x.com/devMadhurendra/" },
+];
+
+export const quickLinks = ["Home", "About", "Education", "Skill", "Project", "Experience", "Contact"];

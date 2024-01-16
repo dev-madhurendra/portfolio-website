@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
 import Navbar from './components/molecules/Navbar';
 import HomeSection from './pages/Home';
-import './App.css';
 import { DarkModeProvider } from './services/context/DarkMode';
 import { useDarkMode } from './services/customhook/useDarkMode';
 import About from './pages/About';
 import Education from './pages/Education';
 import SkillSection from './pages/Skills';
+import Project from './pages/Project';
+import Experience from './pages/Experience';
+import ContactMeSection from './pages/ContactMe';
+import Footer from './components/organisms/Footer';
+import './App.css';
 
 
 function App() {
@@ -22,7 +26,8 @@ const AppContent: React.FC = () => {
 
   useEffect(() => {
     document.body.style.color = isDark ? '#fff' : '#000',
-    document.body.style.backgroundColor =  isDark ? "#1f1d27" : "#fff"
+    document.body.style.fontWeight = isDark ? '500' : 'inherit',
+    document.body.style.backgroundColor =  isDark ? "#003950" : "#fff"
   },[isDark])
 
   return (
@@ -32,6 +37,10 @@ const AppContent: React.FC = () => {
       <About />
       <Education />
       <SkillSection />
+      <Project />
+      <Experience />
+      <ContactMeSection />
+      <Footer />
     </>
   );
 };

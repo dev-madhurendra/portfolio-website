@@ -3,6 +3,7 @@ import MuiButton from '../components/atoms/Button'
 import WaveUrl from "../../public/gif/Wave-Animation.gif"
 import DarkModeWaveUrl from "../../public/gif/Dark-Mode.gif"
 import { keyframes } from '@emotion/react'
+import { Tab } from 'react-tabs'
 
 export const StyledIcon = styled.img`
   cursor: pointer;
@@ -37,9 +38,9 @@ export const IconContainer = styled('div')({
     flexDirection: 'row', 
     alignItems: 'center', 
     position: 'fixed', 
-    bottom: '0', 
+    top: '0', 
     left: '0', 
-    width: '95%', 
+    width: '80%', 
     height: 'auto', 
     gap: '0.5rem', 
     marginLeft: '0', 
@@ -51,7 +52,7 @@ export const LeftDiv = styled('div')({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+  boxShadow: "rgba(0, 0, 0, 0.35) 0px 0.3125rem 0.9375rem",
   cursor: "pointer",
   borderRadius: "50%",
   '@media (max-width: 468px)': {
@@ -65,22 +66,23 @@ export const MiddleDiv = styled('div')({
   flexDirection:"column",
   alignItems: "center",
   gap:"0.625rem",
-  boxShadow: "rgba(0, 0, 0, 0.35) 0px 0.3125rem 0.9375rem",
+  boxShadow: "rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem",
   padding: "1.25rem",
   cursor: "pointer",
-  borderRadius: "50px",
+  borderRadius: "3.125rem",
   backgroundColor: "rgba(255,255,255,0.1)",
-  backdropFilter: "blur(1px)",
+  backdropFilter: "blur(0.0625rem)",
   '@media (max-width: 468px)': {
     flexDirection: 'row', 
     position: 'fixed', 
     overflow:"hidden",
-    bottom: '0', 
-    left: '0', 
-    gap:"0.9375rem",
+    top: '0', 
+    left: '0',
+    gap:"1.25rem",
     width: '80%', 
     height: 'auto', 
     marginLeft: '0', 
+    marginTop: '0.3125rem', 
     padding: "1.25rem",
   },
 })
@@ -92,7 +94,8 @@ export const RightDiv = styled('div')({
   cursor: "pointer",
   gap: "1.25rem",
   '@media (max-width: 468px)': {
-    marginLeft:"90%"
+    marginLeft: "90%",
+    marginTop: '0.3125rem', 
   },
 })
 export const StyledNavIcon = {
@@ -124,6 +127,7 @@ export const HomeDiv = styled('div')<{ id: string }>({
       justifyContent: "center",
       width: "100%",
       marginLeft: "0vw",
+      marginTop:"30%"
     },
     '@media (max-width:1024px)': {
       justifyContent: "center",
@@ -169,7 +173,7 @@ export const LeftHomeDiv = styled('div')({
     '@media (max-width:468px)': {
       width: "100vw",
       marginLeft: "0px",
-      fontSize: "1.875rem"
+      fontSize: "1.875rem",
     },
     zIndex:1
 })
@@ -178,7 +182,7 @@ const floatAnimation = keyframes`
     transform: translateY(-20);
   }
   50% {
-    transform: translateY(20px);
+    transform: translateY(1.25rem);
   }
 `;
 
@@ -211,7 +215,7 @@ export const RightHomeDiv = styled('div')({
     '& img': {
       width: "25rem",
       height: "25rem",
-      marginLeft:"-0.625rem"
+      marginLeft: "-0.625rem",      
     }
   },
 });
@@ -537,18 +541,57 @@ export const SkillTagButton = styled(MuiButton)({
   },
 });
 
+export const DefaultClickedTagButton = styled(MuiButton)({
+  alignItems: 'center',
+  appearance: 'none',
+  backgroundColor: '#fff',
+  borderRadius: '24px',
+  border: '2px solid #4285f4',
+  boxSizing: 'border-box',
+  color: '#174ea6',
+  cursor: 'pointer',
+  display: 'inline-flex',
+  fill: 'currentcolor',
+  fontFamily: '"Google Sans", Roboto, Arial, sans-serif',
+  fontWeight: '500',
+  height: '48px',
+  justifyContent: 'center',
+  letterSpacing: '.25px',
+  lineHeight: 'normal',
+  maxWidth: '90%',
+  overflow: 'visible',
+  position: 'relative',
+  textAlign: 'center',
+  textTransform: 'none',
+  transition: 'box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms',
+  userSelect: 'none',
+  WebkitUserSelect: 'none',
+  touchAction: 'manipulation',
+  width: 'auto',
+  willChange: 'transform, opacity',
+  zIndex: '0',
+  boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
+})
+
 export const SkillTagDiv = styled('div')({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap:"1.25rem"
+    gap: "1.25rem",
+    '@media (max-width: 468px)':{
+      width: "90%",
+      marginLeft:"14%"
+    },
 })
 
 export const SlillTagList = styled('ul')({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap:"1.25rem"
+    gap: "1.25rem",
+    '@media (max-width: 468px)':{
+      width: "12.5rem",
+    },
 })
 export const MuiChipAboutStyled = ({
   width: "100%",
@@ -601,7 +644,415 @@ export const EducationImageDiv = styled('div')({
 export const EducationDetails = styled('div')({
     display: "flex",
     flexDirection: "column",
-    gap:"2px",
+    gap:"0.125rem",
     justifyContent: "center",
     width: "90%",
 });
+export const StyledProjectContainer = styled('div')({
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  flexDirection: "column",
+  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  padding: "0 1.25rem 1.25rem 1.25rem",
+  width: "25rem",
+  borderRadius: "0.625rem",
+  height: "100%",
+})
+export const StyledProjectImageDiv = styled('div')({
+  '& img': {
+    width: "25rem",
+    height: "25rem",
+    objectFit:"cover"
+  },
+})
+export const StyledProjectInfoDiv = styled('div')({
+  width: "100%",
+  display: "flex",
+  flexDirection:"column",
+  justifyContent: "space-around",
+  alignItems: "flex-start",
+  gap: "0.9375rem",
+})
+export const StyledProjectUrlsDiv = styled('div')({
+  width: "100%",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  paddingTop: "1.25rem",
+  gap:"10px"
+})
+export const StyledProjectDiv = styled('div')({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  maxWidth: '100vw',
+  gap: "1.25rem",
+  margin: '0 auto',
+  
+});
+
+export const StyledProjectSection = styled('div')<{ id: string }>({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  height: '100vh',
+  marginLeft: '5rem',
+  '@media (max-width: 468px)': {
+    marginLeft: 0,
+  },
+});
+export const StyledMuiButton = styled(MuiButton)`
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+
+  &:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+
+  &:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+
+  &:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+`;
+export const MuiChipSkillSx = {
+  height: "50px",
+  width: "200px",
+  borderRadius: "50px",
+  fontSize: "20px",
+  '@media(max-width:468px)': {
+    width: "100px",
+  }
+}
+
+export const SkillDiv = styled('div')<{ id: string }>({
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  flexDirection: 'column',
+  width: '90%',
+  marginLeft:"10%",
+  height: '100vh',
+});
+export const LeftSkillDiv = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  flexDirection: 'column',
+  height: "20%",
+  marginLeft:"-100px"
+});
+export const RightSkillDiv = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  flexDirection: 'column',
+  height: "60%",
+  marginLeft:"-100px"
+});
+export const SkillTextImageDiv = styled('div')({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',  
+})
+export const SkillGrid = styled('div')({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, minmax(150px, 1fr))',
+  gap: '16px',
+  justifyContent: "center",
+  alignItems: "center",
+  '@media(max-width:468px)':{
+    gridTemplateColumns: 'repeat(2, minmax(150px, 1fr))',
+    marginLeft:"15%"
+  },
+});
+export const StyledExperienceSection = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100vw",
+  height: "100vh",
+  '@media(max-width:468px)':{
+    height: "100%",
+  },
+});
+
+export const ExperienceFirstContainer = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "90%",
+  width: "100vw",
+  marginLeft: "200px",
+  '@media(max-width:468px)':{
+    marginTop:"0px"
+  },
+});
+
+export const ExperienceTabDiv = styled(Tab)({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "80vw",
+  gap: "20px",
+  height: "90vh",
+  "@media (max-width: 768px)": {
+    flexDirection: "column",
+    marginLeft: "-200px",
+  },
+});
+
+export const StyledTabPanelDiv = styled("div")({
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  padding: "50px",
+  borderRadius: "10px",
+  "@media (max-width: 468px)": {
+    width:"90vw"
+  },
+});
+
+export const StyledExpTechDiv = styled("div")({
+  display: "grid",
+  gridTemplateColumns: "repeat(6, 1fr)", 
+  gridTemplateRows: "repeat(3, 1fr)", 
+  gap: "10px",
+  "@media (max-width: 468px)": {
+    gridTemplateColumns: "repeat(3, 1fr)", 
+    gridTemplateRows: "repeat(3, 1fr)", 
+  },
+});
+export const StyledDescriptionExp = styled("div")({
+  width: "37.5rem",
+  "@media (max-width: 468px)": {
+    width: "70vw",
+    textAlign:"justify"
+  },
+})
+export const StyledContactSection = styled.div`
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: 468px) {
+    width:90vw;
+    height:100%;
+  }
+`;
+
+export const ContactGrid = styled.div`
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  gap: 20px;
+  width:70%;
+  height:650px;
+  @media (max-width: 468px) {
+    width:90vw;
+    height:100%;
+  }
+`;
+
+export const LeftColumn = styled.div`
+  grid-column: span 3;
+  grid-row: span 2;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  Webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 16px;
+  @media (max-width: 468px) {
+    height:100%;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  img {
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    width:100%;
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+`;
+
+export const ContactDetails = styled.div`
+  h3 {
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  p {
+    padding-top: 0.5rem;
+  }
+`;
+
+export const SocialLinks = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+  gap:20px;
+
+  a {
+    text-decoration: none;
+  }
+
+  div {
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+
+export const StyledHorizontalSmallLine = styled("hr")`
+  border: 1px solid orange;
+  width: 40%;
+  margin-bottom: 10px;
+`;
+export const StyledHorizontalLargeLine = styled("hr")`
+  border: 1px solid orange;
+  width: 50%;
+`;
+export const FoorterWrapper = styled("div")`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+  gap:20px;
+  @media (max-width: 468px) {
+    height:100%;
+    justify-content: center;
+    flex-direction:column;
+    gap:0px;
+  }
+`;
+export const FoorterDiv = styled("div")`
+  display:flex;
+  justify-content:flex-start;
+  flex-direction:column;
+  width: 100%;
+  padding: 50px;
+  gap:10px;
+  height:300px;
+  @media (max-width: 468px) {
+    height:fit-content;
+  }
+`;
+export const FooterContainer = styled("div")`
+  display: flex;
+  justify-content: space-between;
+  flex-direction:column;
+  gap:20px;
+  padding:20px;
+  align-items: center;
+  font-weight:900;
+  width:95vw;
+  margin-left:5vw;
+`;
+export const DeveloperName = styled.h2`
+  margin: 0;
+`;
+
+export const Year = styled.p`
+  margin: 0;
+`;
+
+export const SocialLinksContainer = styled.div`
+  a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size:30px;
+    color:black;
+  }
+`;
+
+export const QuickLinksContainer = styled.div`
+  div {
+    margin-bottom: 5px;
+    cursor:pointer;
+  }
+`;
+
+export const BottomToTopButton = styled(MuiButton)({
+  backgroundColor: "white",
+  borderRadius: "50%",
+  width: "60px",
+  height: "60px",
+  color: "black",
+  fontSize: "20px",
+  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+  backdropFilter: "blur(20px)"
+})
+export const StyledHorizontalLine = styled.hr`
+  width: 60%;
+  border: 1px solid grey;
+`;
+export const StyledContactMeSection = styled('div')<{id: string}>({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    "@media (max-width: 468px)": {
+      flexDirection:"column",
+      height:"100%"
+    },
+})
+export const ExperienceMuiButton = styled(MuiButton)({
+    fontSize: "18px",
+    padding:"10px"
+})
