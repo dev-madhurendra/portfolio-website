@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faCode, faEnvelope, faHouse, faInfo, faLaptopCode, faRightToBracket, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import DarkModeToggle from '../../atoms/Toggle';
 import { IconContainer, LeftDiv, MiddleDiv, RightDiv, StyledNavIcon } from '../../../utils/styled';
 import Icon from '../../atoms/Icon';
