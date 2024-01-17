@@ -108,8 +108,8 @@ export const navLinks  = [
   { to: "home", icon: faHouse },
   { to: "about", icon: faInfo },
   { to: "education", icon: faUserGraduate },
-  { to: "code", icon: faCode },
-  { to: "projects", icon: faLaptopCode },
+  { to: "skill", icon: faCode },
+  { to: "project", icon: faLaptopCode },
   { to: "experience", icon: faBriefcase },
   { to: "contact", icon: faEnvelope },
 ]
