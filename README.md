@@ -25,3 +25,15 @@ Welcome to my personal portfolio website powered by FastAPI and Spring Boot for 
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/dev-madhurendra/portfolio-website.git
+
+## Portfolio UI - V1
+
+### Light Mode :
+![LighModePortfolio](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/47c0034e-9f09-4797-9e2a-6656d5e46f18)
+
+### Dark Model :
+![DarkModePortfolio](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/b71f4a5c-93bb-4f2f-8ee3-abf21118d5ee)
+
+## Portfolio Frontend - Code Quality - V1
+![Screenshot from 2024-01-17 11-30-25](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/fd85a336-122e-41e9-8de0-966ddaad7b9c)
+
