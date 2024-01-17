@@ -16,16 +16,16 @@ const ProjectCard = (props: IProjectCardProps) => {
     <StyledProjectContainer>
       <StyledProjectImageDiv>
         <ImageContainer>
-            <img
-                src={getRandomImage(PROJECT_IMAGE)}
-                alt={`${PROJECT_ALT} ${props.projects.title}`}
-                width={500}        
-                height={500}        
-            />
+          <img
+            src={props.projects.projectImage ? props.projects.projectImage : getRandomImage(PROJECT_IMAGE)}
+            alt={`${PROJECT_ALT} ${props.projects.title}`}
+            width={500}
+            height={500}
+          />
         </ImageContainer>
       </StyledProjectImageDiv>
       <StyledProjectInfoDiv>
-        <h1>{props.projects.title}</h1>
+        <h3>{props.projects.title}</h3>
         <p>{props.projects.description}</p>
         <div>
           {technologiesProject.map((tech, index) => (
@@ -34,8 +34,16 @@ const ProjectCard = (props: IProjectCardProps) => {
         </div>
       </StyledProjectInfoDiv>
       <StyledProjectUrlsDiv>
-        <Link url={props.projects.githubUrl} children={<FontAwesomeIcon icon={faSquareGithub} />} />
-        <Link url={props.projects.deployedUrl} children={<FontAwesomeIcon icon={faExternalLink} />} />
+        <Link
+          url={props.projects.githubUrl}
+          children={<FontAwesomeIcon icon={faSquareGithub} />}
+        />
+        {props.projects.deployedUrl && (
+          <Link
+            url={props.projects.deployedUrl}
+            children={<FontAwesomeIcon icon={faExternalLink} />}
+          />
+        )}
       </StyledProjectUrlsDiv>
     </StyledProjectContainer>
   );

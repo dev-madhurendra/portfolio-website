@@ -20,7 +20,7 @@ export const EDUIMG_3 = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/
 export const EDUIMG_4 = "https://cdni.iconscout.com/illustration/premium/thumb/growth-of-education-with-hard-work-2158676-1816228.png"
 export const EDUIMG_5 = "https://media.istockphoto.com/id/1409407973/vector/people-with-check-mark-make-choice.jpg?s=612x612&w=0&k=20&c=nyAG50fozvQVSKD3x6YMBo3k4t80I4fUgAuZflWhyWc="
 export const EDUIMG_6 = "https://media.istockphoto.com/id/1267267142/vector/small-people-stand-next-to-a-large-to-do-list.jpg?s=612x612&w=0&k=20&c=ElNGNaGjFgjkKdqlUzSsBD9R7fdHOwmYYaiZKDQBJyA="
-export const URL = process.env.API_URL
+export const URL = "http://localhost:8080"
 export const EDUCATION_ENDPOINT = "/educations"
 export const SKILL_EDNPOINT = "/skills"
 export const EDUCATION_ALT = "education-alt"
@@ -52,3 +52,5 @@ export const CONTACT_IMAGE_URL = "https://cdni.iconscout.com/illustration/premiu
 export const CONTACT_DESC = "I am available for freelance or full-time positions. Please feel free to contact me, and let's have a conversation."
 export const CONTACT_ME = "<Contact Me />"
 export const CONTACT = "contact"
+export const EDUCATION_TITLE = '<' + EDUCATION + '/>'
+export const SKILL_TITLE = '<' + SKILL + '/>'

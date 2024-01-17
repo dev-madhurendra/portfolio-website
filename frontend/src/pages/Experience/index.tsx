@@ -77,7 +77,7 @@ const Experience = () => {
                         {title} @ {company}
                       </h2>
                       <p className="tab__panel-subtitle">
-                        {start_date} - {end_date}
+                        {start_date} - {end_date ? end_date : "Present"}
                       </p>
                       <p className="tab__panel-subtitle">{location}</p>
                         <StyledDescriptionExp className="tab__panel-subtitle">

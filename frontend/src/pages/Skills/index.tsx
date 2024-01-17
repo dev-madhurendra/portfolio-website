@@ -13,6 +13,7 @@ import {
   SkillGrid,
   SkillTextImageDiv
 } from '../../utils/styled';
+import { SKILL_TITLE } from '../../utils/constants';
 
 const SkillSection = () => {
   const {isDark} = useDarkMode()
@@ -40,7 +41,7 @@ const SkillSection = () => {
   return (
     <SkillDiv id='skill'>
       <LeftSkillDiv>
-        <h1>{'<'}Skills{'/>'}</h1>
+        <h1>{SKILL_TITLE}</h1>
         <SkillsTag onSkillTagClick={handleTagSkill} />
       </LeftSkillDiv>
       <RightSkillDiv>

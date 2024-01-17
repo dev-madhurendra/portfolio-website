@@ -888,7 +888,7 @@ export const ContactGrid = styled.div`
   align-items:center;
   gap: 20px;
   width:70%;
-  height:650px;
+  height:600px;
   @media (max-width: 468px) {
     width:90vw;
     height:100%;
@@ -1052,7 +1052,7 @@ export const StyledContactMeSection = styled('div')({
     },
 })
 export const ExperienceMuiButton = styled(MuiButton)({
-    fontSize: "18px",
+    fontSize: "15px",
     padding:"10px"
 })
 export const ContactContainer = styled('div')<{id: string}>({

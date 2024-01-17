@@ -20,23 +20,19 @@ const Project = () => {
   const [stepBy,setStepBy] = useState(1)
 
   useEffect(() => {    
-    console.log("Current Width: ", window.innerWidth);
     if (window.innerWidth >= 1000) {
-        console.log("Laptop or more");
         setPageState((prevState) => ({
             ...prevState,
             endIndex: projectPerPage.laptop,
         }));
         setStepBy(3);
     } else if (window.innerWidth >= 768) {
-        console.log("Tablet or more");
         setPageState((prevState) => ({
             ...prevState,
             endIndex: projectPerPage.tablet,
         }));
         setStepBy(2);
     } else {
-        console.log("Mobile");
         setPageState((prevState) => ({
             ...prevState,
             endIndex: projectPerPage.mobile,

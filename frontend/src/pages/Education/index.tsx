@@ -7,6 +7,7 @@ import { a11yProps, getTabStyle } from '../../services/functions/functions'
 import { useDarkMode } from '../../services/customhook/useDarkMode'
 import { EductionsDiv, LeftEducationDiv, RightEducationDiv, EductionsTabDiv, EductionsDetailsDiv } from '../../utils/styled'
 import { EDUCATION_SECTION_TEST_ID } from '../../services/mocks/testMocks'
+import { EDUCATION_TITLE } from '../../utils/constants'
 
 
 const Education = () => {
@@ -25,7 +26,7 @@ const Education = () => {
   return (
     <EductionsDiv id={'education'} data-testid = {EDUCATION_SECTION_TEST_ID}>
         <LeftEducationDiv>
-              <h1>{'<'}Education{'/>'}</h1>  
+            <h1>{EDUCATION_TITLE}</h1>  
         </LeftEducationDiv>      
         <RightEducationDiv>
             <EductionsTabDiv>

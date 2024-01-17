@@ -15,7 +15,7 @@ const TypedText = (props: { text: string }) => {
     };
   }, [props.text]);
 
-  return <div ref={el} data-tesid={TYPED_TEXT_TEST_ID}></div>;
+  return <h4 ref={el} data-tesid={TYPED_TEXT_TEST_ID}></h4>;
 };
 
 export default TypedText;

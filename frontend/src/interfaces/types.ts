@@ -63,7 +63,6 @@ export interface IProject {
   title: string;
   description: string;
   technologies: string;
-  link: string;
   projectImage: string;
   githubUrl: string;
   deployedUrl: string;

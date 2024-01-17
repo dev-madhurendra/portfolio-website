@@ -42,8 +42,8 @@ const SkillsTag = (props: ISkillProps) => {
         }
           
       })
-      .catch(() => {
-        console.log('error');
+      .catch((err) => {
+        throw new Error("Error while fetching skills tag : " + err)
       });
 
     return () => {

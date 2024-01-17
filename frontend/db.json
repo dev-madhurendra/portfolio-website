@@ -20,149 +20,185 @@
         {
           "id": 1,
           "title": "High School",
-          "school": "University XYZ",
-          "location": "City ABC",
-          "start_date": "2020-09-01",
-          "end_date": "2024-05-31",
-          "percentage": "75%",
-          "description": "Studied computer science with a focus on algorithms and data structures."
+          "school": "Kuri Lal Rungta Saraswati Vidya Mandir",
+          "location": "Khalilabad, S.K.N., UP, 272175",
+          "start_date": "2014",
+          "end_date": "2016",
+          "percentage": "87.5%",
+          "description": "Completed high school with a focus on mathematics and physics."
         },
         {
           "id": 2,
           "title": "Intermediate",
-          "school": "High School XYZ",
-          "location": "City ABC",
-          "start_date": "2016-09-01",
-          "end_date": "2020-05-31",
-          "percentage": "85%",
-          "description": "Completed high school with a focus on mathematics and physics."
+          "school": "S N Singh Inter College",
+          "location": "Panchpedwa, S.K.N., UP, 272175",
+          "start_date": "2016",
+          "end_date": "2018",
+          "percentage": "88.8%",
+          "description": "Completed intermediate with a focus on mathematics, physics and chemistry."
         },
         {
           "id": 3,
           "title": "B.Tech.",
-          "school": "Tech Institute",
-          "location": "City XYZ",
-          "start_date": "2022-01-15",
-          "end_date": "2022-05-15",
-          "percentage": "N/A",
-          "description": "Attended a short-term course on web development, learning HTML, CSS, and JavaScript."
+          "school": "United College Of Engineering & Research",
+          "location": "Naini,Prayagraj,UP,211010",
+          "start_date": "2019",
+          "end_date": "2023",
+          "percentage": "72%",
+          "description": "Explored on developing problem-solving skills through the study of algorithms and data structures.."
         }
     ],
-    "experience":[
-        {
-            "id": 1,
-            "title": "Software Engineer",
-            "company": "TechCo",
-            "location": "City, Country",
-            "start_date": "2022-01-01",
-            "end_date": "2023-01-01",
-            "description": "Worked on developing innovative software solutions.",
-            "technologies": "Java, Python, JavaScript, React, Spring"
-        }
+    "experiences": [
+      {
+        "id": 1,
+        "title": "Associate Software Engineer",
+        "company": "ZeMoSo Labs Pvt. Ltd.",
+        "location": "Remote, Hyderabad, India",
+        "start_date": "2022-02-06",
+        "end_date": "",
+        "description": "Developed end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects end-to-end solutions for various client projects.",
+        "technologies": "Java, Python, JavaScript, React, Spring, C++, HTML, CSS, Node.js, Sonar Cloud, GraphQL, MySQL, MongoDB, Kafka, Golang, API & Swagger, Agile, GCP, Node, Docker, C#, Azure, Kubernetes, GraphQL, TypeScript, Rust, Redux, FastAPI,Git,HTML,CSS,RTL,JUNIT,MOCKITO,Cypress"
+      }
     ],
     "skills":[
-        {"id": 1, "name": "C++", "tags": ["Programming Language"]},
+        {"id": 1, "name": "Cpp", "tags": ["Programming Language"]},
         {"id": 2, "name": "Python", "tags": ["Programming Language"]},
         {"id": 3, "name": "Java", "tags": ["Programming Language", "Backend"]},
         {"id": 4, "name": "JavaScript", "tags": ["Programming Language", "Frontend"]},
         {"id": 5, "name": "TypeScript", "tags": ["Programming Language", "Frontend"]},
-        {"id": 6, "name": "Golang", "tags": ["Programming Language", "Backend"]},
+        {"id": 6, "name": "Golang", "tags": ["Programming Language"]},
         {"id": 7, "name": "HTML", "tags": ["Frontend"]},
         {"id": 8, "name": "CSS", "tags": ["Frontend"]},
-        {"id": 9, "name": "ReactJS", "tags": ["Frontend", "Framework"]},
+        {"id": 9, "name": "React", "tags": ["Frontend", "Framework"]},
         {"id": 10, "name": "NextJS", "tags": ["Frontend", "Framework"]},
         {"id": 11, "name": "Spring", "tags": ["Backend", "Framework"]},
         {"id": 12, "name": "SpringBoot", "tags": ["Backend", "Framework"]},
-        {"id": 13, "name": "Node", "tags": ["Backend"]},
+        {"id": 13, "name": "NodeJS", "tags": ["Backend"]},
         {"id": 14, "name": "Express", "tags": ["Backend", "Framework"]},
         {"id": 15, "name": "Django", "tags": ["Backend", "Framework"]},
-        {"id": 16, "name": "FastAPI", "tags": ["Backend", "Framework", "API"]},
-        {"id": 17, "name": "Atomic Design", "tags": ["Frontend", "Design Pattern"]},
+        {"id": 16, "name": "FastAPI", "tags": ["Backend", "Framework"]},
+        {"id": 17, "name": "Atomic Design", "tags": ["Design Pattern"]},
         {"id": 18, "name": "Design Pattern", "tags": ["Design Pattern"]},
-        {"id": 19, "name": "Java SOLID", "tags": ["Backend", "Programming Language", "OOP"]},
-        {"id": 20, "name": "RTL", "tags": ["Testing"]},
-        {"id": 21, "name": "JUNIT", "tags": ["Testing", "Java"]},
-        {"id": 22, "name": "Mockito", "tags": ["Testing", "Java"]},
+        {"id": 19, "name": "Java SOLID", "tags": ["Design Pattern"]},
+        {"id": 20, "name": "Jest", "tags": ["Testing"]},
+        {"id": 21, "name": "JUNIT", "tags": ["Testing"]},
+        {"id": 22, "name": "Mockito", "tags": ["Testing"]},
         {"id": 23, "name": "MySQL", "tags": ["Database"]},
         {"id": 24, "name": "MongoDB", "tags": ["Database"]},
         {"id": 25, "name": "SQLite", "tags": ["Database"]},
-        {"id": 26, "name": "Storybook", "tags": ["Frontend", "Tool"]},
-        {"id": 27, "name": "GraphQL", "tags": ["Frontend", "API"]},
-        {"id": 28, "name": "OOPs", "tags": ["Programming Language", "OOP"]},
-        {"id": 29, "name": "DBMS", "tags": ["Database"]},
-        {"id": 30, "name": "Git", "tags": ["Tool"]},
+        {"id": 26, "name": "Storybook", "tags": ["Frontend"]},
+        {"id": 27, "name": "GraphQL", "tags": ["Frontend", "Others"]},
+        {"id": 28, "name": "OOPs", "tags": ["Design Pattern"]},
+        {"id": 30, "name": "Git", "tags": ["Tools"]},
         {"id": 31, "name": "Bootstrap", "tags": ["Frontend", "Framework"]},
-        {"id": 32, "name": "Material UI", "tags": ["Frontend", "Framework"]},
-        {"id": 33, "name": "DSA", "tags": ["Programming Language", "Algorithm"]},
-        {"id": 34, "name": "OWASP", "tags": ["Security"]}
+        {"id": 32, "name": "MaterialUI", "tags": ["Frontend", "Framework"]},
+        {"id": 34, "name": "VSCode", "tags": ["Tools"]},
+        {"id": 35, "name": "Atom", "tags": ["Tools"]},
+        {"id": 36, "name": "Vercel", "tags": ["Tools"]},
+        {"id": 37, "name": "Idea", "tags": ["Tools"]},
+        {"id": 38, "name": "Postman", "tags": ["Tools"]},
+        {"id": 39, "name": "Swagger", "tags": ["Others"]},
+        {"id": 40, "name": "Others Deisgn", "tags": ["Others"]},
+        {"id": 41, "name": "DB Design", "tags": ["Others"]},
+        {"id": 42, "name": "Webpack", "tags": ["Frontend"]},
+        {"id": 43, "name": "Vite", "tags": ["Frontend"]},
+        {"id": 44, "name": "Tailwind", "tags": ["Frontend"]},
+        {"id": 45, "name": "Pug", "tags": ["Frontend"]},
+        {"id": 46, "name": "Powershell", "tags": ["Tools"]},
+        {"id": 47, "name": "Maven", "tags": ["Backend"]},
+        {"id": 48, "name": "Markdown", "tags": ["Others"]},
+        {"id": 49, "name": "Hibernate", "tags": ["Database"]},
+        {"id": 50, "name": "Heroku", "tags": ["Tools"]},
+        {"id": 51, "name": "Github", "tags": ["Tools"]},
+        {"id": 52, "name": "React Testing Library", "tags": ["Testing"]},
+        {"id": 53, "name": "Rest", "tags": ["Others"]},
+        {"id": 54, "name": "DBMS", "tags": ["Others"]},
+        {"id": 55, "name": "DSA", "tags": ["Others"]},
+        {"id": 56, "name": "OOPs", "tags": ["Others"]},
+        {"id": 57, "name": "Sonarcloud", "tags": ["Others"]},
+        {"id": 58, "name": "CI/CD", "tags": ["Others"]},
+        {"id": 59, "name": "Linux", "tags": ["Others"]},
+        {"id": 60, "name": "Windows", "tags": ["Others"]},
+        {"id": 61, "name": "Agile", "tags": ["Others"]},
+        {"id": 62, "name": "Jira", "tags": ["Others"]},
+        {"id": 63, "name": "Auth0", "tags": ["Others"]},
+        {"id": 63, "name": "Google Cloud Platform", "tags": ["Others"]},
+        {"id": 64, "name": "Kafka", "tags": ["Others"]}
       ],
-    "projects":[
-        {
-          "id": 1,
-          "title": "Project 1",
-          "description": "Description for Project 1",
-          "technologies": "Java, Spring Boot, React",
-          "link": "https://project1.example.com",
-          "projectImage": "project1_image.jpg"
-        },
-        {
-          "id": 2,
-          "title": "Project 2",
-          "description": "Description for Project 2",
-          "technologies": "Python, Django, Vue.js",
-          "link": "https://project2.example.com",
-          "projectImage": "project2_image.jpg"
-        },
-        {
-          "id": 3,
-          "title": "Project 3",
-          "description": "Description for Project 3",
-          "technologies": "Node.js, Express, Angular",
-          "link": "https://project3.example.com",
-          "projectImage": "project3_image.jpg"
-        },
-        {
-          "id": 4,
-          "title": "Project 4",
-          "description": "Description for Project 4",
-          "technologies": "Ruby on Rails, React",
-          "link": "https://project4.example.com",
-          "projectImage": "project4_image.jpg"
-        },
-        {
-          "id": 5,
-          "title": "Project 5",
-          "description": "Description for Project 5",
-          "technologies": "PHP, Laravel, Vue.js",
-          "link": "https://project5.example.com",
-          "projectImage": "project5_image.jpg"
-        },
-        {
-          "id": 6,
-          "title": "Project 6",
-          "description": "Description for Project 6",
-          "technologies": "Java, Spring Boot, Angular",
-          "link": "https://project6.example.com",
-          "projectImage": "project6_image.jpg"
-        },
-        {
-          "id": 7,
-          "title": "Project 7",
-          "description": "Description for Project 7",
-          "technologies": "Python, Flask, React",
-          "link": "https://project7.example.com",
-          "projectImage": "project7_image.jpg"
-        },
-        {
-          "id": 8,
-          "title": "Project 8",
-          "description": "Description for Project 8",
-          "technologies": "Node.js, Express, Vue.js",
-          "link": "https://project8.example.com",
-          "projectImage": "project8_image.jpg"
-        }
-    ]
-      ,
+    "projects": [
+      {
+        "id": 1,
+        "title": "Blog Api",
+        "description": "Developed with Spring Boot, Java, and React, facilitating efficient content management.",
+        "technologies": "Java, Spring Boot, MySQL",
+        "projectImage": "",
+        "githubUrl": "https://github.com/dev-madhurendra/blog-application-springboot.git",
+        "deployedUrl": ""
+      },
+      {
+        "id": 2,
+        "title": "Portfolio Website",
+        "description": "A dynamic platform built with Python, Django, and Vue.js for showcasing skills and projects",
+        "technologies": "HTML, CSS, JavaScript",
+        "projectImage": "https://i.pinimg.com/736x/bb/e3/58/bbe35876fdca69cce431ef383f1987bf.jpg",
+        "githubUrl": "https://github.com/dev-madhurendra/portfolio-website.git",
+        "deployedUrl":"https://dev-madhurendra.github.io/Madhurendra-Portfolio/"
+      },
+      {
+        "id": 3,
+        "title": "Dynamic Portfolio",
+        "description": "Utilizes Node.js, Express, and Angular to create an interactive and engaging portfolio experience.",
+        "technologies": "React, Springboot, FastAPI, MySQL, Sonar Cloud, CSS, Material UI",
+        "projectImage": "https://i.pinimg.com/736x/ef/58/15/ef58155dec4427f9248df410d653e666.jpg",
+        "githubUrl": "https://github.com/dev-madhurendra/dynamic-portfolio-website.git",
+        "deployedUrl": "https://dev-madhurendra.vercel.app/"
+      },
+      {
+        "id": 4,
+        "title": "Todo App",
+        "description": "FastAPI and React-based application for efficient task management and organization",
+        "technologies": "FastAPI, React, MySQL",
+        "projectImage": "https://i.pinimg.com/736x/0a/88/ee/0a88ee2c7b4b6db2b2b445b5a4177349.jpg",
+        "githubUrl": "https://github.com/dev-madhurendra/fastapi.git",
+        "deployedUrl": ""
+      },
+      {
+        "id": 5,
+        "title": "Contact Management System",
+        "description": "C++ power this system for streamlined contact management.",
+        "technologies": "C++",
+        "projectImage": "",
+        "githubUrl": "https://github.com/dev-madhurendra/Contact-Management-System.git",
+        "deployedUrl": ""
+      },
+      {
+        "id": 6,
+        "title": "Monkey Type Clone",
+        "description": "JavaScript, HTML, and CSS combine to replicate a dynamic typing practice platform.",
+        "technologies": "HTML, CSS, JavaScript",
+        "projectImage": "https://i.pinimg.com/564x/71/ac/d9/71acd95a12d19f77ef3ed20b20885c89.jpg",
+        "githubUrl": "https://github.com/dev-madhurendra/Typing-Speed-Test",
+        "deployedUrl": "https://dev-madhurendra.github.io/Typing-Speed-Test/"
+      },
+      {
+        "id": 7,
+        "title": "School Website",
+        "description": "Created using HTML, CSS, and JS, offering a seamless experience for school-related information",
+        "technologies": "HTML, CSS, JavaScript",
+        "projectImage": "https://i.pinimg.com/736x/a2/0c/13/a20c13c50c237d9c95e0424eb195164b.jpg",
+        "githubUrl": "https://github.com/dev-madhurendra/KLRSVM",
+        "deployedUrl": "https://dev-madhurendra.github.io/KLRSVM/"
+      },
+      {
+        "id": 8,
+        "title": "Sorting Visualizer",
+        "description": "HTML,CSS & JS bring this visualizer to life, aiding in understanding sorting algorithms.",
+        "technologies": "HTML, CSS, JavaScript",
+        "projectImage": "https://i.pinimg.com/564x/be/3e/3d/be3e3d999c85782ab1db1053b7f4847c.jpg",
+        "githubUrl": "https://github.com/dev-madhurendra/Sorting-Visualizer",
+        "deployedUrl": ""
+      }
+    ],
     "messages":[
         {
           "id": 1,
