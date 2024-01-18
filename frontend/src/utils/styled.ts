@@ -472,72 +472,75 @@ export const EductionsDetailsDiv = styled('div')({
   },
 })
 
-export const SkillTagButton = styled(MuiButton)({
-  alignItems: 'center',
-  appearance: 'none',
-  backgroundColor: '#fff',
-  borderRadius: '24px',
-  borderStyle: 'none',
-  boxShadow: 'rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0',
-  boxSizing: 'border-box',
-  color: '#3c4043',
-  cursor: 'pointer',
-  display: 'inline-flex',
-  fill: 'currentcolor',
-  fontFamily: '"Google Sans", Roboto, Arial, sans-serif',
-  fontWeight: '500',
-  height: '48px',
-  justifyContent: 'center',
-  letterSpacing: '.25px',
-  lineHeight: 'normal',
-  maxWidth: '90%',
-  overflow: 'visible',
-  position: 'relative',
-  textAlign: 'center',
-  textTransform: 'none',
-  transition: 'box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms',
-  userSelect: 'none',
-  WebkitUserSelect: 'none',
-  touchAction: 'manipulation',
-  width: 'auto',
-  willChange: 'transform, opacity',
-  zIndex: '0',
+export const SkillTagButton = styled(MuiButton)<{ selected?: boolean }>({
+    alignItems: 'center',
+    appearance: 'none',
+    backgroundColor: '#fff',
+    borderRadius: '24px',
+    borderStyle: 'none',
+    boxShadow: 'rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0',
+    boxSizing: 'border-box',
+    color: '#3c4043',
+    cursor: 'pointer',
+    display: 'inline-flex',
+    fill: 'currentcolor',
+    fontFamily: '"Google Sans", Roboto, Arial, sans-serif',
+    fontWeight: '500',
+    height: '48px',
+    justifyContent: 'center',
+    letterSpacing: '.25px',
+    lineHeight: 'normal',
+    maxWidth: '90%',
+    overflow: 'visible',
+    position: 'relative',
+    textAlign: 'center',
+    textTransform: 'none',
+    transition: 'box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms',
+    userSelect: 'none',
+    WebkitUserSelect: 'none',
+    touchAction: 'manipulation',
+    width: 'auto',
+    willChange: 'transform, opacity',
+    zIndex: '0',
+    '&:hover': {
+      background: '#F6F9FE',
+      color: '#174ea6',
+    },
 
-  '&:hover': {
-    background: '#F6F9FE',
-    color: '#174ea6',
+    '&:active': {
+      boxShadow: '0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%)',
+      outline: 'none',
+    },
+
+    '&:focus': {
+      outline: 'none',
+      border: '2px solid #4285f4',
+    },
+
+    '&:not(:disabled)': {
+      boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
+    },
+
+    '&:not(:disabled):hover': {
+      boxShadow: 'rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px',
+    },
+
+    '&:not(:disabled):focus': {
+      boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
+    },
+
+    '&:not(:disabled):active': {
+      boxShadow: 'rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px',
+    },
+
+    '&:disabled': {
+      boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
+    },
   },
-
-  '&:active': {
-    boxShadow: '0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%)',
-    outline: 'none',
-  },
-
-  '&:focus': {
-    outline: 'none',
+  (props) => props.selected && {
     border: '2px solid #4285f4',
-  },
-
-  '&:not(:disabled)': {
-    boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
-  },
-
-  '&:not(:disabled):hover': {
-    boxShadow: 'rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px',
-  },
-
-  '&:not(:disabled):focus': {
-    boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
-  },
-
-  '&:not(:disabled):active': {
-    boxShadow: 'rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px',
-  },
-
-  '&:disabled': {
-    boxShadow: 'rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px',
-  },
-});
+  }
+);
 
 export const DefaultClickedTagButton = styled(MuiButton)({
   alignItems: 'center',
@@ -657,6 +660,7 @@ export const StyledProjectContainer = styled('div')({
   padding: "0 1.25rem 1.25rem 1.25rem",
   width: "25rem",
   borderRadius: "0.625rem",
+  height:"100%",
   '@media (max-width: 468px)': {
     width: "90vw",
     justifyContent: "center",
@@ -665,8 +669,8 @@ export const StyledProjectContainer = styled('div')({
 export const StyledProjectImageDiv = styled('div')({
   '& img': {
     width: "100%",
-    height: "50%",
-    objectFit:"contain"
+    height: "100%",
+    objectFit: "cover",
   },
 })
 export const StyledProjectInfoDiv = styled('div')({
@@ -698,7 +702,7 @@ export const StyledProjectDiv = styled('div')({
 
 export const StyledProjectSection = styled('div')<{ id: string }>({
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'space-evenly',
   alignItems: 'center',
   flexDirection: 'column',
   height: '100vh',
@@ -880,6 +884,7 @@ export const StyledContactSection = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height:100%;
   @media (max-width: 468px) {
     width:90vw;
     height:100%;
@@ -892,7 +897,7 @@ export const ContactGrid = styled.div`
   align-items:center;
   gap: 20px;
   width:70%;
-  height:600px;
+  height:80%;
   @media (max-width: 468px) {
     width:90vw;
     height:100%;

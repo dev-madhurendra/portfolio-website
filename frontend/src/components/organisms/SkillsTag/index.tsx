@@ -1,15 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { getSkillsTags } from '../../../services/apicalls/getcall';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { SkillTagButton, SkillTagDiv, SlillTagList } from '../../../utils/styled';
-import { itemsPerPage } from '../../../services/mocks/mocks';
-import { CHEVRON_LEFT_ROLE, CHEVRON_RIGHT_ROLE, SKILL_SECTION_TEST_ID, SKILL_TAG } from '../../../services/mocks/testMocks';
-import { updateIndices } from '../../../services/functions/functions';
-import { ISkillProps } from '../../../interfaces/types';
+import React, { useEffect, useState } from "react";
+import { getSkillsTags } from "../../../services/apicalls/getcall";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronCircleLeft,
+  faChevronCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  SkillTagButton,
+  SkillTagDiv,
+  SlillTagList,
+} from "../../../utils/styled";
+import { itemsPerPage } from "../../../services/mocks/mocks";
+import {
+  CHEVRON_LEFT_ROLE,
+  CHEVRON_RIGHT_ROLE,
+  SKILL_SECTION_TEST_ID,
+  SKILL_TAG,
+} from "../../../services/mocks/testMocks";
+import { updateIndices } from "../../../services/functions/functions";
+import { ISkillProps } from "../../../interfaces/types";
 
 const SkillsTag = (props: ISkillProps) => {
   const [tags, setTags] = useState<string[]>([]);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [pageState, setPageState] = useState({
     startIndex: 0,
     endIndex: itemsPerPage.laptop,
@@ -19,31 +32,33 @@ const SkillsTag = (props: ISkillProps) => {
     let mounted = true;
 
     if (window.innerWidth >= 1000) {
-      setPageState((prevState) => ({
+      setPageState(prevState => ({
         ...prevState,
         endIndex: itemsPerPage.laptop,
       }));
     } else if (window.innerWidth >= 768) {
-      setPageState((prevState) => ({
+      setPageState(prevState => ({
         ...prevState,
         endIndex: itemsPerPage.tablet,
       }));
-    } else if (window.innerWidth <=468) {
-      setPageState((prevState) => ({
+    } else if (window.innerWidth <= 468) {
+      setPageState(prevState => ({
         ...prevState,
         endIndex: itemsPerPage.mobile,
       }));
     }
 
     getSkillsTags()
-      .then((res) => {
+      .then(res => {
         if (mounted) {
           setTags(res);
+          if (res.length > 0) {
+            setSelectedTag(res[0]);
+          }
         }
-          
       })
-      .catch((err) => {
-        throw new Error("Error while fetching skills tag : " + err)
+      .catch(err => {
+        throw new Error("Error while fetching skills tag : " + err);
       });
 
     return () => {
@@ -52,7 +67,7 @@ const SkillsTag = (props: ISkillProps) => {
   }, []);
 
   const handlePageChange = (direction: string) => {
-    setPageState((prevState) => {
+    setPageState(prevState => {
       const { newStartIndex, newEndIndex } = updateIndices(
         prevState.startIndex,
         prevState.endIndex,
@@ -66,27 +81,34 @@ const SkillsTag = (props: ISkillProps) => {
     });
   };
 
+  const handleTagClick = (tag: string) => {
+    setSelectedTag(tag);
+    props.onSkillTagClick(tag);
+  };
+
   return (
     <SkillTagDiv data-testid={SKILL_SECTION_TEST_ID}>
       <SkillTagButton
-        onClick={() => handlePageChange('prev')}
+        onClick={() => handlePageChange("prev")}
         disabled={pageState.startIndex === 0}
         children={<FontAwesomeIcon icon={faChevronCircleLeft} />}
         role={CHEVRON_LEFT_ROLE}
       />
       <SlillTagList>
-        {tags?.slice(pageState.startIndex, pageState.endIndex)
+        {tags
+          ?.slice(pageState.startIndex, pageState.endIndex)
           .map((tag, index) => (
             <SkillTagButton
               key={index}
               children={tag}
               role={SKILL_TAG + index}
-              onClick={() => props.onSkillTagClick(tag)}
+              onClick={() => handleTagClick(tag)}
+              selected={selectedTag === tag}
             />
           ))}
       </SlillTagList>
       <SkillTagButton
-        onClick={() => handlePageChange('next')}
+        onClick={() => handlePageChange("next")}
         disabled={pageState.endIndex >= tags.length}
         children={<FontAwesomeIcon icon={faChevronCircleRight} />}
         role={CHEVRON_RIGHT_ROLE}
