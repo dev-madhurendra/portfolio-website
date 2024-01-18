@@ -1,4 +1,4 @@
-# 🚀 Portfolio Website
+# 🚀 [Portfolio Website](https://dev-madhurendra.vercel.app) <sup>↗️</sup>
 
 Welcome to my personal portfolio website powered by FastAPI and Spring Boot for the backend, and Vite React for the frontend! 🌐✨
 
@@ -31,7 +31,7 @@ Welcome to my personal portfolio website powered by FastAPI and Spring Boot for 
 ### Light Mode :
 ![LighModePortfolio](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/47c0034e-9f09-4797-9e2a-6656d5e46f18)
 
-### Dark Model :
+### Dark Mode :
 ![DarkModePortfolio](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/b71f4a5c-93bb-4f2f-8ee3-abf21118d5ee)
 
 ## Portfolio Frontend - Code Quality - V1
