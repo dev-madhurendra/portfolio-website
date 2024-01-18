@@ -31,12 +31,13 @@ const Project = () => {
             ...prevState,
             endIndex: projectPerPage.tablet,
         }));
-        setStepBy(2);
+        setStepBy(1);
     } else {
         setPageState((prevState) => ({
             ...prevState,
             endIndex: projectPerPage.mobile,
         }));
+        setStepBy(1);
     }
 
     getProjects()

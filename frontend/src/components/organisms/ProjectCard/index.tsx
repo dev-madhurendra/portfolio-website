@@ -19,8 +19,6 @@ const ProjectCard = (props: IProjectCardProps) => {
           <img
             src={props.projects.projectImage ? props.projects.projectImage : getRandomImage(PROJECT_IMAGE)}
             alt={`${PROJECT_ALT} ${props.projects.title}`}
-            width={500}
-            height={500}
           />
         </ImageContainer>
       </StyledProjectImageDiv>

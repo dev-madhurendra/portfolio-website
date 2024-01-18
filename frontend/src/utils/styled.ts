@@ -125,7 +125,7 @@ export const HomeDiv = styled('div')<{ id: string }>({
       justifyContent: "center",
       width: "100%",
       marginLeft: "0vw",
-      marginTop:"30%"
+      marginTop:"10%"
     },
     '@media (max-width:1024px)': {
       justifyContent: "center",
@@ -657,13 +657,16 @@ export const StyledProjectContainer = styled('div')({
   padding: "0 1.25rem 1.25rem 1.25rem",
   width: "25rem",
   borderRadius: "0.625rem",
-  height: "100%",
+  '@media (max-width: 468px)': {
+    width: "90vw",
+    justifyContent: "center",
+  },
 })
 export const StyledProjectImageDiv = styled('div')({
   '& img': {
-    width: "25rem",
-    height: "25rem",
-    objectFit:"cover"
+    width: "100%",
+    height: "50%",
+    objectFit:"contain"
   },
 })
 export const StyledProjectInfoDiv = styled('div')({
@@ -807,6 +810,7 @@ export const StyledExperienceSection = styled("div")({
   marginTop:"100px",
   '@media(max-width:468px)':{
     height: "100%",
+    marginTop:"0px",
   },
 });
 
@@ -819,7 +823,7 @@ export const ExperienceFirstContainer = styled("div")({
   width: "100vw",
   marginLeft: "200px",
   '@media(max-width:468px)':{
-    marginTop:"100px"
+    marginTop:"0px"
   },
 });
 
@@ -912,7 +916,7 @@ export const LeftColumn = styled.div`
 
 export const ImageContainer = styled.div`
   img {
-    border-radius: 20px;
+    padding-top:10px;
     transition: transform 0.3s ease-in-out;
     width:100%;
     &:hover {
@@ -1052,8 +1056,12 @@ export const StyledContactMeSection = styled('div')({
     },
 })
 export const ExperienceMuiButton = styled(MuiButton)({
-    fontSize: "15px",
-    padding:"10px"
+  fontSize: "15px",
+  padding: "10px",
+  "@media (max-width: 468px)": {
+    width: "90vw",
+    marginLeft: "5%",
+  },
 })
 export const ContactContainer = styled('div')<{id: string}>({
   height: "100%",
