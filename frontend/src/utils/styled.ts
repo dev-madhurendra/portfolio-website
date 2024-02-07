@@ -889,6 +889,7 @@ export const StyledContactSection = styled.div`
     width:90vw;
     height:100%;
   }
+  
 `;
 
 export const ContactGrid = styled.div`
