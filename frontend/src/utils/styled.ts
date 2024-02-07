@@ -897,7 +897,6 @@ export const ContactGrid = styled.div`
   align-items:center;
   gap: 20px;
   width:70%;
-  height:80%;
   @media (max-width: 468px) {
     width:90vw;
     height:100%;
