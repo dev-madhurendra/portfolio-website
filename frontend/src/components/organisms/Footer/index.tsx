@@ -28,7 +28,7 @@ import {
 import { getQuotes } from "../../../services/apicalls/getcall";
 
 const Footer = () => {
-    const [quotes,setQuotes] = useState("")
+  const [quotes,setQuotes] = useState("")
   useEffect(() => {
       getQuotes().then((res) => {
         setQuotes(res.data[0]?.content)
