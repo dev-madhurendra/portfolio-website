@@ -37,3 +37,11 @@ Welcome to my personal portfolio website powered by FastAPI and Spring Boot for 
 ## Portfolio Frontend - Code Quality - V1
 ![Screenshot from 2024-01-17 11-30-25](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/fd85a336-122e-41e9-8de0-966ddaad7b9c)
 
+## Portfolio Frontend - V2
+- Added Skeleton Loader
+- Improved UI
+- Added contact form Validation
+
+![Screenshot from 2024-02-25 18-07-48](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/56f49e66-b34c-4a07-af29-cd23ca722f3d)
+
+
