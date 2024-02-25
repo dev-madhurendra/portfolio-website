@@ -660,7 +660,7 @@ export const StyledProjectContainer = styled('div')({
   padding: "0 1.25rem 1.25rem 1.25rem",
   width: "25rem",
   borderRadius: "0.625rem",
-  height:"100%",
+  height: "500px",
   '@media (max-width: 468px)': {
     width: "90vw",
     justifyContent: "center",
@@ -695,8 +695,10 @@ export const StyledProjectDiv = styled('div')({
   alignItems: 'center',
   flexWrap: 'wrap',
   maxWidth: '100vw',
+  height:"100%",
   gap: "1.25rem",
   margin: '0 auto',
+  marginTop:"5%"
   
 });
 
@@ -705,7 +707,7 @@ export const StyledProjectSection = styled('div')<{ id: string }>({
   justifyContent: 'space-evenly',
   alignItems: 'center',
   flexDirection: 'column',
-  height: '100vh',
+  height: '100%',
   marginLeft: '5rem',
   '@media (max-width: 468px)': {
     marginLeft: 0,
@@ -947,18 +949,17 @@ export const SocialLinks = styled.div`
   justify-content: space-evenly;
   padding-top: 1rem;
   gap:20px;
-
   a {
     text-decoration: none;
+    color: inherit;
   }
-
   div {
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 1rem;
     cursor: pointer;
+    color: inherit;
     transition: transform 0.3s ease-in-out;
-
     &:hover {
       transform: scale(1.1);
     }
@@ -1025,7 +1026,7 @@ export const SocialLinksContainer = styled.div`
     display: inline-block;
     margin-right: 10px;
     font-size:30px;
-    color:black;
+    color:inherit;
   }
 `;
 
@@ -1055,6 +1056,7 @@ export const StyledContactMeSection = styled('div')({
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
+    marginTop:"1%",
     "@media (max-width: 468px)": {
       flexDirection:"column",
       height: "100%",
@@ -1150,3 +1152,190 @@ export const SendButton = styled.button`
   border-radius: 8px;
   cursor: pointer;
 `;
+
+
+export const loaderSlideInAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const SkeletonIconContainer = styled.div`
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 1.5rem;
+  margin-left: 1.25rem;
+  z-index: 1111;
+  animation: ${loaderSlideInAnimation} 0.5s ease-in-out;
+  @media (max-width: 468px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: auto;
+  }
+`;
+
+export const SkeletonLeftDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0.3125rem 0.9375rem;
+  cursor: pointer;
+  border-radius: 50%;
+  @media (max-width: 468px) {
+    display: none;
+  }
+`;
+
+export const SkeletonMiddleDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem;
+  padding: 1.25rem;
+  cursor: pointer;
+  border-radius: 3.125rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.0625rem);
+  @media (max-width: 468px) {
+    flex-direction: row;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    gap: 1.25rem;
+    width: 65%;
+    height: auto;
+    padding: 1.25rem;
+  }
+`;
+
+export const SkeletonRightDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 1.25rem;
+  @media (max-width: 468px) {
+    margin-left: 70%;
+    margin-top: 0.3125rem;
+  }
+`;
+
+export const skeletonAnimation = keyframes`
+  0% {
+    background-color: #f0f0f0;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+`;
+
+
+export const skeletonPlaceholderStyles = (props: {width?: string, height?: string}) => ({
+  width: props.width || "20rem",
+  height: props.height || "2rem",
+  borderRadius: "20px",
+  backgroundColor: "#e0e0e0",
+  animation: `${skeletonAnimation} 1s infinite ease-in-out`
+});
+
+export const SkeletonPlaceholder = styled.div(skeletonPlaceholderStyles);
+
+export const SkeletonHomeDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 90vw;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    width: 100vw;
+  }
+  @media (max-width: 468px) {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10%;
+  }
+  @media (max-width: 1024px) {
+    justify-content: center;
+    width: 90vw;
+    margin-left: 6vw;
+  }
+`;
+
+export const SkeletonRightHomeDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & img {
+    animation: ${skeletonAnimation} 1.5s infinite ease-in-out;
+    width: 31.25rem;
+    height: 25rem;
+  }
+  @media (max-width: 900px) {
+    & img {
+      width: 20rem;
+      height: 20rem;
+      margin-top: -4.5rem;
+      margin-left: -7.5rem;
+    }
+  }
+  @media (max-width: 468px) {
+    & img {
+      width: 25rem;
+      height: 25rem;
+      margin-left: -0.625rem;
+    }
+  }
+`;
+
+export const SkeletonLeftHomeDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+  gap: 1rem;
+  font-size: 1.875rem;
+  z-index: 1;
+  @media (max-width: 900px) {
+    width: 90%;
+    font-size: 2.1875rem;
+  }
+  @media (max-width: 468px) {
+    width: 100vw;
+    margin-left: 0px;
+    font-size: 1.875rem;
+  }
+`;
+
+export const SkeletonDiv = styled('div')({
+  width: "50px",
+  height: "50px",
+  backgroundColor: "#e0e0e0",
+  borderRadius: "50%",
+  animation: `${skeletonAnimation} 1s infinite ease-in-out`
+})

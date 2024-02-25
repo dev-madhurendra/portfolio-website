@@ -1,6 +1,7 @@
 import { faCodepen, faDiscord, faGithub, faGithubSquare, faInstagram, faLinkedinIn, faQuora, faSnapchat, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { EDUIMG_1, EDUIMG_2, EDUIMG_3, EDUIMG_4, EDUIMG_5, EDUIMG_6 } from '../../utils/constants';
 import { faHouse, faInfo, faUserGraduate, faCode, faLaptopCode, faBriefcase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { IFormField } from '../../interfaces/types';
 
 
 export const greets = [
@@ -97,7 +98,7 @@ export const socialLinks = [
 
 export const quickLinks = ["Home", "About", "Education", "Skill", "Project", "Experience", "Contact"];
 
-export const formFields = [
+export const formFields: IFormField[] = [
   { name: "Name", type: "text", field: "name" },
   { name: "Phone Number", type: "text", field: "phone" },
   { name: "Email", type: "email", field: "email" },
@@ -113,3 +114,21 @@ export const navLinks  = [
   { to: "experience", icon: faBriefcase },
   { to: "contact", icon: faEnvelope },
 ]
+
+export const initialContactFormData = {
+  name: "",
+  phone: "",
+  email: "",
+  subject: "",
+  message: "",
+}
+
+export const placeholders = [
+    { width: "10rem", height: "3rem" },
+    { width: "20rem" },
+    { width: "20rem" },
+    { width: "20rem" },
+    { width: "20rem" },
+    { width: "20rem" },
+    { width: "10rem", height: "3rem" },
+  ];
