@@ -41,6 +41,7 @@ Welcome to my personal portfolio website powered by FastAPI and Spring Boot for 
 - Added Skeleton Loader
 - Improved UI
 - Added contact form Validation
+- Added reveal content while scrolling animation
 
 ![Screenshot from 2024-02-25 18-07-48](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/56f49e66-b34c-4a07-af29-cd23ca722f3d)
 
