@@ -1233,7 +1233,7 @@ export const SkeletonRightDiv = styled.div`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  gap: 1.25rem;
+  gap: 0.25rem;
   @media (max-width: 468px) {
     margin-left: 70%;
     margin-top: 0.3125rem;
@@ -1263,12 +1263,19 @@ export const skeletonPlaceholderStyles = (props: {width?: string, height?: strin
 
 export const SkeletonPlaceholder = styled.div(skeletonPlaceholderStyles);
 
+
+
 export const SkeletonHomeDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100vh;
   width: 90vw;
+  @media (max-width: 1024px) {
+    justify-content: center;
+    width: 90vw;
+    margin-left: 6vw;
+  }
   @media (max-width: 900px) {
     flex-direction: column;
     width: 100vw;
@@ -1277,11 +1284,7 @@ export const SkeletonHomeDiv = styled.div`
     justify-content: center;
     width: 100%;
     margin-top: 10%;
-  }
-  @media (max-width: 1024px) {
-    justify-content: center;
-    width: 90vw;
-    margin-left: 6vw;
+    margin-left:-15px;
   }
 `;
 
@@ -1333,8 +1336,8 @@ export const SkeletonLeftHomeDiv = styled.div`
 `;
 
 export const SkeletonDiv = styled('div')({
-  width: "50px",
-  height: "50px",
+  width: "35px",
+  height: "35px",
   backgroundColor: "#e0e0e0",
   borderRadius: "50%",
   animation: `${skeletonAnimation} 1s infinite ease-in-out`
