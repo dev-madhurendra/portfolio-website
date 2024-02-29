@@ -14,12 +14,13 @@ import {
   SkillTextImageDiv
 } from '../../utils/styled';
 import { SKILL_TITLE } from '../../utils/constants';
+import { useScrollReveal } from '../../hook/useScrollReveal';
 
 const SkillSection = () => {
   const {isDark} = useDarkMode()
   const [skills, setSkills] = useState<string[]>([]);
   const [tagSkillObj, setTagSkillObj] = useState<TagsToSkillsMapping>({});
-
+  useScrollReveal();
   useEffect(() => {
     getSkillsByTag()
       .then((res) => {
@@ -39,7 +40,7 @@ const SkillSection = () => {
   };
 
   return (
-    <SkillDiv id='skill'>
+    <SkillDiv id='skill' className='reveal'>
       <LeftSkillDiv>
         <h1>{SKILL_TITLE}</h1>
         <SkillsTag onSkillTagClick={handleTagSkill} />

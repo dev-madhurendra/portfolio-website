@@ -7,11 +7,12 @@ import { ABOUT_COMPONENT, ABOUT_DESC, ABOUT_SUB_DESC, ABOUT_SUB_FOOTER_DESC, ICO
 import { AboutDiv, LeftAboutDiv, MuiChipAboutStyled, RightAboutDiv, SkillAboutDiv } from '../../utils/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
+import { useScrollReveal } from '../../hook/useScrollReveal';
 
 
 const About = () => {
   const el = React.useRef(null);
-
+  useScrollReveal();
   useEffect(() => {
     const typed = new Typed(el.current, typeNameAttributes);
 
@@ -22,7 +23,7 @@ const About = () => {
     
 
   return (
-    <AboutDiv data-testid={ABOUT_COMPONENT} id={'about'}>
+    <AboutDiv data-testid={ABOUT_COMPONENT} id={'about'} className='reveal'>
         <LeftAboutDiv>
             <img src={AboutImage} alt={ICON_ABOUT_ALT} />      
         </LeftAboutDiv>        

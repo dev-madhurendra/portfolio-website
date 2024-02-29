@@ -12,17 +12,17 @@ import ContactMeSection from "./pages/ContactMe";
 import Footer from "./components/organisms/Footer";
 import "./App.css";
 import PortfolioSkeletonLoader from "./components/molecules/SkeletonLoader";
+import { useScrollReveal } from "./hook/useScrollReveal";
 
 const AppContent: React.FC = () => {
   const { isDark } = useDarkMode();
-  const [isLoading, setIsLoading] = useState(true); 
-
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {

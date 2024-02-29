@@ -10,6 +10,7 @@ import { CHEVRON_LEFT_ROLE, CHEVRON_RIGHT_ROLE } from '../../services/mocks/test
 import { projectPerPage } from '../../services/mocks/mocks';
 import { updateIndices } from '../../services/functions/functions';
 import MuiButton from '../../components/atoms/Button';
+import { useScrollReveal } from '../../hook/useScrollReveal';
 
 const Project = () => {
   const [projects, setProjects] = useState<IProject[]>([]);
@@ -18,7 +19,7 @@ const Project = () => {
     endIndex: projectPerPage.mobile,
   });
   const [stepBy,setStepBy] = useState(1)
-
+  useScrollReveal()
   useEffect(() => {    
     if (window.innerWidth >= 1000) {
         setPageState((prevState) => ({
@@ -68,7 +69,7 @@ const Project = () => {
   }
 
   return (
-    <StyledProjectSection id={PROJECT_REF}>
+    <StyledProjectSection id={PROJECT_REF} className='reveal'>
       <div>
         <h1>{PROJECT_HEADING}</h1>
       </div>

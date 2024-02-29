@@ -8,6 +8,7 @@ import { useDarkMode } from '../../services/customhook/useDarkMode'
 import { EductionsDiv, LeftEducationDiv, RightEducationDiv, EductionsTabDiv, EductionsDetailsDiv } from '../../utils/styled'
 import { EDUCATION_SECTION_TEST_ID } from '../../services/mocks/testMocks'
 import { EDUCATION_TITLE } from '../../utils/constants'
+import { useScrollReveal } from '../../hook/useScrollReveal'
 
 
 const Education = () => {
@@ -15,6 +16,7 @@ const Education = () => {
 
     const [educations, setEducations] = useState<IEducationDetail[]>([])
     const [value, setValue] = React.useState(0);
+    useScrollReveal();
 
     useEffect(() => {
         getEducations()
@@ -24,7 +26,7 @@ const Education = () => {
 
     const handleChange = (event: React.SyntheticEvent,newValue: number) => setValue(newValue);
   return (
-    <EductionsDiv id={'education'} data-testid = {EDUCATION_SECTION_TEST_ID}>
+    <EductionsDiv id={'education'} data-testid = {EDUCATION_SECTION_TEST_ID} className='reveal'>
         <LeftEducationDiv>
             <h1>{EDUCATION_TITLE}</h1>  
         </LeftEducationDiv>      

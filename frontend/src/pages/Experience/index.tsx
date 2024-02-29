@@ -13,12 +13,13 @@ import {
 } from "../../utils/styled";
 import './index.css'
 import TechScroll from "../../components/organisms/TechScroll";
+import { useScrollReveal } from "../../hook/useScrollReveal";
 
 
 const Experience = () => {
   const [experiences, setExperiences] = useState<IExperience[]>([]);
   const [tabIndex, setTabIndex] = useState(0);
-
+  useScrollReveal()
   useEffect(() => {
     getExperiences()
       .then((res) => {
@@ -30,7 +31,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <StyledExperienceSection id="experience">
+    <StyledExperienceSection id="experience" className="reveal">
       <h1>{EXPERIENCE_TITLE}</h1>
       <ExperienceFirstContainer>
         <Tabs
