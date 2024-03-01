@@ -8,7 +8,6 @@ import { Tab } from 'react-tabs'
 export const StyledIcon = styled.img`
   cursor: pointer;
 `
-
 const slideInAnimation = () => ({
   '@keyframes slideIn': {
     from: {
