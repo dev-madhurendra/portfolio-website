@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Typed from 'typed.js';
 import { typeAttributes } from '../../services/mocks/mocks';
-import { HERO_SECTION_IMAGE, RESUME_LINK } from '../../utils/constants';
+import { HERO_SECTION_IMAGE, HIRE_ME_HREF, RESUME_LINK } from '../../utils/constants';
 import { ButtonHomeDiv, CapsuleButton, GreetHomeDiv, HomeDiv, IntroDiv, LeftHomeDiv, RightHomeDiv, TypedHomeDiv } from '../../utils/styled';
 import SocialMediaIcons from '../../components/molecules/SocialMediaIcons';
 import HeroSectionImage from '../../../public/gif/Video-Call.gif'
@@ -9,8 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faUser } from '@fortawesome/free-solid-svg-icons';
 import AnimatedName from '../../components/molecules/AnimatedName';
 import './style.css'
-
-
 
 const HomeSection = () => {
   const el = React.useRef(null);
@@ -46,7 +44,8 @@ const HomeSection = () => {
                 <CapsuleButton
                   variant="outlined"
                   startIcon={<FontAwesomeIcon
-                    icon={faUser} />}
+                  icon={faUser} />}
+                  href={HIRE_ME_HREF}
                 >
                   Hire Me
                 </CapsuleButton>
