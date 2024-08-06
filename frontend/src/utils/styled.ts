@@ -198,7 +198,7 @@ export const RightHomeDiv = styled('div')({
   '& img': {
     animation: `${floatAnimation} 3s ease-in-out infinite, ${slideInFromRight} 3s ease-in-out`,
     width: "31.25rem",
-    height:"25rem"
+    height:"31.25rem"
   },
   '@media (max-width: 900px)': {
     '& img': {

@@ -4,7 +4,7 @@ import { typeAttributes } from '../../services/mocks/mocks';
 import { HERO_SECTION_IMAGE, HIRE_ME_HREF, RESUME_LINK } from '../../utils/constants';
 import { ButtonHomeDiv, CapsuleButton, GreetHomeDiv, HomeDiv, IntroDiv, LeftHomeDiv, RightHomeDiv, TypedHomeDiv } from '../../utils/styled';
 import SocialMediaIcons from '../../components/molecules/SocialMediaIcons';
-import HeroSectionImage from '../../../public/gif/Video-Call.gif'
+import HeroSectionImage from '../../../public/png/profile-pic.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faUser } from '@fortawesome/free-solid-svg-icons';
 import AnimatedName from '../../components/molecules/AnimatedName';

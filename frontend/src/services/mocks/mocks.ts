@@ -43,7 +43,7 @@ export const socialMediaData = [
   { platform: 'twitter', icon: faXTwitter, color: '#000', link: 'https://twitter.com/devMadhurendra' },
   { platform: 'linkedin', icon: faLinkedinIn, color: '#0077b5', link: 'https://www.linkedin.com/in/dev-madhurendra' },
   { platform: 'quora', icon: faQuora, color: '#a82400', link: 'https://www.quora.com/profile/dev.madhurendra' },
-  { platform: 'youtube', icon: faYoutube, color: '#ff0000', link: 'https://www.youtube.com/@dev.madhurendra' },
+  { platform: 'youtube', icon: faYoutube, color: '#ff0000', link: 'https://www.youtube.com/@InterviewPrepWithMe' },
   { platform: 'discord', icon: faDiscord, color: '#7289da', link: 'https://discord.gg/dev-madhurendra' },
   { platform: 'codepen', icon: faCodepen, color: '#000000', link: 'https://codepen.io/devMadhurendra' },
   { platform: 'snapchat', icon: faSnapchat, color: '#fffc00', link: 'https://www.snapchat.com/add/dev-madhurendra' },
