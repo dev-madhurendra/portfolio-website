@@ -106,47 +106,56 @@
   100% { transform: scale(1); }
 }
 
-.name {
-  color: #f4b039;
-}
-
 .name-0 {
   display: inline-block;
   animation: hinge 1.5s infinite 0.1s;
+  color: #015871; /* Dark teal */
 }
+
 .name-1 {
   display: inline-block;
   animation: bounce 1.5s infinite 0.1s;
+  color: #7C0158; /* Dark pink */
 }
+
 .name-2, .name-10 {
   display: inline-block;
   animation: flip 1.5s infinite 0.1s;
+  color: #FF9671; /* Light orange */
 }
 
 .name-3 {
   display: inline-block;
   animation: swing 1.5s infinite 0.1s;
+  color: #FF6F91; /* Light pink */
 }
 
 .name-4, .name-8 {
   display: inline-block;
   animation: wobble 1.5s infinite 0.1s;
+  color: #f4b039; /* Gold */
 }
+
 .name-5 {
   display: inline-block;
   animation: gelatine 1.5s infinite 0.1s;
+  color: #015871; /* Dark teal */
 }
+
 .name-9 {
   display: inline-block;
   animation: rotate-in-up-left 1.5s infinite 0.1s;
+  color: #7C0158; /* Dark pink */
 }
 
 .name-7 {
   display: inline-block;
   animation: rotate-in-down-left 1.5s infinite 0.1s;
+  color: #FF9671; /* Light orange */
 }
 
 .name-6 {
   display: inline-block;
   animation: hithere 1.5s infinite 0.1s;
+  color: #FF6F91; /* Light pink */
 }

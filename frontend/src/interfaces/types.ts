@@ -1,3 +1,4 @@
+import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { ButtonProps, ButtonPropsVariantOverrides, SxProps, TypographyProps } from "@mui/material";
 import React, { CSSProperties, ReactElement } from "react";
 
@@ -102,4 +103,13 @@ export interface IFormErrors {
   email?: string;
   subject?: string;
   message?: string;
+  
+}
+
+export interface SocialMediaUserData {
+  personal: string;
+  organization: string;
+  personalLink: string;
+  orgLink: string;
+  icon: IconDefinition;
 }

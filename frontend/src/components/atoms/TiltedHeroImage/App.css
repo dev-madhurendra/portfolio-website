@@ -1,0 +1,8 @@
+.tilt-container {
+  perspective: 1000px; /* Add perspective to enhance the 3D effect */
+}
+
+img {
+  width: 100%; /* Adjust size as needed */
+  transform-style: preserve-3d; /* Enables 3D transformations */
+}

@@ -20,7 +20,8 @@ export const EDUIMG_3 = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/
 export const EDUIMG_4 = "https://cdni.iconscout.com/illustration/premium/thumb/growth-of-education-with-hard-work-2158676-1816228.png"
 export const EDUIMG_5 = "https://media.istockphoto.com/id/1409407973/vector/people-with-check-mark-make-choice.jpg?s=612x612&w=0&k=20&c=nyAG50fozvQVSKD3x6YMBo3k4t80I4fUgAuZflWhyWc="
 export const EDUIMG_6 = "https://media.istockphoto.com/id/1267267142/vector/small-people-stand-next-to-a-large-to-do-list.jpg?s=612x612&w=0&k=20&c=ElNGNaGjFgjkKdqlUzSsBD9R7fdHOwmYYaiZKDQBJyA="
-export const URL = process.env.API_URL
+export const URL = process.env.API_URL || ""
+export const DEFAULT_QUOTES = "Success is not final, failure is not fatal: It is the courage to continue that counts.  – Winston Churchill"
 export const EDUCATION_ENDPOINT = "/educations"
 export const SKILL_EDNPOINT = "/skills"
 export const EDUCATION_ALT = "education-alt"

@@ -12,7 +12,6 @@ import ContactMeSection from "./pages/ContactMe";
 import Footer from "./components/organisms/Footer";
 import "./App.css";
 import PortfolioSkeletonLoader from "./components/molecules/SkeletonLoader";
-import { useScrollReveal } from "./hook/useScrollReveal";
 
 const AppContent: React.FC = () => {
   const { isDark } = useDarkMode();
@@ -28,8 +27,9 @@ const AppContent: React.FC = () => {
   useEffect(() => {
     document.body.style.color = isDark ? "#fff" : "#000";
     document.body.style.fontWeight = isDark ? "500" : "inherit";
-    document.body.style.backgroundColor = isDark ? "#1f1d27" : "#fff";
+    document.body.style.backgroundColor = isDark ? "#3A506C" : "#fff"; // Softer dark color
   }, [isDark]);
+  
 
   return (
     <>

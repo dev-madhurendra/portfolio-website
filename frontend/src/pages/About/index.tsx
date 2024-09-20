@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Typed from 'typed.js';
 import AboutImage from "../../../public/jpeg/About-Image.jpg"
 import MyChip from '../../components/atoms/Chip'
-import { skillsData, socialMediaData, typeNameAttributes } from '../../services/mocks/mocks'
+import { nameType, skillsData, socialMediaData, typeAttributes,  } from '../../services/mocks/mocks'
 import { ABOUT_COMPONENT, ABOUT_DESC, ABOUT_SUB_DESC, ABOUT_SUB_FOOTER_DESC, ICON_ABOUT_ALT } from '../../utils/constants';
 import { AboutDiv, LeftAboutDiv, MuiChipAboutStyled, RightAboutDiv, SkillAboutDiv } from '../../utils/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,7 +14,7 @@ const About = () => {
   const el = React.useRef(null);
   useScrollReveal();
   useEffect(() => {
-    const typed = new Typed(el.current, typeNameAttributes);
+    const typed = new Typed(el.current, typeAttributes(nameType));
 
     return () => {
       typed.destroy();

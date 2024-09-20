@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import MuiButton from '../components/atoms/Button'
-import WaveUrl from "../../public/gif/Wave-Animation.gif"
 import DarkModeWaveUrl from "../../public/gif/Dark-Mode.gif"
 import { keyframes } from '@emotion/react'
 import { Tab } from 'react-tabs'
+import { Link } from 'react-scroll'
 
 export const StyledIcon = styled.img`
   cursor: pointer;
@@ -11,14 +11,32 @@ export const StyledIcon = styled.img`
 const slideInAnimation = () => ({
   '@keyframes slideIn': {
     from: {
-      transform: 'translateX(-100%)',
+      transform: 'translateY(100%)',
+      opacity: 0,
     },
     to: {
-      transform: 'translateX(0)',
+      transform: 'translateY(0)',
+      opacity: 1,
     },
   },
-  animation: 'slideIn 1s ease-in',
+  animation: 'slideIn 2s ease-out', 
 });
+
+const slideInLeftAnimation = () => ({
+  '@keyframes slideLeftIn': {
+    from: {
+      transform: 'translateX(-100%)',
+      opacity: 0,
+    },
+    to: {
+      transform: 'translateY(0)',
+      opacity: 1,
+    },
+  },
+  animation: 'slideLeftIn 2s ease-out', 
+});
+
+
 
 export const IconContainer = styled('div')({
   height: '100vh',
@@ -63,12 +81,12 @@ export const MiddleDiv = styled('div')({
   flexDirection:"column",
   alignItems: "center",
   gap:"0.625rem",
-  boxShadow: "rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem",
+  // boxShadow: "rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem",
   padding: "1.25rem",
   cursor: "pointer",
-  borderRadius: "3.125rem",
-  backgroundColor: "rgba(255,255,255,0.1)",
-  backdropFilter: "blur(0.0625rem)",
+  // borderRadius: "3.125rem",
+  // backgroundColor: "rgba(255,255,255,0.1)",
+  // backdropFilter: "blur(0.0625rem)",
   '@media (max-width: 468px)': {
     flexDirection: 'row', 
     position: 'fixed', 
@@ -132,17 +150,71 @@ export const HomeDiv = styled('div')<{ id: string }>({
       marginLeft: "6vw",
     },
 })
+
+// export const RotatedBackground = styled('div')({
+//   position: 'absolute',
+//   top: 0,
+//   left: 0,
+//   width: '100%',
+//   height: '100%',
+//   background: `url(${WaveUrl})`,
+//   backgroundRepeat: 'no-repeat',
+//   backgroundSize: '100% 100%',
+//   transform: 'rotate(0deg)',
+// });
+
 export const RotatedBackground = styled('div')({
   position: 'absolute',
   top: 0,
   left: 0,
   width: '100%',
   height: '100%',
-  background: `url(${WaveUrl})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: '100% 100%',
-  transform: 'rotate(0deg)',
+  background: 'linear-gradient(180deg, rgba(255, 105, 180, 0.5) 0%, rgba(0, 119, 190, 0.5) 50%, rgba(0, 119, 190, 1) 100%)',
+  animation: 'waveAnimation 4s infinite linear',
+
+  '@keyframes waveAnimation': {
+    '0%': {
+      backgroundPosition: '0% 0%',
+    },
+    '50%': {
+      backgroundPosition: '100% 0%',
+    },
+    '100%': {
+      backgroundPosition: '0% 0%',
+    },
+  },
+
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '200%',
+    height: '100%',
+    background: 'linear-gradient(180deg, rgba(255, 105, 180, 0.3) 0%, rgba(0, 119, 190, 0) 100%)',
+    animation: 'sineWave 2s infinite linear',
+    transform: 'translateX(-50%)', // Start the sine wave off-screen
+  },
+
+  '@keyframes sineWave': {
+    '0%': {
+      transform: 'translateX(-50%) translateY(0)',
+    },
+    '25%': {
+      transform: 'translateX(-50%) translateY(-10px)', // Peak of the wave
+    },
+    '50%': {
+      transform: 'translateX(-50%) translateY(0)', // Return to baseline
+    },
+    '75%': {
+      transform: 'translateX(-50%) translateY(10px)', // Trough of the wave
+    },
+    '100%': {
+      transform: 'translateX(-50%) translateY(0)', // Return to baseline
+    },
+  },
 });
+
 export const DarkRotatedBackground = styled('div')({
   position: 'absolute',
   top: 0,
@@ -154,6 +226,7 @@ export const DarkRotatedBackground = styled('div')({
   backgroundSize: '100% 100%',
   transform: 'rotate(0deg)',
 });
+
 export const LeftHomeDiv = styled('div')({
     display: "flex",
     justifyContent: "center",
@@ -163,6 +236,7 @@ export const LeftHomeDiv = styled('div')({
     height: "50%",    
     gap: "1rem",
     fontSize: "1.875rem",
+    ...slideInLeftAnimation(),
     '@media (max-width:900px)': {
       width: "90%",
       fontSize: "2.1875rem",
@@ -191,14 +265,36 @@ const slideInFromRight = keyframes`
     transform: translateX(0);
   }
 `;
+
+const tiltAnimation = keyframes`
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(5deg) rotateY(-3deg) rotateZ(2deg); /* Reduced angles for less tilt */
+  }
+  50% {
+    transform: rotateX(-5deg) rotateY(3deg) rotateZ(-2deg); /* Subtle movement */
+  }
+  75% {
+    transform: rotateX(3deg) rotateY(-5deg) rotateZ(3deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+`
+
+
+
 export const RightHomeDiv = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   '& img': {
-    animation: `${floatAnimation} 3s ease-in-out infinite, ${slideInFromRight} 3s ease-in-out`,
+    animation: `${floatAnimation} 3s ease-in-out infinite, ${slideInFromRight} 3s ease-in-out, ${tiltAnimation} 5s infinite ease-in-out; `,
     width: "31.25rem",
-    height:"31.25rem"
+    height:"31.25rem",
+    cursor: "pointer"
   },
   '@media (max-width: 900px)': {
     '& img': {
@@ -231,12 +327,64 @@ export const GreetHomeDiv = styled('div')({
 })
 
 export const CapsuleButton = styled(MuiButton)({
-  borderRadius: '50px', 
+  borderRadius: '50px',
   textTransform: 'none',
-  width: "11.375rem",
-  height: "3.125rem",
-  fontSize: "1.375rem",
-})
+  width: '12rem',
+  height: '3.5rem',
+  fontSize: '1.25rem',
+  fontWeight: '600',
+  background: 'linear-gradient(135deg, #015871, #7C0158)', // Gradient from #015871 to dark pink
+  color: '#fff',
+  border: '2px solid transparent',
+  transition: 'all 0.4s ease-in-out',
+  position: 'relative',
+  zIndex: 1,
+  overflow: 'hidden',
+
+  '&:before': {
+    content: '""',
+    position: 'absolute',
+    top: '-100%',
+    left: '0',
+    width: '100%',
+    height: '200%',
+    background: 'linear-gradient(135deg, #FF9671, #FF6F91)', // Vibrant hover gradient
+    transition: 'all 0.4s ease-in-out',
+    zIndex: -1,
+    transform: 'translateY(100%)',
+  },
+
+  '&:hover:before': {
+    transform: 'translateY(0)', // Slide the background on hover
+  },
+
+  '&:hover': {
+    borderColor: '#fff',
+    color: '#fff',
+    boxShadow: '0 20px 30px rgba(0, 0, 0, 0.35)', // Stronger hover shadow
+    animation: 'none', // Disable the pulsing effect on hover
+  },
+
+  '&:focus': {
+    outline: 'none',
+    borderColor: '#FF9671', // Focused border color
+    boxShadow: '0 0 0 4px rgba(255, 150, 113, 0.4)', // Glowing focus effect
+  },
+
+  '&:active': {
+    transform: 'scale(0.98)', // Pressed effect
+    boxShadow: '0 10px 15px rgba(0, 0, 0, 0.2)',
+  },
+
+  '@keyframes pulse': {
+    '0%': { boxShadow: '0 0 0 0 rgba(1, 88, 113, 0.7)' }, // Use #015871
+    '70%': { boxShadow: '0 0 0 25px rgba(1, 88, 113, 0)' },
+    '100%': { boxShadow: '0 0 0 0 rgba(1, 88, 113, 0)' },
+  },
+
+  animation: 'pulse 2s infinite', // Pulsing effect for the idle state
+});
+
 
 export const ButtonHomeDiv = styled('div')({
   display: "flex",
@@ -313,6 +461,29 @@ export const IconDiv = styled('div')({
     },
 
 })
+
+export const Popup = styled.div`
+  position: absolute;
+  top: -60px; 
+  left: 0px; 
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 5px;
+  z-index: 10;
+  min-width: 150px;
+
+  p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333; 
+  }
+`;
+
+
+
 
 export const AboutDiv = styled('div')<{id: string}>({
     display: "flex",
@@ -1341,3 +1512,20 @@ export const SkeletonDiv = styled('div')({
   borderRadius: "50%",
   animation: `${skeletonAnimation} 1s infinite ease-in-out`
 })
+
+export const StyledNavLink = styled(Link)`
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s, color 0.3s;
+
+  & > svg {
+    transition: transform 0.3s; 
+    color: #015871;
+  }
+
+  &:hover > svg {
+    transform: scale(1.2); 
+    color: #f4b039;
+  }`
+;
+

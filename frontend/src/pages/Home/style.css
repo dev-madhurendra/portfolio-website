@@ -1,25 +1,92 @@
 .wave {
+  animation-name: wave-bounce-animation; /* Refers to the custom keyframes below */
+  animation-duration: 1.5s; /* Duration of the bounce */
+  animation-iteration-count: infinite; /* Infinite bounce */
+  transform-origin: 70% 70%; /* Pivot point remains the same */
+  display: inline-block;
+  animation-timing-function: ease-in-out; /* Smooth easing for the bounce */
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate( 0.0deg) }
+ 10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+ 20% { transform: rotate(-8.0deg) }
+ 30% { transform: rotate(14.0deg) }
+ 40% { transform: rotate(-4.0deg) }
+ 50% { transform: rotate(10.0deg) }
+ 60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+100% { transform: rotate( 0.0deg) }
+}
+
+/* Keyframes for the bubble bounce effect */
+@keyframes wave-bounce-animation {
+  0%, 100% {
+    transform: scale(1); /* Starting and ending size */
+  }
+  50% {
+    transform: scale(1.2); /* Bubble expands at the peak of the bounce */
+  }
+}
+.wave:hover {
   animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
   animation-duration: 2.5s;        /* Change to speed up or slow down */
   animation-iteration-count: infinite;  /* Never stop waving :) */
   transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
   display: inline-block;
 }
-
-@keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
-}
-
 /* .home-section {
   position: absolute;
   width: 100vw;
   height: 100vh;
   top: 0;
 } */
+
+.particles-canvas {
+  position: absolute;
+  width: 100vw;
+  height: 800px;
+  top: 0;
+}
+
+
+.ocean { 
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #015871;
+  transform: rotate(180deg); /* Rotate the wave */
+}
+
+.ocean .wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -190px; /* Adjust this based on your wave height */
+  width: 6400px;
+  height: 198px;
+  animation: ocean-wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+.ocean .wave:nth-of-type(2) {
+  top: -165px; /* Adjust the second wave position */
+  animation: ocean-wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes ocean-wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}

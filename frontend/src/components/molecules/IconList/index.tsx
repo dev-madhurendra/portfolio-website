@@ -2,13 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import DarkModeToggle from '../../atoms/Toggle';
-import { IconContainer, LeftDiv, MiddleDiv, RightDiv, StyledNavIcon } from '../../../utils/styled';
+import { IconContainer, LeftDiv, MiddleDiv, RightDiv, StyledNavIcon, StyledNavLink } from '../../../utils/styled';
 import Icon from '../../atoms/Icon';
 import LogoGif from '../../../../public/gif/Logo.gif';
 import { useDarkMode } from '../../../services/customhook/useDarkMode';
 import { ICON_COMPONENT_HOME } from '../../../utils/constants';
-import { Link } from 'react-scroll';
 import { navLinks } from '../../../services/mocks/mocks';
+
 
 const HomeIconsList = () => {
   const { isDark, toggleMode } = useDarkMode();
@@ -20,9 +20,9 @@ const HomeIconsList = () => {
       </LeftDiv>
       <MiddleDiv>
         {navLinks.map((link, index) => (
-          <Link key={index} to={link.to} spy smooth duration={500}>
-            <FontAwesomeIcon icon={link.icon} />
-          </Link>
+          <StyledNavLink key={index} to={link.to} spy smooth duration={500}>
+            <FontAwesomeIcon icon={link.icon} className={`fwi-${index}`} />
+          </StyledNavLink>
         ))}
       </MiddleDiv>
       <RightDiv>

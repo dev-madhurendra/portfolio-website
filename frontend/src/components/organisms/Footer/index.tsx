@@ -5,6 +5,7 @@ import StyledSeparator from "../../atoms/StyledSeparator";
 import { Link } from "react-scroll";
 import {
     BLANK,
+    DEFAULT_QUOTES,
     DEVLOPER_NAME,
     HOME,
     MADHURENDRA_NATH_TIWARI,
@@ -31,6 +32,7 @@ const Footer = () => {
   const [quotes,setQuotes] = useState("")
   useEffect(() => {
       getQuotes().then((res) => {
+        console.log(res.data[0]?.content)
         setQuotes(res.data[0]?.content)
       }).catch((err) => {
         throw new Error("Error while fetching quotes " + err)    
@@ -82,7 +84,7 @@ const Footer = () => {
       </FoorterWrapper>
       <StyledHorizontalLine />
       <div>
-        <h3>{quotes}</h3>
+        <h3>{quotes ?? DEFAULT_QUOTES}</h3>
       </div>
     </FooterContainer>
   );
