@@ -45,4 +45,11 @@ Welcome to my personal portfolio website powered by FastAPI and Spring Boot for 
 
 ![Screenshot from 2024-02-25 18-07-48](https://github.com/dev-madhurendra/portfolio-website/assets/68775519/56f49e66-b34c-4a07-af29-cd23ca722f3d)
 
+## Portfolio Frontend - V3
+- Added more animations to the hero section
+- Add wave background
+- Change color combination
+
+[Screencast from 20-09-24 05:11:05 PM IST.webm](https://github.com/user-attachments/assets/983fe1ef-0fe8-446e-a3da-09f525ee13f8)
+
 
