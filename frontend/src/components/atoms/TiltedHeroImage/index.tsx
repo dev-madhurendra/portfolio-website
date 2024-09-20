@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import HeroSectionImage from '../../../../public/png/profile-pic.png'
-import './App.css'; 
 import { HERO_SECTION_IMAGE } from '../../../utils/constants';
 import { tiltedImageStyle } from '../../../services/mocks/mocks';
 
@@ -25,7 +24,6 @@ const TiltedHeroImage = () => {
 
   return (
     <div
-      className="tilt-container"
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setTilt({ x: 0, y: 0 })} 
     >

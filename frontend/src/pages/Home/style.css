@@ -34,40 +34,26 @@
   transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
   display: inline-block;
 }
-/* .home-section {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-} */
-
-.particles-canvas {
-  position: absolute;
-  width: 100vw;
-  height: 800px;
-  top: 0;
-}
-
 
 .ocean { 
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 0; /* Default for larger screens */
   left: 0;
   background: #015871;
   transform: rotate(180deg); /* Rotate the wave */
 }
 
-.ocean .wave {
+.ocean-wave {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
   position: absolute;
   top: -190px; /* Adjust this based on your wave height */
-  width: 6400px;
+  width: 200%; /* Default width for larger screens */
   height: 198px;
   animation: ocean-wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
 }
 
-.ocean .wave:nth-of-type(2) {
+.ocean-wave:nth-of-type(2) {
   top: -165px; /* Adjust the second wave position */
   animation: ocean-wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
   opacity: 1;
@@ -78,7 +64,7 @@
     margin-left: 0;
   }
   100% {
-    margin-left: -1600px;
+    margin-left: -100%; /* Adjust for smoother animation */
   }
 }
 
@@ -88,5 +74,12 @@
   }
   50% {
     transform: translate3d(0, 5px, 0);
+  }
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .ocean { 
+    display: none;
   }
 }

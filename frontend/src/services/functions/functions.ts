@@ -77,3 +77,13 @@ export const updateIndices =
     return { newStartIndex: startIndex, newEndIndex: endIndex };
 };
 
+export const handleOpenNav = (
+    display: string, 
+    setDisplay: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    if (display === 'none') {
+      setDisplay("flex");
+    } else {
+      setDisplay("none");
+    }
+  };

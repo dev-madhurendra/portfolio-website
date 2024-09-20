@@ -27,9 +27,8 @@ const AppContent: React.FC = () => {
   useEffect(() => {
     document.body.style.color = isDark ? "#fff" : "#000";
     document.body.style.fontWeight = isDark ? "500" : "inherit";
-    document.body.style.backgroundColor = isDark ? "#3A506C" : "#fff"; // Softer dark color
+    document.body.style.backgroundColor = isDark ? "whitesmoke" : "#fff";
   }, [isDark]);
-  
 
   return (
     <>

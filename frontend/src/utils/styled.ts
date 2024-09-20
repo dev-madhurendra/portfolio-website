@@ -50,14 +50,15 @@ export const IconContainer = styled('div')({
   fontSize: '1.5rem',
   marginLeft: '1.25rem',
   zIndex: '1111',
-  '@media (max-width: 468px)': {
+  '@media (max-width: 768px)': {
     display: 'flex', 
     flexDirection: 'row', 
     alignItems: 'center', 
     position: 'fixed', 
-    top: '0', 
-    left: '0', 
-    width: '80%', 
+    justifyContent: 'space-between',
+    top: '0',
+    width: '90vw', 
+    margin: 'none',
     height: 'auto', 
   },
 }, slideInAnimation);
@@ -70,49 +71,50 @@ export const LeftDiv = styled('div')({
   boxShadow: "rgba(0, 0, 0, 0.35) 0px 0.3125rem 0.9375rem",
   cursor: "pointer",
   borderRadius: "50%",
-  '@media (max-width: 468px)': {
-    display:"none"
-  },
-  
 })
-export const MiddleDiv = styled('div')({
+export const MiddleDiv = styled('div')<{mediaDisplay: string}>(({ mediaDisplay }) => ({
   display: "flex",
   justifyContent: "center",
-  flexDirection:"column",
+  flexDirection: "column",
   alignItems: "center",
-  gap:"0.625rem",
-  // boxShadow: "rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem",
+  gap: "0.625rem",
   padding: "1.25rem",
   cursor: "pointer",
-  // borderRadius: "3.125rem",
-  // backgroundColor: "rgba(255,255,255,0.1)",
-  // backdropFilter: "blur(0.0625rem)",
-  '@media (max-width: 468px)': {
-    flexDirection: 'row', 
-    position: 'fixed', 
-    overflow:"hidden",
-    top: '0', 
-    left: '0',
-    gap:"1.25rem",
-    width: '65%', 
-    height: 'auto', 
-    marginLeft: '0', 
-    marginTop: '0.3125rem', 
+  '@media (max-width: 768px)': {
+    position: 'absolute',
+    overflow: "hidden",
+    top: '30px',
+    left: '65%',
+    gap: "1.25rem",
+    width: '65%',
+    height: 'auto',
+    marginLeft: '0',
+    marginTop: '0.3125rem',
     padding: "1.25rem",
+    display: mediaDisplay, 
   },
-})
+}));
+
+
 export const RightDiv = styled('div')({
   display: "flex",
   justifyContent: "center",
-  flexDirection:"column",
+  flexDirection: "column",
   alignItems: "center",
   cursor: "pointer",
   gap: "1.25rem",
-  '@media (max-width: 468px)': {
-    marginLeft: "70%",
-    marginTop: '0.3125rem', 
+  '& svg:nth-of-type(3)': {
+    display: 'none', 
   },
-})
+  '@media (max-width: 768px)': {
+    marginTop: '0.3125rem', 
+    flexDirection: "row",
+    '& svg:nth-of-type(3)': {
+      display: 'flex', 
+    }
+  },
+});
+
 export const StyledNavIcon = {
   width: "4rem",
   height: "4rem",
@@ -135,7 +137,7 @@ export const HomeDiv = styled('div')<{ id: string }>({
     height: "100vh",
     width: "90vw",
     '@media (max-width: 900px)': {
-      flexDirection: 'column',
+      flexDirection: 'column-reverse',
       width: "100vw",
     },
     '@media (max-width:468px)': {
@@ -150,18 +152,6 @@ export const HomeDiv = styled('div')<{ id: string }>({
       marginLeft: "6vw",
     },
 })
-
-// export const RotatedBackground = styled('div')({
-//   position: 'absolute',
-//   top: 0,
-//   left: 0,
-//   width: '100%',
-//   height: '100%',
-//   background: `url(${WaveUrl})`,
-//   backgroundRepeat: 'no-repeat',
-//   backgroundSize: '100% 100%',
-//   transform: 'rotate(0deg)',
-// });
 
 export const RotatedBackground = styled('div')({
   position: 'absolute',
@@ -213,18 +203,6 @@ export const RotatedBackground = styled('div')({
       transform: 'translateX(-50%) translateY(0)', // Return to baseline
     },
   },
-});
-
-export const DarkRotatedBackground = styled('div')({
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  background: `url(${DarkModeWaveUrl})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: '100% 100%',
-  transform: 'rotate(0deg)',
 });
 
 export const LeftHomeDiv = styled('div')({
@@ -284,24 +262,35 @@ const tiltAnimation = keyframes`
   }
 `
 
-
-
 export const RightHomeDiv = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  '& img': {
-    animation: `${floatAnimation} 3s ease-in-out infinite, ${slideInFromRight} 3s ease-in-out, ${tiltAnimation} 5s infinite ease-in-out; `,
+  transformStyle: 'preserve-3d',
+  '& div': {
+    perspective: '1000px',
+  },
+  '& div > img': {
+    animation: `${floatAnimation} 3s ease-in-out infinite, 
+                ${slideInFromRight} 3s ease-in-out, 
+                ${tiltAnimation} 5s infinite ease-in-out; `,
     width: "31.25rem",
     height:"31.25rem",
     cursor: "pointer"
   },
   '@media (max-width: 900px)': {
-    '& img': {
+    '& div > img': {
       width: "20rem",
       height: "20rem",
       marginTop: "-4.5rem",
       marginLeft:"-7.5rem"
+    }
+  },
+  '@media (max-width: 768px)': {
+    '& div > img': {
+      width: "17rem",
+      height: "17rem",
+      marginLeft: "-0.75rem"
     }
   },
   '@media (max-width: 468px)': {
@@ -312,6 +301,8 @@ export const RightHomeDiv = styled('div')({
     }
   },
 });
+
+
 export const GreetHomeDiv = styled('div')({
     display: "flex",
     justifyContent: "flex-start",

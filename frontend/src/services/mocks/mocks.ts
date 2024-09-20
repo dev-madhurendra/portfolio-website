@@ -6,9 +6,7 @@ import { IFormField, SocialMediaUserData } from '../../interfaces/types';
 export const greetingsHello = [
   "Hola ", 
   "Bonjour",
-  "Hello ", 
-  "नमस्ते ",  // Hindi greeting
-  "नमस्कार "   // Another Hindi greeting
+  "Hello ",
 ];
 export const greets = [
   'Software Engineer',
@@ -32,10 +30,8 @@ export const nameType = [
   `System.out.println('👋 Madhurendra');`,  // Java
   `printf("👋 Madhurendra\\n");`,     // C
   `fmt.Println("👋 Madhurendra")`,    // Go
-  `Write-Host '👋 Madhurendra'`,      // PowerShell
   `Console.WriteLine("👋 Madhurendra");`, // C#
   `echo '👋 Madhurendra'`,            // Bash
-  `document.write('👋 Madhurendra');`, // HTML/JS
   `IO.puts "👋 Madhurendra"`,         // Elixir
   `say "👋 Madhurendra"`,             // Swift
   `echo '👋 Madhurendra!'`,           // Shell script

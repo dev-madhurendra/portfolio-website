@@ -28,8 +28,8 @@ const HomeSection = () => {
   return (      
       <HomeDiv id={'home'}>
         <div className="ocean">
-          <div className="wave"></div>
-          <div className="wave"></div>
+          <div className="ocean-wave"></div>
+          <div className="ocean-wave"></div>
         </div>
         <LeftHomeDiv>
           <GreetHomeDiv>
