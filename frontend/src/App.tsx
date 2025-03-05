@@ -25,10 +25,11 @@ const AppContent: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.color = isDark ? "#fff" : "#000";
+    document.body.style.color = isDark ? "#E4E6EB" : "#000";  // Light gray text in dark mode
     document.body.style.fontWeight = isDark ? "500" : "inherit";
-    document.body.style.backgroundColor = isDark ? "whitesmoke" : "#fff";
+    document.body.style.backgroundColor = isDark ? "#18191A" : "#fff"; // Dark grayish background
   }, [isDark]);
+  
 
   return (
     <>

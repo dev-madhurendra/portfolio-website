@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import MuiButton from '../components/atoms/Button'
-import DarkModeWaveUrl from "../../public/gif/Dark-Mode.gif"
+// import DarkModeWaveUrl from "../../public/gif/Dark-Mode.gif"
 import { keyframes } from '@emotion/react'
 import { Tab } from 'react-tabs'
 import { Link } from 'react-scroll'
@@ -535,7 +535,7 @@ export const RightAboutDiv = styled('div')({
 })
 export const SkillAboutDiv = styled('div')({
   display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
+  gridTemplateColumns: 'repeat(2, 1fr)',
   rowGap: '0.625rem',
   columnGap: '0.625rem',
   '@media (max-width: 800px)': {
@@ -816,11 +816,11 @@ export const StyledProjectContainer = styled('div')({
   alignItems: "center",
   flexDirection: "column",
   boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
   padding: "0 1.25rem 1.25rem 1.25rem",
   width: "25rem",
-  borderRadius: "0.625rem",
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  borderRadius: "1.5625rem",
   height: "500px",
   '@media (max-width: 468px)': {
     width: "90vw",
@@ -1016,7 +1016,7 @@ export const StyledTabPanelDiv = styled("div")({
   backdropFilter: 'blur(20px)',
   WebkitBackdropFilter: 'blur(20px)',
   padding: "50px",
-  borderRadius: "10px",
+  borderRadius: "30px",
   "@media (max-width: 468px)": {
     width:"90vw"
   },
@@ -1024,9 +1024,10 @@ export const StyledTabPanelDiv = styled("div")({
 
 export const StyledExpTechDiv = styled("div")({
   display: "grid",
-  gridTemplateColumns: "repeat(6, 1fr)", 
+  gridTemplateColumns: "repeat(4, 1fr)", 
   gridTemplateRows: "repeat(3, 1fr)", 
   gap: "10px",
+  width: "100%",
   "@media (max-width: 468px)": {
     gridTemplateColumns: "repeat(3, 1fr)", 
     gridTemplateRows: "repeat(3, 1fr)", 
@@ -1519,4 +1520,86 @@ export const StyledNavLink = styled(Link)`
     color: #f4b039;
   }`
 ;
+
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+`;
+
+export const ModalContent = styled.div`
+  width: 80%;
+  height: 80%;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+`;
+
+export const CloseButtonWrapper = styled.div`
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  z-index: 1100;
+`;
+
+export const CloseButton = styled.button`
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  
+  &:hover {
+    background: #cc0000;
+  }
+`;
+
+export const IframeWrapper = styled.iframe`
+  width: 100%;
+  height: 100%;
+  border: none;
+`;
+
+export const TerminalIcon = styled.div`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  animation: bubble 2s infinite ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  @keyframes bubble {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Only show for laptop screens and larger */
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`;
+
 

@@ -154,3 +154,39 @@
 ul {
   list-style: none;
 }
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #0073b1; /* LinkedIn Blue */
+  border-radius: 50%;
+  position: relative;
+  margin-top: 10px;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 110px;
+  background-color: #0073b1;
+  top: 15px;
+  left: 4px;
+}
+
+.timeline-content {
+  flex: 1;
+}

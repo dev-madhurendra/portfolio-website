@@ -61,3 +61,4 @@ export const SUBMIT = 'submit'
 export const POST = 'post'
 export const MULTI_PART_FORM_DATA = "multipart/form-data";
 export const HIRE_ME_HREF = '#contact';
+export const TERMINAL_PORTFOLIO_URL = "https://dev-madhurendra-terminal-portfolio.vercel.app/"

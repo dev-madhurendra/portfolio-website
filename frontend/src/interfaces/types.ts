@@ -1,5 +1,5 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { ButtonProps, ButtonPropsVariantOverrides, SxProps, TypographyProps } from "@mui/material";
+import { ButtonProps, SxProps, TypographyProps } from "@mui/material";
 import React, { CSSProperties, ReactElement } from "react";
 
 export interface IButtonProps extends ButtonProps {}
@@ -75,13 +75,17 @@ export interface ILinkProps {
   url: string;
   children: React.ReactNode;
 }
-export interface IExperience {
-  id: number;
+export interface ITitle {
+  title_id: number;
   title: string;
-  company: string;
-  location: string;
   start_date: string;
   end_date: string;
+}
+export interface IExperience {
+  id: number;
+  titles: ITitle[];
+  company: string;
+  location: string;
   description: string;
   technologies: string;
 }
@@ -112,4 +116,10 @@ export interface SocialMediaUserData {
   personalLink: string;
   orgLink: string;
   icon: IconDefinition;
+}
+
+export interface ITerminalModel {
+  isOpen: boolean;
+  onClose: () => void;
+  url: string;
 }
