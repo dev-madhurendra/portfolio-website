@@ -11,6 +11,7 @@ export interface IIconProps {
   width?: string
   height?: string
   src: string
+  alt?: string
   onClick?: () => void
 }
 export interface IDarkModeToggle {

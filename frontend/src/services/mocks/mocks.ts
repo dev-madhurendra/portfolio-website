@@ -116,15 +116,17 @@ export const formFields: IFormField[] = [
   { name: "Subject", type: "text", field: "subject" },
   { name: "Message", type: "textarea", field: "message" },
 ];
-export const navLinks  = [
-  { to: "home", icon: faHouse },
-  { to: "about", icon: faInfo },
-  { to: "education", icon: faUserGraduate },
-  { to: "skill", icon: faCode },
-  { to: "project", icon: faLaptopCode },
-  { to: "experience", icon: faBriefcase },
-  { to: "contact", icon: faEnvelope },
-]
+
+export const navLinks = [
+  { to: "home", label: "Home", icon: faHouse },
+  { to: "about", label: "About", icon: faInfo },
+  { to: "education", label: "Education", icon: faUserGraduate },
+  { to: "skill", label: "Skills", icon: faCode },
+  { to: "project", label: "Projects", icon: faLaptopCode },
+  { to: "experience", label: "Experience", icon: faBriefcase },
+  { to: "contact", label: "Contact", icon: faEnvelope },
+];
+
 
 export const initialContactFormData = {
   name: "",

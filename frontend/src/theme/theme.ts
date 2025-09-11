@@ -1,0 +1,148 @@
+export const appTheme = {
+  light: {
+    colors: {
+      // Elegant neutral palette with subtle accents
+      primary: '#2563EB', // Clean blue
+      primaryHover: '#1D4ED8',
+      primaryLight: '#DBEAFE',
+      secondary: '#64748B', // Sophisticated slate
+      secondaryHover: '#475569',
+      tertiary: '#059669', // Subtle emerald
+      accent: '#7C3AED', // Refined purple
+      
+      background: '#FFFFFF',
+      backgroundSecondary: '#FAFAFA',
+      navbar: 'rgba(255, 255, 255, 0.95)',
+      cardBg: 'rgba(255, 255, 255, 0.9)',
+
+      text: '#1F2937',
+      textSecondary: '#6B7280',
+      textLight: '#9CA3AF',
+
+      white: '#FFFFFF',
+      black: '#111827',
+      
+      // Refined gray palette
+      gray: {
+        50: '#FAFAFA',
+        100: '#F5F5F5',
+        200: '#E5E5E5',
+        300: '#D4D4D8',
+        400: '#A1A1AA',
+        500: '#71717A',
+        600: '#52525B',
+        700: '#3F3F46',
+        800: '#27272A',
+        900: '#18181B'
+      },
+
+      border: 'rgba(0, 0, 0, 0.05)',
+      shadow: 'rgba(0, 0, 0, 0.08)',
+
+      success: '#059669',
+      warning: '#FF8C42',
+      error: '#DC2626',
+      info: '#2563EB'
+    },
+    shadows: {
+      navbar: '0 1px 3px rgba(0, 0, 0, 0.05)',
+      dropdown: '0 10px 25px rgba(0, 0, 0, 0.1)',
+      logo: '0 2px 8px rgba(37, 99, 235, 0.15)',
+      logoHover: '0 4px 12px rgba(37, 99, 235, 0.2)',
+      card: '0 1px 3px rgba(0, 0, 0, 0.05)',
+      cardHover: '0 4px 12px rgba(0, 0, 0, 0.1)',
+      glow: '0 0 20px rgba(37, 99, 235, 0.1)'
+    },
+    gradients: {
+      // Subtle, elegant gradients
+      primary: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
+      secondary: 'linear-gradient(135deg, #64748B 0%, #475569 100%)',
+      tertiary: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
+      hero: 'linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%)',
+      background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)',
+      card: 'linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.8) 100%)',
+      text: 'linear-gradient(135deg, #1F2937 0%, #374151 100%)',
+      accent: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
+      subtle: 'linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%)',
+      ocean: 'linear-gradient(135deg, #0EA5E9 0%, #2563EB 100%)',
+      sage: 'linear-gradient(135deg, #059669 0%, #065F46 100%)'
+    },
+    fonts: {
+      body: `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`,
+      heading: `'Cal Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif`,
+    }
+  },
+
+  dark: {
+    colors: {
+      // Sophisticated dark palette
+      primary: '#3B82F6', // Refined blue
+      primaryHover: '#2563EB',
+      primaryLight: '#1E3A8A',
+      secondary: '#94A3B8', // Light slate
+      secondaryHover: '#CBD5E1',
+      tertiary: '#10B981', // Emerald
+      accent: '#8B5CF6', // Purple
+      
+      background: '#0F172A',
+      backgroundSecondary: '#1E293B',
+      navbar: 'rgba(15, 23, 42, 0.95)',
+      cardBg: 'rgba(30, 41, 59, 0.7)',
+
+      text: '#F8FAFC',
+      textSecondary: '#CBD5E1',
+      textLight: '#94A3B8',
+
+      white: '#FFFFFF',
+      black: '#000000',
+      
+      gray: {
+        50: '#0F172A',
+        100: '#1E293B',
+        200: '#334155',
+        300: '#475569',
+        400: '#64748B',
+        500: '#94A3B8',
+        600: '#CBD5E1',
+        700: '#E2E8F0',
+        800: '#F1F5F9',
+        900: '#F8FAFC'
+      },
+
+      border: 'rgba(241, 238, 238, 0.3)',
+      shadow: 'rgba(0, 0, 0, 0.3)',
+
+      success: '#10B981',
+      warning: '#f3c87dff',
+      error: '#EF4444',
+      info: '#3B82F6'
+    },
+    shadows: {
+      navbar: '0 4px 12px rgba(0, 0, 0, 0.3)',
+      dropdown: '0 12px 32px rgba(0, 0, 0, 0.4)',
+      logo: '0 4px 12px rgba(59, 130, 246, 0.2)',
+      logoHover: '0 8px 20px rgba(59, 130, 246, 0.3)',
+      card: '0 4px 12px rgba(0, 0, 0, 0.2)',
+      cardHover: '0 8px 25px rgba(0, 0, 0, 0.3)',
+      glow: '0 0 20px rgba(59, 130, 246, 0.2)'
+    },
+    gradients: {
+      // Sophisticated dark gradients
+      primary: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
+      secondary: 'linear-gradient(135deg, #94A3B8 0%, #64748B 100%)',
+      tertiary: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+      hero: 'linear-gradient(135deg, #1E293B 0%, #334155 100%)',
+      background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)',
+      card: 'linear-gradient(145deg, rgba(30,41,59,0.8) 0%, rgba(51,65,85,0.6) 100%)',
+      text: 'linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%)',
+      accent: 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)',
+      subtle: 'linear-gradient(135deg, #334155 0%, #475569 100%)',
+      ocean: 'linear-gradient(135deg, #0EA5E9 0%, #3B82F6 100%)',
+      sage: 'linear-gradient(135deg, #10B981 0%, #065F46 100%)'
+    },
+    fonts: {
+      body: `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`,
+      heading: `'Cal Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif`,
+    }
+  }
+};
