@@ -10,9 +10,9 @@ import {
 import AboutSectionImage from "../../../../public/gif/HeroSectionAnimation.gif";
 import { techIcons } from "../../../services/mocks/mocks";
 
-const EnhancedProfileSection = () => {
+const EnhancedProfileSection = ({ className }: { className?: string }) => {
   return (
-    <ProfileSection>
+    <ProfileSection className={className}>
       <ProfileImageWrapper>
         <ProfileRings>
           <div className="ring ring-1"></div>

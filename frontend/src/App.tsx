@@ -12,7 +12,6 @@ import Project from "./pages/Project";
 import Experience from "./pages/Experience";
 import ContactMeSection from "./pages/ContactMe";
 import Footer from "./components/organisms/Footer";
-import PortfolioSkeletonLoader from "./components/molecules/SkeletonLoader";
 import "./App.css";
 
 const AppContent: React.FC = () => {
@@ -22,7 +21,7 @@ const AppContent: React.FC = () => {
   return (
     <ThemeProvider theme={isDark ? appTheme.dark : appTheme.light}>
       {isLoading ? (
-        <PortfolioSkeletonLoader />
+        <></>
       ) : (
         <>
           <Navbar />

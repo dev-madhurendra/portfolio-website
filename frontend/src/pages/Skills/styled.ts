@@ -182,14 +182,6 @@ export const GradientText = styled.span`
   -webkit-text-fill-color: transparent;
 `;
 
-export const Subtitle = styled.p`
-  font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-`;
-
 // Skills Grid
 export const SkillsGrid = styled.div`
   display: grid;

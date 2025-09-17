@@ -12,6 +12,23 @@ const fadeInLeft = keyframes`
   }
 `;
 
+const slideUp = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px); /* slight overshoot */
+  }
+  80% {
+    transform: translateY(4px);  /* bounce down */
+  }
+  100% {
+    transform: translateY(0);    /* settle */
+  }
+`;
+
 const fadeInRight = keyframes`
   from { 
     opacity: 0; 
@@ -65,6 +82,232 @@ const subtleShift = keyframes`
   25% { transform: translateX(2px) translateY(-2px); }
   50% { transform: translateX(-1px) translateY(2px); }
   75% { transform: translateX(-2px) translateY(-1px); }
+`;
+
+const dropBounce = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-850px);
+    animation-timing-function: ease-in;
+  }
+  22% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  32% {
+    transform: translateY(-100px);
+    animation-timing-function: ease-in;
+  }
+  42% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  48% {
+    transform: translateY(-50px);
+    animation-timing-function: ease-in;
+  }
+  54% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  58% {
+    transform: translateY(-25px);
+    animation-timing-function: ease-in;
+  }
+  62% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  68% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  70% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  74% {
+    transform: translateY(-3px);
+  }
+  76% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+`;
+
+const slideInFromLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+`;
+
+const slideInFromTop = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+`;
+
+const slideInFromBottom = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+`;
+
+const elasticBounce = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(-90deg);
+  }
+  70% {
+    transform: scale(0.9) rotate(-45deg);
+  }
+  85% {
+    transform: scale(1.05) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+`;
+
+const popRotate = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+    filter: blur(5px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.15) rotate(-10deg);
+    filter: blur(1px);
+  }
+  80% {
+    transform: scale(0.95) rotate(5deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px);
+  }
+`;
+
+const magneticAttraction = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateX(200px) translateY(-200px) rotate(360deg);
+  }
+  30% {
+    opacity: 0.7;
+    transform: scale(0.7) translateX(100px) translateY(-100px) rotate(180deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) translateX(20px) translateY(-20px) rotate(45deg);
+  }
+  80% {
+    transform: scale(0.95) translateX(-5px) translateY(5px) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0) rotate(0deg);
+  }
+`;
+
+const glitchEntrance = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scaleX(0.5);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateX(20px) scaleX(1.2);
+    filter: hue-rotate(180deg);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateX(-10px) scaleX(0.8);
+    filter: hue-rotate(270deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(5px) scaleX(1.1);
+    filter: hue-rotate(360deg);
+  }
+  80% {
+    transform: translateX(-2px) scaleX(0.95);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+    filter: hue-rotate(0deg);
+  }
+`;
+
+const waveRipple = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0) rotateY(180deg);
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.7);
+  }
+  30% {
+    opacity: 0.7;
+    transform: scale(0.8) rotateY(90deg);
+    box-shadow: 0 0 0 20px rgba(74, 144, 226, 0.3);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotateY(30deg);
+    box-shadow: 0 0 0 40px rgba(74, 144, 226, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+  }
 `;
 
 export const HeroContainer = styled.section`
@@ -512,6 +755,12 @@ export const ButtonGroup = styled.div`
   gap: 1rem;
   margin-bottom: 2.5rem;
 
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: ${slideUp} 4s ease-out forwards;
+  }
+
   /* Large Desktop */
   @media (min-width: 1920px) {
     gap: 1.5rem;
@@ -895,14 +1144,15 @@ export const RightSection = styled.div`
   }
 `;
 
-export const HeroImageContainer = styled.div`
+export const HeroImageContainer = styled.div<{
+  visible?: boolean;
+}>`
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
   &::before {
     content: "";
     position: absolute;
@@ -941,12 +1191,16 @@ export const HeroImage = styled.img`
   position: relative;
   z-index: 1;
 
+  &.visible {
+    animation: ${dropBounce} 5s ease-out forwards;
+  }
+
   @media (max-width: 768px) {
     width: clamp(220px, 45vw, 780px);
   }
 `;
 
-export const FloatingCard = styled.div`
+export const FloatingCard = styled.div<{ animationType?: string }>`
   position: absolute;
   background: ${({ theme }) => theme.colors.cardBg};
   padding: 0.75rem 1.25rem;
@@ -963,6 +1217,9 @@ export const FloatingCard = styled.div`
   transition: all 0.3s ease;
   z-index: 10;
 
+  opacity: 0;
+  transform: scale(0);
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.cardHover};
@@ -972,96 +1229,81 @@ export const FloatingCard = styled.div`
     font-size: 1.1rem;
   }
 
-  &.card-1 {
-    top: 0%;
-    right: -20%;
-    animation: ${float} 3s ease-in-out infinite 0s;
+  /* Card base positions */
+  &.card-1 { top: 0%; right: -20%; }
+  &.card-2 { top: 50%; left: -20%; }
+  &.card-3 { bottom: 0%; right: -20%; }
+  &.card-4 { top: 0%; left: -20%; }
+  &.card-5 { bottom: -15%; left: 35%; }
+  &.card-6 { top: -15%; left: 35%; }
+
+  /* =============== Animations when .visible is added =============== */
+  &.visible.card-1 {
+    animation: ${slideInFromTop} 0.8s ease-out 0.2s forwards,
+               ${float} 3s ease-in-out infinite 1s;
   }
-  &.card-2 {
-    top: 50%;
-    left: -20%;
-    animation: ${floatReverse} 3s ease-in-out infinite 0.5s;
+  &.visible.card-2 {
+    animation: ${slideInFromLeft} 0.8s ease-out 0.4s forwards,
+               ${floatReverse} 3s ease-in-out infinite 1.2s;
   }
-  &.card-3 {
-    bottom: 0%;
-    right: -20%;
-    animation: ${float} 3s ease-in-out infinite 1s;
+  &.visible.card-3 {
+    animation: ${slideInFromBottom} 0.8s ease-out 0.6s forwards,
+               ${float} 3s ease-in-out infinite 1.4s;
   }
-  &.card-4 {
-    top: 0%;
-    left: -20%;
-    animation: ${floatReverse} 3s ease-in-out infinite 1.5s;
+  &.visible.card-4 {
+    animation: ${elasticBounce} 1s ease-out 0.8s forwards,
+               ${floatReverse} 3s ease-in-out infinite 1.6s;
   }
-  &.card-5 {
-    bottom: -15%;
-    left: 35%;
-    animation: ${float} 3s ease-in-out infinite 2s;
+  &.visible.card-5 {
+    animation: ${popRotate} 1s ease-out 1s forwards,
+               ${float} 3s ease-in-out infinite 1.8s;
   }
-  &.card-6 {
-    top: -15%;
-    left: 35%;
-    animation: ${float} 3s ease-in-out infinite 2.5s;
+  &.visible.card-6 {
+    animation: ${magneticAttraction} 1.2s ease-out 1.2s forwards,
+               ${float} 3s ease-in-out infinite 2s;
   }
 
+  /* Optional: alternative animation modes */
+  &.visible.glitch {
+    animation: ${glitchEntrance} 0.8s ease-out forwards;
+  }
+  &.visible.wave {
+    animation: ${waveRipple} 1s ease-out forwards;
+  }
+  &.visible.magnetic {
+    animation: ${magneticAttraction} 1.2s ease-out forwards;
+  }
+
+  /* ================= Responsive ================= */
   @media (max-width: 1024px) {
     padding: 0.6rem 1rem;
     font-size: 0.8rem;
-
-    &.card-1 {
-      right: -10%;
-      top: 5%;
-    }
-    &.card-2 {
-      left: -10%;
-      top: 50%;
-    }
-    &.card-3 {
-      right: -8%;
-      bottom: 5%;
-    }
+    &.card-1 { right: -10%; top: 5%; }
+    &.card-2 { left: -10%; top: 50%; }
+    &.card-3 { right: -8%; bottom: 5%; }
   }
 
   @media (max-width: 768px) {
     padding: 0.5rem 0.8rem;
     font-size: 0.7rem;
     gap: 0.4rem;
-    &.card-1 {
-      right: 15%;
-      top: 20%;
-    }
-    &.card-2 {
-      left: 45%;
-      top: 55%;
-    }
-    &.card-3 {
-      right: 15%;
-      bottom: 20%;
-    }
+    &.card-1 { right: 15%; top: 20%; }
+    &.card-2 { left: 45%; top: 55%; }
+    &.card-3 { right: 15%; bottom: 20%; }
     &.card-4,
     &.card-5,
-    &.card-6 {
-      display: none;
-    }
+    &.card-6 { display: none; }
   }
 
   @media (max-width: 480px) {
     padding: 0.4rem 0.6rem;
     font-size: 0.65rem;
-
-    &.card-1 {
-      right: 5%;
-      top: -5%;
-    }
-    &.card-2 {
-      left: -35%;
-      top: 30%;
-    }
-    &.card-3 {
-      right: 5%;
-      bottom: -5%;
-    }
+    &.card-1 { right: 5%; top: -5%; }
+    &.card-2 { left: -35%; top: 30%; }
+    &.card-3 { right: 5%; bottom: -5%; }
   }
 `;
+
 
 export const FloatingElements = styled.div`
   position: absolute;
@@ -1072,16 +1314,16 @@ export const FloatingElements = styled.div`
   pointer-events: none;
 `;
 
-// Clean scroll indicator
-export const ScrollIndicator = styled.div`
+export const ScrollIndicator = styled.a`
   position: absolute;
   bottom: 2rem;
-  left: 50%;
+  left: 48%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   gap: 0.5rem;
   color: ${({ theme }) => theme.colors.textLight};
   cursor: pointer;
@@ -1112,7 +1354,6 @@ export const ScrollIndicator = styled.div`
   }
 `;
 
-// Subtle gradient orbs
 export const GradientOrb = styled.div`
   position: absolute;
   border-radius: 50%;

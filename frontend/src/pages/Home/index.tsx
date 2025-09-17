@@ -32,12 +32,15 @@ import {
 import { getHomeContent } from "../../services/apicalls/getcall";
 import { HomeContent } from "./interfaces";
 import SkeletonHomeSection from "../../components/atoms/SkeletonLoader";
+import { FullScreenLoader } from "../../components/atoms/SkeletonLoader/styled";
+import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
 
 const Home = () => {
   const typedRef = useRef(null);
   const greetingRef = useRef(null);
   const [homeData, setHomeData] = useState<HomeContent | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const { ref, isVisible } = useAnimateOnScroll(homeData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,12 +78,14 @@ const Home = () => {
   if (loading)
     return (
       <HeroContainer id="home">
-        <SkeletonHomeSection />
+        <FullScreenLoader>
+          <SkeletonHomeSection />
+        </FullScreenLoader>
       </HeroContainer>
     );
 
   return (
-    <HeroContainer id="home">
+    <HeroContainer id="home" className={isVisible ? "visible" : ""} ref={ref}>
       <GradientOrb className="orb-1" />
       <GradientOrb className="orb-2" />
       <GradientOrb className="orb-3" />
@@ -117,7 +122,7 @@ const Home = () => {
             ))}
           </SocialLinks>
 
-          <ButtonGroup>
+          <ButtonGroup className = {isVisible ? "visible" : ""}>
             <PrimaryButton href={homeData?.hireMeLink}>
               <FontAwesomeIcon icon={faUser} />
               Hire Me
@@ -130,16 +135,17 @@ const Home = () => {
         </LeftSection>
 
         <RightSection>
-          <HeroImageContainer>
+          <HeroImageContainer >
             <HeroImage
               src={homeData?.imageUrl}
+              className = {isVisible ? "visible" : ""}
               alt="Madhurendra Nath Tiwari - Software Engineer"
             />
           </HeroImageContainer>
 
           <FloatingElements>
             {floatingCards.map((card, index) => (
-              <FloatingCard key={index} className={`card-${index + 1}`}>
+              <FloatingCard key={index} className={`card-${index + 1} ${isVisible ? "visible" : ""}`}>
                 <div className="icon">{card.icon}</div>
                 <span>{card.label}</span>
               </FloatingCard>
@@ -148,7 +154,7 @@ const Home = () => {
         </RightSection>
       </HeroContent>
 
-      <ScrollIndicator>
+      <ScrollIndicator href="#about">
         <FontAwesomeIcon icon={faMouse} />
         <span>Scroll to explore</span>
       </ScrollIndicator>

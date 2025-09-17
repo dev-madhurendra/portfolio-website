@@ -10,41 +10,57 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: scale(1); }
 `;
 
+const slideInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100%); 
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+`;
+
+
 export const NavbarWrapper = styled.nav`
-  width: 80%;
+  width: 50%;
   height: 70px;
-  max-width: 1200px;
-  margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 1rem;
   background: ${({ theme }) => theme.colors.navbar};
-  border-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   box-shadow: ${({ theme }) => theme.shadows.navbar};
   position: fixed;
   top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0; /* always stick to left */
   z-index: 999;
   transition: all 0.3s ease;
   backdrop-filter: blur(20px);
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-right: 1px solid ${({ theme }) => theme.colors.border};
   font-family: ${({ theme }) => theme.fonts.body};
+  animation: ${slideInLeft} 2s ease-out forwards;
 
   @media (max-width: 768px) {
-    width: 80%;
-    padding: 0.75rem 1.5rem;
-    border-radius: 40px;
+    width: 50%;   
+    height: 60px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
   }
 
   @media (max-width: 480px) {
+    width: 50%;   
     height: 50px;
-    width: 80%;
     padding: 0.5rem 1rem;
-    border-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
   }
 `;
+
 
 export const LogoContainer = styled.div`
   display: flex;
@@ -68,6 +84,7 @@ export const LinksWrapper = styled.ul<{ open?: boolean }>`
   display: flex;
   list-style: none;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
   margin: 0;
   padding: 0;
@@ -75,19 +92,23 @@ export const LinksWrapper = styled.ul<{ open?: boolean }>`
 
   @media (max-width: 768px) {
     position: absolute;
-    top: calc(100% + 1rem);
-    right: 1rem;
-    left: 1rem;
+    top: 100%;
+    left: 0;
+    width: 100%;
     flex-direction: column;
     background: ${({ theme }) => theme.colors.navbar};
-    border-radius: 25px;
-    padding: 1.5rem;
+    border-radius: 50px;
+    justify-content: center;
+    padding: 1rem;
     box-shadow: ${({ theme }) => theme.shadows.dropdown};
     backdrop-filter: blur(20px);
     border: 1px solid ${({ theme }) => theme.colors.border};
     display: ${({ open }) => (open ? "flex" : "none")};
     animation: ${slideDown} 0.3s ease;
-    gap: 0.5rem;
+  }
+
+  @media (max-width: 468px) {
+    border: 1px solid ${({ theme }) => theme.colors.border};
   }
 `;
 
@@ -112,7 +133,7 @@ export const LinkItem = styled.li<{ active?: boolean }>`
     font-family: ${({ theme }) => theme.fonts.body};
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -147,10 +168,10 @@ export const LinkItem = styled.li<{ active?: boolean }>`
 
     a {
       width: 90%;
-      padding: 0.6rem 1rem;  
-      font-size: 0.85rem;    
-      margin: 0.3rem auto;   
-      border-radius: 24px;   
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      margin: 0.3rem auto;
+      border-radius: 24px;
     }
   }
 `;

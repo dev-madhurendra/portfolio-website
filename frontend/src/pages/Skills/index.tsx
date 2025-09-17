@@ -23,7 +23,6 @@ import {
   SkillsBadge,
   MainTitle,
   GradientText,
-  Subtitle,
   SkillsGrid,
   CategoryHeader,
   CategoryIcon,
@@ -48,6 +47,7 @@ import {
   SkillsSection,
 } from "./styled";
 import SkillsPageSection from "../../components/organisms/SkillSection";
+import { Subtitle } from "../../globalStyled";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);

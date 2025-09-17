@@ -37,6 +37,7 @@ import {
   Institution
 } from "./styled";
 import MyChip from "../../components/atoms/Chip";
+import { GradientText, MainTitle, StyledBadgeIcon, TitleBadge } from "../../globalStyled";
 
 
 const Education = () => {
@@ -103,7 +104,8 @@ const Education = () => {
     <EducationSection id="education">
       <Container>
         <Header>
-          <Title>Education</Title>
+          <TitleBadge><StyledBadgeIcon>🎓</StyledBadgeIcon>Education</TitleBadge>
+          <MainTitle>Learning<GradientText>& growth</GradientText></MainTitle>
           <Subtitle>My academic journey and continuous learning path</Subtitle>
         </Header>
 

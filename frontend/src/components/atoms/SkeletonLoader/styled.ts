@@ -21,7 +21,7 @@ export const SkeletonPlaceholder = styled.div<{ width?: string; height?: string 
 `;
 
 export const SkeletonHeroContainer = styled.div`
-  position: relative;
+  position: fixed;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -271,4 +271,18 @@ export const SkeletonScrollText = styled.div`
   
   width: 100px;
   height: 14px;
+`;
+
+
+export const FullScreenLoader = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: ${({ theme }) => theme.colors.background || "#fff"};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 `;

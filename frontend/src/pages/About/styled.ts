@@ -1,7 +1,19 @@
 import styled, { keyframes } from "styled-components";
 
-// Animations
-
+const slideInFromLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(20px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+`;
 
 const moveChip = keyframes`
   0% {
@@ -12,27 +24,6 @@ const moveChip = keyframes`
   }
 `;
 
-const fadeInUp = keyframes`
-  from { 
-    opacity: 0; 
-    transform: translateY(30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-`;
-
-const fadeInLeft = keyframes`
-  from { 
-    opacity: 0; 
-    transform: translateX(-30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
-  }
-`;
 
 const scaleIn = keyframes`
   from { 
@@ -45,19 +36,9 @@ const scaleIn = keyframes`
   }
 `;
 
-const progressAnimation = keyframes`
-  from { width: 0%; }
-  to { width: var(--progress-width); }
-`;
-
 const float = keyframes`
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(180deg); }
-`;
-
-const shimmer = keyframes`
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
 `;
 
 const pulse = keyframes`
@@ -72,13 +53,12 @@ const subtleMove = keyframes`
   75% { transform: translate(-5px, -3px) rotate(0.5deg); }
 `;
 
-// Main Container
 export const AboutContainer = styled.section`
   position: relative;
   min-height: 100vh;
   padding: 6rem 2rem;
   position: relative;
-  background:  ${({ theme }) => theme.gradients.backgroundRev};
+  background: ${({ theme }) => theme.gradients.backgroundRev};
   overflow: hidden;
 
   /* Large Desktop */
@@ -134,10 +114,21 @@ export const AnimatedBackground = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 20%, rgba(1, 4, 183, 0.03) 0%, transparent 60%),
-      radial-gradient(circle at 80% 80%, rgba(223, 5, 5, 0.03) 0%, transparent 60%),
-      radial-gradient(circle at 60% 40%, rgba(0, 17, 6, 0.02) 0%, transparent 60%);
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(1, 4, 183, 0.03) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(223, 5, 5, 0.03) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at 60% 40%,
+        rgba(0, 17, 6, 0.02) 0%,
+        transparent 60%
+      );
   }
 `;
 
@@ -176,9 +167,18 @@ export const FloatingOrb = styled.div`
   }
 
   @media (max-width: 768px) {
-    &.orb-1 { width: 120px; height: 120px; }
-    &.orb-2 { width: 100px; height: 100px; }
-    &.orb-3 { width: 80px; height: 80px; }
+    &.orb-1 {
+      width: 120px;
+      height: 120px;
+    }
+    &.orb-2 {
+      width: 100px;
+      height: 100px;
+    }
+    &.orb-3 {
+      width: 80px;
+      height: 80px;
+    }
   }
 `;
 
@@ -210,16 +210,17 @@ export const SectionHeader = styled.div`
   }
 `;
 
-export const SectionTitle = styled.h2<{isVisible: boolean}>`
+export const SectionTitle = styled.h2<{ isVisible: boolean }>`
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 800;
   margin-bottom: 1rem;
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.heading};
   letter-spacing: -0.025em;
-  
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateY(0)' : 'translateY(30px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateY(0)" : "translateY(30px)"};
   transition: all 0.6s ease-out;
 
   @media (min-width: 1920px) {
@@ -232,15 +233,16 @@ export const SectionTitle = styled.h2<{isVisible: boolean}>`
   }
 `;
 
-export const SectionSubtitle = styled.p<{isVisible: boolean}>`
+export const SectionSubtitle = styled.p<{ isVisible: boolean }>`
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: ${({ theme }) => theme.colors.textSecondary};
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
-  
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateY(0)' : 'translateY(20px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateY(0)" : "translateY(20px)"};
   transition: all 0.6s ease-out 0.2s;
 
   @media (min-width: 1920px) {
@@ -285,15 +287,17 @@ export const AboutGrid = styled.div`
   }
 `;
 
-export const LeftColumn = styled.div<{isVisible: boolean}>`
+export const LeftColumn = styled.div<{ isVisible: boolean }>`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateX(0)' : 'translateX(-30px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateX(0)" : "translateX(-30px)"};
   transition: all 0.8s ease-out 0.3s;
 `;
 
-export const RightColumn = styled.div<{isVisible: boolean}>`
+export const RightColumn = styled.div<{ isVisible: boolean }>`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateX(0)' : 'translateX(30px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateX(0)" : "translateX(30px)"};
   transition: all 0.8s ease-out 0.5s;
 
   @media (max-width: 1024px) {
@@ -307,7 +311,7 @@ export const AboutText = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   margin-bottom: 1.5rem;
   font-weight: 400;
-  text-align: 
+  text-align: justify;
 
   &:last-of-type {
     margin-bottom: 2.5rem;
@@ -316,7 +320,7 @@ export const AboutText = styled.p`
   @media (min-width: 1920px) {
     font-size: clamp(1.1rem, 1.5vw, 1.25rem);
     margin-bottom: 2rem;
-    
+
     &:last-of-type {
       margin-bottom: 3rem;
     }
@@ -324,7 +328,7 @@ export const AboutText = styled.p`
 
   @media (max-width: 768px) {
     margin-bottom: 1.25rem;
-    
+
     &:last-of-type {
       margin-bottom: 2rem;
     }
@@ -333,7 +337,7 @@ export const AboutText = styled.p`
   @media (max-width: 480px) {
     margin-bottom: 1rem;
     line-height: 1.7;
-    
+
     &:last-of-type {
       margin-bottom: 1.5rem;
     }
@@ -354,8 +358,7 @@ export const StatsGrid = styled.div`
   }
 `;
 
-
-export const StatCard = styled.div<{delay: number}>`
+export const StatCard = styled.div<{ delay: number }>`
   background: ${({ theme }) => theme.colors.cardBg};
   padding: 1.5rem;
   border-radius: 12px;
@@ -364,9 +367,12 @@ export const StatCard = styled.div<{delay: number}>`
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
-  
-  animation: ${scaleIn} 0.6s ease-out ${({ delay }) => delay}ms both;
   transition: all 0.3s ease;
+
+  &.visible {
+    animation: ${scaleIn} 0.6s ease-out forwards;
+    animation-delay: ${({ delay }) => delay}s;
+  }
 
   &::before {
     content: "";
@@ -518,83 +524,12 @@ export const SkillsList = styled.div`
   }
 `;
 
-export const SkillItem = styled.div<{delay: number}>`
-  opacity: 0;
-  transform: translateY(20px);
-  animation: ${fadeInUp} 0.6s ease-out ${({ delay }) => delay}ms forwards;
-
-  .skill-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-
-    .skill-name {
-      font-weight: 500;
-      color: ${({ theme }) => theme.colors.text};
-      font-size: 0.95rem;
-    }
-
-    .skill-percentage {
-      font-size: 0.875rem;
-      color: ${({ theme }) => theme.colors.primary};
-      font-weight: 600;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .skill-info {
-      .skill-name {
-        font-size: 0.9rem;
-      }
-
-      .skill-percentage {
-        font-size: 0.8rem;
-      }
-    }
-  }
-`;
-
-export const SkillBar = styled.div`
-  height: 6px;
-  background: ${({ theme }) => theme.colors.border};
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
-`;
-
-export const SkillProgress = styled.div<{delay: number, width: number}>`
-  height: 100%;
-  background: ${({ theme }) => theme.gradients.primary};
-  border-radius: 3px;
-  position: relative;
-  --progress-width: ${({ width }) => width}%;
-  animation: ${progressAnimation} 1s ease-out ${({ delay }) => delay}ms forwards;
-  width: 0%;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent
-    );
-    animation: ${shimmer} 2s infinite;
-    animation-delay: ${({ delay }) => delay + 500}ms;
-  }
-`;
-
-export const ExperienceSection = styled.div<{isVisible: boolean}>`
+export const ExperienceSection = styled.div<{ isVisible: boolean }>`
   margin-bottom: 4rem;
-  
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateY(0)' : 'translateY(30px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateY(0)" : "translateY(30px)"};
   transition: all 0.8s ease-out 0.7s;
 
   .timeline {
@@ -635,144 +570,12 @@ export const ExperienceSection = styled.div<{isVisible: boolean}>`
   }
 `;
 
-export const TimelineItem = styled.div<{delay: number}>`
-  position: relative;
-  padding-bottom: 2rem;
-  
-  opacity: 0;
-  transform: translateX(-20px);
-  animation: ${fadeInLeft} 0.6s ease-out ${({ delay }) => delay}ms forwards;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -2.5rem;
-    top: 0.5rem;
-    width: 10px;
-    height: 10px;
-    background: ${({ theme }) => theme.colors.primary};
-    border-radius: 50%;
-    border: 3px solid ${({ theme }) => theme.colors.background};
-    box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.border};
-  }
-
-  &:last-child {
-    padding-bottom: 0;
-  }
-
-  @media (max-width: 768px) {
-    &::before {
-      left: -2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    padding-bottom: 1.5rem;
-
-    &::before {
-      left: -1.5rem;
-      width: 8px;
-      height: 8px;
-    }
-  }
-`;
-
-export const TimelineDate = styled.div`
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.colors.primary};
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-
-  @media (min-width: 1920px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.8rem;
-  }
-`;
-
-export const TimelineContent = styled.div`
-  background: ${({ theme }) => theme.colors.cardBg};
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  backdrop-filter: blur(10px);
-  position: relative;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.shadows.cardHover};
-    border-color: ${({ theme }) => theme.colors.primary}40;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -8px;
-    top: 1rem;
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 8px solid ${({ theme }) => theme.colors.cardBg};
-  }
-
-  @media (min-width: 1920px) {
-    padding: 2rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 1.25rem;
-
-    &::before {
-      left: -6px;
-      border-right-width: 6px;
-      border-top-width: 6px;
-      border-bottom-width: 6px;
-    }
-  }
-`;
-
-export const TimelineTitle = styled.h4`
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 0.75rem;
-
-  @media (min-width: 1920px) {
-    font-size: 1.25rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-`;
-
-export const TimelineDescription = styled.p`
-  font-size: 0.95rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  line-height: 1.6;
-
-  @media (min-width: 1920px) {
-    font-size: 1.05rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-`;
-
-export const PersonalSection = styled.div<{isVisible: boolean}>`
+export const PersonalSection = styled.div<{ isVisible: boolean }>`
   margin-bottom: 4rem;
-  
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateY(0)' : 'translateY(30px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateY(0)" : "translateY(30px)"};
   transition: all 0.8s ease-out 0.9s;
 
   @media (min-width: 1920px) {
@@ -810,7 +613,7 @@ export const PersonalGrid = styled.div`
   }
 `;
 
-export const PersonalCard = styled.div<{delay: number}>`
+export const PersonalCard = styled.div<{ delay: number }>`
   background: ${({ theme }) => theme.colors.cardBg};
   padding: 2rem;
   border-radius: 16px;
@@ -819,10 +622,12 @@ export const PersonalCard = styled.div<{delay: number}>`
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
-  
+
   opacity: 0;
   transform: translateY(30px);
-  animation: ${scaleIn} 0.6s ease-out ${({ delay }) => delay}ms forwards;
+  &.visible {
+    animation: ${scaleIn} 0.6s ease-out ${({ delay }) => delay}ms forwards;
+  }
   transition: all 0.4s ease;
 
   &::before {
@@ -932,7 +737,7 @@ export const PersonalDesc = styled.p`
   }
 `;
 
-export const CTASection = styled.div<{isVisible: boolean}>`
+export const CTASection = styled.div<{ isVisible: boolean }>`
   text-align: center;
   background: ${({ theme }) => theme.colors.cardBg};
   padding: 3rem 2rem;
@@ -941,9 +746,10 @@ export const CTASection = styled.div<{isVisible: boolean}>`
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
-  
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateY(0)' : 'translateY(30px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateY(0)" : "translateY(30px)"};
   transition: all 0.8s ease-out 1.1s;
 
   &::before {
@@ -1132,19 +938,24 @@ export const WhatIDoSection = styled.div`
   margin: 4rem 0;
   overflow: hidden;
   position: relative;
+
+  &.visible {
+    animation: ${slideInFromLeft} 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
 `;
 
 export const WhatIDoTitle = styled.h3<{
-  isVisible: boolean
+  isVisible: boolean;
 }>`
   font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
   color: white;
   text-align: center;
   margin-bottom: 3rem;
-  
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? 'translateY(0)' : 'translateY(30px)')};
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateY(0)" : "translateY(30px)"};
   transition: all 0.6s ease-out;
 `;
 
@@ -1152,7 +963,13 @@ export const ChipsContainer = styled.div`
   position: relative;
   height: 200px;
   overflow: hidden;
-  mask: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
 
   @media (max-width: 768px) {
     height: 150px;
@@ -1166,22 +983,4 @@ export const ChipRow = styled.div<{ duration: number; delay: number }>`
 
   animation: ${moveChip} ${({ duration }) => duration}s linear infinite;
   animation-delay: ${({ delay }) => delay}s;
-`;
-
-export const StyledBadgeIcon = styled.span`
-  font-size: 1.1rem;
-`;
-
-export const AboutBadge = styled.div`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: ${({ theme }) => theme.gradients.primary};
-  color: ${({ theme }) => theme.colors.white};
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
 `;

@@ -10,10 +10,10 @@
     "name": "Madhurendra",
     "introText": "I craft beautiful digital experiences that connect brands with their audiences. Specialized in creating intuitive interfaces and compelling user journeys that drive engagement and conversion.",
     "typedRoles": [
-      "Software Engineer",
-      "Full Stack Developer",
-      "UI/UX Enthusiast",
-      "Tech Explorer"
+      "Software",
+      "Frotnend",
+      "UI/UX",
+      "Backend"
     ],
     "greeting": ["Hello, I'm", "Welcome", "Hola", "Bonjour"],
     "imageUrl": "/gif/HeroSectionAnimationLight.gif",

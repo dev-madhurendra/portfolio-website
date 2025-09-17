@@ -67,12 +67,32 @@ export const iconGlow = keyframes`
   }
 `;
 
+const slideInFromLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(20px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+`;
+
+
 export const ProfileSection = styled.div`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
+
+  &.visible {
+    animation: ${slideInFromLeft} 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
 `;
 
 export const ProfileImageWrapper = styled.div`

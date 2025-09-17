@@ -45,10 +45,6 @@ const Navbar: React.FC = () => {
 
   return (
     <NavbarWrapper>
-      <LogoContainer>
-          <LikeFeature />
-      </LogoContainer>
-
       <LinksWrapper open={mobileMenu}>
         {navLinks.map((link) => (
           <LinkItem key={link.to} active={activeLink === link.to}>
@@ -72,6 +68,9 @@ const Navbar: React.FC = () => {
           className="menu-toggle"
           onClick={() => setMobileMenu(!mobileMenu)}
         />
+        <LogoContainer>
+          <LikeFeature />
+        </LogoContainer>
       </RightActions>
     </NavbarWrapper>
   );

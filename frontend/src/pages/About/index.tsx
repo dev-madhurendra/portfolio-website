@@ -1,15 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faRocket,
-  faAward,
-} from "@fortawesome/free-solid-svg-icons";
+import { faRocket, faAward } from "@fortawesome/free-solid-svg-icons";
 import {
   AboutContainer,
   AboutContent,
   SectionHeader,
-  SectionTitle,
-  SectionSubtitle,
   AboutGrid,
   LeftColumn,
   RightColumn,
@@ -37,45 +32,34 @@ import {
   WhatIDoSection,
 } from "./styled";
 import AboutSectionProfile from "../../components/molecules/AboutSectionProfile";
-import {
-  Code
-} from "lucide-react";
+import { Code } from "lucide-react";
 import MyChip from "../../components/atoms/Chip";
 import { AboutData } from "./interfaces";
 import { getAboutContent } from "../../services/apicalls/getcall";
 import { chipData, personalTraits } from "../../services/mocks/mocks";
+import {
+  GradientText,
+  MainTitle,
+  StyledBadgeIcon,
+  Subtitle,
+  TitleBadge,
+} from "../../globalStyled";
+import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
   const [aboutData, setAboutData] = useState<AboutData | null>(null);
+
+  const { ref, isVisible } = useAnimateOnScroll(aboutData, { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1.0] });
 
   useEffect(() => {
     getAboutContent().then((res) => {
       setAboutData(res.data[0]);
-      console.log(res.data[0]);
+      console.log(res.data[0].stats);
     });
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <AboutContainer id="about" ref={sectionRef}>
+    <AboutContainer id="about" ref={ref}>
       <AnimatedBackground>
         <FloatingOrb className="orb-1" />
         <FloatingOrb className="orb-2" />
@@ -84,18 +68,24 @@ const About = () => {
 
       <AboutContent>
         <SectionHeader>
-          <SectionTitle isVisible={isVisible}>
-            About <HighlightText>Me</HighlightText>
-          </SectionTitle>
-          <SectionSubtitle isVisible={isVisible}>
+          <TitleBadge>
+            <StyledBadgeIcon>🧑‍💻</StyledBadgeIcon>
+            About Me
+          </TitleBadge>
+
+          <MainTitle>
+            Who I Am <GradientText>Beyond Code</GradientText>
+          </MainTitle>
+          <Subtitle isVisible={isVisible}>
             {aboutData?.shortDescription}
-          </SectionSubtitle>
+          </Subtitle>
         </SectionHeader>
 
         <AboutGrid>
           <LeftColumn isVisible={isVisible}>
-            <AboutSectionProfile />
-            <WhatIDoSection>
+            "
+            <AboutSectionProfile className={isVisible ? "visible" : ""} />
+            <WhatIDoSection className={isVisible ? "visible" : ""}>
               <ChipsContainer>
                 {Array.from({ length: 3 }).map((_, rowIndex) => {
                   const chipsPerRow = 7;
@@ -110,7 +100,7 @@ const About = () => {
                       style={{ top: `${rowIndex * 60}px` }}
                     >
                       {[...row, ...row].map((chip, chipIndex) => {
-                        const IconComponent = chip.icon || Code; 
+                        const IconComponent = chip.icon || Code;
                         return (
                           <MyChip
                             key={chipIndex}
@@ -145,12 +135,23 @@ const About = () => {
             </AboutText>
 
             <StatsGrid>
-              {aboutData?.stats.map((stat, index) => (
-                <StatCard key={index} delay={index * 100}>
-                  <StatNumber>{stat.number}</StatNumber>
-                  <StatLabel>{stat.label}</StatLabel>
-                </StatCard>
-              ))}
+              <StatsGrid>
+                {aboutData?.stats ? (
+                  aboutData.stats.map((stat, index) => (
+                    <StatCard
+                      key={index}
+                      delay={index * 0.1}
+                    >
+                      <StatNumber>{stat.number}</StatNumber>
+                      <StatLabel>{stat.label}</StatLabel>
+                    </StatCard>
+                  ))
+                ) : (
+                  <>
+                    <h1>Loading.....</h1>
+                  </>
+                )}
+              </StatsGrid>
             </StatsGrid>
           </RightColumn>
         </AboutGrid>
@@ -162,7 +163,11 @@ const About = () => {
           </CategoryTitle>
           <PersonalGrid>
             {personalTraits.map((trait, index) => (
-              <PersonalCard key={index} delay={index * 150}>
+              <PersonalCard
+                key={index}
+                delay={index * 150}
+                className={isVisible ? "visible" : ""}
+              >
                 <PersonalIcon>
                   <FontAwesomeIcon icon={trait.icon} />
                 </PersonalIcon>
