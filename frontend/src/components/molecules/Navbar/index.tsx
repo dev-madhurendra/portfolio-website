@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import DarkModeToggle from "../../atoms/Toggle";
 import { navLinks } from "../../../services/mocks/mocks";
 import { useDarkMode } from "../../../services/customhook/useDarkMode";
-import { LinkItem, LinksWrapper, LogoContainer, NavbarWrapper, RightActions, StyledLogo } from "./styled";
-import NavLogo from "../../../../public/png/MNT_Logo.png"
+import {
+  LinkItem,
+  LinksWrapper,
+  LogoContainer,
+  NavbarWrapper,
+  RightActions,
+} from "./styled";
 import LikeFeature from "../../organisms/LikeWrapper";
 
 const Navbar: React.FC = () => {
@@ -13,12 +18,35 @@ const Navbar: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const { isDark, toggleMode } = useDarkMode();
 
+  useEffect(() => {
+    const sections = navLinks.map((link) => document.getElementById(link.to));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <NavbarWrapper>
       <LogoContainer>
-        <div className="logo-circle">
-          <StyledLogo src={NavLogo} width="200px" height="200px" />
-        </div>
+          <LikeFeature />
       </LogoContainer>
 
       <LinksWrapper open={mobileMenu}>
@@ -30,7 +58,7 @@ const Navbar: React.FC = () => {
                 setActiveLink(link.to);
                 setMobileMenu(false);
               }}
-            > 
+            >
               <span>{link.label}</span>
             </a>
           </LinkItem>

@@ -4,7 +4,7 @@ import { DarkModeProvider } from "./services/context/DarkMode";
 import { useDarkMode } from "./services/customhook/useDarkMode";
 import { appTheme } from "./theme/theme";
 import Navbar from "./components/molecules/Navbar";
-import HomeSection from "./pages/Home";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Education from "./pages/Education";
 import SkillSection from "./pages/Skills";
@@ -26,7 +26,7 @@ const AppContent: React.FC = () => {
       ) : (
         <>
           <Navbar />
-          <HomeSection />
+          <Home />
           <About />
           <Education />
           <SkillSection />

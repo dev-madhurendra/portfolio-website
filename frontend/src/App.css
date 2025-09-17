@@ -6,8 +6,14 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
 
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .reveal{

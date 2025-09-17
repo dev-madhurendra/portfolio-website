@@ -11,6 +11,7 @@ const MyChip = (props: IChipProp) =>
         variant={props.variant}
         onClick={props.onClick}
         color={props.color}
+        avatar={props.avatar}
         sx={{ ...props.style, backgroundColor: getRandomLightColor() }}
         data-testid={MUI_CHIP}
     />

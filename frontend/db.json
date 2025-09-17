@@ -1,69 +1,93 @@
 {
-  "admin":[
-      {
-          "id":1,
-          "username":"dev.madhurendra@gmail.com",
-          "password":"Madhurendra@123Portfolio"
-      }
+  "admin": [
+    {
+      "id": 1,
+      "username": "dev.madhurendra@gmail.com",
+      "password": "Madhurendra@123Portfolio"
+    }
   ],
-  "about":[
-      {
-          "id": 1,
-          "images": "image_url1",
-          "name": "John Doe",
-          "title": "Software Engineer",
-          "description": "Experienced software engineer with expertise in various technologies.",
-          "resumeLink": "resume_link1"
-      }
+  "home": {
+    "name": "Madhurendra",
+    "introText": "I craft beautiful digital experiences that connect brands with their audiences. Specialized in creating intuitive interfaces and compelling user journeys that drive engagement and conversion.",
+    "typedRoles": [
+      "Software Engineer",
+      "Full Stack Developer",
+      "UI/UX Enthusiast",
+      "Tech Explorer"
+    ],
+    "greeting": ["Hello, I'm", "Welcome", "Hola", "Bonjour"],
+    "imageUrl": "/gif/HeroSectionAnimationLight.gif",
+    "resumeUrl": "/resume.pdf",
+    "hireMeLink": "#contact"
+  },
+  "about": [
+    {
+      "id": 1,
+      "image": "https://yourcdn.com/profile.jpg",
+      "name": "Madhurendra Nath Tiwari",
+      "title": "Full Stack Developer",
+      "shortDescription": "Passionate developer crafting digital experiences with precision and creativity.",
+      "longDescription": [
+        "I'm a passionate full-stack developer with over 3 years of experience creating digital solutions that make a difference. My journey in tech started with a curiosity about how things work, and has evolved into a deep love for building scalable, user-centric applications.",
+        "I specialize in modern web technologies including React, Node.js, and cloud platforms. What sets me apart is my attention to detail, commitment to clean code, and ability to translate complex requirements into intuitive user experiences."
+      ],
+      "stats": [
+        { "number": "3+", "label": "Years Experience" },
+        { "number": "50+", "label": "Projects Completed" },
+        { "number": "25+", "label": "Happy Clients" },
+        { "number": "100%", "label": "Satisfaction Rate" }
+      ],
+      "resumeLink": "https://yourcdn.com/resume.pdf"
+    }
   ],
-  "educations":[
-      {
-        "id": 1,
-        "title": "High School",
-        "school": "Kuri Lal Rungta Saraswati Vidya Mandir",
-        "location": "Khalilabad, S.K.N., UP, 272175",
-        "start_date": "2014",
-        "end_date": "2016",
-        "percentage": "87.5%",
-        "description": "Completed high school with a focus on mathematics and physics."
-      },
-      {
-        "id": 2,
-        "title": "Intermediate",
-        "school": "S N Singh Inter College",
-        "location": "Panchpedwa, S.K.N., UP, 272175",
-        "start_date": "2016",
-        "end_date": "2018",
-        "percentage": "88.8%",
-        "description": "Completed intermediate with a focus on mathematics, physics and chemistry."
-      },
-      {
-        "id": 3,
-        "title": "B.Tech.",
-        "school": "United College Of Engineering & Research",
-        "location": "Naini,Prayagraj,UP,211010",
-        "start_date": "2019",
-        "end_date": "2023",
-        "percentage": "72%",
-        "description": "Explored on developing problem-solving skills through the study of algorithms and data structures.."
-      }
+  "educations": [
+    {
+      "id": 1,
+      "title": "High School",
+      "school": "Kuri Lal Rungta Saraswati Vidya Mandir",
+      "location": "Khalilabad, S.K.N., UP, 272175",
+      "start_date": "2014",
+      "end_date": "2016",
+      "percentage": "87.5%",
+      "description": "Completed high school with a focus on mathematics and physics."
+    },
+    {
+      "id": 2,
+      "title": "Intermediate",
+      "school": "S N Singh Inter College",
+      "location": "Panchpedwa, S.K.N., UP, 272175",
+      "start_date": "2016",
+      "end_date": "2018",
+      "percentage": "88.8%",
+      "description": "Completed intermediate with a focus on mathematics, physics and chemistry."
+    },
+    {
+      "id": 3,
+      "title": "B.Tech.",
+      "school": "United College Of Engineering & Research",
+      "location": "Naini,Prayagraj,UP,211010",
+      "start_date": "2019",
+      "end_date": "2023",
+      "percentage": "72%",
+      "description": "Explored on developing problem-solving skills through the study of algorithms and data structures.."
+    }
   ],
   "experiences": [
     {
       "id": 1,
       "titles": [
-          {
-              "title_id":1,
-              "title": "Software Engineer 1",
-              "start_date": "2025-01-01",
-              "end_date": ""
-          },
-          {
-              "title_id":2,
-              "title": "Associate Software Engineer",
-              "start_date": "2023-02-06",
-              "end_date": "2025-01-01"
-          }
+        {
+          "title_id": 1,
+          "title": "Software Engineer 1",
+          "start_date": "2025-01-01",
+          "end_date": ""
+        },
+        {
+          "title_id": 2,
+          "title": "Associate Software Engineer",
+          "start_date": "2023-02-06",
+          "end_date": "2025-01-01"
+        }
       ],
       "company": "ZeMoSo Labs Pvt. Ltd.",
       "location": "Remote, Hyderabad, India",
@@ -71,112 +95,120 @@
       "technologies": "Java, Python, JavaScript, React, Spring, C++, HTML, CSS, Node.js, Sonar Cloud, GraphQL, MySQL, MongoDB, Kafka, Golang, API & Swagger, Agile, GCP, Node, Docker, C#, Azure, Kubernetes, GraphQL, TypeScript, Rust, Redux, FastAPI,Git,HTML,CSS,RTL,JUNIT,MOCKITO,Cypress"
     }
   ],
-  "skills":[
-      {"id": 1, "name": "Cpp", "tags": ["Programming Language"]},
-      {"id": 2, "name": "Python", "tags": ["Programming Language"]},
-      {"id": 3, "name": "Java", "tags": ["Programming Language", "Backend"]},
-      {"id": 4, "name": "JavaScript", "tags": ["Programming Language", "Frontend"]},
-      {"id": 5, "name": "TypeScript", "tags": ["Programming Language", "Frontend"]},
-      {"id": 6, "name": "Golang", "tags": ["Programming Language"]},
-      {"id": 7, "name": "HTML", "tags": ["Frontend"]},
-      {"id": 8, "name": "CSS", "tags": ["Frontend"]},
-      {"id": 9, "name": "React", "tags": ["Frontend", "Framework"]},
-      {"id": 10, "name": "NextJS", "tags": ["Frontend", "Framework"]},
-      {"id": 11, "name": "Spring", "tags": ["Backend", "Framework"]},
-      {"id": 12, "name": "SpringBoot", "tags": ["Backend", "Framework"]},
-      {"id": 13, "name": "NodeJS", "tags": ["Backend"]},
-      {"id": 14, "name": "Express", "tags": ["Backend", "Framework"]},
-      {"id": 15, "name": "Django", "tags": ["Backend", "Framework"]},
-      {"id": 16, "name": "FastAPI", "tags": ["Backend", "Framework"]},
-      {"id": 17, "name": "Atomic Design", "tags": ["Design Pattern"]},
-      {"id": 18, "name": "Design Pattern", "tags": ["Design Pattern"]},
-      {"id": 19, "name": "Java SOLID", "tags": ["Design Pattern"]},
-      {"id": 20, "name": "Jest", "tags": ["Testing"]},
-      {"id": 21, "name": "JUNIT", "tags": ["Testing"]},
-      {"id": 22, "name": "Mockito", "tags": ["Testing"]},
-      {"id": 23, "name": "MySQL", "tags": ["Database"]},
-      {"id": 24, "name": "MongoDB", "tags": ["Database"]},
-      {"id": 25, "name": "SQLite", "tags": ["Database"]},
-      {"id": 26, "name": "Storybook", "tags": ["Frontend"]},
-      {"id": 27, "name": "GraphQL", "tags": ["Frontend", "Others"]},
-      {"id": 28, "name": "OOPs", "tags": ["Design Pattern"]},
-      {"id": 30, "name": "Git", "tags": ["Tools"]},
-      {"id": 31, "name": "Bootstrap", "tags": ["Frontend", "Framework"]},
-      {"id": 32, "name": "MaterialUI", "tags": ["Frontend", "Framework"]},
-      {"id": 34, "name": "VSCode", "tags": ["Tools"]},
-      {"id": 35, "name": "Atom", "tags": ["Tools"]},
-      {"id": 36, "name": "Vercel", "tags": ["Tools"]},
-      {"id": 37, "name": "Idea", "tags": ["Tools"]},
-      {"id": 38, "name": "Postman", "tags": ["Tools"]},
-      {"id": 39, "name": "Swagger", "tags": ["Others"]},
-      {"id": 40, "name": "Others Deisgn", "tags": ["Others"]},
-      {"id": 41, "name": "DB Design", "tags": ["Others"]},
-      {"id": 42, "name": "Webpack", "tags": ["Frontend"]},
-      {"id": 43, "name": "Vite", "tags": ["Frontend"]},
-      {"id": 44, "name": "Tailwind", "tags": ["Frontend"]},
-      {"id": 45, "name": "Pug", "tags": ["Frontend"]},
-      {"id": 46, "name": "Powershell", "tags": ["Tools"]},
-      {"id": 47, "name": "Maven", "tags": ["Backend"]},
-      {"id": 48, "name": "Markdown", "tags": ["Others"]},
-      {"id": 49, "name": "Hibernate", "tags": ["Database"]},
-      {"id": 50, "name": "Heroku", "tags": ["Tools"]},
-      {"id": 51, "name": "Github", "tags": ["Tools"]},
-      {"id": 52, "name": "React Testing Library", "tags": ["Testing"]},
-      {"id": 53, "name": "Rest", "tags": ["Others"]},
-      {"id": 54, "name": "DBMS", "tags": ["Others"]},
-      {"id": 55, "name": "DSA", "tags": ["Others"]},
-      {"id": 56, "name": "OOPs", "tags": ["Others"]},
-      {"id": 57, "name": "Sonarcloud", "tags": ["Others"]},
-      {"id": 58, "name": "CI/CD", "tags": ["Others"]},
-      {"id": 59, "name": "Linux", "tags": ["Others"]},
-      {"id": 60, "name": "Windows", "tags": ["Others"]},
-      {"id": 61, "name": "Agile", "tags": ["Others"]},
-      {"id": 62, "name": "Jira", "tags": ["Others"]},
-      {"id": 63, "name": "Auth0", "tags": ["Others"]},
-      {"id": 63, "name": "Google Cloud Platform", "tags": ["Others"]},
-      {"id": 64, "name": "Kafka", "tags": ["Others"]}, 
-      
-{
-"id": 65,
-"name": "Selenium",
-"tags": ["QA"]
-},
-{
-"id": 66,
-"name": "Cypress",
-"tags": ["QA"]
-},
-{
-"id": 67,
-"name": "Karate",
-"tags": ["QA"]
-},
-{
-"id": 68,
-"name": "JMeter",
-"tags": ["QA"]
-},
-{
-"id": 69,
-"name": "BDD Cucumber",
-"tags": ["QA"]
-},
-{
-"id": 70,
-"name": "Database Testing",
-"tags": ["QA"]
-},
-{
-"id": 71,
-"name": "Manual Testing",
-"tags": ["QA"]
-},
-{
-"id": 72,
-"name": "Security Testing",
-"tags": ["QA"]
-}
-    ],
+  "skills": [
+    { "id": 1, "name": "Cpp", "tags": ["Programming Language"] },
+    { "id": 2, "name": "Python", "tags": ["Programming Language"] },
+    { "id": 3, "name": "Java", "tags": ["Programming Language", "Backend"] },
+    {
+      "id": 4,
+      "name": "JavaScript",
+      "tags": ["Programming Language", "Frontend"]
+    },
+    {
+      "id": 5,
+      "name": "TypeScript",
+      "tags": ["Programming Language", "Frontend"]
+    },
+    { "id": 6, "name": "Golang", "tags": ["Programming Language"] },
+    { "id": 7, "name": "HTML", "tags": ["Frontend"] },
+    { "id": 8, "name": "CSS", "tags": ["Frontend"] },
+    { "id": 9, "name": "React", "tags": ["Frontend", "Framework"] },
+    { "id": 10, "name": "NextJS", "tags": ["Frontend", "Framework"] },
+    { "id": 11, "name": "Spring", "tags": ["Backend", "Framework"] },
+    { "id": 12, "name": "SpringBoot", "tags": ["Backend", "Framework"] },
+    { "id": 13, "name": "NodeJS", "tags": ["Backend"] },
+    { "id": 14, "name": "Express", "tags": ["Backend", "Framework"] },
+    { "id": 15, "name": "Django", "tags": ["Backend", "Framework"] },
+    { "id": 16, "name": "FastAPI", "tags": ["Backend", "Framework"] },
+    { "id": 17, "name": "Atomic Design", "tags": ["Design Pattern"] },
+    { "id": 18, "name": "Design Pattern", "tags": ["Design Pattern"] },
+    { "id": 19, "name": "Java SOLID", "tags": ["Design Pattern"] },
+    { "id": 20, "name": "Jest", "tags": ["Testing"] },
+    { "id": 21, "name": "JUNIT", "tags": ["Testing"] },
+    { "id": 22, "name": "Mockito", "tags": ["Testing"] },
+    { "id": 23, "name": "MySQL", "tags": ["Database"] },
+    { "id": 24, "name": "MongoDB", "tags": ["Database"] },
+    { "id": 25, "name": "SQLite", "tags": ["Database"] },
+    { "id": 26, "name": "Storybook", "tags": ["Frontend"] },
+    { "id": 27, "name": "GraphQL", "tags": ["Frontend", "Others"] },
+    { "id": 28, "name": "OOPs", "tags": ["Design Pattern"] },
+    { "id": 30, "name": "Git", "tags": ["Tools"] },
+    { "id": 31, "name": "Bootstrap", "tags": ["Frontend", "Framework"] },
+    { "id": 32, "name": "MaterialUI", "tags": ["Frontend", "Framework"] },
+    { "id": 34, "name": "VSCode", "tags": ["Tools"] },
+    { "id": 35, "name": "Atom", "tags": ["Tools"] },
+    { "id": 36, "name": "Vercel", "tags": ["Tools"] },
+    { "id": 37, "name": "Idea", "tags": ["Tools"] },
+    { "id": 38, "name": "Postman", "tags": ["Tools"] },
+    { "id": 39, "name": "Swagger", "tags": ["Others"] },
+    { "id": 40, "name": "Others Deisgn", "tags": ["Others"] },
+    { "id": 41, "name": "DB Design", "tags": ["Others"] },
+    { "id": 42, "name": "Webpack", "tags": ["Frontend"] },
+    { "id": 43, "name": "Vite", "tags": ["Frontend"] },
+    { "id": 44, "name": "Tailwind", "tags": ["Frontend"] },
+    { "id": 45, "name": "Pug", "tags": ["Frontend"] },
+    { "id": 46, "name": "Powershell", "tags": ["Tools"] },
+    { "id": 47, "name": "Maven", "tags": ["Backend"] },
+    { "id": 48, "name": "Markdown", "tags": ["Others"] },
+    { "id": 49, "name": "Hibernate", "tags": ["Database"] },
+    { "id": 50, "name": "Heroku", "tags": ["Tools"] },
+    { "id": 51, "name": "Github", "tags": ["Tools"] },
+    { "id": 52, "name": "React Testing Library", "tags": ["Testing"] },
+    { "id": 53, "name": "Rest", "tags": ["Others"] },
+    { "id": 54, "name": "DBMS", "tags": ["Others"] },
+    { "id": 55, "name": "DSA", "tags": ["Others"] },
+    { "id": 56, "name": "OOPs", "tags": ["Others"] },
+    { "id": 57, "name": "Sonarcloud", "tags": ["Others"] },
+    { "id": 58, "name": "CI/CD", "tags": ["Others"] },
+    { "id": 59, "name": "Linux", "tags": ["Others"] },
+    { "id": 60, "name": "Windows", "tags": ["Others"] },
+    { "id": 61, "name": "Agile", "tags": ["Others"] },
+    { "id": 62, "name": "Jira", "tags": ["Others"] },
+    { "id": 63, "name": "Auth0", "tags": ["Others"] },
+    { "id": 63, "name": "Google Cloud Platform", "tags": ["Others"] },
+    { "id": 64, "name": "Kafka", "tags": ["Others"] },
+
+    {
+      "id": 65,
+      "name": "Selenium",
+      "tags": ["QA"]
+    },
+    {
+      "id": 66,
+      "name": "Cypress",
+      "tags": ["QA"]
+    },
+    {
+      "id": 67,
+      "name": "Karate",
+      "tags": ["QA"]
+    },
+    {
+      "id": 68,
+      "name": "JMeter",
+      "tags": ["QA"]
+    },
+    {
+      "id": 69,
+      "name": "BDD Cucumber",
+      "tags": ["QA"]
+    },
+    {
+      "id": 70,
+      "name": "Database Testing",
+      "tags": ["QA"]
+    },
+    {
+      "id": 71,
+      "name": "Manual Testing",
+      "tags": ["QA"]
+    },
+    {
+      "id": 72,
+      "name": "Security Testing",
+      "tags": ["QA"]
+    }
+  ],
   "projects": [
     {
       "id": 1,
@@ -194,7 +226,7 @@
       "technologies": "HTML, CSS, JavaScript",
       "projectImage": "https://i.pinimg.com/736x/bb/e3/58/bbe35876fdca69cce431ef383f1987bf.jpg",
       "githubUrl": "https://github.com/dev-madhurendra/portfolio-website.git",
-      "deployedUrl":"https://dev-madhurendra.github.io/Madhurendra-Portfolio/"
+      "deployedUrl": "https://dev-madhurendra.github.io/Madhurendra-Portfolio/"
     },
     {
       "id": 3,
@@ -222,7 +254,7 @@
       "projectImage": "",
       "githubUrl": "https://github.com/dev-madhurendra/Contact-Management-System.git",
       "deployedUrl": ""
-    }, 
+    },
     {
       "id": 6,
       "title": "Monkey Type Clone",
@@ -249,7 +281,7 @@
       "projectImage": "https://i.pinimg.com/564x/be/3e/3d/be3e3d999c85782ab1db1053b7f4847c.jpg",
       "githubUrl": "https://github.com/dev-madhurendra/Sorting-Visualizer",
       "deployedUrl": ""
-    }, 
+    },
     {
       "id": 9,
       "title": "Amplifier",
@@ -260,25 +292,24 @@
       "deployedUrl": ""
     }
   ],
-  "messages":[
-      {
-        "id": 1,
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "description": "Description for John Doe"
-      },
-      {
-        "id": 2,
-        "name": "Jane Doe",
-        "email": "jane.doe@example.com",
-        "description": "Description for Jane Doe"
-      },
-      {
-        "id": 3,
-        "name": "Alice Smith",
-        "email": "alice.smith@example.com",
-        "description": "Description for Alice Smith"
-      }
+  "messages": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "description": "Description for John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "description": "Description for Jane Doe"
+    },
+    {
+      "id": 3,
+      "name": "Alice Smith",
+      "email": "alice.smith@example.com",
+      "description": "Description for Alice Smith"
+    }
   ]
-    
 }

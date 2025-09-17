@@ -1,16 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled, { keyframes } from "styled-components";
-
-// Refined, subtle animations
-const fadeInUp = keyframes`
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-`;
 
 const fadeInLeft = keyframes`
   from { 
@@ -34,9 +23,20 @@ const fadeInRight = keyframes`
   }
 `;
 
+const pulse = keyframes`
+  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.2); }
+  70% { box-shadow: 0 0 0 8px rgba(0,0,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+`;
+
+const sway = keyframes`
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+`;
+
 const float = keyframes`
-  0%,100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 `;
 
 const floatReverse = keyframes`
@@ -48,16 +48,6 @@ const wave = keyframes`
   0%,100% { transform: rotate(0deg); }
   25% { transform: rotate(10deg); }
   75% { transform: rotate(-5deg); }
-`;
-
-const pulse = keyframes`
-  0%,100% { transform: scale(1); opacity: 0.1; }
-  50% { transform: scale(1.05); opacity: 0.05; }
-`;
-
-const gentleGlow = keyframes`
-  0%,100% { box-shadow: 0 0 10px rgba(37, 99, 235, 0.1); }
-  50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.2); }
 `;
 
 const bounce = keyframes`
@@ -77,7 +67,6 @@ const subtleShift = keyframes`
   75% { transform: translateX(-2px) translateY(-1px); }
 `;
 
-// Clean, minimal container with enhanced responsiveness
 export const HeroContainer = styled.section`
   height: 100vh;
   min-height: 100vh;
@@ -451,6 +440,7 @@ export const IntroText = styled.p`
   margin-bottom: 2rem;
   max-width: 500px;
   font-weight: 400;
+  text-align: justify;
 
   strong {
     color: ${({ theme }) => theme.colors.text};
@@ -791,7 +781,6 @@ export const SocialLinks = styled.div`
     justify-content: center;
     flex-direction: row;
     gap: 0.875rem;
-    margin-top: 0.875rem;
   }
 
   /* Large Mobile */
@@ -800,7 +789,6 @@ export const SocialLinks = styled.div`
     justify-content: center;
     flex-direction: row;
     gap: 0.75rem;
-    margin-top: 0.75rem;
   }
 
   /* Standard Mobile */
@@ -809,7 +797,6 @@ export const SocialLinks = styled.div`
     justify-content: center;
     flex-direction: row;
     gap: 0.625rem;
-    margin-top: 0.625rem;
   }
 
   /* Small Mobile */
@@ -818,7 +805,7 @@ export const SocialLinks = styled.div`
     justify-content: center;
     flex-direction: row;
     gap: 0.5rem;
-    margin-top: 0.5rem;
+    margin-top: 0.625rem;
   }
 
   /* Landscape adjustments */
@@ -836,6 +823,7 @@ export const SocialLinks = styled.div`
 `;
 
 export const SocialIcon = styled.a`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -843,71 +831,61 @@ export const SocialIcon = styled.a`
   height: 44px;
   background: ${({ theme }) => theme.colors.backgroundSecondary};
   color: ${({ theme }) => theme.colors.textSecondary};
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   border: 1px solid ${({ theme }) => theme.colors.border};
   font-size: 1.1rem;
-  transition: all 0.2s ease;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:nth-child(1) {
+    animation: ${float} 1s linear infinite;
+  }
+  &:nth-child(2) {
+    animation: ${wave} 1s linear infinite;
+  }
+  &:nth-child(3) {
+    animation: ${sway} 1s linear infinite;
+  }
+  &:nth-child(4) {
+    animation: ${wave} 1s linear infinite;
+  }
+  &:nth-child(5) {
+    animation: ${bounce} 1s linear infinite;
+  }
 
   &:hover {
-    background: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.white};
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.shadows.glow};
+    color: ${({ theme }) => theme.colors.primary};
     border-color: ${({ theme }) => theme.colors.primary};
-  }
+    transform: translateY(-3px) scale(1.05);
 
-  /* Large Desktop */
-  @media (min-width: 1920px) {
-    width: 52px;
-    height: 52px;
-    font-size: 1.3rem;
-  }
-
-  /* Desktop */
-  @media (min-width: 1440px) and (max-width: 1919px) {
-    width: 48px;
-    height: 48px;
-    font-size: 1.2rem;
-  }
-
-  /* iPad & Standard Tablets */
-  @media (min-width: 601px) and (max-width: 768px) {
-    width: 42px;
-    height: 42px;
-    font-size: 1.05rem;
-  }
-
-  /* Large Mobile */
-  @media (min-width: 481px) and (max-width: 600px) {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  /* Standard Mobile */
-  @media (min-width: 321px) and (max-width: 480px) {
-    width: 38px;
-    height: 38px;
-    font-size: 0.95rem;
-  }
-
-  /* Small Mobile */
-  @media (max-width: 320px) {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
-  }
-
-  /* Landscape adjustments */
-  @media (orientation: landscape) and (max-height: 600px) {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      background-size: 200% auto;
+    }
   }
 `;
 
-// Elegant right section
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{ label: string }>`
+  color: ${({ theme, label }) => theme.colors.iconColors[label]};
+  transition: color 0.3s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+`;
+
 export const RightSection = styled.div`
   position: relative;
   animation: ${fadeInRight} 0.8s ease-out 0.2s both;
@@ -920,7 +898,9 @@ export const RightSection = styled.div`
 export const HeroImageContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 
   &::before {
@@ -950,7 +930,7 @@ export const HeroImageContainer = styled.div`
 `;
 
 export const HeroImage = styled.img`
-  width: 100%;
+  width: clamp(180px, 35vw, 480px);
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -960,6 +940,10 @@ export const HeroImage = styled.img`
   box-shadow: ${({ theme }) => theme.shadows.cardHover};
   position: relative;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: clamp(220px, 45vw, 780px);
+  }
 `;
 
 export const FloatingCard = styled.div`
@@ -1065,11 +1049,11 @@ export const FloatingCard = styled.div`
     font-size: 0.65rem;
 
     &.card-1 {
-      right: 5%; 
+      right: 5%;
       top: -5%;
     }
     &.card-2 {
-      left: -35%; 
+      left: -35%;
       top: 30%;
     }
     &.card-3 {
@@ -1096,6 +1080,7 @@ export const ScrollIndicator = styled.div`
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   color: ${({ theme }) => theme.colors.textLight};
@@ -1181,9 +1166,8 @@ export const GradientOrb = styled.div`
   }
 `;
 
-// Gradient text utility
 export const GradientText = styled.span`
-  background: ${({ gradient, theme }) => gradient || theme.gradients.accent};
+  background: ${({ theme }) => theme.gradients.accent};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

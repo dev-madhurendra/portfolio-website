@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import Icon from "../../atoms/Icon";
 
-export const slideDown = keyframes`
+const slideDown = keyframes`
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 `;
@@ -12,8 +11,8 @@ const fadeIn = keyframes`
 `;
 
 export const NavbarWrapper = styled.nav`
-  width: 90%;
-  height: 80px;
+  width: 80%;
+  height: 70px;
   max-width: 1200px;
   margin: auto;
   display: flex;
@@ -34,12 +33,14 @@ export const NavbarWrapper = styled.nav`
   font-family: ${({ theme }) => theme.fonts.body};
 
   @media (max-width: 768px) {
-    width: 95%;
+    width: 80%;
     padding: 0.75rem 1.5rem;
     border-radius: 40px;
   }
 
   @media (max-width: 480px) {
+    height: 50px;
+    width: 80%;
     padding: 0.5rem 1rem;
     border-radius: 35px;
   }
@@ -52,7 +53,7 @@ export const LogoContainer = styled.div`
   padding: 10px;
 
   .logo-circle {
-    width: 60px;           
+    width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
@@ -63,10 +64,6 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const StyledLogo = styled(Icon)`
-  object-fit: contain;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-`;
 export const LinksWrapper = styled.ul<{ open?: boolean }>`
   display: flex;
   list-style: none;
@@ -90,7 +87,7 @@ export const LinksWrapper = styled.ul<{ open?: boolean }>`
     border: 1px solid ${({ theme }) => theme.colors.border};
     display: ${({ open }) => (open ? "flex" : "none")};
     animation: ${slideDown} 0.3s ease;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 `;
 
@@ -101,12 +98,10 @@ export const LinkItem = styled.li<{ active?: boolean }>`
     border-radius: 30px;
     font-weight: 500;
     font-size: 0.95rem;
-    color: ${({ theme, active }) => 
-      active ? theme.colors.white : theme.colors.textSecondary
-    };
-    background: ${({ theme, active }) => 
-      active ? theme.colors.primary : "transparent"
-    };
+    color: ${({ theme, active }) =>
+      active ? theme.colors.white : theme.colors.textSecondary};
+    background: ${({ theme, active }) =>
+      active ? theme.colors.primary : "transparent"};
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
@@ -123,20 +118,23 @@ export const LinkItem = styled.li<{ active?: boolean }>`
       left: 0;
       right: 0;
       bottom: 0;
-      background: ${({ theme }) => theme.colors.primary};
+      background: ${({ theme }) => theme.gradients.primary};
       opacity: 0;
       transition: opacity 0.3s ease;
       border-radius: 30px;
+      z-index: 0;
     }
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.white};
-      transform: translateY(-2px);
-      
-      &::before {
-        opacity: ${({ active }) => active ? 1 : 0.9};
-      }
-    }
+    ${({ active, theme }) =>
+      !active &&
+      `
+        &:hover {
+          color: ${theme.colors.textPrimary};
+          background: transparent;
+          transform: translateY(-2px);
+          box-shadow: ${theme.shadows.navbar};
+        }
+      `}
 
     span {
       position: relative;
@@ -146,11 +144,13 @@ export const LinkItem = styled.li<{ active?: boolean }>`
 
   @media (max-width: 768px) {
     width: 100%;
-    
+
     a {
-      width: 100%;
-      padding: 1rem;
-      justify-content: center;
+      width: 90%;
+      padding: 0.6rem 1rem;  
+      font-size: 0.85rem;    
+      margin: 0.3rem auto;   
+      border-radius: 24px;   
     }
   }
 `;

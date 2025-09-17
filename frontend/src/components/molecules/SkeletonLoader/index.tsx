@@ -2,7 +2,7 @@ import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import SidebarSkeletonLoader from "../../atoms/SidebarSkeleton";
-import HomeSkeleton from "../../atoms/HomeSkeleton";
+import HomeSkeleton from "../../atoms/SkeletonLoader";
 
 
 const Container = styled.div`

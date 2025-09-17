@@ -6,8 +6,8 @@ export const DarkModeContext = createContext<DarkModeContextProps | undefined>(u
 export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setIsDark] = useState<boolean>(() => {
     const storedMode = localStorage.getItem('dark');
-    if (storedMode) return storedMode === 'true';
-    return true; 
+    if (storedMode) return storedMode === 'false';
+    return false; 
   });
 
   useEffect(() => {
