@@ -1,73 +1,17 @@
-import styled, { keyframes, css } from "styled-components";
+import styled, { css } from "styled-components";
+import {
+  float,
+  slideInUp,
+  fadeInUp,
+  shimmer,
+  progressLoad,
+  slideInRight,
+} from "../../globalStyled";
 
-// Animations
-const float = keyframes`
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-20px) rotate(5deg); }
-  50% { transform: translateY(-10px) rotate(-3deg); }
-  75% { transform: translateY(-15px) rotate(2deg); }
-`;
-
-const slideInUp = keyframes`
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
-
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const shimmer = keyframes`
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
-`;
-
-const slideInLeft = keyframes`
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-`;
-
-const slideInRight = keyframes`
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
-`;
-
-const scaleIn = keyframes`
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
-`;
-
-const ripple = keyframes`
-  0% { transform: scale(0); opacity: 1; }
-  100% { transform: scale(4); opacity: 0; }
-`;
-
-const progressLoad = keyframes`
-  from { width: 0%; }
-  to { width: var(--progress-width); }
-`;
-
-const glow = keyframes`
-  0%, 100% { box-shadow: 0 0 20px ${props => props.theme.colors.primary}40; }
-  50% { box-shadow: 0 0 30px ${props => props.theme.colors.primary}60; }
-`;
-
-// Main Section
 export const SkillsSection = styled.section`
   min-height: 100vh;
   padding: 100px 0;
-  background: ${({ theme }) => theme.gradients.background};
+  background: ${({ theme }) => theme.gradients.hero};
   position: relative;
   overflow: hidden;
 `;
@@ -80,7 +24,6 @@ export const SkillsContainer = styled.div`
   z-index: 2;
 `;
 
-// Floating Background
 export const FloatingTechBackground = styled.div`
   position: absolute;
   inset: 0;
@@ -89,25 +32,25 @@ export const FloatingTechBackground = styled.div`
 `;
 
 export const FloatingTechIcon = styled.div<{
-    delay: string,
-    size: string,
-    duration: string,
-    x: number,
-    y: number
+  delay: string;
+  size: string;
+  duration: string;
+  x: number;
+  y: number;
 }>`
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${({ size }) => size || '60px'};
-  height: ${({ size }) => size || '60px'};
+  width: ${({ size }) => size || "60px"};
+  height: ${({ size }) => size || "60px"};
   background: ${({ theme }) => theme.colors.cardBg};
   backdrop-filter: blur(10px);
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 16px;
   color: ${({ theme }) => theme.colors.primary};
-  animation: ${float} ${({ duration }) => duration || '6s'} ease-in-out infinite;
-  animation-delay: ${({ delay }) => delay || '0s'};
+  animation: ${float} ${({ duration }) => duration || "6s"} ease-in-out infinite;
+  animation-delay: ${({ delay }) => delay || "0s"};
   opacity: 0.7;
   transition: all 0.3s ease;
   left: ${({ x }) => x}%;
@@ -127,7 +70,7 @@ export const FloatingTechIcon = styled.div<{
   @media (max-width: 768px) {
     width: 40px;
     height: 40px;
-    
+
     svg {
       width: 18px;
       height: 18px;
@@ -135,33 +78,13 @@ export const FloatingTechIcon = styled.div<{
   }
 `;
 
-// Header Section
-
-export const StyledBadgeIcon = styled.span`
-  font-size: 1.1rem;
-`;
-
 export const HeaderSection = styled.div<{
-    delay: string
+  delay: string;
 }>`
   text-align: center;
   margin-bottom: 80px;
   animation: ${slideInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: ${({ delay }) => delay || '0s'};
-`;
-
-export const SkillsBadge = styled.div`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: ${({ theme }) => theme.gradients.primary};
-  color: ${({ theme }) => theme.colors.white};
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  animation-delay: ${({ delay }) => delay || "0s"};
 `;
 
 export const BadgeIcon = styled.span`
@@ -182,7 +105,6 @@ export const GradientText = styled.span`
   -webkit-text-fill-color: transparent;
 `;
 
-// Skills Grid
 export const SkillsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -196,8 +118,8 @@ export const SkillsGrid = styled.div`
 `;
 
 export const CategoryCard = styled.div<{
-    delay: number,
-    gradient: string
+  delay: number;
+  gradient: string;
 }>`
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
@@ -210,12 +132,12 @@ export const CategoryCard = styled.div<{
   animation: ${fadeInUp} 0.6s ease-out;
   animation-fill-mode: both;
 
-  ${props => css`
+  ${(props) => css`
     animation-delay: ${props.delay}ms;
   `}
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -200px;
@@ -243,7 +165,6 @@ export const CategoryCard = styled.div<{
   }
 `;
 
-
 export const CategoryHeader = styled.div`
   display: flex;
   align-items: center;
@@ -252,15 +173,14 @@ export const CategoryHeader = styled.div`
 `;
 
 export const CategoryIcon = styled.div<{
-    index: number
+  index: number;
 }>`
   font-size: 2rem;
   animation: ${float} 3s ease-in-out infinite;
-  ${props => css`
+  ${(props) => css`
     animation-delay: ${props.index * 0.5}s;
   `}
 `;
-
 
 export const SkillsWrapper = styled.div`
   display: grid;
@@ -300,25 +220,23 @@ export const SkillName = styled.div`
 `;
 
 export const SkillLevel = styled.div<{
-    level: number
+  level: number;
 }>`
   font-size: 0.875rem;
   font-weight: 500;
-  color: ${props => `hsl(${props.level * 1.2}, 70%, 60%)`};
+  color: ${(props) => `hsl(${props.level * 1.2}, 70%, 60%)`};
 `;
 
-
 export const CategoryTitle = styled.h3<{
-    gradient: string
+  gradient: string;
 }>`
   font-size: 1.5rem;
   font-weight: 700;
-  background: ${props => `linear-gradient(135deg, ${props.gradient})`};
+  background: ${(props) => `linear-gradient(135deg, ${props.gradient})`};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 `;
-
 
 export const SkillsList = styled.div`
   display: flex;
@@ -346,7 +264,7 @@ export const SkillChip = styled.div`
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -364,13 +282,12 @@ export const SkillChip = styled.div`
   }
 `;
 
-// Expertise Levels
 export const ExpertiseSection = styled.div<{
-    delay: string
+  delay: string;
 }>`
   margin-bottom: 80px;
   animation: ${slideInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: ${({ delay }) => delay || '0s'};
+  animation-delay: ${({ delay }) => delay || "0s"};
 `;
 
 export const SectionTitle = styled.h3`
@@ -382,7 +299,7 @@ export const SectionTitle = styled.h3`
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -405,25 +322,52 @@ export const ExpertiseGrid = styled.div`
   }
 `;
 
-export const ExpertiseCard = styled.div<{
-    delay: string
-}>`
+export const ExpertiseCard = styled.div<{ delay: string }>`
   background: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 20px;
+
   padding: 30px;
   text-align: center;
   position: relative;
+  overflow: hidden;
+
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: ${slideInUp} 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: ${({ delay }) => delay || '0s'};
+
+  &.visible {
+    animation: ${slideInRight} 5s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: ${({ theme }) => theme.gradients.accent};
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: ${({ theme }) => theme.shadows.cardHover};
+    box-shadow: ${({ theme }) => theme.shadows.cardHover},
+                ${({ theme }) => theme.shadows.glow};
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transform: scale(1.02); /* subtle glow expansion */
   }
 `;
+
 
 export const ExpertiseIcon = styled.div`
   width: 70px;
@@ -465,15 +409,15 @@ export const ProgressContainer = styled.div`
 `;
 
 export const ProgressBar = styled.div<{
-    delay: string,
-    width: string
+  delay: string;
+  width: string;
 }>`
   height: 100%;
   background: ${({ theme }) => theme.gradients.accent};
   border-radius: 4px;
   width: 0%;
   animation: ${progressLoad} 2s ease-out forwards;
-  animation-delay: ${({ delay }) => delay || '1s'};
+  animation-delay: ${({ delay }) => delay || "1s"};
   --progress-width: ${({ width }) => width};
 `;
 
@@ -496,82 +440,16 @@ export const TechTag = styled.span`
 
 // Stats Section
 export const StatsSection = styled.div<{
-    delay: string
+  delay: string;
 }>`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   animation: ${slideInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: ${({ delay }) => delay || '0s'};
+  animation-delay: ${({ delay }) => delay || "0s"};
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-`;
-
-export const StatCard = styled.div<{
-    delay: string
-}>`
-  background: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: blur(20px);
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: ${scaleIn} 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: ${({ delay }) => delay || '0s'};
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: ${({ theme }) => theme.shadows.cardHover};
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: ${({ theme }) => theme.gradients.accent};
-    opacity: 0.05;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: transform 0.6s ease;
-  }
-
-  &:hover::before {
-    transform: scale(1);
-  }
-`;
-
-export const StatNumber = styled.div`
-  font-size: 3rem;
-  font-weight: 800;
-  background: ${({ theme }) => theme.gradients.accent};
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
-  font-family: ${({ theme }) => theme.fonts.heading};
-`;
-
-export const StatLabel = styled.div`
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  font-weight: 600;
-  margin-bottom: 15px;
-`;
-
-export const StatIcon = styled.div`
-  color: ${({ theme }) => theme.colors.primary};
-  opacity: 0.7;
-
-  svg {
-    width: 24px;
-    height: 24px;
   }
 `;

@@ -1,93 +1,130 @@
-import { keyframes, styled, css } from "styled-components";
-
-const slideInFromLeft = keyframes`
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-`;
-
-const slideInUp = keyframes`
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
-
-const slideInFromRight = keyframes`
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
-`;
-
-const markerPop = keyframes`
-  0% { transform: translateX(-50%) scale(0.4); opacity: 0; }
-  80% { transform: translateX(-50%) scale(1); opacity: 1; }
-  100% { transform: translateX(-50%) scale(0.8); }
-`;
+import { styled, css } from "styled-components";
+import { slideUp, fadeIn, slideInFromLeft, fadeInRight, slideInFromBottom } from "../../globalStyled";
 
 export const EducationSection = styled.section`
   min-height: 100vh;
-  padding: 100px 0;
-  background: ${({ theme }) => theme.gradients.background};
+  padding: 80px 0;
+  background: ${({ theme }) => theme.gradients.hero};
   position: relative;
-  overflow: hidden;
-  animation: ${slideInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at 20% 80%,
-        ${({ theme }) => theme.colors.primary}15 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 20%,
-        ${({ theme }) => theme.colors.accent}15 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 40% 40%,
-        ${({ theme }) => theme.colors.tertiary}10 0%,
-        transparent 50%
-      );
-  }
 `;
 
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
+  padding: 0 24px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
 `;
 
 export const Header = styled.div`
   text-align: center;
-  margin-bottom: 80px;
-  animation: ${slideInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+  margin-bottom: 60px;
+  animation: ${slideUp} 0.6s ease-out;
 `;
 
-export const Title = styled.h2`
-  font-size: clamp(3rem, 8vw, 5rem);
+export const Subtitle = styled.p`
+  font-size: 1.1rem;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  max-width: 600px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+`;
+
+export const StatsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+  animation: ${slideUp} 0.6s ease-out 0.2s both;
+`;
+
+export const StatCard = styled.div`
+  background: ${({ theme }) => theme.colors.cardBg};
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  transition: all 0.3s ease;
+  &.visible {
+    animation: ${fadeInRight} 1s forwards;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: ${({ theme }) => theme.shadows.card};
+  }
+`;
+
+export const StatNumber = styled.div`
+  font-size: 2rem;
   font-weight: 800;
   background: ${({ theme }) => theme.gradients.accent};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
-  font-family: ${({ theme }) => theme.fonts.heading};
+  margin-bottom: 8px;
 `;
 
-export const Subtitle = styled.p`
-  font-size: 1.25rem;
+export const StatLabel = styled.div`
+  font-size: 0.9rem;
   color: ${({ theme }) => theme.colors.textSecondary};
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 `;
 
-export const EducationGrid = styled.div`
+export const ViewToggle = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  animation: ${slideUp} 0.6s ease-out 0.3s both;
+
+  button {
+    padding: 12px 24px;
+    border: 2px solid ${({ theme }) => theme.colors.border};
+    background: ${({ theme }) => theme.colors.cardBg};
+    color: ${({ theme }) => theme.colors.textSecondary};
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+      background: ${({ theme }) => theme.colors.primary}10;
+      border-color: ${({ theme }) => theme.colors.primary}50;
+    }
+
+    &.active {
+      background: ${({ theme }) => theme.colors.primary};
+      color: white;
+      border-color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 200px;
+    }
+  }
+`;
+
+export const GridContainer = styled.div`
+  animation: ${fadeIn} 0.5s ease-out;
+`;
+
+export const EducationContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin-bottom: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+  align-items: start;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -95,327 +132,394 @@ export const EducationGrid = styled.div`
   }
 `;
 
-export const EducationCard = styled.div<{ isActive: boolean; delay: number }>`
+export const EducationCard = styled.div<{ delay: number; isExpanded: boolean }>`
   background: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: blur(20px);
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 24px;
-  padding: 30px;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: ${slideInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1)
-    ${({ delay }) => delay}s both;
+  border-radius: 20px;
+  padding: 0;
   overflow: hidden;
-  height: ${({ isActive }) => (isActive ? "auto" : "400px")};
-  min-height: ${({ isActive }) => (isActive ? "600px" : "400px")};
+  min-height: 380px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.visible {
+    animation: ${slideInFromLeft} 2s ${({ delay }) => delay}s forwards;
+  }
+
+  border-color: ${({ isExpanded, theme }) =>
+    isExpanded ? theme.colors.primary : theme.colors.border};
 
   &:hover {
-    transform: translateY(-10px) scale(${({ isActive }) => (isActive ? "1.02" : "1")});
+    transform: translateY(-4px);
     box-shadow: ${({ theme }) => theme.shadows.cardHover};
+    border-color: ${({ theme }) => theme.colors.primary}60;
   }
 `;
 
-export const CardHeader = styled.div`
+export const CardTop = styled.div`
+  padding: 24px 24px 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 2;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border}20;
 `;
 
-export const IconWrapper = styled.div`
+export const EducationBadge = styled.div<{ type: string }>`
   display: flex;
   align-items: center;
-  gap: 15px;
-`;
-
-export const Icon = styled.div`
-  font-size: 2.5rem;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-`;
-
-export const TypeBadge = styled.span<{ type: string }>`
-  padding: 6px 16px;
+  gap: 8px;
+  padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
+  margin-bottom: 8px;
+
   background: ${({ theme, type }) => {
-    switch (type) {
-      case "Masters":
-        return theme.gradients.primary;
-      case "Bachelors":
-        return theme.gradients.tertiary;
-      case "School":
-        return theme.gradients.accent;
+    switch (type.toLowerCase()) {
+      case "masters":
+        return `${theme.colors.primary}15`;
+      case "bachelors":
+        return `${theme.colors.tertiary}15`;
+      case "school":
+        return `${theme.colors.accent}15`;
       default:
-        return theme.gradients.secondary;
+        return `${theme.colors.secondary}15`;
     }
   }};
-  color: ${({ theme }) => theme.colors.white};
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+
+  color: ${({ theme, type }) => {
+    switch (type.toLowerCase()) {
+      case "masters":
+        return theme.colors.primary;
+      case "bachelors":
+        return theme.colors.tertiary;
+      case "school":
+        return theme.colors.accent;
+      default:
+        return theme.colors.secondary;
+    }
+  }};
+
+  .icon {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Duration = styled.div`
   font-size: 0.9rem;
   color: ${({ theme }) => theme.colors.textSecondary};
   font-weight: 600;
-  background: ${({ theme }) => theme.colors.gray[100]}20;
-  padding: 8px 16px;
-  border-radius: 16px;
 `;
 
-export const CardContent = styled.div`
-  position: relative;
-  z-index: 2;
+export const ExpandIndicator = styled.div<{ isExpanded: boolean }>`
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid ${({ theme }) => theme.colors.primary};
+  background: ${({ isExpanded, theme }) =>
+    isExpanded ? theme.colors.primary : "transparent"};
+  color: ${({ isExpanded, theme }) =>
+    isExpanded ? "white" : theme.colors.primary};
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  transform: ${({ isExpanded }) =>
+    isExpanded ? "rotate(180deg)" : "rotate(0deg)"};
+`;
+
+export const CardMain = styled.div`
+  padding: 10px 34px 34px 34px;
+`;
+
+export const InstitutionInfo = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Degree = styled.h3`
-  font-size: 1.5rem;
+export const InstitutionName = styled.h3`
+  font-size: 1.3rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   line-height: 1.3;
-`;
-
-export const Field = styled.p`
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.accent};
-  font-weight: 600;
-  margin-bottom: 12px;
-`;
-
-export const InstitutionName = styled.h4`
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 4px;
-`;
-
-export const Institution = styled.div`
-  margin-bottom: 12px;
 `;
 
 export const Location = styled.p`
   font-size: 0.9rem;
   color: ${({ theme }) => theme.colors.textSecondary};
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  &::before {
-    content: "📍";
-    font-size: 0.8rem;
-  }
+  font-weight: 500;
 `;
 
-export const Grade = styled.div`
-  display: inline-block;
-  background: ${({ theme }) => theme.colors.warning};
-  color: ${({ theme }) => theme.colors.white};
-  padding: 8px 16px;
-  border-radius: 16px;
-  font-weight: 600;
-  font-size: 0.8rem;
-`;
-
-export const ExpandedContent = styled.div<{ isActive: boolean }>`
-  position: relative;
-  z-index: 2;
-  max-height: ${(props) => (props.isActive ? "400px" : "0")};
-  opacity: ${(props) => (props.isActive ? 1 : 0)};
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-`;
-
-export const Section = styled.div`
-  margin-bottom: 25px;
-`;
-
-export const SectionTitle = styled.h5`
-  font-size: 1rem;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  &::before {
-    content: "";
-    width: 4px;
-    height: 20px;
-    background: ${({ theme }) => theme.gradients.accent};
-    border-radius: 2px;
-  }
-`;
-
-export const AchievementsList = styled.div`
+export const DegreeInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
 `;
 
-export const Achievement = styled.div`
+export const Degree = styled.h4`
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const Field = styled.p`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.accent};
+  font-weight: 500;
+`;
+
+export const Grade = styled.div`
+  display: inline-flex;
+  align-items: center;
+  background: ${({ theme }) => theme.gradients.subtle};
+  color: ${({ theme }) => theme.colors.text};
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  align-self: flex-start;
+`;
+
+export const DetailsSection = styled.div<{ isExpanded: boolean }>`
+  max-height: ${({ isExpanded }) => (isExpanded ? "600px" : "0")};
+  opacity: ${({ isExpanded }) => (isExpanded ? 1 : 0)};
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  margin-top: ${({ isExpanded }) => (isExpanded ? "1rem" : "0")};
+  color: ${({ isExpanded }) => (isExpanded ? "red" : "inherit")};
+`;
+
+export const DetailRow = styled.div`
+  padding: 24px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border}20;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+export const CardFooter = styled.div`
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+  padding: 0px 0px 10px 0px;
+`;
+
+export const ViewMore = styled.div<{ isActive: boolean }>`
+  text-align: center;
+  color: ${(props) =>
+    props.isActive
+      ? props.theme.colors.primary
+      : props.theme.colors.textSecondary};
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+`;
+
+export const DetailLabel = styled.h5`
+  font-size: 1rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+`;
+
+export const DetailContent = styled.div`
+  animation: ${fadeIn} 0.5s ease-out 0.2s both;
+`;
+
+export const AchievementGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const AchievementItem = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
   font-size: 0.9rem;
   color: ${({ theme }) => theme.colors.text};
-  padding: 6px 0;
+  line-height: 1.5;
+
+  .bullet {
+    color: ${({ theme }) => theme.colors.primary};
+    font-weight: bold;
+    margin-top: 2px;
+  }
 `;
 
-export const AchievementIcon = styled.span`
-  font-size: 0.8rem;
-`;
-
-export const CoursesList = styled.div`
+export const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 `;
 
-export const Course = styled.span`
+export const SkillChip = styled.span`
   background: ${({ theme }) => theme.colors.primary}15;
   color: ${({ theme }) => theme.colors.primary};
   padding: 6px 12px;
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid ${({ theme }) => theme.colors.primary}30;
+  border: 1px solid ${({ theme }) => theme.colors.primary}25;
 `;
 
-export const CardFooter = styled.div`
-  position: relative;
-  z-index: 2;
-  margin-top: auto;
+export const TimelineSection = styled.div`
+  animation: ${fadeIn} 0.5s ease-out;
 `;
 
-export const ViewMore = styled.div<{ isActive: boolean }>`
-  text-align: center;
-  color: ${(props) => (props.isActive ? props.theme.colors.primary : props.theme.colors.textSecondary)};
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-`;
-
-export const TimelineContainer = styled.div`
-  margin-top: 80px;
-`;
-
-export const TimelineTitle = styled.h3`
+export const TimelineHeader = styled.h3`
   font-size: 2rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
   text-align: center;
-  margin-bottom: 50px;
-  animation: ${slideInUp} 0.8s ease both;
+  margin-bottom: 40px;
 `;
 
-export const Timeline = styled.div`
+export const TimelineWrapper = styled.div`
   position: relative;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 40px 0;
+`;
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: ${({ theme }) => theme.gradients.accent};
-    transform: translateX(-50%);
+export const TimelineLine = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: ${({ theme }) => theme.gradients.accent};
+  transform: translateX(-50%);
+  border-radius: 2px;
+  z-index: 1;
 
-    @media (max-width: 768px) {
-      left: 20px;
-    }
+  @media (max-width: 768px) {
+    left: 30px;
+    transform: translateX(0);
   }
 `;
 
-export const TimelineItem = styled.div<{ index: number }>`
+export const TimelineItem = styled.div<{ index: number; delay: number }>`
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   display: flex;
-  align-items: center;
+  z-index: 2;
+  &.visible {
+    animation: ${slideInFromBottom} 2s ease-out both;
+  }
 
   ${({ index }) =>
     index % 2 === 0
       ? css`
           justify-content: flex-start;
-          animation: ${slideInFromLeft} 0.8s ease both;
+
           @media (min-width: 769px) {
             justify-content: flex-end;
-            text-align: right;
+
+            & > div:last-child {
+              margin-right: 80px;
+            }
           }
         `
       : css`
           justify-content: flex-start;
-          animation: ${slideInFromRight} 0.8s ease both;
+
           @media (min-width: 769px) {
-            justify-content: flex-start;
+            & > div:last-child {
+              margin-left: 80px;
+            }
           }
         `}
 
   @media (max-width: 768px) {
     justify-content: flex-start;
-    padding-left: 50px;
+
+    & > div:last-child {
+      margin-left: 80px;
+      margin-right: 0;
+    }
   }
 `;
 
 export const TimelineMarker = styled.div`
   position: absolute;
   left: 50%;
-  width: 16px;
-  height: 16px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  background: ${({ theme }) => theme.colors.primary};
+  border: 4px solid white;
   border-radius: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 0 4px #fff, 0 0 0 8px rgba(37, 99, 235, 0.2);
-  animation: ${markerPop} 1s cubic-bezier(0.25, 1, 0.5, 1) both infinite;
+  box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.primary}30;
+  z-index: 3;
 
   @media (max-width: 768px) {
-    left: 20px;
+    left: 30px;
+    transform: translateX(-50%);
   }
 `;
 
-
-export const TimelineContent = styled.div`
+export const TimelineCard = styled.div`
   background: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: blur(10px);
-  padding: 20px 25px;
-  border-radius: 16px;
-  max-width: 350px;
-  box-shadow: ${({ theme }) => theme.shadows.card};
   border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   transition: all 0.3s ease;
-  animation: ${slideInUp} 0.8s ease both;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  position: relative;
+  z-index: 2;
 
   &:hover {
+    transform: translateY(-6px);
     box-shadow: ${({ theme }) => theme.shadows.cardHover};
-    transform: translateY(-3px);
+    border-color: ${({ theme }) => theme.colors.primary}40;
   }
+
+  @media (max-width: 768px) {
+    max-width: calc(100vw - 140px);
+  }
+`;
+
+export const TimelineIcon = styled.div`
+  font-size: 2rem;
+  flex-shrink: 0;
+`;
+
+export const TimelineContent = styled.div`
+  flex: 1;
 `;
 
 export const TimelineYear = styled.div`
   font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 6px;
   color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 8px;
 `;
 
-export const TimelineDegree = styled.h4`
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+export const TimelineTitle = styled.h4`
+  font-size: 1.2rem;
+  font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 4px;
 `;
 
-export const TimelineInstitution = styled.p`
-  font-size: 0.95rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  font-family: ${({ theme }) => theme.fonts.body};
+export const TimelineSubtitle = styled.p`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.accent};
+  font-weight: 500;
+  margin-bottom: 12px;
 `;

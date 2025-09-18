@@ -37,6 +37,11 @@ import {
   Coffee,
   Award,
   Heart,
+  Cpu,
+  GitBranch,
+  Globe,
+  Layers,
+  Zap,
 } from "lucide-react";
 import {
   FaReact,
@@ -47,6 +52,10 @@ import {
   FaGitAlt,
   FaAws,
   FaDatabase,
+  FaCss3Alt,
+  FaHtml5,
+  FaJava,
+  FaLinux,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -57,6 +66,18 @@ import {
   SiRedis,
   SiKubernetes,
   SiPostgresql,
+  SiAngular,
+  SiCplusplus,
+  SiDocker,
+  SiFigma,
+  SiFirebase,
+  SiGo,
+  SiJavascript,
+  SiJenkins,
+  SiJest,
+  SiRedux,
+  SiSpringboot,
+  SiVuedotjs,
 } from "react-icons/si";
 
 export const greetingsHello = ["Hola ", "Bonjour", "Hello "];
@@ -173,7 +194,7 @@ export const personalTraits = [
   },
 ];
 
-export const techIcons = [
+export const techIconsAbout = [
   { icon: FaReact, title: "React", className: "react" },
   { icon: FaNodeJs, title: "Node.js", className: "nodejs" },
   { icon: SiMongodb, title: "MongoDB", className: "mongodb" },
@@ -216,6 +237,101 @@ export const chipData = [
   { icon: Coffee, text: "API Development" },
 ];
 
+export const educationData = [
+  {
+    id: 1,
+    degree: "Master of Computer Applications",
+    field: "Computer Science & Engineering",
+    institution: "Indian Institute of Technology",
+    location: "Delhi, India",
+    duration: "2020 - 2022",
+    grade: "CGPA: 8.7/10",
+    type: "Masters",
+    achievements: [
+      "Specialized in Full-Stack Development",
+      "Research in Machine Learning & AI",
+      "Lead Developer - University Tech Club",
+      "Published 2 research papers",
+    ],
+    courses: [
+      "Advanced Algorithms",
+      "System Design",
+      "Database Management",
+      "Web Technologies",
+    ],
+    icon: "🎓",
+  },
+  {
+    id: 2,
+    degree: "Bachelor of Computer Applications",
+    field: "Computer Applications",
+    institution: "Delhi University",
+    location: "New Delhi, India",
+    duration: "2017 - 2020",
+    grade: "Percentage: 85.4%",
+    type: "Bachelors",
+    achievements: [
+      "Dean's List for 3 consecutive semesters",
+      "President - Computer Science Society",
+      "Winner - Inter-college Hackathon 2019",
+      "Merit Scholarship Recipient",
+    ],
+    courses: [
+      "Data Structures",
+      "Programming Languages",
+      "Software Engineering",
+      "Mathematics",
+    ],
+    icon: "🏆",
+  },
+  {
+    id: 3,
+    degree: "Higher Secondary Education",
+    field: "Science (PCM + Computer)",
+    institution: "Delhi Public School",
+    location: "Delhi, India",
+    duration: "2015 - 2017",
+    grade: "Percentage: 92.8%",
+    type: "School",
+    achievements: [
+      "School Topper in Computer Science",
+      "National Level Olympiad Qualifier",
+      "Head Boy - Student Council",
+      "Best Student Award 2017",
+    ],
+    courses: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
+    icon: "📚",
+  },
+];
+
+export const expertiseLevels = [
+  {
+    title: "Expert Level",
+    icon: Zap,
+    level: "95%",
+    technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Git"],
+  },
+  {
+    title: "Advanced Level",
+    icon: Cpu,
+    level: "85%",
+    technologies: ["TypeScript", "Python", "AWS", "Docker", "GraphQL"],
+  },
+  {
+    title: "Proficient Level",
+    icon: Layers,
+    level: "75%",
+    technologies: ["React Native", "Flutter", "DevOps", "UI/UX", "Testing"],
+  },
+];
+
+export const stats = [
+  { number: "25+", label: "Technologies Mastered", icon: Globe },
+  { number: "100+", label: "Projects Completed", icon: Code },
+  { number: "1000+", label: "Hours of Coding", icon: Zap },
+  { number: "5+", label: "Years Experience", icon: GitBranch },
+];
+
 export const skillsData = [
   { label: "🌐 Frontend Development" },
   { label: "🛠️ Backend Development" },
@@ -233,27 +349,45 @@ export const educationImage = [
   EDUIMG_5,
   EDUIMG_6,
 ];
-export const particlesColorValues = [
-  "#2EB67D",
-  "#ECB22E",
-  "#E01E5B",
-  "#36C5F0",
-  "#EF5B0C",
-  "#3330E4",
-  "#FF9F29",
-  "#570A57",
-  "#40DFEF",
-  "#E9D5DA",
-  "#A6D1E6",
-  "#BFFFF0",
-  "#FF5733",
-  "#3F51B5",
-  "#4CAF50",
-  "#FFC107",
-  "#9C27B0",
-  "#009688",
-  "#FFEB3B",
-  "#795548",
+export const techIcons = [
+  // Frontend
+  { Icon: FaReact, color: "#61dafb" },
+  { Icon: SiNextdotjs, color: "#000000" },
+  { Icon: SiRedux, color: "#764ABC" },
+  { Icon: SiAngular, color: "#dd1b16" },
+  { Icon: SiVuedotjs, color: "#42b883" },
+  { Icon: SiTailwindcss, color: "#38BDF8" },
+  { Icon: FaHtml5, color: "#e34f26" },
+  { Icon: FaCss3Alt, color: "#1572b6" },
+  { Icon: SiJavascript, color: "#f7df1e" },
+  { Icon: SiTypescript, color: "#3178c6" },
+
+  // Backend
+  { Icon: FaNodeJs, color: "#68a063" },
+  { Icon: SiSpringboot, color: "#6DB33F" },
+  { Icon: FaPython, color: "#3776AB" },
+  { Icon: FaJava, color: "#007396" },
+  { Icon: SiGo, color: "#00ADD8" },
+  { Icon: SiGraphql, color: "#e535ab" },
+
+  // Databases
+  { Icon: FaDatabase, color: "#336791" },
+  { Icon: SiMongodb, color: "#47A248" },
+  { Icon: SiPostgresql, color: "#4169e1" },
+  { Icon: SiFirebase, color: "#ffca28" },
+
+  // DevOps & Cloud
+  { Icon: SiDocker, color: "#0db7ed" },
+  { Icon: SiKubernetes, color: "#326CE5" },
+  { Icon: FaAws, color: "#FF9900" },
+  { Icon: SiJenkins, color: "#d33833" },
+  { Icon: FaLinux, color: "#FCC624" },
+  { Icon: FaGitAlt, color: "#F1502F" },
+
+  // Tools & Testing
+  { Icon: SiFigma, color: "#F24E1E" },
+  { Icon: SiJest, color: "#99425b" },
+  { Icon: SiCplusplus, color: "#00599C" },
 ];
 export const itemsPerPage = {
   mobile: 2,

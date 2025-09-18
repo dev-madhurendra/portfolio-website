@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ThemeProvider } from "styled-components";
 import { DarkModeProvider } from "./services/context/DarkMode";
 import { useDarkMode } from "./services/customhook/useDarkMode";
@@ -16,13 +16,9 @@ import "./App.css";
 
 const AppContent: React.FC = () => {
   const { isDark } = useDarkMode();
-  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <ThemeProvider theme={isDark ? appTheme.dark : appTheme.light}>
-      {isLoading ? (
-        <></>
-      ) : (
         <>
           <Navbar />
           <Home />
@@ -34,7 +30,6 @@ const AppContent: React.FC = () => {
           <ContactMeSection />
           <Footer />
         </>
-      )}
     </ThemeProvider>
   );
 };

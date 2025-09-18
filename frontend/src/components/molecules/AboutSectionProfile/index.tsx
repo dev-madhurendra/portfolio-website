@@ -8,7 +8,7 @@ import {
   TechIcons,
 } from "./styled";
 import AboutSectionImage from "../../../../public/gif/HeroSectionAnimation.gif";
-import { techIcons } from "../../../services/mocks/mocks";
+import { techIconsAbout } from "../../../services/mocks/mocks";
 
 const EnhancedProfileSection = ({ className }: { className?: string }) => {
   return (
@@ -29,7 +29,7 @@ const EnhancedProfileSection = ({ className }: { className?: string }) => {
         </ProfileParticles>
 
         <TechIcons>
-          {techIcons.map(({ icon: Icon, title, className }, index) => (
+          {techIconsAbout.map(({ icon: Icon, title, className }, index) => (
             <Icon
               key={index}
               className={`tech-icon ${className}`}

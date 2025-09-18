@@ -135,7 +135,7 @@ const Home = () => {
         </LeftSection>
 
         <RightSection>
-          <HeroImageContainer >
+          <HeroImageContainer>
             <HeroImage
               src={homeData?.imageUrl}
               className = {isVisible ? "visible" : ""}

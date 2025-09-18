@@ -1,314 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled, { keyframes } from "styled-components";
-
-const fadeInLeft = keyframes`
-  from { 
-    opacity: 0; 
-    transform: translateX(-20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
-  }
-`;
-
-const slideUp = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-8px); /* slight overshoot */
-  }
-  80% {
-    transform: translateY(4px);  /* bounce down */
-  }
-  100% {
-    transform: translateY(0);    /* settle */
-  }
-`;
-
-const fadeInRight = keyframes`
-  from { 
-    opacity: 0; 
-    transform: translateX(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
-  }
-`;
-
-const pulse = keyframes`
-  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.2); }
-  70% { box-shadow: 0 0 0 8px rgba(0,0,0,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
-`;
-
-const sway = keyframes`
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(3deg); }
-`;
-
-const float = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-`;
-
-const floatReverse = keyframes`
-  0%,100% { transform: translateY(-5px); }
-  50% { transform: translateY(5px); }
-`;
-
-const wave = keyframes`
-  0%,100% { transform: rotate(0deg); }
-  25% { transform: rotate(10deg); }
-  75% { transform: rotate(-5deg); }
-`;
-
-const bounce = keyframes`
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-`;
-
-const typing = keyframes`
-  from { border-right-color: ${({ theme }) => theme.colors.primary}; }
-  to { border-right-color: transparent; }
-`;
-
-const subtleShift = keyframes`
-  0%, 100% { transform: translateX(0) translateY(0); }
-  25% { transform: translateX(2px) translateY(-2px); }
-  50% { transform: translateX(-1px) translateY(2px); }
-  75% { transform: translateX(-2px) translateY(-1px); }
-`;
-
-const dropBounce = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-850px);
-    animation-timing-function: ease-in;
-  }
-  22% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-  32% {
-    transform: translateY(-100px);
-    animation-timing-function: ease-in;
-  }
-  42% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-  48% {
-    transform: translateY(-50px);
-    animation-timing-function: ease-in;
-  }
-  54% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-  58% {
-    transform: translateY(-25px);
-    animation-timing-function: ease-in;
-  }
-  62% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-  65% {
-    transform: translateY(-12px);
-    animation-timing-function: ease-in;
-  }
-  68% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-  70% {
-    transform: translateY(-6px);
-    animation-timing-function: ease-in;
-  }
-  72% {
-    transform: translateY(0px);
-    animation-timing-function: ease-out;
-  }
-  74% {
-    transform: translateY(-3px);
-  }
-  76% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-`;
-
-const slideInFromLeft = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateX(-100px) scale(0.8);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(10px) scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-`;
-
-const slideInFromTop = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0.8);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(10px) scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-`;
-
-const slideInFromBottom = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(100px) scale(0.8);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10px) scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-`;
-
-const elasticBounce = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0) rotate(-180deg);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2) rotate(-90deg);
-  }
-  70% {
-    transform: scale(0.9) rotate(-45deg);
-  }
-  85% {
-    transform: scale(1.05) rotate(-10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-`;
-
-const popRotate = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0) rotate(180deg);
-    filter: blur(5px);
-  }
-  60% {
-    opacity: 0.8;
-    transform: scale(1.15) rotate(-10deg);
-    filter: blur(1px);
-  }
-  80% {
-    transform: scale(0.95) rotate(5deg);
-    filter: blur(0px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    filter: blur(0px);
-  }
-`;
-
-const magneticAttraction = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.3) translateX(200px) translateY(-200px) rotate(360deg);
-  }
-  30% {
-    opacity: 0.7;
-    transform: scale(0.7) translateX(100px) translateY(-100px) rotate(180deg);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.1) translateX(20px) translateY(-20px) rotate(45deg);
-  }
-  80% {
-    transform: scale(0.95) translateX(-5px) translateY(5px) rotate(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateX(0) translateY(0) rotate(0deg);
-  }
-`;
-
-const glitchEntrance = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateX(-100px) scaleX(0.5);
-    filter: hue-rotate(90deg);
-  }
-  20% {
-    opacity: 0.8;
-    transform: translateX(20px) scaleX(1.2);
-    filter: hue-rotate(180deg);
-  }
-  40% {
-    opacity: 0.6;
-    transform: translateX(-10px) scaleX(0.8);
-    filter: hue-rotate(270deg);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(5px) scaleX(1.1);
-    filter: hue-rotate(360deg);
-  }
-  80% {
-    transform: translateX(-2px) scaleX(0.95);
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scaleX(1);
-    filter: hue-rotate(0deg);
-  }
-`;
-
-const waveRipple = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0) rotateY(180deg);
-    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.7);
-  }
-  30% {
-    opacity: 0.7;
-    transform: scale(0.8) rotateY(90deg);
-    box-shadow: 0 0 0 20px rgba(74, 144, 226, 0.3);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.1) rotateY(30deg);
-    box-shadow: 0 0 0 40px rgba(74, 144, 226, 0.1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotateY(0deg);
-    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
-  }
-`;
+import styled from "styled-components";
+import {
+  wave,
+  typing,
+  fadeInLeft,
+  slideUp,
+  float,
+  sway,
+  bounce,
+  fadeInRight,
+  pulse,
+  dropBounce,
+  slideInFromTop,
+  slideInFromLeft,
+  floatReverse,
+  slideInFromBottom,
+  elasticBounce,
+  popRotate,
+  magneticAttraction,
+  glitchEntrance,
+  waveRipple,
+  subtleShift,
+} from "../../globalStyled";
 
 export const HeroContainer = styled.section`
   height: 100vh;
@@ -341,68 +54,56 @@ export const HeroContainer = styled.section`
     pointer-events: none;
   }
 
-  /* Large Desktop (1920px and up) */
   @media (min-width: 1920px) {
     padding: 0 4rem;
   }
 
-  /* Desktop (1440px - 1919px) */
   @media (min-width: 1440px) and (max-width: 1919px) {
     padding: 0 3rem;
   }
 
-  /* Standard Desktop (1200px - 1439px) */
   @media (min-width: 1200px) and (max-width: 1439px) {
     padding: 0 2.5rem;
   }
 
-  /* Laptop (1024px - 1199px) */
   @media (min-width: 1025px) and (max-width: 1199px) {
     padding: 0 2rem;
   }
 
-  /* iPad Pro & Large Tablets (768px - 1024px) */
   @media (min-width: 769px) and (max-width: 1024px) {
     padding: 0 1.5rem;
     min-height: 100vh;
   }
 
-  /* iPad & Standard Tablets (601px - 768px) */
   @media (min-width: 601px) and (max-width: 768px) {
     padding: 0 1.25rem;
     min-height: 100vh;
   }
 
-  /* Large Mobile (481px - 600px) */
   @media (min-width: 481px) and (max-width: 600px) {
     padding: 0 1rem;
     min-height: 100vh;
   }
 
-  /* Standard Mobile (321px - 480px) */
   @media (min-width: 321px) and (max-width: 480px) {
     padding: 0 0.75rem;
     min-height: 100vh;
   }
 
-  /* Small Mobile (280px - 320px) */
   @media (max-width: 320px) {
     padding: 0 0.5rem;
     min-height: 100vh;
   }
 
-  /* Short screens */
   @media (max-height: 600px) {
     min-height: 600px;
   }
 
-  /* Very short screens (landscape mobile) */
   @media (max-height: 500px) {
     min-height: 500px;
     padding: 0 1rem;
   }
 
-  /* Ultra-wide monitors */
   @media (min-width: 2560px) {
     padding: 0 6rem;
   }
@@ -418,64 +119,54 @@ export const HeroContent = styled.div`
   justify-items: center;
   z-index: 2;
 
-  /* Large Desktop */
   @media (min-width: 1920px) {
     max-width: 1400px;
     gap: 5rem;
   }
 
-  /* Desktop */
   @media (min-width: 1440px) and (max-width: 1919px) {
     max-width: 1300px;
     gap: 4.5rem;
   }
 
-  /* Standard Desktop */
   @media (min-width: 1200px) and (max-width: 1439px) {
     gap: 4rem;
   }
 
-  /* Laptop */
   @media (min-width: 1025px) and (max-width: 1199px) {
     gap: 3.5rem;
   }
 
-  /* iPad Pro & Large Tablets */
   @media (min-width: 769px) and (max-width: 1024px) {
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
   }
 
-  /* iPad & Standard Tablets */
   @media (min-width: 601px) and (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     text-align: center;
   }
 
-  /* Large Mobile */
   @media (min-width: 481px) and (max-width: 600px) {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
 
-  /* Standard Mobile */
   @media (min-width: 321px) and (max-width: 480px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     text-align: center;
   }
 
-  /* Small Mobile */
   @media (max-width: 320px) {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     text-align: center;
   }
 
-  /* Landscape orientation adjustments */
   @media (orientation: landscape) and (max-height: 600px) {
     gap: 2rem;
     grid-template-columns: 1fr 1fr;
@@ -503,7 +194,6 @@ export const GreetingText = styled.div`
     display: inline-block;
   }
 
-  /* Large Desktop */
   @media (min-width: 1920px) {
     font-size: 1.3rem;
     .wave {
@@ -511,7 +201,6 @@ export const GreetingText = styled.div`
     }
   }
 
-  /* Desktop */
   @media (min-width: 1440px) and (max-width: 1919px) {
     font-size: 1.2rem;
     .wave {
@@ -519,7 +208,6 @@ export const GreetingText = styled.div`
     }
   }
 
-  /* iPad Pro & Large Tablets */
   @media (min-width: 769px) and (max-width: 1024px) {
     justify-content: center;
     font-size: 1.05rem;
@@ -528,7 +216,6 @@ export const GreetingText = styled.div`
     }
   }
 
-  /* iPad & Standard Tablets */
   @media (min-width: 601px) and (max-width: 768px) {
     justify-content: center;
     font-size: 1rem;
@@ -537,7 +224,6 @@ export const GreetingText = styled.div`
     }
   }
 
-  /* Large Mobile */
   @media (min-width: 481px) and (max-width: 600px) {
     justify-content: center;
     font-size: 0.95rem;
@@ -546,7 +232,6 @@ export const GreetingText = styled.div`
     }
   }
 
-  /* Standard Mobile */
   @media (min-width: 321px) and (max-width: 480px) {
     justify-content: center;
     font-size: 0.9rem;
@@ -555,7 +240,6 @@ export const GreetingText = styled.div`
     }
   }
 
-  /* Small Mobile */
   @media (max-width: 320px) {
     justify-content: center;
     font-size: 0.85rem;
@@ -599,7 +283,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* Large Desktop */
   @media (min-width: 1920px) {
     h1 {
       font-size: clamp(3.5rem, 6vw, 5rem);
@@ -607,7 +290,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* Desktop */
   @media (min-width: 1440px) and (max-width: 1919px) {
     h1 {
       font-size: clamp(3rem, 5.5vw, 4.5rem);
@@ -615,7 +297,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* iPad Pro & Large Tablets */
   @media (min-width: 769px) and (max-width: 1024px) {
     order: 2;
     text-align: center;
@@ -625,7 +306,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* iPad & Standard Tablets */
   @media (min-width: 601px) and (max-width: 768px) {
     order: 2;
     text-align: center;
@@ -635,7 +315,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* Large Mobile */
   @media (min-width: 481px) and (max-width: 600px) {
     order: 2;
     text-align: center;
@@ -645,7 +324,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* Standard Mobile */
   @media (min-width: 321px) and (max-width: 480px) {
     order: 2;
     text-align: center;
@@ -655,7 +333,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* Small Mobile */
   @media (max-width: 320px) {
     order: 2;
     text-align: center;
@@ -665,7 +342,6 @@ export const LeftSection = styled.div`
     }
   }
 
-  /* Landscape adjustments */
   @media (orientation: landscape) and (max-height: 600px) {
     order: 1;
     text-align: left;
@@ -690,35 +366,30 @@ export const IntroText = styled.p`
     font-weight: 600;
   }
 
-  /* Large Desktop */
   @media (min-width: 1920px) {
     font-size: 1.3rem;
     max-width: 600px;
     margin-bottom: 2.5rem;
   }
 
-  /* Desktop */
   @media (min-width: 1440px) and (max-width: 1919px) {
     font-size: 1.2rem;
     max-width: 550px;
     margin-bottom: 2.25rem;
   }
 
-  /* iPad Pro & Large Tablets */
   @media (min-width: 769px) and (max-width: 1024px) {
     max-width: 700px;
     margin: 0 auto 2rem;
     font-size: 1.1rem;
   }
 
-  /* iPad & Standard Tablets */
   @media (min-width: 601px) and (max-width: 768px) {
     max-width: 600px;
     margin: 0 auto 1.75rem;
     font-size: 1.05rem;
   }
 
-  /* Large Mobile */
   @media (min-width: 481px) and (max-width: 600px) {
     max-width: 100%;
     margin: 0 auto 1.5rem;
@@ -726,7 +397,6 @@ export const IntroText = styled.p`
     line-height: 1.6;
   }
 
-  /* Standard Mobile */
   @media (min-width: 321px) and (max-width: 480px) {
     max-width: 100%;
     margin: 0 auto 1.25rem;
@@ -734,7 +404,6 @@ export const IntroText = styled.p`
     line-height: 1.6;
   }
 
-  /* Small Mobile */
   @media (max-width: 320px) {
     max-width: 100%;
     margin: 0 auto 1rem;
@@ -742,7 +411,6 @@ export const IntroText = styled.p`
     line-height: 1.55;
   }
 
-  /* Landscape adjustments */
   @media (orientation: landscape) and (max-height: 600px) {
     margin-bottom: 1rem;
     font-size: 0.95rem;
@@ -761,33 +429,28 @@ export const ButtonGroup = styled.div`
     animation: ${slideUp} 4s ease-out forwards;
   }
 
-  /* Large Desktop */
   @media (min-width: 1920px) {
     gap: 1.5rem;
     margin-bottom: 3rem;
   }
 
-  /* Desktop */
   @media (min-width: 1440px) and (max-width: 1919px) {
     gap: 1.25rem;
     margin-bottom: 2.75rem;
   }
 
-  /* iPad Pro & Large Tablets */
   @media (min-width: 769px) and (max-width: 1024px) {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
   }
 
-  /* iPad & Standard Tablets */
   @media (min-width: 601px) and (max-width: 768px) {
     justify-content: center;
     gap: 0.875rem;
     margin-bottom: 1.75rem;
   }
 
-  /* Large Mobile */
   @media (min-width: 481px) and (max-width: 600px) {
     justify-content: center;
     gap: 0.75rem;
@@ -795,7 +458,6 @@ export const ButtonGroup = styled.div`
     flex-direction: row;
   }
 
-  /* Standard Mobile */
   @media (min-width: 321px) and (max-width: 480px) {
     justify-content: center;
     gap: 0.625rem;
@@ -804,7 +466,6 @@ export const ButtonGroup = styled.div`
     align-items: center;
   }
 
-  /* Small Mobile */
   @media (max-width: 320px) {
     justify-content: center;
     gap: 0.5rem;
@@ -813,7 +474,6 @@ export const ButtonGroup = styled.div`
     align-items: center;
   }
 
-  /* Landscape adjustments */
   @media (orientation: landscape) and (max-height: 600px) {
     margin-bottom: 1rem;
     gap: 0.75rem;
@@ -866,33 +526,28 @@ export const PrimaryButton = styled.a`
     transform: translateY(0);
   }
 
-  /* Large Desktop */
   @media (min-width: 1920px) {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     gap: 0.75rem;
   }
 
-  /* Desktop */
   @media (min-width: 1440px) and (max-width: 1919px) {
     padding: 0.9375rem 2.25rem;
     font-size: 1rem;
     gap: 0.625rem;
   }
 
-  /* iPad & Standard Tablets */
   @media (min-width: 601px) and (max-width: 768px) {
     padding: 0.8125rem 1.75rem;
     font-size: 0.9rem;
   }
 
-  /* Large Mobile */
   @media (min-width: 481px) and (max-width: 600px) {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
   }
 
-  /* Standard Mobile */
   @media (min-width: 321px) and (max-width: 480px) {
     padding: 0.75rem 1.5rem;
     font-size: 0.85rem;
@@ -901,7 +556,6 @@ export const PrimaryButton = styled.a`
     justify-content: center;
   }
 
-  /* Small Mobile */
   @media (max-width: 320px) {
     padding: 0.625rem 1.25rem;
     font-size: 0.8rem;
@@ -910,7 +564,6 @@ export const PrimaryButton = styled.a`
     justify-content: center;
   }
 
-  /* Landscape adjustments */
   @media (orientation: landscape) and (max-height: 600px) {
     padding: 0.625rem 1.25rem;
     font-size: 0.8rem;
@@ -942,33 +595,28 @@ export const SecondaryButton = styled.a`
     transform: translateY(0);
   }
 
-  /* Large Desktop */
   @media (min-width: 1920px) {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     gap: 0.75rem;
   }
 
-  /* Desktop */
   @media (min-width: 1440px) and (max-width: 1919px) {
     padding: 0.9375rem 2.25rem;
     font-size: 1rem;
     gap: 0.625rem;
   }
 
-  /* iPad & Standard Tablets */
   @media (min-width: 601px) and (max-width: 768px) {
     padding: 0.8125rem 1.75rem;
     font-size: 0.9rem;
   }
 
-  /* Large Mobile */
   @media (min-width: 481px) and (max-width: 600px) {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
   }
 
-  /* Standard Mobile */
   @media (min-width: 321px) and (max-width: 480px) {
     padding: 0.75rem 1.5rem;
     font-size: 0.85rem;
@@ -977,7 +625,6 @@ export const SecondaryButton = styled.a`
     justify-content: center;
   }
 
-  /* Small Mobile */
   @media (max-width: 320px) {
     padding: 0.625rem 1.25rem;
     font-size: 0.8rem;
@@ -986,7 +633,6 @@ export const SecondaryButton = styled.a`
     justify-content: center;
   }
 
-  /* Landscape adjustments */
   @media (orientation: landscape) and (max-height: 600px) {
     padding: 0.625rem 1.25rem;
     font-size: 0.8rem;
@@ -1144,9 +790,7 @@ export const RightSection = styled.div`
   }
 `;
 
-export const HeroImageContainer = styled.div<{
-  visible?: boolean;
-}>`
+export const HeroImageContainer = styled.div`
   position: relative;
   width: 100%;
   display: flex;
@@ -1171,11 +815,19 @@ export const HeroImageContainer = styled.div<{
   }
 
   @media (max-width: 768px) {
-    max-width: 240px;
+    width: 180px;
+    height: 180px;
+    &::before {
+      border-radius: 50%;
+    }
   }
 
   @media (max-width: 480px) {
-    max-width: 180px;
+    width: 180px
+    height: 180px;
+    &::before {
+      border-radius: 50%;
+    }
   }
 `;
 
@@ -1230,37 +882,55 @@ export const FloatingCard = styled.div<{ animationType?: string }>`
   }
 
   /* Card base positions */
-  &.card-1 { top: 0%; right: -20%; }
-  &.card-2 { top: 50%; left: -20%; }
-  &.card-3 { bottom: 0%; right: -20%; }
-  &.card-4 { top: 0%; left: -20%; }
-  &.card-5 { bottom: -15%; left: 35%; }
-  &.card-6 { top: -15%; left: 35%; }
+  &.card-1 {
+    top: 0%;
+    right: -20%;
+  }
+  &.card-2 {
+    top: 50%;
+    left: -20%;
+  }
+  &.card-3 {
+    bottom: 0%;
+    right: -20%;
+  }
+  &.card-4 {
+    top: 0%;
+    left: -20%;
+  }
+  &.card-5 {
+    bottom: -15%;
+    left: 35%;
+  }
+  &.card-6 {
+    top: -15%;
+    left: 35%;
+  }
 
   /* =============== Animations when .visible is added =============== */
   &.visible.card-1 {
     animation: ${slideInFromTop} 0.8s ease-out 0.2s forwards,
-               ${float} 3s ease-in-out infinite 1s;
+      ${float} 3s ease-in-out infinite 1s;
   }
   &.visible.card-2 {
     animation: ${slideInFromLeft} 0.8s ease-out 0.4s forwards,
-               ${floatReverse} 3s ease-in-out infinite 1.2s;
+      ${floatReverse} 3s ease-in-out infinite 1.2s;
   }
   &.visible.card-3 {
     animation: ${slideInFromBottom} 0.8s ease-out 0.6s forwards,
-               ${float} 3s ease-in-out infinite 1.4s;
+      ${float} 3s ease-in-out infinite 1.4s;
   }
   &.visible.card-4 {
     animation: ${elasticBounce} 1s ease-out 0.8s forwards,
-               ${floatReverse} 3s ease-in-out infinite 1.6s;
+      ${floatReverse} 3s ease-in-out infinite 1.6s;
   }
   &.visible.card-5 {
     animation: ${popRotate} 1s ease-out 1s forwards,
-               ${float} 3s ease-in-out infinite 1.8s;
+      ${float} 3s ease-in-out infinite 1.8s;
   }
   &.visible.card-6 {
     animation: ${magneticAttraction} 1.2s ease-out 1.2s forwards,
-               ${float} 3s ease-in-out infinite 2s;
+      ${float} 3s ease-in-out infinite 2s;
   }
 
   /* Optional: alternative animation modes */
@@ -1278,32 +948,60 @@ export const FloatingCard = styled.div<{ animationType?: string }>`
   @media (max-width: 1024px) {
     padding: 0.6rem 1rem;
     font-size: 0.8rem;
-    &.card-1 { right: -10%; top: 5%; }
-    &.card-2 { left: -10%; top: 50%; }
-    &.card-3 { right: -8%; bottom: 5%; }
+    &.card-1 {
+      right: -10%;
+      top: 5%;
+    }
+    &.card-2 {
+      left: -10%;
+      top: 50%;
+    }
+    &.card-3 {
+      right: -8%;
+      bottom: 5%;
+    }
   }
 
   @media (max-width: 768px) {
     padding: 0.5rem 0.8rem;
     font-size: 0.7rem;
     gap: 0.4rem;
-    &.card-1 { right: 15%; top: 20%; }
-    &.card-2 { left: 45%; top: 55%; }
-    &.card-3 { right: 15%; bottom: 20%; }
+    &.card-1 {
+      right: 15%;
+      top: 20%;
+    }
+    &.card-2 {
+      left: 45%;
+      top: 55%;
+    }
+    &.card-3 {
+      right: 15%;
+      bottom: 20%;
+    }
     &.card-4,
     &.card-5,
-    &.card-6 { display: none; }
+    &.card-6 {
+      display: none;
+    }
   }
 
   @media (max-width: 480px) {
     padding: 0.4rem 0.6rem;
     font-size: 0.65rem;
-    &.card-1 { right: 5%; top: -5%; }
-    &.card-2 { left: -35%; top: 30%; }
-    &.card-3 { right: 5%; bottom: -5%; }
+    &.card-1 {
+      right: 5%;
+      top: -5%;
+    }
+    &.card-2 {
+      left: -35%;
+      top: 30%;
+    }
+    &.card-3 {
+      right: 5%;
+      bottom: -5%;
+    }
   }
 `;
-
 
 export const FloatingElements = styled.div`
   position: absolute;
@@ -1312,46 +1010,6 @@ export const FloatingElements = styled.div`
   right: 0;
   bottom: 0;
   pointer-events: none;
-`;
-
-export const ScrollIndicator = styled.a`
-  position: absolute;
-  bottom: 2rem;
-  left: 48%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  gap: 0.5rem;
-  color: ${({ theme }) => theme.colors.textLight};
-  cursor: pointer;
-  animation: ${bounce} 2s ease-in-out infinite;
-  transition: all 0.2s ease;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.primary};
-  }
-
-  span {
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: lowercase;
-    letter-spacing: 0.025em;
-    text-align: center;
-  }
-
-  svg {
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    left: 35%;
-    bottom: 1%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
 `;
 
 export const GradientOrb = styled.div`
@@ -1407,10 +1065,42 @@ export const GradientOrb = styled.div`
   }
 `;
 
-export const GradientText = styled.span`
-  background: ${({ theme }) => theme.gradients.accent};
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: inherit;
+export const ScrollIndicator = styled.a`
+  position: absolute;
+  bottom: 2rem;
+  left: 48%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
+  color: ${({ theme }) => theme.colors.textLight};
+  cursor: pointer;
+  animation: ${bounce} 2s ease-in-out infinite;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
+  span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    letter-spacing: 0.025em;
+    text-align: center;
+  }
+
+  svg {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    left: 35%;
+    bottom: 1%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
 `;

@@ -1,190 +1,254 @@
-import { CardContent } from "@mui/material";
-import React, { useState } from "react";
-import { CardHeader, CardFooter } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import {
   EducationSection,
   Header,
-  Title,
   Subtitle,
-  EducationGrid,
+  EducationContainer,
   EducationCard,
-  IconWrapper,
-  Duration,
+  CardTop,
+  EducationBadge,
+  CardMain,
+  InstitutionInfo,
+  InstitutionName,
+  Location,
+  DegreeInfo,
   Degree,
   Field,
-  InstitutionName,
   Grade,
-  ExpandedContent,
-  SectionTitle,
-  AchievementsList,
-  Achievement,
-  AchievementIcon,
-  CoursesList,
-  ViewMore,
-  TimelineContainer,
-  TimelineTitle,
-  Timeline,
+  DetailsSection,
+  DetailRow,
+  DetailLabel,
+  DetailContent,
+  AchievementGrid,
+  AchievementItem,
+  SkillsContainer,
+  SkillChip,
+  TimelineSection,
+  TimelineHeader,
+  TimelineWrapper,
+  TimelineLine,
   TimelineItem,
   TimelineMarker,
+  TimelineCard,
+  TimelineIcon,
   TimelineContent,
   TimelineYear,
-  TimelineDegree,
-  TimelineInstitution,
-  Location,
+  TimelineTitle,
+  TimelineSubtitle,
   Container,
-  Section,
-  Icon,
-  Institution
+  StatsGrid,
+  StatCard,
+  StatNumber,
+  StatLabel,
+  ViewToggle,
+  GridContainer,
+  ViewMore,
+  CardFooter,
 } from "./styled";
 import MyChip from "../../components/atoms/Chip";
-import { GradientText, MainTitle, StyledBadgeIcon, TitleBadge } from "../../globalStyled";
-
+import {
+  AnimatedBackground,
+  FloatingOrb,
+  GradientText,
+  MainTitle,
+  StyledBadgeIcon,
+  TitleBadge,
+} from "../../globalStyled";
+import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
+import { getEducationContent } from "../../services/apicalls/getcall";
+import { EducationData } from "./interfaces";
 
 const Education = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [expandedCards, setExpandedCards] = useState<number[]>([]);
+  const [viewMode, setViewMode] = useState<"grid" | "timeline">("grid");
+  const [educationData, setEducationData] = useState<EducationData[] | null>(
+    null
+  );
+  const { ref, isVisible } = useAnimateOnScroll(educationData, {
+    threshold: [0.08],
+  });
 
-  const educationData = [
-    {
-      id: 1,
-      degree: "Master of Computer Applications",
-      field: "Computer Science & Engineering",
-      institution: "Indian Institute of Technology",
-      location: "Delhi, India",
-      duration: "2020 - 2022",
-      grade: "CGPA: 8.7/10",
-      type: "Masters",
-      achievements: [
-        "Specialized in Full-Stack Development",
-        "Research in Machine Learning & AI",
-        "Lead Developer - University Tech Club",
-        "Published 2 research papers"
-      ],
-      courses: ["Advanced Algorithms", "System Design", "Database Management", "Web Technologies"],
-      icon: "🎓"
-    },
-    {
-      id: 2,
-      degree: "Bachelor of Computer Applications",
-      field: "Computer Applications",
-      institution: "Delhi University",
-      location: "New Delhi, India",
-      duration: "2017 - 2020",
-      grade: "Percentage: 85.4%",
-      type: "Bachelors",
-      achievements: [
-        "Dean's List for 3 consecutive semesters",
-        "President - Computer Science Society",
-        "Winner - Inter-college Hackathon 2019",
-        "Merit Scholarship Recipient"
-      ],
-      courses: ["Data Structures", "Programming Languages", "Software Engineering", "Mathematics"],
-      icon: "🏆"
-    },
-    {
-      id: 3,
-      degree: "Higher Secondary Education",
-      field: "Science (PCM + Computer)",
-      institution: "Delhi Public School",
-      location: "Delhi, India",
-      duration: "2015 - 2017",
-      grade: "Percentage: 92.8%",
-      type: "School",
-      achievements: [
-        "School Topper in Computer Science",
-        "National Level Olympiad Qualifier",
-        "Head Boy - Student Council",
-        "Best Student Award 2017"
-      ],
-      courses: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
-      icon: "📚"
-    }
-  ];
+  const toggleCard = (id: number) => {
+    setExpandedCards((prev) =>
+      prev.includes(id) ? prev.filter((cardId) => cardId !== id) : [...prev, id]
+    );
+  };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await getEducationContent();
+        setEducationData(res.data);
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  }, []);
 
   return (
-    <EducationSection id="education">
+    <EducationSection id="education" ref={ref}>
+      <AnimatedBackground>
+        <FloatingOrb className="orb-1" />
+        <FloatingOrb className="orb-2" />
+        <FloatingOrb className="orb-3" />
+      </AnimatedBackground>
+
       <Container>
         <Header>
-          <TitleBadge><StyledBadgeIcon>🎓</StyledBadgeIcon>Education</TitleBadge>
-          <MainTitle>Learning<GradientText>& growth</GradientText></MainTitle>
-          <Subtitle>My academic journey and continuous learning path</Subtitle>
+          <TitleBadge>
+            <StyledBadgeIcon>🎓</StyledBadgeIcon>
+            Education
+          </TitleBadge>
+          <MainTitle>
+            Academic <GradientText>Journey</GradientText>
+          </MainTitle>
+          <Subtitle>
+            Building knowledge through structured learning and continuous growth
+          </Subtitle>
         </Header>
 
-        <EducationGrid>
-          {educationData.map((edu, index) => (
-            <EducationCard
-              key={edu.id}
-              isActive={activeCard === edu.id}
-              onMouseEnter={() => setActiveCard(edu.id)}
-              onMouseLeave={() => setActiveCard(null)}
-              delay={index * 0.1}
-            >
-              <CardHeader>
-                <IconWrapper>
-                  <Icon>{edu.icon}</Icon>
-                  <MyChip label={edu.type} />
-                </IconWrapper>
-                <Duration>{edu.duration}</Duration>
-              </CardHeader>
+        <StatsGrid>
+          <StatCard className={isVisible ? "visible" : ""}>
+            <StatNumber>{educationData?.length}</StatNumber>
+            <StatLabel>Institutions</StatLabel>
+          </StatCard>
+          <StatCard className={isVisible ? "visible" : ""}>
+            <StatNumber>{"4.2"}</StatNumber>
+            <StatLabel>Average GPA</StatLabel>
+          </StatCard>
+          <StatCard className={isVisible ? "visible" : ""}>
+            <StatNumber>
+              {educationData?.reduce((acc, edu) => acc + edu.courses.length, 0)}
+              +
+            </StatNumber>
+            <StatLabel>Subjects Studied</StatLabel>
+          </StatCard>
+        </StatsGrid>
 
-              <CardContent>
-                <Degree>{edu.degree}</Degree>
-                <Field>{edu.field}</Field>
-                <Institution>
-                  <InstitutionName>{edu.institution}</InstitutionName>
-                  <Location>{edu.location}</Location>
-                </Institution>
-                <Grade>{edu.grade}</Grade>
-              </CardContent>
+        <ViewToggle>
+          <button
+            className={viewMode === "grid" ? "active" : ""}
+            onClick={() => setViewMode("grid")}
+          >
+            📊 Card View
+          </button>
+          <button
+            className={viewMode === "timeline" ? "active" : ""}
+            onClick={() => setViewMode("timeline")}
+          >
+            📅 Timeline View
+          </button>
+        </ViewToggle>
 
-              <ExpandedContent isActive={activeCard === edu.id}>
-                <Section>
-                  <SectionTitle>Key Achievements</SectionTitle>
-                  <AchievementsList>
-                    {edu.achievements.map((achievement, idx) => (
-                      <Achievement key={idx}>
-                        <AchievementIcon>✨</AchievementIcon>
-                        {achievement}
-                      </Achievement>
-                    ))}
-                  </AchievementsList>
-                </Section>
+        {viewMode === "grid" ? (
+          <GridContainer>
+            <EducationContainer>
+              {educationData?.map((edu, index) => (
+                <EducationCard
+                  key={edu.id}
+                  delay={index * 0.1}
+                  onClick={() => toggleCard(edu.id)}
+                  isExpanded={expandedCards.includes(edu.id)}
+                  className={isVisible ? "visible" : ""}
+                >
+                  <CardFooter>
+                    <ViewMore isActive={expandedCards.includes(edu.id)}>
+                      {expandedCards.includes(edu.id)
+                        ? "Click to explore"
+                        : "Click for details"}
+                    </ViewMore>
+                  </CardFooter>
+                  <CardTop>
+                    <MyChip label={edu.icon + " " + edu.type} />
+                  </CardTop>
 
-                <Section>
-                  <SectionTitle>Core Subjects</SectionTitle>
-                  <CoursesList>
-                    {edu.courses.map((course, idx) => (
-                      <MyChip key={idx} label={course} />
-                    ))}
-                  </CoursesList>
-                </Section>
-              </ExpandedContent>
+                  <CardMain>
+                    <InstitutionInfo>
+                      <InstitutionName>{edu.institution}</InstitutionName>
+                      <Location>📍 {edu.location}</Location>
+                    </InstitutionInfo>
 
-              <CardFooter>
-                <ViewMore isActive={activeCard === edu.id}>
-                  {activeCard === edu.id ? 'Hover to explore' : 'Hover for details'}
-                </ViewMore>
-              </CardFooter>
-            </EducationCard>
-          ))}
-        </EducationGrid>
+                    <DegreeInfo>
+                      <Degree>{edu.degree}</Degree>
+                      <Field>{edu.field}</Field>
+                      <Grade>{edu.grade}</Grade>
+                    </DegreeInfo>
+                  </CardMain>
 
-        <TimelineContainer>
-          <TimelineTitle>Educational Timeline</TimelineTitle>
-          <Timeline>
-            {educationData.map((edu, index) => (
-              <TimelineItem key={edu.id} index={index}>
-                <TimelineMarker />
-                <TimelineContent>
-                  <TimelineYear>{edu.duration.split(' - ')[0]}</TimelineYear>
-                  <TimelineDegree>{edu.degree}</TimelineDegree>
-                  <TimelineInstitution>{edu.institution}</TimelineInstitution>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </TimelineContainer>
+                  <DetailsSection isExpanded={expandedCards.includes(edu.id)}>
+                    <DetailRow>
+                      <DetailLabel>🏆 Key Achievements</DetailLabel>
+                      <DetailContent>
+                        <AchievementGrid>
+                          {edu.achievements.map((achievement, idx) => (
+                            <AchievementItem key={idx}>
+                              <span className="bullet">•</span>
+                              <span>{achievement}</span>
+                            </AchievementItem>
+                          ))}
+                        </AchievementGrid>
+                      </DetailContent>
+                    </DetailRow>
+
+                    <DetailRow>
+                      <DetailLabel>📚 Core Subjects</DetailLabel>
+                      <DetailContent>
+                        <SkillsContainer>
+                          {edu.courses.map((course, idx) => (
+                            <SkillChip key={idx}>{course}</SkillChip>
+                          ))}
+                        </SkillsContainer>
+                      </DetailContent>
+                    </DetailRow>
+                  </DetailsSection>
+                </EducationCard>
+              ))}
+            </EducationContainer>
+          </GridContainer>
+        ) : (
+          <TimelineSection>
+            <TimelineHeader>📅 Educational Timeline</TimelineHeader>
+            <TimelineWrapper>
+              <TimelineLine />
+              {educationData?.map((edu, index) => (
+                <TimelineItem
+                  key={edu.id}
+                  index={index}
+                  delay={index * 0.15}
+                  className={isVisible ? "visible" : ""}
+                >
+                  <TimelineMarker />
+                  <TimelineCard>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "16px",
+                        marginBottom: "12px",
+                      }}
+                    >
+                      <TimelineIcon>{edu.icon}</TimelineIcon>
+                      <EducationBadge type={edu.type}>
+                        <span className="text">{edu.type}</span>
+                      </EducationBadge>
+                    </div>
+                    <TimelineContent>
+                      <TimelineYear>{edu.duration}</TimelineYear>
+                      <TimelineTitle>{edu.degree}</TimelineTitle>
+                      <TimelineSubtitle>{edu.field}</TimelineSubtitle>
+                      <InstitutionName>{edu.institution}</InstitutionName>
+                      <Location>📍 {edu.location}</Location>
+                      <Grade>{edu.grade}</Grade>
+                    </TimelineContent>
+                  </TimelineCard>
+                </TimelineItem>
+              ))}
+            </TimelineWrapper>
+          </TimelineSection>
+        )}
       </Container>
     </EducationSection>
   );
 };
+
 export default Education;

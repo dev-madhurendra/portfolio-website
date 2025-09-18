@@ -36,16 +36,6 @@ const scaleIn = keyframes`
   }
 `;
 
-const float = keyframes`
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-`;
-
-const pulse = keyframes`
-  0%, 100% { opacity: 0.05; transform: scale(1); }
-  50% { opacity: 0.1; transform: scale(1.05); }
-`;
-
 const subtleMove = keyframes`
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
   25% { transform: translate(5px, -5px) rotate(1deg); }
@@ -95,90 +85,6 @@ export const AboutContainer = styled.section`
   @media (orientation: landscape) and (max-height: 600px) {
     min-height: auto;
     padding: 3rem 1rem;
-  }
-`;
-
-export const AnimatedBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-        circle at 20% 20%,
-        rgba(1, 4, 183, 0.03) 0%,
-        transparent 60%
-      ),
-      radial-gradient(
-        circle at 80% 80%,
-        rgba(223, 5, 5, 0.03) 0%,
-        transparent 60%
-      ),
-      radial-gradient(
-        circle at 60% 40%,
-        rgba(0, 17, 6, 0.02) 0%,
-        transparent 60%
-      );
-  }
-`;
-
-export const FloatingOrb = styled.div`
-  position: absolute;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.gradients.primary};
-  opacity: 0.05;
-  animation: ${float} 12s ease-in-out infinite, ${pulse} 8s ease-in-out infinite;
-  filter: blur(1px);
-
-  &.orb-1 {
-    width: 200px;
-    height: 200px;
-    top: 15%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-
-  &.orb-2 {
-    width: 150px;
-    height: 150px;
-    bottom: 20%;
-    right: 15%;
-    background: ${({ theme }) => theme.gradients.accent};
-    animation-delay: 4s;
-  }
-
-  &.orb-3 {
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    right: 30%;
-    background: ${({ theme }) => theme.gradients.tertiary};
-    animation-delay: 8s;
-  }
-
-  @media (max-width: 768px) {
-    &.orb-1 {
-      width: 120px;
-      height: 120px;
-    }
-    &.orb-2 {
-      width: 100px;
-      height: 100px;
-    }
-    &.orb-3 {
-      width: 80px;
-      height: 80px;
-    }
   }
 `;
 
@@ -355,83 +261,6 @@ export const StatsGrid = styled.div`
 
   @media (max-width: 768px) {
     gap: 1rem;
-  }
-`;
-
-export const StatCard = styled.div<{ delay: number }>`
-  background: ${({ theme }) => theme.colors.cardBg};
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-
-  &.visible {
-    animation: ${scaleIn} 0.6s ease-out forwards;
-    animation-delay: ${({ delay }) => delay}s;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    transition: left 0.6s;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: ${({ theme }) => theme.shadows.cardHover};
-    border-color: ${({ theme }) => theme.colors.primary}40;
-
-    &::before {
-      left: 100%;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    padding: 2rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 1.25rem;
-  }
-`;
-
-export const StatNumber = styled.div`
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.primary};
-  margin-bottom: 0.5rem;
-  font-family: ${({ theme }) => theme.fonts.heading};
-
-  @media (min-width: 1920px) {
-    font-size: clamp(2.25rem, 3vw, 3rem);
-  }
-`;
-
-export const StatLabel = styled.div`
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  font-weight: 500;
-
-  @media (min-width: 1920px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.8rem;
   }
 `;
 

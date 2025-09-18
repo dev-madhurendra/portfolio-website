@@ -11,9 +11,6 @@ import {
   AboutText,
   HighlightText,
   StatsGrid,
-  StatCard,
-  StatNumber,
-  StatLabel,
   CategoryTitle,
   PersonalSection,
   PersonalGrid,
@@ -25,8 +22,6 @@ import {
   CTAText,
   CTAButtons,
   PrimaryButton,
-  FloatingOrb,
-  AnimatedBackground,
   ChipRow,
   ChipsContainer,
   WhatIDoSection,
@@ -38,6 +33,8 @@ import { AboutData } from "./interfaces";
 import { getAboutContent } from "../../services/apicalls/getcall";
 import { chipData, personalTraits } from "../../services/mocks/mocks";
 import {
+  AnimatedBackground,
+  FloatingOrb,
   GradientText,
   MainTitle,
   StyledBadgeIcon,
@@ -45,11 +42,14 @@ import {
   TitleBadge,
 } from "../../globalStyled";
 import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
+import AnimatedStatCard from "../../components/atoms/AnimatedStatCard";
 
 const About = () => {
   const [aboutData, setAboutData] = useState<AboutData | null>(null);
 
-  const { ref, isVisible } = useAnimateOnScroll(aboutData, { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1.0] });
+  const { ref, isVisible } = useAnimateOnScroll(aboutData, {
+    threshold: [0.2, 0.35, 0.6],
+  });
 
   useEffect(() => {
     getAboutContent().then((res) => {
@@ -136,21 +136,14 @@ const About = () => {
 
             <StatsGrid>
               <StatsGrid>
-                {aboutData?.stats ? (
-                  aboutData.stats.map((stat, index) => (
-                    <StatCard
-                      key={index}
-                      delay={index * 0.1}
-                    >
-                      <StatNumber>{stat.number}</StatNumber>
-                      <StatLabel>{stat.label}</StatLabel>
-                    </StatCard>
-                  ))
-                ) : (
-                  <>
-                    <h1>Loading.....</h1>
-                  </>
-                )}
+                {aboutData?.stats.map((stat, index) => (
+                  <AnimatedStatCard
+                    stat={stat}
+                    isIcon={false}
+                    isVisible={isVisible}
+                    index={index}
+                  />
+                ))}
               </StatsGrid>
             </StatsGrid>
           </RightColumn>

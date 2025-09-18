@@ -9,12 +9,7 @@
   "home": {
     "name": "Madhurendra",
     "introText": "I craft beautiful digital experiences that connect brands with their audiences. Specialized in creating intuitive interfaces and compelling user journeys that drive engagement and conversion.",
-    "typedRoles": [
-      "Software",
-      "Frotnend",
-      "UI/UX",
-      "Backend"
-    ],
+    "typedRoles": ["Software", "Frotnend", "UI/UX", "Backend"],
     "greeting": ["Hello, I'm", "Welcome", "Hola", "Bonjour"],
     "imageUrl": "/gif/HeroSectionAnimationLight.gif",
     "resumeUrl": "/resume.pdf",
@@ -43,33 +38,67 @@
   "educations": [
     {
       "id": 1,
-      "title": "High School",
-      "school": "Kuri Lal Rungta Saraswati Vidya Mandir",
-      "location": "Khalilabad, S.K.N., UP, 272175",
-      "start_date": "2014",
-      "end_date": "2016",
-      "percentage": "87.5%",
-      "description": "Completed high school with a focus on mathematics and physics."
+      "degree": "Bachelor Of Technology",
+      "field": "Information Technology",
+      "institution": "United College Of Engineering & Research",
+      "location": "Prayagraj, UP, India",
+      "duration": "2019 - 2023",
+      "grade": "CGPA: 7.5/10",
+      "type": "Bachelors",
+      "achievements": [
+        "Specialized in Full-Stack Development",
+        "Research in Machine Learning & AI",
+        "Cracked HWI held by Infosys",
+        "Developed Resume Builder Application for Students"
+      ],
+      "courses": [
+        "Advanced Algorithms",
+        "System Design",
+        "Database Management",
+        "Web Technologies"
+      ],
+      "icon": "🎓"
     },
     {
       "id": 2,
-      "title": "Intermediate",
-      "school": "S N Singh Inter College",
-      "location": "Panchpedwa, S.K.N., UP, 272175",
-      "start_date": "2016",
-      "end_date": "2018",
-      "percentage": "88.8%",
-      "description": "Completed intermediate with a focus on mathematics, physics and chemistry."
+      "degree": "Senior Secondary Education",
+      "field": "Science (PCM + Computer)",
+      "institution": "Narpat Singh Inter College",
+      "location": "Ujrautikala, Sant Kabir Nagar, UP, India",
+      "duration": "2016 - 2018",
+      "grade": "Percentage: 88.8%",
+      "type": "Intermediate",
+      "achievements": [
+        "Achieved District Rank 3 in academics",
+        "President - Computer Science Society",
+        "Successfully cleared IIT-JEE and multiple competitive examinations",
+        "Selected for and participated in the SSB (Services Selection Board) Interview"
+      ],
+      "courses": [
+        "Programming Languages",
+        "Physics",
+        "Chemistry",
+        "Mathematics"
+      ],
+      "icon": "🏆"
     },
     {
       "id": 3,
-      "title": "B.Tech.",
-      "school": "United College Of Engineering & Research",
-      "location": "Naini,Prayagraj,UP,211010",
-      "start_date": "2019",
-      "end_date": "2023",
-      "percentage": "72%",
-      "description": "Explored on developing problem-solving skills through the study of algorithms and data structures.."
+      "degree": "Higher Secondary Education",
+      "field": "Science",
+      "institution": "Kuri Lal Rungta Saraswati Vidya Mandir",
+      "location": "Khalilabad, Sant Kabir Nagar, UP, India",
+      "duration": "2014 - 2016",
+      "grade": "Percentage: 87.5%",
+      "type": "Highschool",
+      "achievements": [
+        "School Topper in Mathematics",
+        "National Level Olympiad Qualifier",
+        "Head Boy - Student Council",
+        "Best Student Award 2016"
+      ],
+      "courses": ["Physics", "Chemistry", "Mathematics", "Computer Science"],
+      "icon": "📚"
     }
   ],
   "experiences": [
@@ -96,117 +125,344 @@
     }
   ],
   "skills": [
-    { "id": 1, "name": "Cpp", "tags": ["Programming Language"] },
-    { "id": 2, "name": "Python", "tags": ["Programming Language"] },
-    { "id": 3, "name": "Java", "tags": ["Programming Language", "Backend"] },
     {
-      "id": 4,
-      "name": "JavaScript",
-      "tags": ["Programming Language", "Frontend"]
+      "name": "Frontend Development",
+      "icon": "🎨",
+      "color": "#3b82f6, #06b6d4",
+      "skills": [
+        {
+          "name": "React",
+          "level": 95,
+          "icon": "⚛️"
+        },
+        {
+          "name": "Next.js",
+          "level": 90,
+          "icon": "▲"
+        },
+        {
+          "name": "TypeScript",
+          "level": 88,
+          "icon": "📘"
+        },
+        {
+          "name": "Vue.js",
+          "level": 85,
+          "icon": "💚"
+        },
+        {
+          "name": "Angular",
+          "level": 80,
+          "icon": "🅰️"
+        },
+        {
+          "name": "Svelte",
+          "level": 75,
+          "icon": "🧡"
+        },
+        {
+          "name": "HTML5",
+          "level": 95,
+          "icon": "🌐"
+        },
+        {
+          "name": "CSS3",
+          "level": 92,
+          "icon": "🎨"
+        },
+        {
+          "name": "Sass",
+          "level": 88,
+          "icon": "💎"
+        },
+        {
+          "name": "Tailwind",
+          "level": 90,
+          "icon": "🌊"
+        }
+      ]
     },
     {
-      "id": 5,
-      "name": "TypeScript",
-      "tags": ["Programming Language", "Frontend"]
-    },
-    { "id": 6, "name": "Golang", "tags": ["Programming Language"] },
-    { "id": 7, "name": "HTML", "tags": ["Frontend"] },
-    { "id": 8, "name": "CSS", "tags": ["Frontend"] },
-    { "id": 9, "name": "React", "tags": ["Frontend", "Framework"] },
-    { "id": 10, "name": "NextJS", "tags": ["Frontend", "Framework"] },
-    { "id": 11, "name": "Spring", "tags": ["Backend", "Framework"] },
-    { "id": 12, "name": "SpringBoot", "tags": ["Backend", "Framework"] },
-    { "id": 13, "name": "NodeJS", "tags": ["Backend"] },
-    { "id": 14, "name": "Express", "tags": ["Backend", "Framework"] },
-    { "id": 15, "name": "Django", "tags": ["Backend", "Framework"] },
-    { "id": 16, "name": "FastAPI", "tags": ["Backend", "Framework"] },
-    { "id": 17, "name": "Atomic Design", "tags": ["Design Pattern"] },
-    { "id": 18, "name": "Design Pattern", "tags": ["Design Pattern"] },
-    { "id": 19, "name": "Java SOLID", "tags": ["Design Pattern"] },
-    { "id": 20, "name": "Jest", "tags": ["Testing"] },
-    { "id": 21, "name": "JUNIT", "tags": ["Testing"] },
-    { "id": 22, "name": "Mockito", "tags": ["Testing"] },
-    { "id": 23, "name": "MySQL", "tags": ["Database"] },
-    { "id": 24, "name": "MongoDB", "tags": ["Database"] },
-    { "id": 25, "name": "SQLite", "tags": ["Database"] },
-    { "id": 26, "name": "Storybook", "tags": ["Frontend"] },
-    { "id": 27, "name": "GraphQL", "tags": ["Frontend", "Others"] },
-    { "id": 28, "name": "OOPs", "tags": ["Design Pattern"] },
-    { "id": 30, "name": "Git", "tags": ["Tools"] },
-    { "id": 31, "name": "Bootstrap", "tags": ["Frontend", "Framework"] },
-    { "id": 32, "name": "MaterialUI", "tags": ["Frontend", "Framework"] },
-    { "id": 34, "name": "VSCode", "tags": ["Tools"] },
-    { "id": 35, "name": "Atom", "tags": ["Tools"] },
-    { "id": 36, "name": "Vercel", "tags": ["Tools"] },
-    { "id": 37, "name": "Idea", "tags": ["Tools"] },
-    { "id": 38, "name": "Postman", "tags": ["Tools"] },
-    { "id": 39, "name": "Swagger", "tags": ["Others"] },
-    { "id": 40, "name": "Others Deisgn", "tags": ["Others"] },
-    { "id": 41, "name": "DB Design", "tags": ["Others"] },
-    { "id": 42, "name": "Webpack", "tags": ["Frontend"] },
-    { "id": 43, "name": "Vite", "tags": ["Frontend"] },
-    { "id": 44, "name": "Tailwind", "tags": ["Frontend"] },
-    { "id": 45, "name": "Pug", "tags": ["Frontend"] },
-    { "id": 46, "name": "Powershell", "tags": ["Tools"] },
-    { "id": 47, "name": "Maven", "tags": ["Backend"] },
-    { "id": 48, "name": "Markdown", "tags": ["Others"] },
-    { "id": 49, "name": "Hibernate", "tags": ["Database"] },
-    { "id": 50, "name": "Heroku", "tags": ["Tools"] },
-    { "id": 51, "name": "Github", "tags": ["Tools"] },
-    { "id": 52, "name": "React Testing Library", "tags": ["Testing"] },
-    { "id": 53, "name": "Rest", "tags": ["Others"] },
-    { "id": 54, "name": "DBMS", "tags": ["Others"] },
-    { "id": 55, "name": "DSA", "tags": ["Others"] },
-    { "id": 56, "name": "OOPs", "tags": ["Others"] },
-    { "id": 57, "name": "Sonarcloud", "tags": ["Others"] },
-    { "id": 58, "name": "CI/CD", "tags": ["Others"] },
-    { "id": 59, "name": "Linux", "tags": ["Others"] },
-    { "id": 60, "name": "Windows", "tags": ["Others"] },
-    { "id": 61, "name": "Agile", "tags": ["Others"] },
-    { "id": 62, "name": "Jira", "tags": ["Others"] },
-    { "id": 63, "name": "Auth0", "tags": ["Others"] },
-    { "id": 63, "name": "Google Cloud Platform", "tags": ["Others"] },
-    { "id": 64, "name": "Kafka", "tags": ["Others"] },
-
-    {
-      "id": 65,
-      "name": "Selenium",
-      "tags": ["QA"]
+      "name": "Backend Development",
+      "icon": "⚙️",
+      "color": "#10b981, #059669",
+      "skills": [
+        {
+          "name": "Node.js",
+          "level": 90,
+          "icon": "🟢"
+        },
+        {
+          "name": "Python",
+          "level": 85,
+          "icon": "🐍"
+        },
+        {
+          "name": "Java",
+          "level": 80,
+          "icon": "☕"
+        },
+        {
+          "name": "Go",
+          "level": 75,
+          "icon": "🐹"
+        },
+        {
+          "name": "PHP",
+          "level": 70,
+          "icon": "🐘"
+        },
+        {
+          "name": "Express.js",
+          "level": 88,
+          "icon": "🚀"
+        },
+        {
+          "name": "Django",
+          "level": 82,
+          "icon": "🎯"
+        },
+        {
+          "name": "Spring Boot",
+          "level": 78,
+          "icon": "🍃"
+        },
+        {
+          "name": "FastAPI",
+          "level": 80,
+          "icon": "⚡"
+        },
+        {
+          "name": "GraphQL",
+          "level": 85,
+          "icon": "📊"
+        }
+      ]
     },
     {
-      "id": 66,
-      "name": "Cypress",
-      "tags": ["QA"]
+      "name": "Database & Cloud",
+      "icon": "☁️",
+      "color": "#8b5cf6, #ec4899",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "level": 88,
+          "icon": "🐘"
+        },
+        {
+          "name": "MongoDB",
+          "level": 85,
+          "icon": "🍃"
+        },
+        {
+          "name": "Redis",
+          "level": 80,
+          "icon": "🔴"
+        },
+        {
+          "name": "MySQL",
+          "level": 82,
+          "icon": "🐬"
+        },
+        {
+          "name": "AWS",
+          "level": 85,
+          "icon": "☁️"
+        },
+        {
+          "name": "Docker",
+          "level": 88,
+          "icon": "🐳"
+        },
+        {
+          "name": "Kubernetes",
+          "level": 75,
+          "icon": "⚓"
+        },
+        {
+          "name": "Firebase",
+          "level": 80,
+          "icon": "🔥"
+        },
+        {
+          "name": "Supabase",
+          "level": 85,
+          "icon": "⚡"
+        },
+        {
+          "name": "Vercel",
+          "level": 90,
+          "icon": "▲"
+        }
+      ]
     },
     {
-      "id": 67,
-      "name": "Karate",
-      "tags": ["QA"]
+      "name": "Tools & Others",
+      "icon": "🛠️",
+      "color": "#f97316, #ef4444",
+      "skills": [
+        {
+          "name": "Git",
+          "level": 95,
+          "icon": "📝"
+        },
+        {
+          "name": "GitHub",
+          "level": 92,
+          "icon": "🐙"
+        },
+        {
+          "name": "VS Code",
+          "level": 95,
+          "icon": "💻"
+        },
+        {
+          "name": "Figma",
+          "level": 85,
+          "icon": "🎨"
+        },
+        {
+          "name": "Postman",
+          "level": 88,
+          "icon": "📮"
+        },
+        {
+          "name": "Jest",
+          "level": 80,
+          "icon": "🃏"
+        },
+        {
+          "name": "Cypress",
+          "level": 75,
+          "icon": "🌲"
+        },
+        {
+          "name": "Webpack",
+          "level": 78,
+          "icon": "📦"
+        },
+        {
+          "name": "Vite",
+          "level": 85,
+          "icon": "⚡"
+        },
+        {
+          "name": "ESLint",
+          "level": 90,
+          "icon": "🔍"
+        }
+      ]
     },
     {
-      "id": 68,
-      "name": "JMeter",
-      "tags": ["QA"]
+      "name": "Automation",
+      "icon": "🤖",
+      "color": "#14b8a6, #0ea5e9",
+      "skills": [
+        {
+          "name": "Selenium",
+          "level": 85,
+          "icon": "🧪"
+        },
+        {
+          "name": "Cucumber",
+          "level": 80,
+          "icon": "🥒"
+        },
+        {
+          "name": "Playwright",
+          "level": 82,
+          "icon": "🎭"
+        },
+        {
+          "name": "Ansible",
+          "level": 78,
+          "icon": "📜"
+        },
+        {
+          "name": "Puppeteer",
+          "level": 80,
+          "icon": "🎮"
+        },
+        {
+          "name": "Robot Framework",
+          "level": 75,
+          "icon": "🤖"
+        }
+      ]
     },
     {
-      "id": 69,
-      "name": "BDD Cucumber",
-      "tags": ["QA"]
+      "name": "DevOps",
+      "icon": "🚀",
+      "color": "#6366f1, #3b82f6",
+      "skills": [
+        {
+          "name": "CI/CD",
+          "level": 90,
+          "icon": "🔄"
+        },
+        {
+          "name": "Jenkins",
+          "level": 85,
+          "icon": "🧩"
+        },
+        {
+          "name": "GitLab CI",
+          "level": 82,
+          "icon": "🦊"
+        },
+        {
+          "name": "Terraform",
+          "level": 80,
+          "icon": "🏗️"
+        },
+        {
+          "name": "ArgoCD",
+          "level": 75,
+          "icon": "🎯"
+        },
+        {
+          "name": "Helm",
+          "level": 78,
+          "icon": "⛵"
+        }
+      ]
     },
     {
-      "id": 70,
-      "name": "Database Testing",
-      "tags": ["QA"]
-    },
-    {
-      "id": 71,
-      "name": "Manual Testing",
-      "tags": ["QA"]
-    },
-    {
-      "id": 72,
-      "name": "Security Testing",
-      "tags": ["QA"]
+      "name": "Security",
+      "icon": "🛡️",
+      "color": "#f59e0b, #b91c1c",
+      "skills": [
+        {
+          "name": "OWASP",
+          "level": 85,
+          "icon": "📚"
+        },
+        {
+          "name": "JWT",
+          "level": 88,
+          "icon": "🔑"
+        },
+        {
+          "name": "OAuth2",
+          "level": 90,
+          "icon": "🔒"
+        },
+        {
+          "name": "Penetration Testing",
+          "level": 75,
+          "icon": "🕵️"
+        },
+        {
+          "name": "Burp Suite",
+          "level": 78,
+          "icon": "🧰"
+        },
+        {
+          "name": "SSL/TLS",
+          "level": 88,
+          "icon": "🔐"
+        }
+      ]
     }
   ],
   "projects": [
