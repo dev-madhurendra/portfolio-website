@@ -45,6 +45,20 @@ export const NavbarWrapper = styled.nav`
   font-family: ${({ theme }) => theme.fonts.body};
   animation: ${slideInLeft} 2s ease-out forwards;
 
+  @media (max-width: 1024px) {
+    width: 72%;   
+    height: 60px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+
+  @media (max-width: 820px) {
+    width: 90%;   
+    height: 60px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+
   @media (max-width: 768px) {
     width: 50%;   
     height: 60px;

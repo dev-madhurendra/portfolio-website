@@ -29,6 +29,7 @@ import { socialLinks } from "../../services/mocks/mocks";
 import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
 import { Form } from "react-bootstrap";
 import { FORM_URL, MULTI_PART_FORM_DATA, POST } from "../../utils/constants";
+import contactMeVector from "../../../public/png/contactmeVector.png"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -155,7 +156,7 @@ const Contact = () => {
         <CharacterSection>
           <CharacterContainer className={isVisible ? "visible" : ""}>
             <img
-              src="../../../public/png/contactmeVector.png"
+              src={contactMeVector}
               alt="character"
             />
           </CharacterContainer>
