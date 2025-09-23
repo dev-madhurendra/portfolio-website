@@ -137,8 +137,7 @@ const Footer = () => {
 
           <BottomBar>
             <BottomText>
-              Made with ❤️ by <span>{DEVLOPER_NAME}</span> | Powered by React &
-              Styled Components
+              Made with ❤️ by <span>{DEVLOPER_NAME}</span>
             </BottomText>
           </BottomBar>
         </ContentContainer>
