@@ -28,7 +28,7 @@ import {
   faUsers,
   faQuoteLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import { IFormField, SocialMediaUserData } from "../../interfaces/types";
+import { SocialMediaUserData } from "../../interfaces/types";
 import {
   Code,
   Rocket,
@@ -349,14 +349,6 @@ export const quickLinks = [
   "Project",
   "Experience",
   "Contact",
-];
-
-export const formFields: IFormField[] = [
-  { name: "Name", type: "text", field: "name" },
-  { name: "Phone Number", type: "text", field: "phone" },
-  { name: "Email", type: "email", field: "email" },
-  { name: "Subject", type: "text", field: "subject" },
-  { name: "Message", type: "textarea", field: "message" },
 ];
 
 export 

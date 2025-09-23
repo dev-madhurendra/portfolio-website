@@ -23,7 +23,7 @@ const slideInLeft = keyframes`
 
 
 export const NavbarWrapper = styled.nav`
-  width: 40%;
+  width: fit-content;
   height: 70px;
   display: flex;
   justify-content: flex-end;
@@ -46,28 +46,24 @@ export const NavbarWrapper = styled.nav`
   animation: ${slideInLeft} 2s ease-out forwards;
 
   @media (max-width: 1024px) {
-    width: 72%;   
     height: 60px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
   }
 
   @media (max-width: 820px) {
-    width: 90%;   
     height: 60px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
   }
 
   @media (max-width: 768px) {
-    width: 50%;   
     height: 60px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
   }
 
   @media (max-width: 480px) {
-    width: 50%;   
     height: 50px;
     padding: 0.5rem 1rem;
     border-top-right-radius: 35px;

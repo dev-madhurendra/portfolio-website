@@ -82,34 +82,6 @@ export interface ITitle {
   start_date: string;
   end_date: string;
 }
-export interface IExperience {
-  id: number;
-  titles: ITitle[];
-  company: string;
-  location: string;
-  description: string;
-  technologies: string;
-}
-export interface IFormField {
-  name: string;
-  type: "text" | "email" | "textarea"; // Assuming these are the only types
-  field: string;
-}
-export interface IFormData {
-  name: string;
-  phone: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-export interface IFormErrors {
-  name?: string;
-  phone?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
-  
-}
 
 export interface SocialMediaUserData {
   personal: string;

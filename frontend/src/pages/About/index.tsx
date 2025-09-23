@@ -48,7 +48,7 @@ const About = () => {
   const [aboutData, setAboutData] = useState<AboutData | null>(null);
 
   const { ref, isVisible } = useAnimateOnScroll(aboutData, {
-    threshold: [0.2, 0.35, 0.6],
+    threshold: [0.2],
   });
 
   useEffect(() => {

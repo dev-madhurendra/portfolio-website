@@ -19,17 +19,15 @@ const AppContent: React.FC = () => {
 
   return (
     <ThemeProvider theme={isDark ? appTheme.dark : appTheme.light}>
-        <>
-          <Navbar />
-          <Home />
-          <About />
-          <Education />
-          <SkillSection />
-          <Project />
-          <Experience />
-          <ContactMeSection />
-          <Footer />
-        </>
+      <Navbar />
+      <Home />
+      <About />
+      <Education />
+      <SkillSection />
+      <Project />
+      <Experience />
+      <ContactMeSection />
+      <Footer />
     </ThemeProvider>
   );
 };
