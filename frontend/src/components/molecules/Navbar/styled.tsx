@@ -23,7 +23,7 @@ const slideInLeft = keyframes`
 
 
 export const NavbarWrapper = styled.nav`
-  width: 50%;
+  width: 40%;
   height: 70px;
   display: flex;
   justify-content: flex-end;
@@ -94,7 +94,7 @@ export const LinksWrapper = styled.ul<{ open?: boolean }>`
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 50%;
     flex-direction: column;
     background: ${({ theme }) => theme.colors.navbar};
     border-radius: 50px;
@@ -118,7 +118,7 @@ export const LinkItem = styled.li<{ active?: boolean }>`
     padding: 0.75rem 1.5rem;
     border-radius: 30px;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: ${({ theme, active }) =>
       active ? theme.colors.white : theme.colors.textSecondary};
     background: ${({ theme, active }) =>

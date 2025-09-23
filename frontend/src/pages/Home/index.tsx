@@ -34,6 +34,7 @@ import { HomeContent } from "./interfaces";
 import SkeletonHomeSection from "../../components/atoms/SkeletonLoader";
 import { FullScreenLoader } from "../../components/atoms/SkeletonLoader/styled";
 import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
+import { AnimatedBackground } from "../../globalStyled";
 
 const Home = () => {
   const typedRef = useRef(null);
@@ -86,9 +87,11 @@ const Home = () => {
 
   return (
     <HeroContainer id="home" className={isVisible ? "visible" : ""} ref={ref}>
-      <GradientOrb className="orb-1" />
-      <GradientOrb className="orb-2" />
-      <GradientOrb className="orb-3" />
+      <AnimatedBackground>
+        <GradientOrb className="orb-1" />
+        <GradientOrb className="orb-2" />
+        <GradientOrb className="orb-3" />
+      </AnimatedBackground>
 
       <HeroContent>
         <LeftSection>
@@ -122,7 +125,7 @@ const Home = () => {
             ))}
           </SocialLinks>
 
-          <ButtonGroup className = {isVisible ? "visible" : ""}>
+          <ButtonGroup className={isVisible ? "visible" : ""}>
             <PrimaryButton href={homeData?.hireMeLink}>
               <FontAwesomeIcon icon={faUser} />
               Hire Me
@@ -138,14 +141,17 @@ const Home = () => {
           <HeroImageContainer>
             <HeroImage
               src={homeData?.imageUrl}
-              className = {isVisible ? "visible" : ""}
+              className={isVisible ? "visible" : ""}
               alt="Madhurendra Nath Tiwari - Software Engineer"
             />
           </HeroImageContainer>
 
           <FloatingElements>
             {floatingCards.map((card, index) => (
-              <FloatingCard key={index} className={`card-${index + 1} ${isVisible ? "visible" : ""}`}>
+              <FloatingCard
+                key={index}
+                className={`card-${index + 1} ${isVisible ? "visible" : ""}`}
+              >
                 <div className="icon">{card.icon}</div>
                 <span>{card.label}</span>
               </FloatingCard>

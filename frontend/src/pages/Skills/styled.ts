@@ -91,13 +91,6 @@ export const BadgeIcon = styled.span`
   font-size: 1.1rem;
 `;
 
-export const MainTitle = styled.h2`
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 20px;
-  font-family: ${({ theme }) => theme.fonts.heading};
-`;
 
 export const GradientText = styled.span`
   background: ${({ theme }) => theme.gradients.accent};

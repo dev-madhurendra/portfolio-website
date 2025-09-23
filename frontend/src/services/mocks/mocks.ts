@@ -26,6 +26,7 @@ import {
   faHeart,
   faRocket,
   faUsers,
+  faQuoteLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { IFormField, SocialMediaUserData } from "../../interfaces/types";
 import {
@@ -237,73 +238,6 @@ export const chipData = [
   { icon: Coffee, text: "API Development" },
 ];
 
-export const educationData = [
-  {
-    id: 1,
-    degree: "Master of Computer Applications",
-    field: "Computer Science & Engineering",
-    institution: "Indian Institute of Technology",
-    location: "Delhi, India",
-    duration: "2020 - 2022",
-    grade: "CGPA: 8.7/10",
-    type: "Masters",
-    achievements: [
-      "Specialized in Full-Stack Development",
-      "Research in Machine Learning & AI",
-      "Lead Developer - University Tech Club",
-      "Published 2 research papers",
-    ],
-    courses: [
-      "Advanced Algorithms",
-      "System Design",
-      "Database Management",
-      "Web Technologies",
-    ],
-    icon: "🎓",
-  },
-  {
-    id: 2,
-    degree: "Bachelor of Computer Applications",
-    field: "Computer Applications",
-    institution: "Delhi University",
-    location: "New Delhi, India",
-    duration: "2017 - 2020",
-    grade: "Percentage: 85.4%",
-    type: "Bachelors",
-    achievements: [
-      "Dean's List for 3 consecutive semesters",
-      "President - Computer Science Society",
-      "Winner - Inter-college Hackathon 2019",
-      "Merit Scholarship Recipient",
-    ],
-    courses: [
-      "Data Structures",
-      "Programming Languages",
-      "Software Engineering",
-      "Mathematics",
-    ],
-    icon: "🏆",
-  },
-  {
-    id: 3,
-    degree: "Higher Secondary Education",
-    field: "Science (PCM + Computer)",
-    institution: "Delhi Public School",
-    location: "Delhi, India",
-    duration: "2015 - 2017",
-    grade: "Percentage: 92.8%",
-    type: "School",
-    achievements: [
-      "School Topper in Computer Science",
-      "National Level Olympiad Qualifier",
-      "Head Boy - Student Council",
-      "Best Student Award 2017",
-    ],
-    courses: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
-    icon: "📚",
-  },
-];
-
 export const expertiseLevels = [
   {
     title: "Expert Level",
@@ -425,6 +359,90 @@ export const formFields: IFormField[] = [
   { name: "Message", type: "textarea", field: "message" },
 ];
 
+export 
+  const experienceData = [
+    {
+      id: 1,
+      company: "Zemosolabs Pvt. Ltd.",
+      totalDuration: "3+ Years",
+      location: "Remote",
+      companySize: "500+ employees",
+      totalRoles: 3,
+      promotions: 2,
+      roles: [
+        {
+          id: 11,
+          title: "Software Engineer 2",
+          period: "Jul 2025 - Present",
+          duration: "3 Month",
+          isPromotion: true,
+          description:
+            "Leading frontend architecture decisions and mentoring junior developers. Spearheading the migration to modern React patterns and implementing performance optimizations across multiple product lines.",
+          technologies: [
+            "React 18",
+            "TypeScript",
+            "Next.js",
+            "GraphQL",
+            "AWS",
+            "Docker",
+            "Jest",
+          ],
+          achievements: [
+            "Architected micro-frontend system serving 10K+ daily users",
+            "Reduced bundle size by 60% through code splitting and optimization",
+            "Led team of 8 developers across 3 different product verticals",
+            "Implemented design system adopted by 12 development teams",
+            "Improved Core Web Vitals scores by 40% across all applications",
+          ],
+        },
+        {
+          id: 12,
+          title: "Software Engineer 1",
+          period: "Jan 2025 - Jun 2025",
+          duration: "6 months",
+          isPromotion: true,
+          description:
+            "Developed scalable React applications and collaborated with cross-functional teams to deliver high-quality user experiences for enterprise clients.",
+          technologies: [
+            "React",
+            "TypeScript",
+            "Redux",
+            "Styled Components",
+            "Webpack",
+          ],
+          achievements: [
+            "Built responsive dashboard increasing user engagement by 40%",
+            "Implemented real-time features using WebSocket connections",
+            "Collaborated with UX team to improve conversion rates by 25%",
+            "Reduced technical debt by refactoring legacy codebase",
+          ],
+        },
+        {
+          id: 13,
+          title: "Associate Software Engineer",
+          period: "Feb 2023 - Jan 2025",
+          duration: "6 months",
+          isPromotion: true,
+          description:
+            "Developed scalable React applications and collaborated with cross-functional teams to deliver high-quality user experiences for enterprise clients.",
+          technologies: [
+            "React",
+            "TypeScript",
+            "Redux",
+            "Styled Components",
+            "Webpack",
+          ],
+          achievements: [
+            "Built responsive dashboard increasing user engagement by 40%",
+            "Implemented real-time features using WebSocket connections",
+            "Collaborated with UX team to improve conversion rates by 25%",
+            "Reduced technical debt by refactoring legacy codebase",
+          ],
+        }
+      ],
+    },
+  ];
+
 export const navLinks = [
   { to: "home", label: "Home", icon: faHouse },
   { to: "about", label: "About", icon: faInfo },
@@ -433,6 +451,8 @@ export const navLinks = [
   { to: "project", label: "Projects", icon: faLaptopCode },
   { to: "experience", label: "Experience", icon: faBriefcase },
   { to: "contact", label: "Contact", icon: faEnvelope },
+  { to: "testimonial", label: "Testimonial", icon: faQuoteLeft }
+
 ];
 
 export const initialContactFormData = {

@@ -2,7 +2,6 @@ import React from "react";
 import {
   SkillsContainer,
   HeaderSection,
-  MainTitle,
   GradientText,
   ExpertiseSection,
   SectionTitle,
@@ -20,6 +19,7 @@ import {
 } from "./styled";
 import SkillsPageSection from "../../components/organisms/SkillSection";
 import {
+  MainTitle,
   StyledBadgeIcon,
   Subtitle,
   TitleBadge,

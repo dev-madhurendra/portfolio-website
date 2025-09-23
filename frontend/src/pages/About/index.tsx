@@ -54,7 +54,6 @@ const About = () => {
   useEffect(() => {
     getAboutContent().then((res) => {
       setAboutData(res.data[0]);
-      console.log(res.data[0].stats);
     });
   }, []);
 

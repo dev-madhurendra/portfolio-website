@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
                 setMobileMenu(false);
               }}
             >
-              <span>{link.label}</span>
+              <FontAwesomeIcon icon={link.icon} />
             </a>
           </LinkItem>
         ))}

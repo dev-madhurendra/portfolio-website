@@ -468,84 +468,131 @@
   "projects": [
     {
       "id": 1,
-      "title": "Blog Api",
-      "description": "Developed with Spring Boot, Java, and React, facilitating efficient content management.",
-      "technologies": "Java, Spring Boot, MySQL",
-      "projectImage": "",
-      "githubUrl": "https://github.com/dev-madhurendra/blog-application-springboot.git",
-      "deployedUrl": ""
+      "title": "Barber PRO",
+      "description": "Allows customers to book digital tokens to avoid long wait times and barbers to manage queues efficiently.",
+      "technologies": ["Java", "Spring Boot", "Postgres", "React"],
+      "projectImage": "/png/barberpro-project.png",
+      "githubUrl": "https://github.com/dev-madhurendra/BarberPRO.git",
+      "deployedUrl": "",
+      "status": "In Progress",
+      "category": "Full Stack",
+      "featured": true
     },
     {
       "id": 2,
-      "title": "Portfolio Website",
-      "description": "A dynamic platform built with Python, Django, and Vue.js for showcasing skills and projects",
-      "technologies": "HTML, CSS, JavaScript",
-      "projectImage": "https://i.pinimg.com/736x/bb/e3/58/bbe35876fdca69cce431ef383f1987bf.jpg",
-      "githubUrl": "https://github.com/dev-madhurendra/portfolio-website.git",
-      "deployedUrl": "https://dev-madhurendra.github.io/Madhurendra-Portfolio/"
+      "title": "School Website",
+      "description": "A school website for student management system",
+      "technologies": ["NextJs", "NestJS", "MongoDB"],
+      "projectImage": "/png/mbdpublicschool-project.png",
+      "githubUrl": "https://github.com/dev-madhurendra/mbdpublicschool.git",
+      "deployedUrl": "https://www.mbdpublicschool.com/",
+      "category": "Full Stack",
+      "status": "",
+      "featured": true
     },
     {
       "id": 3,
       "title": "Dynamic Portfolio",
-      "description": "Utilizes Node.js, Express, and Angular to create an interactive and engaging portfolio experience.",
-      "technologies": "React, Springboot, FastAPI, MySQL, Sonar Cloud, CSS, Material UI",
-      "projectImage": "https://i.pinimg.com/736x/ef/58/15/ef58155dec4427f9248df410d653e666.jpg",
-      "githubUrl": "https://github.com/dev-madhurendra/dynamic-portfolio-website.git",
-      "deployedUrl": "https://dev-madhurendra.vercel.app/"
+      "description": "Utilizes Node.js, Express, and React to create an interactive and engaging portfolio experience.",
+      "technologies": [
+        "React",
+        "Springboot",
+        "NodeJS",
+        "FastAPI",
+        "MySQL",
+        "Sonar Cloud",
+        "CSS",
+        "Material UI"
+      ],
+      "projectImage": "/png/dynamic-portfolio-project.png",
+      "githubUrl": "https://github.com/dev-madhurendra/portfolio-website.git",
+      "deployedUrl": "https://dev-madhurendra.in/",
+      "category": "Full Stack",
+      "status": "",
+      "featured": true
     },
     {
       "id": 4,
       "title": "Todo App",
       "description": "FastAPI and React-based application for efficient task management and organization",
-      "technologies": "FastAPI, React, MySQL",
+      "technologies": ["FastAPI", "React", "MySQL"],
       "projectImage": "https://i.pinimg.com/736x/0a/88/ee/0a88ee2c7b4b6db2b2b445b5a4177349.jpg",
       "githubUrl": "https://github.com/dev-madhurendra/fastapi.git",
-      "deployedUrl": ""
+      "deployedUrl": "",
+      "category": "Full Stack",
+      "featured": false
     },
     {
       "id": 5,
       "title": "Contact Management System",
       "description": "C++ power this system for streamlined contact management.",
-      "technologies": "C++",
-      "projectImage": "",
+      "technologies": ["React", "NodeJS"],
+      "projectImage": "https://i.pinimg.com/1200x/54/50/9e/54509e2a32823d2d8b4d773f3ea5c849.jpg",
       "githubUrl": "https://github.com/dev-madhurendra/Contact-Management-System.git",
-      "deployedUrl": ""
+      "deployedUrl": "",
+      "category": "Desktop",
+      "status": "",
+      "featured": false
+    },
+    {
+      "id": 9,
+      "title": "AI Interviewer",
+      "description": "AI-powered platform for automated first-round candidate screening using LLMs, RAG, and VectorDB.",
+      "technologies": ["LLM", "React", "Python", "VectorDB", "RAG"],
+      "projectImage": "https://i.pinimg.com/1200x/b4/b5/a8/b4b5a8f4b0264feee53e18a50731911e.jpg",
+      "githubUrl": "",
+      "deployedUrl": "",
+      "category": "Full Stack GenAI",
+      "status": "",
+      "featured": false
     },
     {
       "id": 6,
       "title": "Monkey Type Clone",
       "description": "JavaScript, HTML, and CSS combine to replicate a dynamic typing practice platform.",
-      "technologies": "HTML, CSS, JavaScript",
+      "technologies": ["HTML", "CSS", "JavaScript"],
       "projectImage": "https://i.pinimg.com/564x/71/ac/d9/71acd95a12d19f77ef3ed20b20885c89.jpg",
       "githubUrl": "https://github.com/dev-madhurendra/Typing-Speed-Test",
-      "deployedUrl": "https://dev-madhurendra.github.io/Typing-Speed-Test/"
+      "deployedUrl": "https://dev-madhurendra.github.io/Typing-Speed-Test/",
+      "category": "Frontend",
+      "status": "",
+      "featured": false
     },
     {
       "id": 7,
       "title": "School Website",
       "description": "Created using HTML, CSS, and JS, offering a seamless experience for school-related information",
-      "technologies": "HTML, CSS, JavaScript",
+      "technologies": ["HTML", "CSS", "JavaScript"],
       "projectImage": "https://i.pinimg.com/736x/a2/0c/13/a20c13c50c237d9c95e0424eb195164b.jpg",
       "githubUrl": "https://github.com/dev-madhurendra/KLRSVM",
-      "deployedUrl": "https://dev-madhurendra.github.io/KLRSVM/"
+      "deployedUrl": "https://dev-madhurendra.github.io/KLRSVM/",
+      "category": "Frontend",
+      "status": "",
+      "featured": false
     },
     {
       "id": 8,
       "title": "Sorting Visualizer",
       "description": "HTML,CSS & JS bring this visualizer to life, aiding in understanding sorting algorithms.",
-      "technologies": "HTML, CSS, JavaScript",
+      "technologies": ["HTML", "CSS", "JavaScript"],
       "projectImage": "https://i.pinimg.com/564x/be/3e/3d/be3e3d999c85782ab1db1053b7f4847c.jpg",
       "githubUrl": "https://github.com/dev-madhurendra/Sorting-Visualizer",
-      "deployedUrl": ""
+      "deployedUrl": "",
+      "category": "Frontend",
+      "status": "",
+      "featured": false
     },
     {
       "id": 9,
       "title": "Amplifier",
       "description": "Developed with Microservices with FastAPI, MySQL, and React, for checking employees's security health checkup.",
-      "technologies": "FastAPI, React, MySQL, MUI",
-      "projectImage": "",
+      "technologies": ["FastAPI", "React", "MySQL", "MUI"],
+      "projectImage": "https://i.pinimg.com/1200x/37/40/7d/37407d07cd2c4a34d4d3fea2dd6ce21b.jpg",
       "githubUrl": "",
-      "deployedUrl": ""
+      "deployedUrl": "",
+      "category": "Full Stack",
+      "status": "",
+      "featured": false
     }
   ],
   "messages": [

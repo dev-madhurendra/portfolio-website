@@ -348,12 +348,16 @@ export const TitleBadge = styled.div`
 `;
 
 export const MainTitle = styled.h2`
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 800;
+  font-size: 2.25rem;
+  font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 20px;
-  font-family: ${({ theme }) => theme.fonts.heading};
-`;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+  
+  @media (min-width: 768px) {
+    font-size: 3.75rem;
+  }
+`
 
 export const GradientText = styled.span`
   background: ${({ theme }) => theme.gradients.accent};
@@ -623,4 +627,16 @@ export const FloatingTechIcon = styled.div<{
     opacity: 1;
     filter: blur(0);
   }
+`;
+
+export const floatUp = keyframes`
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0.7; }
+`;
+
+export const gradientShift = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 `;

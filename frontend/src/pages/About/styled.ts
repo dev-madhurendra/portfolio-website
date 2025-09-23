@@ -568,7 +568,6 @@ export const PersonalDesc = styled.p`
 
 export const CTASection = styled.div<{ isVisible: boolean }>`
   text-align: center;
-  background: ${({ theme }) => theme.colors.cardBg};
   padding: 3rem 2rem;
   border-radius: 20px;
   border: 1px solid ${({ theme }) => theme.colors.border};

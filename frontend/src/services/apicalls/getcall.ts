@@ -11,7 +11,6 @@ import {
 } from "../../utils/constants";
 import { supabase } from "./supabaseClient";
 
-export const getProjects = async () => await axios.get(URL + PROJECT_ENDPOINT);
 
 export const getExperiences = async () =>
   await axios.get(URL + EXPERIENCE_ENDPOINT);
@@ -27,3 +26,5 @@ export const getAboutContent = async () => await axios.get(URL + ABOUT_ENDPOINT)
 export const getEducationContent = async () => await axios.get(URL + EDUCATION_ENDPOINT)
 
 export const getSkillContent = async () => await axios.get(URL + SKILL_ENDPOINT)
+
+export const getProjects = async () => await axios.get(URL + PROJECT_ENDPOINT);

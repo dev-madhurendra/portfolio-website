@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useCountUp(target: number, duration = 2000, isVisible: boolean) {
+export function useCountUp(target: number, duration = 3000, isVisible: boolean) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {

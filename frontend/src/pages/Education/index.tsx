@@ -60,7 +60,7 @@ import { EducationData } from "./interfaces";
 
 const Education = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
-  const [viewMode, setViewMode] = useState<"grid" | "timeline">("grid");
+  const [viewMode, setViewMode] = useState<"grid" | "timeline">("timeline");
   const [educationData, setEducationData] = useState<EducationData[] | null>(
     null
   );
