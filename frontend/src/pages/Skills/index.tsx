@@ -1,69 +1,110 @@
-import React, { useEffect, useState } from 'react';
-import SkillsTag from '../../components/organisms/SkillsTag';
-import { getSkillsByTag } from '../../services/apicalls/getcall';
-import { TagsToSkillsMapping } from '../../interfaces/types';
-import MyChip from '../../components/atoms/Chip';
-import { getSkiilImage } from '../../services/apicalls/getcall';
-import { useDarkMode } from '../../services/customhook/useDarkMode';
+import React from "react";
 import {
-  LeftSkillDiv,
-  MuiChipSkillSx,
-  RightSkillDiv,
-  SkillDiv,
-  SkillGrid,
-  SkillTextImageDiv
-} from '../../utils/styled';
-import { SKILL_TITLE } from '../../utils/constants';
-import { useScrollReveal } from '../../hook/useScrollReveal';
+  SkillsContainer,
+  HeaderSection,
+  GradientText,
+  ExpertiseSection,
+  SectionTitle,
+  ExpertiseGrid,
+  ExpertiseCard,
+  ExpertiseIcon,
+  ExpertiseTitle,
+  ExpertiseLevel,
+  ProgressContainer,
+  TechList,
+  TechTag,
+  StatsSection,
+  ProgressBar,
+  SkillsSection,
+} from "./styled";
+import SkillsPageSection from "../../components/organisms/SkillSection";
+import {
+  MainTitle,
+  StyledBadgeIcon,
+  Subtitle,
+  TitleBadge,
+} from "../../globalStyled";
+import { expertiseLevels, stats } from "../../services/mocks/mocks";
+import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
+import AnimatedStatCard from "../../components/atoms/AnimatedStatCard";
+import FloatingIcons from "../../components/atoms/FloatingIconAnimation";
 
-const SkillSection = () => {
-  const {isDark} = useDarkMode()
-  const [skills, setSkills] = useState<string[]>([]);
-  const [tagSkillObj, setTagSkillObj] = useState<TagsToSkillsMapping>({});
-  useScrollReveal();
-  useEffect(() => {
-    getSkillsByTag()
-      .then((res) => {
-        setTagSkillObj(res);
-        const defaultTag = Object.keys(res)[0];
-        const defaultSkills = res[defaultTag] || [];
-        setSkills(defaultSkills);
-      })
-      .catch((error) => {
-        throw new Error("Error while fetching skills " + error)
-      });
-  }, []);
-
-  const handleTagSkill = (value: string) => {
-    const selectedSkills = tagSkillObj[value] || [];
-    setSkills(selectedSkills);
-  };
+const Skills = () => {
+  const { ref, isVisible } = useAnimateOnScroll({ threshold: [0.1, 0.4] });
 
   return (
-    <SkillDiv id='skill' className='reveal'>
-      <LeftSkillDiv>
-        <h1>{SKILL_TITLE}</h1>
-        <SkillsTag onSkillTagClick={handleTagSkill} />
-      </LeftSkillDiv>
-      <RightSkillDiv>
-        <SkillGrid>
-          {skills.map((skill,index) =>
-            <SkillTextImageDiv key={index}>
-              <img
-                src={getSkiilImage(skill, isDark)}
-                alt={skill}
-              />
-              <MyChip
-                label={skill}
-                key={skill}
-                style={MuiChipSkillSx}
-              />
-            </SkillTextImageDiv>
-          )}
-        </SkillGrid>
-      </RightSkillDiv>
-    </SkillDiv>
+    <SkillsSection id="skill" ref={ref}>
+      <FloatingIcons />
+      <SkillsContainer>
+        <HeaderSection delay="0.2s">
+          <TitleBadge>
+            <StyledBadgeIcon>⚡</StyledBadgeIcon>
+            Technical Expertise
+          </TitleBadge>
+
+          <MainTitle>
+            Skills That <GradientText>Drive Innovation</GradientText>
+          </MainTitle>
+
+          <Subtitle>
+            A comprehensive arsenal of modern technologies and frameworks,
+            constantly evolving to stay at the forefront of development
+          </Subtitle>
+        </HeaderSection>
+
+        <SkillsPageSection isVisible={isVisible} />
+
+        <ExpertiseSection delay="0.8s">
+          <SectionTitle>Expertise Levels</SectionTitle>
+
+          <ExpertiseGrid>
+            {expertiseLevels.map((expertise, index) => {
+              const IconComponent = expertise.icon;
+              return (
+                <ExpertiseCard
+                  key={expertise.title}
+                  delay={`${0.2 + index * 0.1}s`}
+                  className={isVisible ? "visible" : ""}
+                >
+                  <ExpertiseIcon>
+                    <IconComponent />
+                  </ExpertiseIcon>
+
+                  <ExpertiseTitle>{expertise.title}</ExpertiseTitle>
+                  <ExpertiseLevel>{expertise.level} Proficiency</ExpertiseLevel>
+
+                  <ProgressContainer>
+                    <ProgressBar
+                      width={expertise.level}
+                      delay={`${1.5 + index * 0.2}s`}
+                    />
+                  </ProgressContainer>
+
+                  <TechList>
+                    {expertise.technologies.map((tech) => (
+                      <TechTag key={tech}>{tech}</TechTag>
+                    ))}
+                  </TechList>
+                </ExpertiseCard>
+              );
+            })}
+          </ExpertiseGrid>
+        </ExpertiseSection>
+
+        <StatsSection delay="1.2s">
+          {stats.map((stat, index) => (
+            <AnimatedStatCard
+              key={stat.label}
+              stat={stat}
+              index={index}
+              isIcon={false}
+              isVisible={isVisible}
+            />
+          ))}
+        </StatsSection>
+      </SkillsContainer>
+    </SkillsSection>
   );
 };
 
-export default SkillSection;
+export default Skills;

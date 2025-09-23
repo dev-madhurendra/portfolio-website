@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import MuiButton from '../components/atoms/Button'
-// import DarkModeWaveUrl from "../../public/gif/Dark-Mode.gif"
 import { keyframes } from '@emotion/react'
-import { Tab } from 'react-tabs'
 import { Link } from 'react-scroll'
 
 export const StyledIcon = styled.img`
@@ -965,60 +963,6 @@ export const SkillGrid = styled('div')({
   '@media(max-width:468px)':{
     gridTemplateColumns: 'repeat(2, minmax(150px, 1fr))',
     marginLeft:"15%"
-  },
-});
-export const StyledExperienceSection = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100vw",
-  height: "100vh",
-  marginTop:"100px",
-  '@media(max-width:468px)':{
-    height: "100%",
-    marginTop:"0px",
-  },
-});
-
-export const ExperienceFirstContainer = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "90%",
-  width: "100vw",
-  marginLeft: "200px",
-  '@media(max-width:468px)':{
-    marginTop:"0px"
-  },
-});
-
-export const ExperienceTabDiv = styled(Tab)({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "80vw",
-  gap: "20px",
-  height: "90vh",
-  "@media (max-width: 768px)": {
-    flexDirection: "column",
-    marginLeft: "-200px",
-  },
-});
-
-export const StyledTabPanelDiv = styled("div")({
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  alignItems: "flex-start",
-  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  padding: "50px",
-  borderRadius: "30px",
-  "@media (max-width: 468px)": {
-    width:"90vw"
   },
 });
 

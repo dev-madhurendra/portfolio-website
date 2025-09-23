@@ -1,89 +1,171 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Typed from 'typed.js';
-import { greetingsHello, greets, typeAttributes } from '../../services/mocks/mocks';
-import { HIRE_ME_HREF, RESUME_LINK, TERMINAL_PORTFOLIO_URL } from '../../utils/constants';
-import { ButtonHomeDiv, CapsuleButton, GreetHomeDiv, HomeDiv, IntroDiv, LeftHomeDiv, RightHomeDiv, TerminalIcon, TypedHomeDiv } from '../../utils/styled';
-import SocialMediaIcons from '../../components/molecules/SocialMediaIcons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faUser, faTerminal } from '@fortawesome/free-solid-svg-icons';
-import AnimatedName from '../../components/molecules/AnimatedName';
-import TiltedHeroImage from '../../components/atoms/TiltedHeroImage';
-import './style.css';
-import TerminalPortfolioModal from '../../components/organisms/TerminalModel';
-import { Tooltip } from '@mui/material';
+import React, { useEffect, useRef, useState } from "react";
+import Typed from "typed.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload, faUser, faMouse } from "@fortawesome/free-solid-svg-icons";
+import {
+  HeroContainer,
+  ButtonGroup,
+  GradientOrb,
+  HeroContent,
+  LeftSection,
+  GreetingText,
+  TypedText,
+  IntroText,
+  PrimaryButton,
+  SecondaryButton,
+  SocialLinks,
+  SocialIcon,
+  RightSection,
+  HeroImageContainer,
+  HeroImage,
+  FloatingElements,
+  FloatingCard,
+  ScrollIndicator,
+  StyledFontAwesomeIcon,
+} from "./styled";
+import {
+  floatingCards,
+  greetingAttributes,
+  socialLinks,
+  typeAttributes,
+} from "../../services/mocks/mocks";
+import { getHomeContent } from "../../services/apicalls/getcall";
+import { HomeContent } from "./interfaces";
+import SkeletonHomeSection from "../../components/atoms/SkeletonLoader";
+import { FullScreenLoader } from "../../components/atoms/SkeletonLoader/styled";
+import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
+import { AnimatedBackground } from "../../globalStyled";
 
-const HomeSection = () => {
-  const el = useRef(null);
-  const el1 = useRef(null);
-  const [isModalOpen, setModalOpen] = useState(false);
+const Home = () => {
+  const typedRef = useRef(null);
+  const greetingRef = useRef(null);
+  const [homeData, setHomeData] = useState<HomeContent | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const { ref, isVisible } = useAnimateOnScroll(homeData);
 
-  // Typed.js Effect
   useEffect(() => {
-    const typed = new Typed(el.current, typeAttributes(greets));
-    const typed1 = new Typed(el1.current, typeAttributes(greetingsHello));
-    
-    return () => {
-      typed.destroy();
-      typed1.destroy();
+    const fetchData = async () => {
+      await getHomeContent()
+        .then((res) => {
+          setHomeData(res.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     };
+
+    fetchData();
   }, []);
 
-  return (      
-    <HomeDiv id={'home'}>
-      <div className="ocean">
-        <div className="ocean-wave"></div>
-        <div className="ocean-wave"></div>
-      </div>
-      <LeftHomeDiv>
-        <GreetHomeDiv>
-          <h1 ref={el1}></h1>      
-          <h1 className='wave'>👋</h1>  
-        </GreetHomeDiv>
-        <IntroDiv>
-          <AnimatedName />
-        </IntroDiv>  
-        <TypedHomeDiv>
-          <h4 ref={el}></h4>      
-        </TypedHomeDiv>
-        <SocialMediaIcons />
-        <ButtonHomeDiv>
-          <CapsuleButton
-            variant="contained"
-            startIcon={<FontAwesomeIcon icon={faDownload} />}
-            href={RESUME_LINK}
-          >
-              Resume
-          </CapsuleButton>
-          <CapsuleButton
-            variant="outlined"
-            startIcon={<FontAwesomeIcon icon={faUser} />}
-            href={HIRE_ME_HREF}
-          >
-            Hire Me
-          </CapsuleButton>
-        </ButtonHomeDiv>
-        
-       
-        <Tooltip title='Terminl Portfolio' arrow>
-          <TerminalIcon 
-            className="terminal-icon"
-            onClick={() => setModalOpen(true)}
-          >
-            <FontAwesomeIcon icon={faTerminal} size="2x" />
-          </TerminalIcon> 
-        </Tooltip> 
-      </LeftHomeDiv>
-      <RightHomeDiv>
-        <TiltedHeroImage />    
-      </RightHomeDiv>
+  useEffect(() => {
+    if (!homeData) return;
 
-      <TerminalPortfolioModal 
-        isOpen={isModalOpen} 
-        onClose={() => setModalOpen(false)} 
-        url={TERMINAL_PORTFOLIO_URL}
-      />
-    </HomeDiv>
+    const typed = new Typed(
+      typedRef.current,
+      typeAttributes(homeData.typedRoles)
+    );
+    const greetingTyped = new Typed(
+      greetingRef.current,
+      greetingAttributes(homeData.greeting)
+    );
+
+    return () => {
+      typed.destroy();
+      greetingTyped.destroy();
+    };
+  }, [homeData]);
+
+  if (loading)
+    return (
+      <HeroContainer id="home">
+        <FullScreenLoader>
+          <SkeletonHomeSection />
+        </FullScreenLoader>
+      </HeroContainer>
+    );
+
+  return (
+    <HeroContainer id="home" className={isVisible ? "visible" : ""} ref={ref}>
+      <AnimatedBackground>
+        <GradientOrb className="orb-1" />
+        <GradientOrb className="orb-2" />
+        <GradientOrb className="orb-3" />
+      </AnimatedBackground>
+
+      <HeroContent>
+        <LeftSection>
+          <GreetingText>
+            <span className="wave">👋</span>
+            <span ref={greetingRef}></span>
+          </GreetingText>
+
+          <h1>
+            <span className="name">{homeData?.name}</span>
+            <br />
+            <TypedText ref={typedRef}></TypedText>
+          </h1>
+
+          <IntroText>{homeData?.introText}</IntroText>
+
+          <SocialLinks>
+            {socialLinks.map((social, index) => (
+              <SocialIcon
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={social.label}
+              >
+                <StyledFontAwesomeIcon
+                  icon={social.icon}
+                  label={social.label}
+                />
+              </SocialIcon>
+            ))}
+          </SocialLinks>
+
+          <ButtonGroup className={isVisible ? "visible" : ""}>
+            <PrimaryButton href={homeData?.hireMeLink}>
+              <FontAwesomeIcon icon={faUser} />
+              Hire Me
+            </PrimaryButton>
+            <SecondaryButton href={homeData?.resumeUrl} download>
+              <FontAwesomeIcon icon={faDownload} />
+              Resume
+            </SecondaryButton>
+          </ButtonGroup>
+        </LeftSection>
+
+        <RightSection>
+          <HeroImageContainer>
+            <HeroImage
+              src={homeData?.imageUrl}
+              className={isVisible ? "visible" : ""}
+              alt="Madhurendra Nath Tiwari - Software Engineer"
+            />
+          </HeroImageContainer>
+
+          <FloatingElements>
+            {floatingCards.map((card, index) => (
+              <FloatingCard
+                key={index}
+                className={`card-${index + 1} ${isVisible ? "visible" : ""}`}
+              >
+                <div className="icon">{card.icon}</div>
+                <span>{card.label}</span>
+              </FloatingCard>
+            ))}
+          </FloatingElements>
+        </RightSection>
+      </HeroContent>
+
+      <ScrollIndicator href="#about">
+        <FontAwesomeIcon icon={faMouse} />
+        <span>Scroll to explore</span>
+      </ScrollIndicator>
+    </HeroContainer>
   );
 };
 
-export default HomeSection;
+export default Home;
