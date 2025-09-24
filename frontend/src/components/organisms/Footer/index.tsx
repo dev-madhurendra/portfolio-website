@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import {
   BLANK,
   COPYRIGHT,
-  DEFAULT_QUOTES,
   DEVLOPER_NAME,
   MADHURENDRA_NATH_TIWARI,
   OTHERS,
@@ -14,7 +13,6 @@ import {
   SOFTWARE_ENGINEER,
 } from "../../../utils/constants";
 import { quickLinks, socialLinks } from "../../../services/mocks/mocks";
-import { getQuotes } from "../../../services/apicalls/getcall";
 import {
   BackToTopButton,
   BackToTopSection,
@@ -29,12 +27,10 @@ import {
   FooterContainer,
   FooterSection,
   FooterWrapper,
-  HeroQuoteSection,
   JobTitle,
   MainGrid,
   QuickLinkItem,
   QuickLinksContainer,
-  QuoteText,
   SectionTitle,
   SocialLink,
   SocialMediaGrid,
@@ -43,20 +39,6 @@ import { AnimatedBackground } from "../../../globalStyled";
 import { GradientOrb } from "../../../pages/Home/styled";
 
 const Footer = () => {
-  const [quotes, setQuotes] = useState("");
-
-  useEffect(() => {
-    getQuotes()
-      .then((res) => {
-        console.log(res.data[0]?.content);
-        setQuotes(res.data[0]?.content);
-      })
-      .catch((err) => {
-        console.error("Error while fetching quotes:", err);
-        setQuotes(DEFAULT_QUOTES);
-      });
-  }, []);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -70,10 +52,6 @@ const Footer = () => {
           <GradientOrb className="orb-3" />
         </AnimatedBackground>
         <ContentContainer>
-          <HeroQuoteSection>
-            <QuoteText>{quotes || DEFAULT_QUOTES}</QuoteText>
-          </HeroQuoteSection>
-
           <MainGrid>
             <BrandSection delay="0s">
               <BrandName>{MADHURENDRA_NATH_TIWARI}</BrandName>

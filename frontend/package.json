@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "json": "json-server --watch db.json --port 8080",
     "build": "vite build --config vite.config.cjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -22,7 +21,6 @@
     "axios": "^1.6.3",
     "bootstrap": "^5.3.2",
     "framer-motion": "^12.23.16",
-    "json-server": "^0.17.4",
     "loadash": "^1.0.0",
     "lucide-react": "^0.544.0",
     "react": "^18.2.0",

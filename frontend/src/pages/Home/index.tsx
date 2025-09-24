@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faUser, faMouse } from "@fortawesome/free-solid-svg-icons";

@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import {
   slideInUp,
-  gradientShift,
   pulse,
   glow,
   ripple,
@@ -39,75 +38,6 @@ export const ContentContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-`;
-
-export const HeroQuoteSection = styled.div`
-  text-align: center;
-  padding: 3rem 2rem;
-  margin-bottom: 4rem;
-  position: relative;
-  animation: ${slideInUp} 0.8s ease-out;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 2px;
-    background: ${({ theme }) => theme.gradients.accent};
-    border-radius: 1px;
-  }
-`;
-
-export const QuoteText = styled.h2`
-  font-family: ${({ theme }) => theme.fonts.heading};
-  font-size: 2rem;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.4;
-  color: ${({ theme }) => theme.colors.text};
-  margin: 2rem 0;
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    ${({ theme }) => theme.colors.text},
-    ${({ theme }) => theme.colors.primary}
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
-  animation: ${gradientShift} 4s ease-in-out infinite;
-
-  &::before,
-  &::after {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    color: ${({ theme }) => theme.colors.primary};
-    font-family: serif;
-    opacity: 0.3;
-  }
-
-  &::before {
-    top: -20px;
-    left: -20px;
-  }
-  &::after {
-    bottom: -40px;
-    right: -10px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-
-    &::before,
-    &::after {
-      font-size: 3rem;
-    }
-  }
 `;
 
 export const MainGrid = styled.div`
