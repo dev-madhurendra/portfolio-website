@@ -26,41 +26,19 @@ import {
 import {
   floatingCards,
   greetingAttributes,
+  homeData,
   socialLinks,
   typeAttributes,
 } from "../../services/mocks/mocks";
-import { getHomeContent } from "../../services/apicalls/getcall";
-import { HomeContent } from "./interfaces";
-import SkeletonHomeSection from "../../components/atoms/SkeletonLoader";
-import { FullScreenLoader } from "../../components/atoms/SkeletonLoader/styled";
 import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
 import { AnimatedBackground } from "../../globalStyled";
 
 const Home = () => {
   const typedRef = useRef(null);
   const greetingRef = useRef(null);
-  const [homeData, setHomeData] = useState<HomeContent | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
   const { ref, isVisible } = useAnimateOnScroll(homeData);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await getHomeContent()
-        .then((res) => {
-          setHomeData(res.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    if (!homeData) return;
-
     const typed = new Typed(
       typedRef.current,
       typeAttributes(homeData.typedRoles)
@@ -74,16 +52,7 @@ const Home = () => {
       typed.destroy();
       greetingTyped.destroy();
     };
-  }, [homeData]);
-
-  if (loading)
-    return (
-      <HeroContainer id="home">
-        <FullScreenLoader>
-          <SkeletonHomeSection />
-        </FullScreenLoader>
-      </HeroContainer>
-    );
+  }, []);
 
   return (
     <HeroContainer id="home" className={isVisible ? "visible" : ""} ref={ref}>

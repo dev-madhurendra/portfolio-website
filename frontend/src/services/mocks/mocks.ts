@@ -378,6 +378,100 @@ export
     },
   ];
 
+export const aboutData = {
+  id: 1,
+  image: "https://yourcdn.com/profile.jpg",
+  name: "Madhurendra Nath Tiwari",
+  title: "Full Stack Developer",
+  shortDescription: "Passionate developer crafting digital experiences with precision and creativity.",
+  longDescription: [
+    "I'm a passionate full-stack developer with over 3 years of experience creating digital solutions that make a difference. My journey in tech started with a curiosity about how things work, and has evolved into a deep love for building scalable, user-centric applications.",
+    "I specialize in modern web technologies including React, Node.js, and cloud platforms. What sets me apart is my attention to detail, commitment to clean code, and ability to translate complex requirements into intuitive user experiences."
+  ],
+  stats: [
+    { number: "3+", label: "Years Experience" },
+    { number: "50+", label: "Projects Completed" },
+    { number: "25+", label: "Happy Clients" },
+    { number: "100%", label: "Satisfaction Rate" }
+  ],
+  resumeLink: "https://yourcdn.com/resume.pdf"
+};
+
+export const educationData = [
+  {
+    id: 1,
+    degree: "Bachelor Of Technology",
+    field: "Information Technology",
+    institution: "United College Of Engineering & Research",
+    location: "Prayagraj, UP, India",
+    duration: "2019 - 2023",
+    grade: "CGPA: 7.5/10",
+    type: "Bachelors",
+    achievements: [
+      "Specialized in Full-Stack Development",
+      "Research in Machine Learning & AI",
+      "Cracked HWI held by Infosys",
+      "Developed Resume Builder Application for Students"
+    ],
+    courses: [
+      "Advanced Algorithms",
+      "System Design",
+      "Database Management",
+      "Web Technologies"
+    ],
+    icon: "🎓"
+  },
+  {
+    id: 2,
+    degree: "Senior Secondary Education",
+    field: "Science (PCM + Computer)",
+    institution: "Narpat Singh Inter College",
+    location: "Ujrautikala, Sant Kabir Nagar, UP, India",
+    duration: "2016 - 2018",
+    grade: "Percentage: 88.8%",
+    type: "Intermediate",
+    achievements: [
+      "Achieved District Rank 3 in academics",
+      "President - Computer Science Society",
+      "Successfully cleared IIT-JEE and multiple competitive examinations",
+      "Selected for and participated in the SSB (Services Selection Board) Interview"
+    ],
+    courses: ["Programming Languages", "Physics", "Chemistry", "Mathematics"],
+    icon: "🏆"
+  },
+  {
+    id: 3,
+    degree: "Higher Secondary Education",
+    field: "Science",
+    institution: "Kuri Lal Rungta Saraswati Vidya Mandir",
+    location: "Khalilabad, Sant Kabir Nagar, UP, India",
+    duration: "2014 - 2016",
+    grade: "Percentage: 87.5%",
+    type: "Highschool",
+    achievements: [
+      "School Topper in Mathematics",
+      "National Level Olympiad Qualifier",
+      "Head Boy - Student Council",
+      "Best Student Award 2016"
+    ],
+    courses: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
+    icon: "📚"
+  }
+];
+
+export const homeData = {
+  name: "Madhurendra",
+  introText:
+    "I craft beautiful digital experiences that connect brands with their audiences. Specialized in creating intuitive interfaces and compelling user journeys that drive engagement and conversion.",
+  typedRoles: ["Software", "Frotnend", "UI/UX", "Backend"],
+  greeting: ["Hello, I'm", "Welcome", "Hola", "Bonjour"],
+  imageUrl: "/gif/HeroSectionAnimationLight.gif",
+  resumeUrl: "/resume.pdf",
+  hireMeLink: "#contact"
+};
+
+
+
 export const navLinks = [
   { to: "home", label: "Home", icon: faHouse },
   { to: "about", label: "About", icon: faInfo },

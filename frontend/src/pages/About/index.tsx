@@ -29,9 +29,7 @@ import {
 import AboutSectionProfile from "../../components/molecules/AboutSectionProfile";
 import { Code } from "lucide-react";
 import MyChip from "../../components/atoms/Chip";
-import { AboutData } from "./interfaces";
-import { getAboutContent } from "../../services/apicalls/getcall";
-import { chipData, personalTraits } from "../../services/mocks/mocks";
+import { aboutData, chipData, personalTraits } from "../../services/mocks/mocks";
 import {
   AnimatedBackground,
   FloatingOrb,
@@ -45,17 +43,10 @@ import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
 import AnimatedStatCard from "../../components/atoms/AnimatedStatCard";
 
 const About = () => {
-  const [aboutData, setAboutData] = useState<AboutData | null>(null);
 
   const { ref, isVisible } = useAnimateOnScroll(aboutData, {
     threshold: [0.2],
   });
-
-  useEffect(() => {
-    getAboutContent().then((res) => {
-      setAboutData(res.data[0]);
-    });
-  }, []);
 
   return (
     <AboutContainer id="about" ref={ref}>

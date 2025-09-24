@@ -55,15 +55,13 @@ import {
   TitleBadge,
 } from "../../globalStyled";
 import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
-import { getEducationContent } from "../../services/apicalls/getcall";
 import { EducationData } from "./interfaces";
+import { educationData } from "../../services/mocks/mocks";
 
 const Education = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
   const [viewMode, setViewMode] = useState<"grid" | "timeline">("timeline");
-  const [educationData, setEducationData] = useState<EducationData[] | null>(
-    null
-  );
+
   const { ref, isVisible } = useAnimateOnScroll(educationData, {
     threshold: [0.08],
   });
@@ -73,17 +71,6 @@ const Education = () => {
       prev.includes(id) ? prev.filter((cardId) => cardId !== id) : [...prev, id]
     );
   };
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await getEducationContent();
-        setEducationData(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
 
   return (
     <EducationSection id="education" ref={ref}>
