@@ -2,18 +2,9 @@ import {
   faCodepen,
   faDiscord,
   faGithubSquare,
-  faInstagram,
   faLinkedinIn,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  EDUIMG_1,
-  EDUIMG_2,
-  EDUIMG_3,
-  EDUIMG_4,
-  EDUIMG_5,
-  EDUIMG_6,
-} from "../../utils/constants";
 import {
   faHouse,
   faInfo,
@@ -28,7 +19,6 @@ import {
   faUsers,
   faQuoteLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import { SocialMediaUserData } from "../../interfaces/types";
 import {
   Code,
   Rocket,
@@ -80,36 +70,6 @@ import {
   SiSpringboot,
   SiVuedotjs,
 } from "react-icons/si";
-
-export const greetingsHello = ["Hola ", "Bonjour", "Hello "];
-export const greets = [
-  "Software Engineer",
-  "Code Enthusiast",
-  "Problem Solver",
-  "Innovative Developer",
-  "Tech Explorer",
-  "Bulding Dev4Beginners",
-  "Coding Maestro",
-  "Software Craftsman",
-  "Algorithm Wizard",
-  "Full Stack Developer",
-  "Code Architect",
-];
-export const nameType = [
-  `console.log('👋 Madhurendra');`,
-  `print('Madhurendra 👋');`,
-  `puts 'Madhur👋endra';`,
-  `cout &lt;&lt; 'Madhurendra 👋';`,
-  `echo "👋 Madhurendra";`,
-  `System.out.println('👋 Madhurendra');`,
-  `printf("👋 Madhurendra\\n");`,
-  `fmt.Println("👋 Madhurendra")`,
-  `Console.WriteLine("👋 Madhurendra");`,
-  `echo '👋 Madhurendra'`,
-  `IO.puts "👋 Madhurendra"`,
-  `say "👋 Madhurendra"`,
-  `echo '👋 Madhurendra!'`,
-];
 
 export const socialLinks = [
   {
@@ -275,14 +235,6 @@ export const skillsData = [
   { label: "📚 Continuous Learning" },
 ];
 export const myname = "MADHURENDRA";
-export const educationImage = [
-  EDUIMG_1,
-  EDUIMG_2,
-  EDUIMG_3,
-  EDUIMG_4,
-  EDUIMG_5,
-  EDUIMG_6,
-];
 export const techIcons = [
   // Frontend
   { Icon: FaReact, color: "#61dafb" },
@@ -323,16 +275,7 @@ export const techIcons = [
   { Icon: SiJest, color: "#99425b" },
   { Icon: SiCplusplus, color: "#00599C" },
 ];
-export const itemsPerPage = {
-  mobile: 2,
-  tablet: 2,
-  laptop: 5,
-};
-export const projectPerPage = {
-  mobile: 1,
-  tablet: 1,
-  laptop: 3,
-};
+
 export const getTypedTextOptions = (text: string = "") => ({
   strings: [text],
   typeSpeed: 40,
@@ -447,49 +390,3 @@ export const navLinks = [
 
 ];
 
-export const initialContactFormData = {
-  name: "",
-  phone: "",
-  email: "",
-  subject: "",
-  message: "",
-};
-
-export const placeholders = [
-  { width: "10rem", height: "3rem" },
-  { width: "20rem" },
-  { width: "20rem" },
-  { width: "20rem" },
-  { width: "20rem" },
-  { width: "20rem" },
-  { width: "10rem", height: "3rem" },
-];
-
-export const userData: Record<string, SocialMediaUserData> = {
-  github: {
-    personal: "dev-madhurendra",
-    organization: "dev4beginners-gh",
-    personalLink: "https://github.com/dev-madhurendra",
-    orgLink: "https://github.com/dev4beginners-gh",
-    icon: faGithubSquare,
-  },
-  instagram: {
-    personal: "dev.madhurendra",
-    organization: "dev4beginners_ig",
-    personalLink: "https://www.instagram.com/dev.madhurendra",
-    orgLink: "https://www.instagram.com/dev4beginners_ig",
-    icon: faInstagram,
-  },
-  twitter: {
-    personal: "dev_madhurendra",
-    organization: "dev4beginners_x",
-    personalLink: "https://x.com/dev_madhurendra",
-    orgLink: "https://x.com/dev4beginners_x",
-    icon: faXTwitter,
-  },
-};
-
-export const tiltedImageStyle = (x: number, y: number) => ({
-  transform: `rotateX(${y}deg) rotateY(${x}deg)`,
-  transition: "transform 0.1s ease",
-});
