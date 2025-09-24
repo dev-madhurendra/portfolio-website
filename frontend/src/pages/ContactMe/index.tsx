@@ -1,5 +1,13 @@
-import React, { FormEvent, useState } from "react";
-import { Mail, User, MessageSquare } from "lucide-react";
+import { Mail, MessageSquare, User } from 'lucide-react';
+import React, { FormEvent, useState } from 'react';
+import { Form } from 'react-bootstrap';
+import contactMeVector from '../../../public/png/contactmeVector.webp';
+import { AnimatedBackground, GradientText, MainTitle, TitleBadge } from '../../globalStyled';
+import { useAnimateOnScroll } from '../../hook/useAnimateOnScroll';
+import { socialLinks } from '../../services/mocks/mocks';
+import { FORM_URL, MULTI_PART_FORM_DATA, POST } from '../../utils/constants';
+import { GradientOrb, StyledFontAwesomeIcon } from '../Home/styled';
+import { HeaderDescription, HeaderSection } from '../Project/styled';
 import {
   CharacterContainer,
   CharacterSection,
@@ -16,20 +24,7 @@ import {
   SubmitButton,
   Subtitle,
   TextArea,
-} from "./styled";
-import { HeaderDescription, HeaderSection } from "../Project/styled";
-import {
-  AnimatedBackground,
-  GradientText,
-  MainTitle,
-  TitleBadge,
-} from "../../globalStyled";
-import { GradientOrb, StyledFontAwesomeIcon } from "../Home/styled";
-import { socialLinks } from "../../services/mocks/mocks";
-import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
-import { Form } from "react-bootstrap";
-import { FORM_URL, MULTI_PART_FORM_DATA, POST } from "../../utils/constants";
-import contactMeVector from "../../../public/png/contactmeVector.png"
+} from './styled';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
