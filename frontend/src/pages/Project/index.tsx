@@ -46,10 +46,9 @@ import {
 } from "./styled";
 import { AnimatedBackground, TitleBadge } from "../../globalStyled";
 import { GradientOrb } from "../Home/styled";
-import { getProjects } from "../../services/apicalls/getcall";
-import { ProjectData } from "./interfaces";
 import MyChip from "../../components/atoms/Chip";
 import { useAnimateOnScroll } from "../../hook/useAnimateOnScroll";
+import { projects } from "../../services/mocks/mocks";
 
 const PROJECTS_PER_PAGE = 6;
 
@@ -58,19 +57,7 @@ export function Project() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  const [projects, setProjects] = useState<ProjectData[]>();
   const {ref, isVisible} = useAnimateOnScroll(projects);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await getProjects();
-        setProjects(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
 
   const categories = [
     "All",

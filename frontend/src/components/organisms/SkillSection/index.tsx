@@ -16,26 +16,13 @@ import {
   CategoriesContainer,
 } from "./styled";
 import SkillTagComponent from "../SkillsTag";
-import { SkillCategory } from "./interfaces";
-import { getSkillContent } from "../../../services/apicalls/getcall";
 import { getRandomLightColor } from "../../../services/functions/functions";
+import { skillData } from "../../../services/mocks/mocks";
 
 
 
 export default function SkillsPageSection({isVisible}: {isVisible: boolean}) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const [skillData, setSkillData] = useState<SkillCategory[] | null>(null);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await getSkillContent();
-        setSkillData(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
 
   return (
     <SectionContainer>
